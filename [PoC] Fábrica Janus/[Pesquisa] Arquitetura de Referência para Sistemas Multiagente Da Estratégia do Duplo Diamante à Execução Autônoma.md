@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//command
 ---
 # Arquitetura de Referência para Sistemas Multiagente: Da Estratégia do Duplo Diamante à Execução Autônoma
 
