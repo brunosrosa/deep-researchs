@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//view
 ---
 # De Recuperação a Raciocínio: Um Estudo Abrangente sobre RAG Avançado e o Paradigma de Pesquisa de IA
 

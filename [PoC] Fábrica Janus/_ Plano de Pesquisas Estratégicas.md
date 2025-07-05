@@ -193,3 +193,25 @@ Apresente um guia prático e acionável.
 
 
 ---
+
+## Novas Pesquisas:
+
+- Pesquisar sobre novíssimas ações da Huawei, Alibaba e outras companhias chinesas que também lançaram importantes agentes e "frameworks" para uso de suas LLMs e outras ferramentas. O que são? Quais evoluções trouxeram? Como posso me beneficiar delas? [FAZENDO]
+  
+- Pesquisar sobre algumas coisas novas (para entender suas forças, aprendizados e se servem para ajudar a compor o Maestro.AI) como:
+	- O template de "Context Engeneering" (https://github.com/coleam00/context-engineering-intro) 
+	- Claudia (https://github.com/getAsterisk/claudia) 
+	- AG-UI (https://github.com/ag-ui-protocol/ag-ui)
+	- AgentSeek (https://github.com/Fosowl/agenticSeek)
+
+- Pesquisar sites [OK]
+	- (1) Realizar uma pesquisa ampla para identificar os modelos de IA (LLMs) de vanguarda, tanto proprietários quanto de código aberto, em Julho de 2025, capturando o que há de mais novo e performático. 
+	- (2) Para cada modelo de ponta, realizar uma investigação aprofundada sobre: 
+		- (a) Proposta central, arquitetura técnica (ex: MoE, RL-based) e funcionalidades distintivas (ex: "Artifacts", "Thinking", memória persistente). 
+		- (b) Desempenho em benchmarks recentes e relevantes (ex: SWE-Bench, GPQA, MMLU, AIME 2025, leaderboards de codificação). 
+		- (c) Métricas operacionais (preço, latência, janela de contexto), trade-offs e estudos de caso do mundo real. 
+	- (3) Mapear e classificar os modelos de acordo com sua adequação para papéis hierárquicos: **Estratégicos** (raciocínio de longo prazo), **Táticos** (decomposição de tarefas) e **Operacionais** (execução rápida e de baixo custo). 
+	- (4) Recomendar os melhores modelos para **'Guildas' de domínio específico** (Engenharia de Software, Análise de Dados, Criativa, etc.), com base em seus pontos fortes comprovados. 
+	- (5) Investigar a dinâmica de **'Conselhos' ou 'Debates' multi-agentes**, pesquisando os benefícios de orquestrar agentes com LLMs diferentes (arquitetura heterogênea) para fomentar diversidade cognitiva, validando com exemplos de frameworks como AutoGen ou CrewAI. 
+	- (6) Sintetizar toda a nova análise para reescrever completamente a 'Parte IV' do relatório, estruturando-a com as novas seções sobre papéis hierárquicos, guildas e a dinâmica de conselhos, e finalizando com uma tabela comparativa atualizada e acionável.
+

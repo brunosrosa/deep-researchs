@@ -8,7 +8,7 @@ sticker: lucide//at-sign
 
 Este é o nosso prompt mestre, agora com a instrução de saída que você solicitou.
 
-``` Markdown
+```Markdown
 # BRIEFING DE PESQUISA E ANÁLISE UX
 
 **1. PERSONA E OBJETIVO:**
