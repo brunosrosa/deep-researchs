@@ -196,9 +196,9 @@ Apresente um guia prático e acionável.
 
 ## Novas Pesquisas:
 
-- Pesquisar sobre novíssimas ações da Huawei, Alibaba e outras companhias chinesas que também lançaram importantes agentes e "frameworks" para uso de suas LLMs e outras ferramentas. O que são? Quais evoluções trouxeram? Como posso me beneficiar delas? [FAZENDO]
+- Pesquisar sobre novíssimas ações da Huawei, Alibaba e outras companhias chinesas que também lançaram importantes agentes e "frameworks" para uso de suas LLMs e outras ferramentas. O que são? Quais evoluções trouxeram? Como posso me beneficiar delas? [OK]
   
-- Pesquisar sobre algumas coisas novas (para entender suas forças, aprendizados e se servem para ajudar a compor o Maestro.AI) como:
+- Pesquisar sobre algumas coisas novas (para entender suas forças, aprendizados e se servem para ajudar a compor o Maestro.AI) como: [OK]
 	- O template de "Context Engeneering" (https://github.com/coleam00/context-engineering-intro) 
 	- Claudia (https://github.com/getAsterisk/claudia) 
 	- AG-UI (https://github.com/ag-ui-protocol/ag-ui)
@@ -214,4 +214,18 @@ Apresente um guia prático e acionável.
 	- (4) Recomendar os melhores modelos para **'Guildas' de domínio específico** (Engenharia de Software, Análise de Dados, Criativa, etc.), com base em seus pontos fortes comprovados. 
 	- (5) Investigar a dinâmica de **'Conselhos' ou 'Debates' multi-agentes**, pesquisando os benefícios de orquestrar agentes com LLMs diferentes (arquitetura heterogênea) para fomentar diversidade cognitiva, validando com exemplos de frameworks como AutoGen ou CrewAI. 
 	- (6) Sintetizar toda a nova análise para reescrever completamente a 'Parte IV' do relatório, estruturando-a com as novas seções sobre papéis hierárquicos, guildas e a dinâmica de conselhos, e finalizando com uma tabela comparativa atualizada e acionável.
+
+- Pesquisa de Refinamento: [OK]
+	- Ainda fiquei com mais algumas dúvidas, será que poderia se aprofundar em outra pesquisa, por favor:
+		- Qual a melhor solução para a criação de um agente "Chefe de Gabinete" que apoia o Maestro num processo de duplo diamante, que busque criar um "Briefing" claro para o problema à ser investigado e tratado por um "conselho" de agentes estratégicos ou táticos para definição de um plano de ataque?
+		- Qual a melhor opção para solução de um agente "Orquestrador" que decompõem o problema, traça um plano e distribui para "Conselho" de agentes para deliberar sobre o problema e então retornar ao orquestrador que busca a aprovação do Maestro, para então seguir com as tarefas divididas para os agentes "operacionais" realizarem as tarefas?
+		- Como me utilizar de uma solução open-source de "Deep Research" (como do Google Gemini) que "aterra" e amplia o contexto com dados web para melhorar as discussões e resoluções para os agentes e o maestro? 
+		- Como aplicar um processo de melhoria continua que mantém atualizado os "Codex" de cada projeto com os avanços que forem sendo refinados, modificados e atualizados para o RAG sempre ter a última informação e manter a documentação "viva"? 
+		- Entendi que o AgenticSeek não serve como "Chefe de Gabinete" mas sim um sandbox para tarefas ou fluxos menos estruturados, correto? Existem outras opções mais maduras? 
+		- Como criar um sistema em "Kanban" que sirva como interface "compartilhada" entre Agentes e o Humano? (Facilitando o entendimento do que está sendo produzido, refinado, discutido ou que necessitam de revisão humana até poder ser marcado como "Done")? 
+		- Quais as principais ferramentas de MCP eu poderia me utilizar para ampliar as capacidades dos mais diversos agentes (Estratégicos, Táticos e Operacionais) que tem "especialidades", visões ou necessidades diferentes...?
+		- Como é melhor orquestrar a memória entre agentes para que no final eles entreguem algum tipo de "artefato" (documentos, relatórios, pesquisas, opiniões, planos, códigos, modelagens e etc...) relacionado ao problema/hipótese proposta?
+		- Qual a melhor forma de separar os contextos para os agentes? Projetos/Hipóteses/Problemas/Especialidades/Tarefas/Fluxos/Prompts? O que se sabe hoje para melhor organizar para que não fique confuso na camada de interação agente-humano?
+		- Existem outras opções como o AG-UI que tem potencial para ser melhor que ele? 
+		- Quais opções se demonstraram melhor para especializar agentes por "papel" ou "especialidade" para que possam ter um arcabouço único para entregas mais ligadas ao esperado de um "especialista"? (Utilizando um RAG com uma Base de Conhecimento especializada, exemplo: Base de conhecimento para "Product Manager", mais o contexto dos documentos do projeto, instruções base e outros pontos de memória importantes)
 
