@@ -229,3 +229,18 @@ Apresente um guia prático e acionável.
 		- Existem outras opções como o AG-UI que tem potencial para ser melhor que ele? 
 		- Quais opções se demonstraram melhor para especializar agentes por "papel" ou "especialidade" para que possam ter um arcabouço único para entregas mais ligadas ao esperado de um "especialista"? (Utilizando um RAG com uma Base de Conhecimento especializada, exemplo: Base de conhecimento para "Product Manager", mais o contexto dos documentos do projeto, instruções base e outros pontos de memória importantes)
 
+- Você está indo maravilhosamente bem, porém, ainda tenho várias novas dúvidas, pode então, por favor, realizar uma nova pesquisa para as perguntas:
+
+	- Existem modelos de prompts de "Chain-of-thought" testados e que demonstram melhores usos? Existem tipos? Como escolher o melhor para cada tipo de Fluxo(?) ou Tarefa(?) ?
+	
+	- Qual a definição de "Socrático"? E quais suas premissas base para uso? Como facilitar o uso para agentes? Quando é necessário? Quais agentes seriam importantes de usar isso? Solicitar "reflexão" ou instruir à refletir podem ter ganhos diferentes (já que algumas LLMs devem fazer parte desse "questionamento" em seu fundamento de "reflexão")?
+	
+	- Como aplicar o método Socrático (até o aprofundamento necessário), utilizando Agentes, em "Canvas" ou processos de "brainstorm visuais" (como o mapa mental) para que ele ajude à ampliar a visão do humano? Existe alguma alternativa open-source ao qual posso me beneficiar para trazer para a PoC?
+	
+	- Com o AG-UI seria possível e necessário então ter quais "telas" internas? Dashboard, Kanban, Fluxos, Acesso aos Templates do "Codex Prime Framework", Codex do Projeto, "Canvas", Perfis/Configurações de Agentes, Fluxos, Configurações de LLMs e Apis (Integrações?), Histórico de Notificações, ..., e o que mais?
+	
+	- Eu posso reconstruir em cima da AG-UI utilizando outras bibliotecas de componentes?
+	
+	- Como deve ser montada essa "Constituição" para os agentes? Existe um modelo base?
+	
+	- Como eu descobrir e desenhar os fluxos (e subfluxos) necessários? Como devo montar eles? Como posso usar uma IA para me ajudar a pensar em todos?

@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//command
 ---
 # A Fábrica Janus: Um Framework para Workflows Agênticos Conscientes de Premissas com Interfaces Visuais Avançadas e Integração com o OpenProject
 
