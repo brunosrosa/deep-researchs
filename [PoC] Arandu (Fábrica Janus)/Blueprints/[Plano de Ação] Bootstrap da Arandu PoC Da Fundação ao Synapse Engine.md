@@ -75,7 +75,7 @@ Este plano é dividido em três fases sequenciais:
 
 ### **Tarefa 1.1: Limpeza e Separação de Conceitos**
 
-- **Objetivo:** Garantir que o `Codex Prime` seja um framework genérico e reutilizável.
+- **Objetivo:** Garantir que o `Codex Prime Framework` tenha um framework genérico e reutilizável.
     
 - **Agente(s) Envolvido(s):** O Maestro, atuando como `@ArquitetoDoCodex`.
     

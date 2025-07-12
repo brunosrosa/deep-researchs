@@ -17,7 +17,7 @@ Este documento serve como o **blueprint arquitetônico completo** para o ecossis
 
 ### **Propósito Estratégico**
 
-Servir como o **"DNA Organizacional"** e a **fonte única da verdade** para todo o ecossistema. O `Codex Prime` fornece o framework mestre de documentação, governança e padrões que garante a consistência, qualidade e a capacidade de raciocínio dos agentes em todos os projetos.
+Servir como o **"DNA Organizacional"** e a **fonte única da verdade** para todo o ecossistema. O `Codex Prime Framework` fornece o framework mestre de documentação, governança e padrões que garante a consistência, qualidade e a capacidade de raciocínio dos agentes em todos os projetos.
 
 ### **Filosofia e Padrão Arquitetural**
 
@@ -67,7 +67,7 @@ Atuar como a **"Plataforma de Memória Cognitiva Temporal"** do ecossistema. O `
         
     2. **Camada de Conhecimento Conectado:** Armazena o grafo de conhecimento extraído dos artefatos brutos, representando as entidades e suas relações. É o "cérebro" que raciocina sobre os dados.
         
-- **Recuperação Baseada em Intenção:** Utiliza as tags do `Diátaxis` provenientes do `Codex Prime` para filtrar e priorizar a recuperação de conhecimento, alinhando o tipo de documento recuperado com a intenção da consulta do agente.
+- **Recuperação Baseada em Intenção:** Utiliza as tags do `Diátaxis` provenientes do `Codex Prime Framework` para filtrar e priorizar a recuperação de conhecimento, alinhando o tipo de documento recuperado com a intenção da consulta do agente.
     
 
 ### **Componentes e Tecnologias Chave**
@@ -158,7 +158,7 @@ Representar a **força de trabalho inteligente e distribuída** da "Fábrica Jan
     - **`Gemini CLI` / `Claude Code`**: Ferramentas de linha de comando que podem ser invocadas por agentes operacionais para tarefas complexas de geração ou refatoração de código.
         
 
-## **Pilar 4: `Maestro Acropolis` (O Cockpit)**
+## **Pilar 4: `Maestro AI Acropolis` (O Cockpit)**
 
 ### **Propósito Estratégico**
 
@@ -166,7 +166,7 @@ Funcionar como o **Sistema Operacional de Governança e Execução**, o cockpit 
 
 ### **Filosofia e Padrão Arquitetural**
 
-- **OS/UI/OC Híbrido:** O `Maestro Acropolis` é um **Sistema Operacional (`OS`)** que gerencia processos e estados, apresentado através de uma **Interface de Usuário (`UI`)** interativa, que funciona como um **Centro de Operações (`OC`)** para a tomada de decisão.
+- **OS/UI/OC Híbrido:** O `Maestro AI Acropolis` é um **Sistema Operacional (`OS`)** que gerencia processos e estados, apresentado através de uma **Interface de Usuário (`UI`)** interativa, que funciona como um **Centro de Operações (`OC`)** para a tomada de decisão.
     
 - **GitHub-Nativo com Camada Anti-Corrupção (ACL):** A arquitetura inicial é implementada como uma **GitHub App** para uma integração profunda com os fluxos de trabalho de desenvolvimento. No entanto, uma **ACL** é implementada desde o Dia 1 para abstrair as chamadas de API do GitHub, garantindo a portabilidade futura e evitando o _vendor lock-in_.
     
@@ -256,7 +256,7 @@ A excelência de uma fábrica não está apenas em suas máquinas, mas em sua li
 
 Toda unidade de trabalho, seja a criação de um novo documento no `Codex` ou a implementação de uma funcionalidade, segue um ciclo de vida padronizado e auditável, orquestrado pelo `Maestro Acropolis` e executado pelos agentes.
 
-1. **Criação da Tarefa:** O Maestro cria uma nova tarefa no Kanban do `Maestro Acropolis`. Esta ação aciona o `@Orquestrador`.
+1. **Criação da Tarefa:** O Maestro cria uma nova tarefa no Kanban do `Maestro AI Acropolis`. Esta ação aciona o `@Orquestrador`.
     
 2. **Início do Trabalho (`GitTool.iniciar_tarefa`):** O `@Orquestrador` atribui a tarefa ao agente apropriado (ex: `@EngenheiroBootstrap`). A primeira ação do agente é invocar a ferramenta `GitTool`, que automaticamente cria um _branch_ isolado para a tarefa (ex: `feature/TASK-123-implementar-login-api`).
     
@@ -273,7 +273,7 @@ Toda unidade de trabalho, seja a criação de um novo documento no `Codex` ou a 
 
 ## **Pilar 7: A Constituição (O Núcleo Ético e Operacional)**
 
-A "Constituição" não é apenas um documento; é um artefato de governança ativo. É um arquivo `CONSTITUICAO-PRINCIPIOS_FUNDAMENTAIS-v1.0.md` no `Codex Prime`, cujos princípios são programaticamente impostos aos agentes através da `LangChain ConstitutionalChain`.
+A "Constituição" não é apenas um documento; é um artefato de governança ativo. É um arquivo `CONSTITUICAO-PRINCIPIOS_FUNDAMENTAIS-v1.0.md` no `Codex Prime Framework`, cujos princípios são programaticamente impostos aos agentes através da `LangChain ConstitutionalChain`.
 
 ### **Estrutura e Princípios Fundamentais**
 
@@ -291,7 +291,7 @@ A Constituição é composta por um preâmbulo e um conjunto de princípios inqu
     
 - **Princípio 2: A Integridade do Conhecimento (A Verdade do Codex)**
     
-    > _"O `Codex Prime` e os `/.codex` dos projetos são a única fonte da verdade. Qualquer artefato gerado deve aderir aos seus padrões. Nenhuma tarefa que gere conhecimento é considerada concluída até que a documentação correspondente seja criada ou atualizada através de um Pull Request."_
+    > _"O `Codex Prime Framework` e os `/.codex` dos projetos são a única fonte da verdade. Qualquer artefato gerado deve aderir aos seus padrões. Nenhuma tarefa que gere conhecimento é considerada concluída até que a documentação correspondente seja criada ou atualizada através de um Pull Request."_
     
 - **Princípio 3: A Eficiência Econômica (O Uso Consciente de Recursos)**
     
@@ -312,7 +312,7 @@ A meta final da **Arandu PoC** não é apenas construir um sistema que _obedece_
 
 ### **A Filosofia: O Espectro de Autonomia**
 
-A interação Humano-IA não é binária. Ela opera em um espectro, e o `Maestro Acropolis` permite ajustar onde cada tarefa se encaixa:
+A interação Humano-IA não é binária. Ela opera em um espectro, e o `Maestro AI Acropolis` permite ajustar onde cada tarefa se encaixa:
 
 - **Maestro-em-Comando:** O Maestro aprova cada passo. Ideal para tarefas de alto risco ou durante o treinamento de um novo agente.
     
@@ -337,7 +337,7 @@ Para que a fábrica se torne um verdadeiro parceiro de treino, introduzimos uma 
     
     - **Origem:** Epimeteu, o Titã cujo nome significa "aquele que pensa depois" (hindsight).
         
-    - **Função:** Após a conclusão de um marco importante ou de um projeto, `@Epimeteu` é acionado. Ele analisa todo o histórico do projeto (PRs, debates, decisões de RFC, dados do `Argus Sentry`) para realizar uma **análise "post-mortem" automatizada**. Ele gera um relatório de "Lições Aprendidas" e sugere atualizações para o `Codex Prime`, garantindo que os erros do passado não se repitam e que os sucessos se tornem novos padrões.
+    - **Função:** Após a conclusão de um marco importante ou de um projeto, `@Epimeteu` é acionado. Ele analisa todo o histórico do projeto (PRs, debates, decisões de RFC, dados do `Argus Sentry`) para realizar uma **análise "post-mortem" automatizada**. Ele gera um relatório de "Lições Aprendidas" e sugere atualizações para o `Codex Prime Framework`, garantindo que os erros do passado não se repitam e que os sucessos se tornem novos padrões.
         
 - **`@Prometeu` (O Batedor de Inovações)**
     
@@ -366,11 +366,11 @@ Com os pilares fundamentais, os ritmos operacionais e a arquitetura de co-evolu�
 
 Estes pilares futuros não são meros acessórios; eles representam a maturação da fábrica, transformando-a de uma ferramenta de produtividade para um verdadeiro parceiro estratégico, capaz de gerenciar segurança, criar seus próprios modelos de IA e simular futuros possíveis.
 
-## **Pilar 9: `@Cerberus` (A Plataforma de Segurança e Confiança da IA)**
+## **Pilar 9: `@Cerberus-SoP` (A Plataforma de Segurança e Confiança da IA)**
 
 ### **Propósito Estratégico**
 
-Funcionar como o **Centro de Operações de Segurança (SOC) da Inteligência Artificial**, uma plataforma dedicada e proativa para proteger todo o ecossistema contra as ameaças únicas do domínio da IA. Enquanto a "Constituição" define a ética, o `@Cerberus` fornece a tecnologia para impor essa ética e defender a fábrica de ataques.
+Funcionar como o **Centro de Operações de Segurança (SOC) da Inteligência Artificial**, uma plataforma dedicada e proativa para proteger todo o ecossistema contra as ameaças únicas do domínio da IA. Enquanto a "Constituição" define a ética, o `@Cerberus-SoP` fornece a tecnologia para impor essa ética e defender a fábrica de ataques.
 
 ### **Filosofia e Padrão Arquitetural**
 
