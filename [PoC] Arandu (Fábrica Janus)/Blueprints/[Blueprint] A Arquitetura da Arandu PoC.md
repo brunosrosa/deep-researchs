@@ -1,7 +1,6 @@
 ---
-
-## sticker: lucide//chevrons-up
-
+sticker: lucide//aperture
+---
 # **[Blueprint] A Arquitetura da Arandu PoC**
 
 Versão: 1.0

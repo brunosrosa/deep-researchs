@@ -1,7 +1,6 @@
 ---
-
-## sticker: lucide//gem
-
+sticker: lucide//aperture
+---
 # Sumário Estratégico: A Prova de Conceito da Fábrica Janus
 
 Versão: 1.0
