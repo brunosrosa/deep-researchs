@@ -33,10 +33,10 @@ Quais formatos de pagamento (mensal, assinatura) têm maior aceitação?
 💭 Outras Perguntas Estratégicas para Explorar Mais:
 
 Se você tivesse acesso a dados externos ou ferramentas de funil, aqui vão perguntas que poderiam gerar ainda mais valor:
-Quais perfis de cliente têm maior abandono? (ex: faixa etária, tipo de imóvel) 
-Quais etapas têm maior tempo de permanência e por quê? 
-Quais concorrentes têm jornadas mais curtas ou mais personalizadas? 
-O cliente entende o valor do seguro residencial ou abandona por falta de percepção de risco? 
-Como o app poderia usar dados do cliente (ex: localização, histórico bancário) para sugerir planos? 
+- Quais perfis de cliente têm maior abandono? (ex: faixa etária, tipo de imóvel) 
+- Quais etapas têm maior tempo de permanência e por quê? 
+- Quais concorrentes têm jornadas mais curtas ou mais personalizadas? 
+- O cliente entende o valor do seguro residencial ou abandona por falta de percepção de risco? 
+- Como o app poderia usar dados do cliente (ex: localização, histórico bancário) para sugerir planos? 
 
 
