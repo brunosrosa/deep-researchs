@@ -1,0 +1,288 @@
+Arquitetura Técnica do DataEngOS: Adaptação do Paradigma DesignOS para uma Engenharia de Dados Orientada por Especificações
+Resumo Executivo
+A intersecção entre a Inteligência Artificial Generativa e a Engenharia de Software precipitou o surgimento de novos paradigmas de desenvolvimento, exemplificados por repositórios inovadores como o 'DesignOS'. Esta ferramenta, construída sobre uma stack moderna de Next.js, React e agentes de IA, redefine o ciclo de vida do desenvolvimento de produtos digitais ao impor uma separação rigorosa entre o planejamento (especificação) e a implementação (codificação). Existe, contudo, uma oportunidade latente e transformadora de transpor este padrão arquitetural para o domínio da Engenharia de Dados. O presente relatório propõe a criação do 'DataEngOS', um sistema operacional agnóstico e orientado por agentes, desenhado para atuar como o plano de controle centralizado para a definição, validação e implantação de produtos de dados.
+Ao reinterpretar os componentes fundamentais do DesignOS — mapeando Especificações de UI para Contratos de Dados (ODCS) e Sistemas de Design para Camadas Semânticas (Malloy/dbt) — o DataEngOS transcende a fragmentação das pipelines tradicionais. Este documento oferece uma análise técnica exaustiva e um roteiro de implementação detalhado, fundamentado na integração de padrões abertos e linguagens semânticas modernas. O objetivo é estabelecer uma plataforma robusta capaz de suportar casos de uso complexos, desde a modernização de legados baseados em Excel até a geração autônoma de analytics, garantindo governança, qualidade e reprodutibilidade em escala.
+1. O Imperativo da Engenharia de Dados Orientada por Especificações
+A indústria de dados enfrenta uma crise de complexidade e confiança. Enquanto a engenharia de software evoluiu através de práticas rigorosas de DevOps, design systems e especificações formais, a engenharia de dados frequentemente opera em um estado de "caos artesanal". Pipelines são construídas ad-hoc, a qualidade é verificada (se muito) apenas na produção, e a documentação raramente reflete a realidade do código. A ascensão dos Grandes Modelos de Linguagem (LLMs) promete automatizar a geração de código, mas sem um arcabouço arquitetural robusto, o uso de IA na engenharia de dados corre o risco de apenas acelerar a produção de dívida técnica e pipelines frágeis.
+1.1 A Filosofia do DesignOS e sua Relevância
+O repositório DesignOS aborda um problema análogo no desenvolvimento frontend: ferramentas de codificação de IA são incríveis na geração de sintaxe, mas falham na arquitetura e na visão do produto. Se pedirmos a um agente para "criar um aplicativo", o resultado é genérico e frequentemente incorreto. O DesignOS resolve isso introduzindo uma fase intermediária obrigatória de "Planejamento e Design", onde humanos e agentes colaboram para gerar especificações detalhadas (arquivos Markdown, JSON) antes de escrever uma única linha de código React.
+Esta filosofia de "Spec-First" (Especificação Primeiro) é a pedra angular para o DataEngOS. Na engenharia de dados, o custo de corrigir um erro de modelagem ou um contrato de dados mal definido cresce exponencialmente à medida que o dado flui da ingestão para o consumo. Ao adotar a abordagem do DesignOS, movemos a validação e a governança para a esquerda (Shift Left), garantindo que os agentes de IA operem dentro de limites estritos definidos por contratos de dados padronizados e camadas semânticas reutilizáveis.
+1.2 A Necessidade de um Sistema Operacional Agnóstico
+As plataformas de dados modernas são fragmentadas. As organizações utilizam uma colcha de retalhos de ferramentas: Airflow para orquestração, dbt para transformação, Snowflake ou Databricks para armazenamento, e Looker ou PowerBI para visualização. Falta um "Sistema Operacional" unificador que orquestre o ciclo de vida do dado independentemente das ferramentas subjacentes.
+O DataEngOS propõe-se a ser essa camada de abstração agnóstica. Assim como o DesignOS usa Next.js como um shell para gerenciar o processo de design, o DataEngOS funcionará como um ambiente de desenvolvimento integrado (IDE) baseado em navegador, onde Arquitetos de Dados definem o que precisa ser construído (Contratos, Métricas), e Agentes de IA geram o código para o como (SQL, Python, YAML), adaptado para a stack específica da organização (seja ela BigQuery/dbt ou Databricks/Spark).
+2. Desconstrução Arquitetural do DesignOS
+Para adaptar o DesignOS, é imperativo primeiro dissecar sua arquitetura técnica. O repositório não é apenas uma coleção de scripts; é uma aplicação web completa que gerencia estado, interações e arquivos locais.
+2.1 A Stack Tecnológica e o Fluxo de Trabalho
+O DesignOS é construído sobre Next.js, aproveitando a renderização do lado do servidor (SSR) e a flexibilidade do React para a interface do usuário. O estado da aplicação não reside em um banco de dados tradicional, mas no próprio sistema de arquivos local, manipulado através de APIs do Node.js. Isso permite que o DesignOS seja versionado via Git juntamente com o código que ele gera, uma característica crítica para práticas de DataOps e GitOps.
+O fluxo de trabalho é segmentado em quatro fases distintas, cada uma gerenciada por diretivas de agentes específicas:
+Visão do Produto: Definição textual de alto nível.
+Modelo de Dados: Estruturação das entidades.
+Sistema de Design: Definição de tokens visuais.
+Especificação de Seção: Detalhamento funcional de cada tela.
+2.2 Agentes e Contexto
+O DesignOS utiliza uma arquitetura de "Agentes Especializados". O product-planner é responsável por extrair a visão do usuário, enquanto outros agentes focam na geração de componentes ou na exportação de código. Uma distinção crucial é feita entre o Contexto da Aplicação (o próprio DesignOS) e o Contexto do Produto (o artefato sendo construído). No DataEngOS, essa distinção se traduz no Plano de Controle (a ferramenta DataEngOS) e no Plano de Dados (as pipelines e tabelas resultantes).
+A navegação no repositório revela diretórios chave como product/ (onde vivem as specs) e src/sections/ (onde vivem as implementações). O DataEngOS deve espelhar essa estrutura, substituindo os artefatos de UI por artefatos de dados, mantendo a integridade referencial e a facilidade de navegação que o modelo base oferece.
+3. Mapeamento Isomórfico: Da UI para a Engenharia de Dados
+A tese central desta adaptação é que existe um isomorfismo — uma correspondência estrutural e funcional — entre os componentes de desenvolvimento de interface e os componentes de engenharia de dados. Explorar essa equivalência permite que o DataEngOS herde a maturidade das ferramentas de frontend (componentização, preview instantâneo, linting) para o mundo dos dados.
+3.1 Specs de UI \rightarrow Contratos de Dados (ODCS)
+No DesignOS, uma "Spec" descreve o comportamento de uma tela: quais dados ela exibe, quais ações o usuário pode tomar e como ela responde a erros. Na Engenharia de Dados, o equivalente direto é o Contrato de Dados.
+Conceito de UI (DesignOS)
+Conceito de Dados (DataEngOS)
+Descrição da Adaptação
+Spec.md
+Contract.odcs.yaml
+Define a interface estrita entre produtor e consumidor.
+Prop Types
+Schema & Data Types
+Validação de tipos de dados (String, Int vs. VARCHAR, INT).
+Visual Testing
+Data Quality Rules
+Testes automatizados (Snapshot vs. Unicidade/Nulidade).
+User Experience (UX)
+Service Level Agreement (SLA)
+Expectativas de performance e disponibilidade (Latência vs. Freshness).
+
+O DataEngOS adota o Open Data Contract Standard (ODCS) como formato nativo para estas especificações. Enquanto o DesignOS usa Markdown livre, o DataEngOS exige estrutura: um arquivo YAML que define rigorosamente o esquema, a semântica e os SLAs. Isso transforma a especificação de um documento passivo em um artefato executável que pode ser validado por agentes antes mesmo da geração de código ETL.
+3.2 Design System \rightarrow Camada Semântica
+Um Design System (como Material Design ou um sistema customizado no DesignOS via design-tokens) garante que cores, tipografia e espaçamentos sejam consistentes em toda a aplicação. Ninguém "inventa" um tom de azul; usa-se primary-500.
+Na engenharia de dados, a Camada Semântica desempenha este papel exato. Ela garante que métricas como "Receita" ou "Churn" sejam definidas uma única vez e reutilizadas em todos os dashboards e modelos.
+Conceito de UI (DesignOS)
+Conceito de Dados (DataEngOS)
+Descrição da Adaptação
+Design Tokens
+Certified Metrics
+Definições atômicas reutilizáveis (ex: revenue = sum(sales)).
+Component Library
+Data Models / Marts
+Blocos de construção lógicos (Tabelas Dimensão/Fato).
+CSS Classes
+Transformations / Macros
+Lógica de transformação padronizada (ex: limpeza de CPF).
+Storybook
+Catalog / Metrics Explorer
+Visualização e documentação dos componentes disponíveis.
+
+Para implementar isso tecnicamente, o DataEngOS deve integrar linguagens de modelagem semântica como Malloy ou a camada semântica do dbt (MetricFlow). O Malloy é particularmente adequado para esta arquitetura devido à sua natureza orientada a objetos e capacidade de compilação em tempo real, permitindo "previews" de dados análogos aos previews de componentes React.
+3.3 Screen Preview \rightarrow Dashboards como Código
+O DesignOS oferece um preview em tempo real das telas sendo desenhadas. O DataEngOS deve oferecer um preview dos dados e das visualizações analíticas. Ferramentas modernas de "BI as Code" como Evidence.dev ou Rill encaixam-se perfeitamente aqui.
+Ao invés de renderizar HTML/CSS, o DataEngOS renderizará dashboards Markdown/SQL (Evidence) ou componentes Svelte (Rill), conectados a um banco de dados local (DuckDB) para feedback imediato. Isso fecha o ciclo de feedback: o engenheiro define o contrato, modela a semântica e vê imediatamente como isso se traduz em insights visuais, tudo dentro do mesmo "Sistema Operacional".
+4. Engenharia de Contratos: O Novo Spec
+A implementação técnica dos Contratos de Dados no DataEngOS exige uma integração profunda com o padrão ODCS v3. Diferente de documentações estáticas, estes contratos atuam como guardiões ativos da integridade da plataforma.
+4.1 Estrutura Técnica do Contrato (ODCS v3)
+O DataEngOS utiliza a versão mais recente do ODCS , que introduz validação estrita de esquema JSON e suporte a relacionamentos. Um arquivo de contrato típico no DataEngOS (/domains/sales/orders.contract.yaml) teria a seguinte estrutura:
+apiVersion: v3.1.0
+kind: DataContract
+id: urn:uuid:e4d56-sales-orders-v1
+name: sales_orders
+status: active
+domain: sales
+
+# 1. Fundamentos: Metadados para descoberta e governança
+description:
+  purpose: "Fonte primária de verdade para pedidos confirmados."
+  usage: "Utilizado para relatórios financeiros e logística."
+  limitations: "Não inclui pedidos cancelados antes de 2023."
+
+# 2. Schema: Definição estrutural (Substitui Prop Types)
+schema:
+  objects:
+    orders:
+      physicalName: fact_orders_v1
+      logicalType: table
+      properties:
+        order_id:
+          logicalType: string
+          primaryKey: true
+          description: "Identificador único do pedido (UUID)."
+        customer_id:
+          logicalType: string
+          description: "Chave estrangeira para a entidade Cliente."
+        amount:
+          logicalType: number
+          description: "Valor total da transação em USD."
+          tags: ["financial", "pii-sensitive"]
+
+# 3. Qualidade de Dados: Regras de validação (Substitui Testes Unitários)
+quality:
+  rules:
+    - type: library
+      name: rowCount
+      threshold: "> 1000"
+    - type: sql
+      name: positive_amount
+      query: "SELECT count(*) FROM ${orders} WHERE amount < 0"
+      threshold: 0
+      severity: error
+
+# 4. SLAs: Garantias de Serviço (Substitui Orçamentos de Performance)
+sla:
+  freshness:
+    value: 1
+    unit: hours
+    description: "Dados disponíveis até 1h após a transação."
+  availability:
+    percentage: 99.9
+
+
+4.2 O Motor de Validação de Contratos
+No coração do DataEngOS reside o "Spec Engine", um serviço Node.js integrado à aplicação Next.js. Ao contrário do DesignOS, que apenas renderiza Markdown, o Spec Engine do DataEngOS realiza o parsing e a validação ativa deste YAML.
+Validação Sintática: Utiliza esquemas JSON do ODCS para garantir que o contrato esteja bem formado.
+Validação Semântica: Verifica a consistência interna (ex: chaves primárias duplicadas, tipos de dados inválidos).
+Validação de Compatibilidade: Verifica se as alterações propostas quebram contratos existentes de consumidores a jusante (Breaking Changes), alertando o usuário imediatamente na interface, similar a um erro de compilação.
+4.3 Integração com Agentes de IA
+Os agentes do DataEngOS são treinados para "pensar" em ODCS. Quando um usuário solicita "Quero ingerir dados de vendas do Salesforce", o Agente Arquiteto não gera código Python imediatamente. Primeiro, ele gera o esboço do contrato acima. Ele pergunta ao usuário sobre SLAs ("Com que frequência você precisa desses dados?") e sobre qualidade ("O campo email pode ser nulo?"). Somente após o contrato ser validado e aprovado pelo usuário é que o Agente Engenheiro é acionado para implementar a pipeline que satisfaz este contrato.
+5. O Sistema de Design Semântico
+Para evitar a proliferação de lógica SQL duplicada e métricas inconsistentes — o equivalente a "magic numbers" e estilos inline no frontend — o DataEngOS implementa uma Camada Semântica rigorosa, servindo como o "Design System" dos dados.
+5.1 Malloy: A Linguagem de Modelagem
+A linguagem Malloy é selecionada como a tecnologia primária para esta camada dentro do DataEngOS. Ao contrário do SQL, que é verbo e difícil de compor, o Malloy é modular, hierárquico e orientado a objetos, permitindo a definição de métricas e relacionamentos que podem ser herdados e estendidos.
+Vantagens Técnicas do Malloy no DataEngOS:
+Composabilidade: Modelos podem ser importados e estendidos, permitindo bibliotecas globais de métricas (análogas a bibliotecas de componentes UI).
+Segurança de Agregação: O Malloy garante que agregações ("Symmetric Aggregates") sejam calculadas corretamente mesmo através de múltiplos joins, prevenindo o problema clássico de "fan-out" do SQL.
+Compilação em Tempo Real: O compilador Malloy pode rodar no navegador (WASM), permitindo que o DataEngOS ofereça feedback instantâneo sobre a lógica das métricas sem latência de rede.
+5.2 Estrutura da Camada Semântica
+O diretório platform/semantic-layer/ substitui o design-tokens do DesignOS.
+Atoms (metrics.malloy): Definições fundamentais.
+source: orders is duckdb.table('orders.parquet') {
+  measure:
+    total_revenue is sum(amount)
+    order_count is count()
+}
+
+
+Molecules (dimensions.malloy): Dimensões padronizadas (Tempo, Geografia).
+Organisms (marts.malloy): Modelos de dados completos prontos para consumo, combinando fontes e métricas.
+5.3 Exportação para o Ecossistema (dbt & BI)
+Embora o Malloy seja usado para design e validação interna, o DataEngOS reconhece a necessidade de interoperabilidade. Agentes de exportação especializados ("Transpilers") são responsáveis por converter os modelos Malloy validados em:
+SQL ANSI: Para execução em qualquer warehouse.
+dbt Models & Metrics: Gerando arquivos .sql e schema.yml compatíveis com MetricFlow, permitindo que o trabalho feito no DataEngOS seja integrado em pipelines de produção dbt existentes.
+6. O Plano de Controle Agentic (AI Orchestration)
+A "magia" do DesignOS reside na orquestração de agentes. O DataEngOS eleva isso ao integrar frameworks avançados de orquestração multi-agente, movendo-se além de simples prompts para fluxos de trabalho determinísticos e resilientes.
+6.1 Arquitetura Híbrida: CrewAI e LangGraph
+A pesquisa sugere que diferentes frameworks de agentes servem a propósitos distintos. O DataEngOS adota uma abordagem híbrida:
+Fase de Planejamento (CrewAI):
+Propósito: Criatividade, colaboração e definição de escopo.
+Implementação: Utiliza o CrewAI para orquestrar a interação entre o "Agente Arquiteto de Dados" e o "Agente de Produto". Esta estrutura baseada em papéis facilita a entrevista inicial, onde os agentes debatem requisitos, exploram o domínio e esboçam a estratégia de dados.
+Artefatos: Documentos de visão (strategy.md) e rascunhos conceituais.
+Fase de Implementação (LangGraph):
+Propósito: Confiabilidade, loops de feedback e execução técnica.
+Implementação: Utiliza o LangGraph para a geração de código e contratos. A natureza baseada em grafos do LangGraph permite definir fluxos de estado complexos: Gerar Contrato -> Validar Contrato -> (Se Erro) -> Corrigir Contrato -> (Se Sucesso) -> Gerar Pipeline. Isso evita loops infinitos e garante que o código gerado cumpra estritamente as especificações.
+6.2 Personas dos Agentes
+O DataEngOS redefine as personas dos agentes para refletir a equipe de dados ideal:
+O Arquiteto de Dados (Spec Shaper):
+Responsabilidade: Interface com o usuário, definição de Contratos ODCS e governança.
+System Prompt: Focado em modelagem de dados, normalização, padrões ODCS e conformidade com LGPD/GDPR. Ele recusa solicitações ambíguas e força a definição de SLAs.
+O Engenheiro de Dados (Pipeline Builder):
+Responsabilidade: Implementação técnica (Python/SQL/dbt).
+System Prompt: Especialista em otimização de queries, particionamento, idempotência e padrões de design de ETL. Ele consome o contrato ODCS como "verdade absoluta" para gerar o DDL e o código de ingestão.
+O Engenheiro Analítico (Visualization Architect):
+Responsabilidade: Criação de dashboards e modelos semânticos.
+System Prompt: Especialista em Malloy, Evidence.dev e storytelling de dados. Ele mapeia as métricas do contrato para componentes visuais.
+6.3 Prompt Engineering Defensivo
+Para evitar alucinações — críticas em dados financeiros ou médicos — o DataEngOS emprega "Defensive Prompting".
+Restrições Explícitas: "Você NÃO deve inventar colunas não existentes no contrato."
+Fail-Safe: "Se a ambiguidade da solicitação for alta, solicite esclarecimento humano em vez de adivinhar."
+Contexto Estruturado: Os prompts são enriquecidos via RAG (Retrieval-Augmented Generation) com o contexto do repositório existente, garantindo que novas tabelas sigam as convenções de nomenclatura e arquitetura já estabelecidas.
+7. A Camada de Apresentação como Código
+A visualização de dados no DataEngOS não é um pós-pensamento, mas um componente integral definido por código, alinhado com a filosofia de versionamento e reprodutibilidade.
+7.1 Evidence.dev: Dashboards em Markdown
+A ferramenta Evidence.dev é escolhida como o motor de visualização nativo. Sua arquitetura baseada em arquivos Markdown com blocos de SQL embarcados (.md files) mapeia 1:1 com a estrutura de arquivos do DesignOS.
+Integração: O diretório src/sections/design-screen/ do DesignOS é transformado em dashboards/.
+Fluxo: O Agente Analítico gera um arquivo Markdown que combina narrativa textual (explicando os insights) com componentes de dados.Performance de Vendas<BigValue data={sales_metrics} value=total_revenue />A receita total cresceu 15% este mês.<BarChart data={sales_by_region} x=region y=sales />
+Preview: O DataEngOS renderiza esses componentes em tempo real usando a biblioteca de componentes do Evidence, permitindo que o usuário visualize o painel final antes do deploy.
+7.2 Rill Developer: Análise Exploratória Rápida
+Para casos de uso que exigem exploração ad-hoc e alta interatividade (slicing & dicing), o Rill Developer é integrado como uma opção de "visualização avançada". O Rill utiliza DuckDB e uma sintaxe declarativa (YAML) para definir dashboards rápidos sobre arquivos Parquet/CSV, oferecendo uma experiência de "IDE para Dados" que complementa os relatórios estáticos do Evidence.
+8. Roteiro de Implementação Técnica
+A transformação do DesignOS em DataEngOS é um projeto de engenharia complexo que deve ser executado em fases incrementais para garantir estabilidade e adoção.
+Fase 1: A Fundação do Shell (Semanas 1-4)
+O objetivo é estabelecer o ambiente de desenvolvimento (IDE) capaz de entender artefatos de dados.
+Semana 1: Refatoração da estrutura de diretórios Next.js. Renomear sections para domains. Implementar o roteador de arquivos para reconhecer extensões .odcs.yaml e .malloy.
+Semana 2: Integração do DuckDB WASM. Configurar o banco de dados in-memory no navegador para permitir a execução local de SQL sobre arquivos CSV de amostra.
+Semana 3: Implementação do Visualizador de Contratos. Criar componentes React para renderizar arquivos ODCS de forma legível (abas para Schema, Quality, SLA).
+Semana 4: Configuração do Motor de Agentes Base. Integração inicial com APIs de LLM (OpenAI/Anthropic) e configuração do sistema de arquivos local para leitura/escrita pelos agentes.
+Fase 2: O Motor de Especificação e Semântica (Semanas 5-8)
+O objetivo é habilitar a criação e validação de contratos e modelos semânticos.
+Semana 5: Integração do Validador ODCS. Implementar a lógica de validação JSON Schema v3.1 no backend.
+Semana 6: Treinamento do Agente Arquiteto (CrewAI). Desenvolvimento de prompts de sistema para entrevista de requisitos e geração de YAML ODCS.
+Semana 7: Integração do Compilador Malloy. Adicionar editor de texto com suporte a sintaxe Malloy e conexão com o DuckDB para preview de métricas.
+Semana 8: Agente de Engenharia Analítica. Capacitar agentes para gerar modelos Malloy a partir de descrições em linguagem natural.
+Fase 3: Geração de Pipelines e Visualização (Semanas 9-12)
+O objetivo é fechar o ciclo ("Last Mile") gerando código executável e dashboards.
+Semana 9: Agente de Engenharia de Dados (LangGraph). Implementar o fluxo de geração de SQL/dbt a partir de contratos ODCS.
+Semana 10: Integração Evidence.dev. Configurar templates de dashboards e capacitar agentes para gerar Markdown Evidence.
+Semana 11: Exportadores (Terraform/dbt). Criar scripts para empacotar os artefatos gerados em um repositório dbt padrão pronto para CI/CD.
+Semana 12: Testes End-to-End. Executar o fluxo completo: Ideia -> Contrato -> Semântica -> Dashboard -> Deploy.
+9. Estudos de Caso Detalhados
+Para demonstrar a versatilidade do DataEngOS, detalhamos dois cenários de uso críticos que validam a arquitetura proposta.
+9.1 Migração de Legado: De Excel para Pipeline Automatizada
+Este caso de uso aborda a "Shadow IT" , onde lógica de negócios crítica reside em planilhas frágeis.
+Fluxo de Trabalho no DataEngOS:
+Ingestão e Análise (Agente de Análise):
+O usuário faz upload de um arquivo Excel complexo (orcamento_2025.xlsm) para o domínio finance.
+O DataEngOS utiliza ferramentas como langchain-excel-loader e scripts Python (openpyxl) para inspecionar a estrutura.
+O Agente identifica abas, cabeçalhos e, crucialmente, extrai macros VBA.
+Engenharia Reversa de Lógica (Agente de Descompilação):
+Um agente especializado, alimentado por modelos de raciocínio forte (ex: Claude 3.5 Sonnet), analisa o código VBA extraído.
+Prompt Defensivo: "Analise a função CalcularImposto. Converta esta lógica para uma transformação SQL Case Statement ou Python Pandas. Priorize legibilidade e documente edge cases."
+Geração de Especificação (Agente Arquiteto):
+Com base na análise, o agente propõe um Contrato de Dados (ODCS) para a tabela de saída e um Modelo Semântico (Malloy) que replica a lógica de cálculo do Excel.
+Implementação e Teste (Agente Engenheiro):
+O agente gera o código da pipeline (dbt model).
+Validação Cruzada: O DataEngOS executa a nova lógica sobre os dados brutos do Excel e compara os resultados com os valores calculados na planilha original, gerando um relatório de paridade.
+9.2 Text-to-Analytics: Do Pergunta ao Dashboard
+Este cenário ilustra a capacidade de democratização de dados do sistema.
+Fluxo de Trabalho no DataEngOS:
+Intenção do Usuário: "Preciso de um dashboard mostrando a evolução das vendas trimestrais por categoria de produto, comparando com o ano anterior."
+Resolução Semântica (Agente Arquiteto):
+O agente consulta a Camada Semântica (Malloy/dbt) para identificar as métricas certificadas para sales, product_category e lógica de year_over_year. Isso evita que o agente invente cálculos de receita incorretos.
+Design da Solução:
+O agente cria uma spec de visualização, selecionando um gráfico de linhas para a tendência e uma tabela dinâmica para detalhes.
+Construção do Artefato (Agente Analítico):
+O agente gera um arquivo vendas_trimestrais.md compatível com Evidence.dev.
+Ele escreve as queries SQL (DuckDB dialect) embarcadas no Markdown, utilizando as definições semânticas resolvidas.
+Entrega: O dashboard é renderizado instantaneamente no shell do DataEngOS para aprovação do usuário.
+10. Governança, Segurança e O Futuro
+O DataEngOS não é apenas uma ferramenta de produtividade; é uma plataforma de governança.
+10.1 Governança via Contratos (Policy as Code)
+A adoção do ODCS permite que a governança seja proativa. Políticas globais (ex: "Todos os campos de email devem ser classificados como PII") são injetadas no prompt do sistema dos agentes. Se um agente tenta criar um contrato violando essa regra, o validador do Spec Engine rejeita a alteração e instrui o agente a corrigir.
+10.2 Segurança e Controle de Acesso
+Sendo uma aplicação baseada em arquivos, o DataEngOS herda a segurança do repositório Git. O acesso a domínios sensíveis (domains/hr/) é controlado via permissões de repositório (CODEOWNERS). Além disso, o DataEngOS pode integrar-se a ferramentas de varredura de segredos para garantir que credenciais nunca sejam commitadas nos arquivos gerados.
+10.3 O Caminho para a Auto-Atualização
+O futuro do DataEngOS aponta para um estado "Auto-Realizável". Sensores na plataforma de dados (ex: logs do Snowflake) poderiam detectar mudanças no perfil dos dados (Data Drift) e acionar proativamente o DataEngOS para propor uma atualização no Contrato de Dados. O agente abriria um Pull Request com a correção sugerida, fechando o ciclo entre a operação e a definição.
+Tabela Comparativa: DesignOS vs. DataEngOS
+Para cristalizar a adaptação, a tabela abaixo resume as transformações fundamentais:
+Componente
+DesignOS (Original)
+DataEngOS (Adaptado)
+Tecnologias Chave
+Atomic Unit
+UI Component / Screen Spec
+Data Product / Data Contract
+ODCS v3, YAML
+Design System
+Tailwind, Design Tokens
+Semantic Layer, Certified Metrics
+Malloy, dbt MetricFlow
+Preview Engine
+React Renderer (Browser)
+DuckDB WASM + Evidence/Rill
+DuckDB, Wasm
+Agent Persona
+Product Designer, Frontend Dev
+Data Architect, Analytics Engineer
+CrewAI, LangGraph
+State Mgmt
+File System (Markdown)
+File System (YAML, SQL, Malloy)
+Node.js fs, Git
+Output
+React/Next.js Codebase
+dbt Project, Airflow DAGs, Dashboards
+SQL, Python, Terraform
+Governance
+Linter (ESLint)
+Contract Validator (Spec Engine)
+AJV (JSON Schema)
+
+Esta transformação alavanca o melhor da engenharia de software moderna para resolver os desafios crônicos da engenharia de dados, criando um ecossistema onde a qualidade é intrínseca, a documentação é viva e a automação é segura e governada.
+Referências citadas
+1. buildermethods/design-os: The missing design process ... - GitHub, https://github.com/buildermethods/design-os 2. design-os/agents.md at main · buildermethods/design-os · GitHub, https://github.com/buildermethods/design-os/blob/main/agents.md 3. Agent OS is a system for better planning and executing software development tasks with your AI agents. - GitHub, https://github.com/buildermethods/agent-os 4. Agentic Data Pipeline Migrator - Xebia, https://xebia.com/solutions/agentic-data-pipeline-migrator/ 5. Planning a Product Roadmap with Agent OS - Builder Methods, https://buildermethods.com/agent-os/plan-product 6. Data Contracts 101 - ProfitOptics, https://www.profitoptics.com/insights/blog/data-contracts-101 7. Open Data Contract Standard (ODCS) - Entropy Data, https://www.entropy-data.com/learn/open-data-contract-standard 8. Data Contracts: The Complete Guide to Data Contract Standards, Tools & Best Practices, https://datacontract.com/ 9. Definition: Open Data Contract Standard (ODCS), https://bitol-io.github.io/open-data-contract-standard/v3.0.1/ 10. Malloy, https://www.malloydata.dev/ 11. Semantic Layer: What it is and when to adopt it | dbt Labs, https://www.getdbt.com/blog/semantic-layer-introduction 12. What Is a Semantic Layer? Definition, Benefits, and Applications | Airbyte, https://airbyte.com/blog/the-rise-of-the-semantic-layer-metrics-on-the-fly 13. Evidence Docs: What is Evidence?, https://docs.evidence.dev/ 14. Embedded Analytics as Code - Evidence, https://evidence.dev/blog/embedded-analytics 15. Rill | Go beyond dashboards with BI-as-code, https://www.rilldata.com/ 16. How we use Rill Data for Data Analytics - Brainforge, https://www.brainforge.ai/blog/how-we-use-rill-for-data-analytics 17. Bitol Announces ODCS v3.1.0: Stronger, Smarter, and Stricter, https://bitol.io/bitol-announces-odcs-v3-1-0-stronger-smarter-and-stricter/ 18. Open Data Contract Standard (ODCS) Source - Data Catering, https://data.catering/0.17.2/docs/guide/data-source/metadata/open-data-contract-standard/ 19. Understanding Data Contracts: An Introduction - Foundational, https://www.foundational.io/blog/introduction-data-contracts 20. Text to SQL Agents? : r/dataengineering - Reddit, https://www.reddit.com/r/dataengineering/comments/1owjt0b/text_to_sql_agents/ 21. NikhilSuthar/dbt-sqlx: A CLI to convert SQL models across database dialects in your dbt projects. - GitHub, https://github.com/NikhilSuthar/dbt-sqlx 22. LLM-powered Analytics Engineering: How we're using AI inside of our dbt project, today, with no new tools., https://docs.getdbt.com/blog/dbt-models-with-snowflake-cortex 23. CrewAI vs LangGraph vs AutoGen: Choosing the Right Multi-Agent AI Framework, https://www.datacamp.com/tutorial/crewai-vs-langgraph-vs-autogen 24. Best AI Agent Frameworks 2025: LangGraph, CrewAI, OpenAI, LlamaIndex, AutoGen, https://www.getmaxim.ai/articles/top-5-ai-agent-frameworks-in-2025-a-practical-guide-for-ai-builders/ 25. CrewAI vs AutoGen vs LangGraph: Top Multi-Agent Frameworks for 2026 - DataMites, https://datamites.com/blog/crewai-vs-autogen-vs-langgraph-top-multi-agent-frameworks/ 26. LangGraph vs. CrewAI: Which Framework Should You Choose for Your Next AI Agent Project? | by Shashank Shekhar pandey | Dec, 2025 | Medium, https://medium.com/@shashank_shekhar_pandey/langgraph-vs-crewai-which-framework-should-you-choose-for-your-next-ai-agent-project-aa55dba5bbbf 27. Effective context engineering for AI agents - Anthropic, https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents 28. Beyond Prompts: Defining System Contracts for Production AI | by Kal | Jan, 2026 | Medium, https://medium.com/@93Kryptonian/beyond-prompts-defining-system-contracts-for-production-ai-81b8f3388e5c 29. 11 Tips to Create Reliable Production AI Agent Prompts - Datagrid, https://datagrid.com/blog/11-tips-ai-agent-prompt-engineering 30. Techniques for improving text-to-SQL | Google Cloud Blog, https://cloud.google.com/blog/products/databases/techniques-for-improving-text-to-sql 31. Build your gen AI–based text-to-SQL application using RAG, powered by Amazon Bedrock (Claude 3 Sonnet and Amazon Titan for embedding) | Artificial Intelligence, https://aws.amazon.com/blogs/machine-learning/build-your-gen-ai-based-text-to-sql-application-using-rag-powered-by-amazon-bedrock-claude-3-sonnet-and-amazon-titan-for-embedding/ 32. Evidence.dev: The SQL-Markdown Web App Revolution | by Jesus LM | T3CH | Medium, https://medium.com/h7w/evidence-dev-the-sql-markdown-web-app-revolution-c95c5b46b13a 33. The Future of BI: Exploring the Impact of BI-as-Code Tools with DuckDB - MotherDuck Blog, https://motherduck.com/blog/the-future-of-bi-bi-as-code-duckdb-impact/ 34. Automation — Streamlining Repetitive Tasks with Microsoft Excel | by Abdulrafiu Izuafa, https://medium.com/@izuafa123abdulrafiu/automation-streamlining-repetitive-tasks-with-microsoft-excel-6b00bd203344 35. langchain-excel-loader - PyPI, https://pypi.org/project/langchain-excel-loader/ 36. LLMs + Pandas: How I Use Generative AI to Generate Pandas DataFrame Summaries, https://towardsdatascience.com/llms-pandas-how-i-use-generative-ai-to-generate-pandas-dataframe-summaries-2/ 37. Excel formulas to python code using LLM's - Reddit, https://www.reddit.com/r/Python/comments/1iyc8qb/excel_formulas_to_python_code_using_llms/ 38. How to generate dynamic dashboards and analytics using LLMs? - Ionio, https://www.ionio.ai/blog/how-to-generate-dynamic-dashboards-and-analytics-using-llms 39. The Rise of the Declarative Data Stack - Rill Data, https://www.rilldata.com/blog/the-rise-of-the-declarative-data-stack
