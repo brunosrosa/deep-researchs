@@ -1,0 +1,33 @@
+---
+sticker: emoji//2763-fe0f
+---
+# Ideias de Pesquisa para Aprofundamento
+
+- AI Governance Tools
+- IA Explicável (XAI)
+- IA Explicável (XAI) e AI Governance Tools
+- modelos de IA para avaliar a capacidade de crédito de indivíduos considerados "invisíveis" pelos sistemas de pontuação tradicionais, que dependem fortemente de histórico de crédito formal (ex: fluxo de caixa, perfil dos sócios, dados setoriais). (Crédito Supera (Social)) {"BB Crédito Acessibilidade" para financiar tecnologia assistiva, demonstram um foco claro em nichos de inclusão que podem ser massivamente escalados com o uso inteligente da IA. (?)} 
+- "Agenda 30 BB"
+- Automação na geração de ETL, melhor opção ao SAS e GEN AI para auxiliar na criação simplificada de fluxos que possam ir para produção. 
+- NIST AI RMF ou ISO/IEC 42001
+- Focos de Negócio:
+	- "redução de risco regulatório"
+	- "aumento da confiança dos clientes"
+	- "eficiência operacional na documentação"
+	- "sustentabilidade dos projetos de IA"
+- Projetos de Data Science, quais são? Quais tipos? 
+- "Vibe Coding" para Data Science?
+- Quais Skills em "Data Science" e/ou "Engenheiro de Dados" e/ou derivados desse relacionados à IA também. 
+	- MLOps (Machine Learning Operations) - O que é, quais skills são importantes? Qual Stack devo focar (principalmente relacionado ao Banco do Brasil)? Consigo estudar pela Alura? O que mais deveria fazer para ser referência nisso também (se é realmente importante como skill futuro)? 
+	- "**IA Generativa e Engenharia de Prompt:** Dominar a arte e a ciência de formular comandos (_prompts_) precisos para extrair o máximo de valor de ferramentas de GenAI é uma competência nova e essencial." (Essa Skill também é quanto importante?)
+	- IA Explicável (XAI) (Técnicas (como LIME e SHAP))
+- Problemas percebidos do BB:
+	- UX ainda inconsistente
+	- Problemas rudes de interface e facilidade de uso
+	- Tempo para atualização de dados como da Fatura paga, muito demorada para os padrões de hoje
+	- Parece faltar estudo de Service Design na definição de priorizações e melhorias necessárias nos serviços e no contato de serviços por meio digital
+	- Relacionado a desenvolvimento de projetos:
+		- 1. Ferramenta de Controle de Projetos POBRE
+		- 2. Metodologia de trabalho sem apoio de cultura documentada/escrita e necessidade de suporte excessivo do Scrum Master que atua como "Babá" das atualizações "faladas" dos participes do time
+		- 3. Regras que limitam ou asfixiam o uso completo da metodologia
+		- 4. Não há claro os padrões de documentações que os projetos devem ter, nem "templates" às documentações. 
