@@ -1,3 +1,6 @@
+---
+sticker: lucide//award
+---
 # Melhores Práticas - Vibe Coding
 
 Quando usamos **“vibe coding”** (pedir “faz X pra mim” e iterar no feeling). A sensação de que “nunca fecha” não é só impressão: é um **efeito sistêmico** de como LLMs geram código **+** de como conduzimos o fluxo. Vamos destrinchar os _porquês_ e, mais importante, **como virar esse jogo**.
