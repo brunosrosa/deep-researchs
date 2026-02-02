@@ -4,7 +4,7 @@ aliases:
 ---
 # Relatório Mestre de Contexto: DataEngOS
 
-**Versão do Sistema:** 0.3.0 (Architecture & CLI Refactor)
+**Versão do Sistema:** 0.3.0 **(Architecture & CLI Refactor)**
 **Data da Análise:** 31 de Janeiro de 2026
 **Paradigma:** Spec-Driven Data Engineering (SDDE) & Socratic AI Partnership
 **Destinatário:** Agente de IA (Persona: Architect System)

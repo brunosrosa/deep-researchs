@@ -16,12 +16,12 @@ A escolha do sistema operacional subjacente é a decisão de infraestrutura mais
 
 Para o desenvolvimento do DataEngOS, que presumivelmente envolverá a orquestração de contêineres Docker, bancos de dados e pipelines de dados, o ambiente nativo do Windows apresenta limitações estruturais significativas que são mitigadas pelo WSL 2.
 
-|**Característica Técnica**|**Windows Nativo (NTFS/Win32)**|**WSL 2 (EXT4/Linux Kernel)**|**Impacto no Fluxo Agêntico (DataEngOS)**|
-|---|---|---|---|
-|**Desempenho de I/O de Arquivos**|O sistema de arquivos NTFS possui um overhead significativo para operações de metadados em muitos arquivos pequenos (ex: `node_modules`, `.git`).|O WSL 2 utiliza discos virtuais EXT4, oferecendo desempenho de I/O quase nativo do Linux.|Agentes de IA realizam varreduras intensivas no código ("Deep Research"). No Windows, isso pode causar lentidão severa no IDE; no WSL, a indexação é instantânea.|
-|**Integração com Docker**|Requer camadas de tradução ou o uso de backend Hyper-V legado, frequentemente resultando em problemas de mapeamento de volume e rede.|O Docker Desktop utiliza o backend nativo do WSL 2, permitindo execução direta de contêineres sem overhead de VM.|Para o DataEngOS, o agente precisará subir contêineres de teste (Postgres, Kafka). A estabilidade do Docker no WSL é crítica para que o agente possa verificar seu próprio trabalho.|
-|**Compatibilidade de Ferramentas (Ag-Kit)**|Scripts e ferramentas de IA (Python/Node) frequentemente falham devido a diferenças em separadores de caminho (`\` vs `/`) e permissões POSIX.|Ambiente totalmente compatível com os padrões POSIX, onde a maioria das ferramentas de IA é desenvolvida e testada.|O Ag-Kit e muitos MCPs são desenvolvidos primariamente para ambientes Unix. Rodar no Windows frequentemente resulta em erros obscuros de `path not found` que confundem os agentes.|
-|**Hospedagem de Servidores MCP**|Executar daemons persistentes (como servidores MCP) é mais complexo sem um sistema `init` robusto.|Permite execução simples de processos em background ou via `systemd`.|Agentes dependem de servidores MCP (como o do GitHub ou Docker) estarem sempre ativos e acessíveis via `stdio` ou HTTP.|
+| **Característica Técnica**                  | **Windows Nativo (NTFS/Win32)**                                                                                                                   | **WSL 2 (EXT4/Linux Kernel)**                                                                                       | **Impacto no Fluxo Agêntico (DataEngOS)**                                                                                                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Desempenho de I/O de Arquivos**           | O sistema de arquivos NTFS possui um overhead significativo para operações de metadados em muitos arquivos pequenos (ex: `node_modules`, `.git`). | O WSL 2 utiliza discos virtuais EXT4, oferecendo desempenho de I/O quase nativo do Linux.                           | Agentes de IA realizam varreduras intensivas no código ("Deep Research"). No Windows, isso pode causar lentidão severa no IDE; no WSL, a indexação é instantânea.                    |
+| **Integração com Docker**                   | Requer camadas de tradução ou o uso de backend Hyper-V legado, frequentemente resultando em problemas de mapeamento de volume e rede.             | O Docker Desktop utiliza o backend nativo do WSL 2, permitindo execução direta de contêineres sem overhead de VM.   | Para o DataEngOS, o agente precisará subir contêineres de teste (Postgres, Kafka). A estabilidade do Docker no WSL é crítica para que o agente possa verificar seu próprio trabalho. |
+| **Compatibilidade de Ferramentas (Ag-Kit)** | Scripts e ferramentas de IA (Python/Node) frequentemente falham devido a diferenças em separadores de caminho (`\` vs `/`) e permissões POSIX.    | Ambiente totalmente compatível com os padrões POSIX, onde a maioria das ferramentas de IA é desenvolvida e testada. | O Ag-Kit e muitos MCPs são desenvolvidos primariamente para ambientes Unix. Rodar no Windows frequentemente resulta em erros obscuros de `path not found` que confundem os agentes.  |
+| **Hospedagem de Servidores MCP**            | Executar daemons persistentes (como servidores MCP) é mais complexo sem um sistema `init` robusto.                                                | Permite execução simples de processos em background ou via `systemd`.                                               | Agentes dependem de servidores MCP (como o do GitHub ou Docker) estarem sempre ativos e acessíveis via `stdio` ou HTTP.                                                              |
 
 ### 2.2 Diagnóstico e Resolução de Problemas do Ag-Kit no WSL
 
@@ -121,24 +121,17 @@ O usuário questiona como criar listas detalhadas que vão desde o teste unitár
 O "Agente da IDE" (geralmente Gemini 3 Pro ou Claude 3.5 Sonnet) tende a ser preguiçoso se não for estimulado. Se você pedir "crie um sistema de usuários", ele criará um script simples. Para obter granularidade (tabelas, hashing, rotas, formulários), utiliza-se uma técnica de **Chain of Thought (Cadeia de Pensamento) Forçada**.
 
 1. **Sessão de Arquitetura (Planning Mode):** Inicie uma sessão com o agente em "Planning Mode" (se disponível no Antigravity) ou instrua explicitamente: _"Atue como um Arquiteto de Software Sênior. Não escreva código. Seu objetivo é decompor a Feature X em um plano de implementação atômico."_
-    
+
 2. **Prompt de Decomposição:**
     
     > "Para a feature 'Autenticação de Usuários', gere um `task_plan.md` detalhado. Cada tarefa deve ser atômica (máximo de 1 hora de trabalho). Para cada tarefa, liste:
-    > 
-    > - Dependências.
-    >     
-    > - Arquivos a serem criados/modificados.
-    >     
-    > - Critérios de Teste (Unitários e Integração).
-    >     
-    > - Verificações de Segurança (ex: Hashing, SQL Injection)."
-    >     
-    
+    > 	 Dependências.
+    > 	Arquivos a serem criados/modificados.
+    > 	Critérios de Teste (Unitários e Integração).
+    > 	Verificações de Segurança (ex: Hashing, SQL Injection)."
+
 3. **Enriquecimento via IDE Agentica:** Utilize o agente para preencher os metadados das User Stories.
-    
     - _Exemplo:_ "Para cada item no `task_plan.md`, gere uma descrição formal de User Story no formato 'Como [persona], eu quero [ação], para que [benefício]', e adicione critérios de aceitação Gherkin (Given/When/Then)."
-        
 
 ---
 
@@ -150,14 +143,14 @@ A observação do usuário de que "MCPs de análise de dados não fazem sentido"
 
 Para "aumentar os poderes" do agente na construção desta plataforma, os seguintes servidores MCP são recomendados, pois permitem que o agente valide seu próprio trabalho no mundo real (Grounding):
 
-|**Servidor MCP**|**Função no DataEngOS**|**Justificativa de "Poder"**|**Fonte**|
-|---|---|---|---|
-|**Docker MCP**|Infraestrutura e Testes|O DataEngOS provavelmente orquestrará contêineres (Airflow, Spark, DBs). O agente precisa listar, iniciar, parar e inspecionar contêineres para verificar se o código que ele escreveu realmente sobe a infraestrutura corretamente.||
-|**PostgreSQL / Database MCP**|Validação de Integração|O agente pode conectar-se a um banco de dados de teste (que ele mesmo subiu via Docker) para verificar se as migrações (Alembic/Flyway) foram aplicadas corretamente e se os dados estão sendo persistidos conforme o esquema.||
-|**Kubernetes MCP**|Orquestração Avançada|Se o DataEngOS tiver deployment em K8s, o agente precisa de acesso via `kubectl` para verificar o estado dos pods, logs e serviços durante os testes de integração.||
-|**FileSystem MCP**|Manipulação de Arquivos|Essencial para permitir que o agente crie estruturas de diretórios complexas, arquivos de configuração (YAML/JSON) e scripts de automação com segurança e permissões controladas.||
-|**Git/GitHub MCP**|Controle de Versão|Permite ao agente realizar operações complexas de git, gerenciar branches de features, ler o histórico de commits para entender o contexto de mudanças passadas e interagir com PRs.||
-|**Sentry/Observability**|Depuração|Permite que o agente leia logs de erro gerados pela aplicação em tempo real para diagnosticar falhas sem que o humano precise colar stack traces no chat.||
+| **Servidor MCP**              | **Função no DataEngOS** | **Justificativa de "Poder"**                                                                                                                                                                                                         | **Fonte** |
+| ----------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| **Docker MCP**                | Infraestrutura e Testes | O DataEngOS provavelmente orquestrará contêineres (Airflow, Spark, DBs). O agente precisa listar, iniciar, parar e inspecionar contêineres para verificar se o código que ele escreveu realmente sobe a infraestrutura corretamente. |           |
+| **PostgreSQL / Database MCP** | Validação de Integração | O agente pode conectar-se a um banco de dados de teste (que ele mesmo subiu via Docker) para verificar se as migrações (Alembic/Flyway) foram aplicadas corretamente e se os dados estão sendo persistidos conforme o esquema.       |           |
+| **Kubernetes MCP**            | Orquestração Avançada   | Se o DataEngOS tiver deployment em K8s, o agente precisa de acesso via `kubectl` para verificar o estado dos pods, logs e serviços durante os testes de integração.                                                                  |           |
+| **FileSystem MCP**            | Manipulação de Arquivos | Essencial para permitir que o agente crie estruturas de diretórios complexas, arquivos de configuração (YAML/JSON) e scripts de automação com segurança e permissões controladas.                                                    |           |
+| **Git/GitHub MCP**            | Controle de Versão      | Permite ao agente realizar operações complexas de git, gerenciar branches de features, ler o histórico de commits para entender o contexto de mudanças passadas e interagir com PRs.                                                 |           |
+| **Sentry/Observability**      | Depuração               | Permite que o agente leia logs de erro gerados pela aplicação em tempo real para diagnosticar falhas sem que o humano precise colar stack traces no chat.                                                                            |           |
 
 Esta seleção transforma o agente de um "gerador de texto" em um "operador de sistema", capaz de executar o ciclo completo de codificação, deploy em ambiente de teste e validação funcional.
 
@@ -170,21 +163,13 @@ Para garantir que "nada seja esquecido" e que a qualidade seja mantida, deve-se 
 **SOPs Essenciais para DataEngOS:**
 
 1. **`SOP-001-Test-Driven-Development.md`:**
-    
     > "Regra Inviolável: Nenhum código de implementação deve ser escrito sem antes escrever um teste unitário que falhe. O ciclo deve ser Red-Green-Refactor. Para componentes de dados, testes de integração com Docker containers são mandatórios."
-    
 2. **`SOP-002-Error-Handling.md`:**
-    
     > "O DataEngOS deve ser resiliente. Todo código que interage com I/O externo (banco, rede, arquivos) deve ter tratamento de exceção explícito. Erros nunca devem ser silenciados (`pass`). Logs estruturados (JSON) devem ser emitidos com contexto."
-    
 3. **`SOP-003-Definition-of-Done.md`:**
-    
     > "Uma tarefa só está concluída se: 1) O código está implementado. 2) Testes passam. 3) Documentação (Docstrings e README) está atualizada. 4) O arquivo `task_plan.md` foi atualizado. 5) O Linter não reporta erros."
-    
 4. **`SOP-004-Atomic-Commits.md`:**
-    
     > "Commits devem ser atômicos e descritivos. Nunca misture refatoração com novas features no mesmo commit. Use a convenção Conventional Commits."
-    
 
 ---
 
@@ -195,33 +180,22 @@ Baseado em todas as análises acima, aqui está o roteiro consolidado para o usu
 ### Fase 1: Fundação (Infraestrutura)
 
 1. **Instalar WSL 2:** Garantir ambiente Ubuntu atualizado.
-    
 2. **Docker no WSL:** Configurar Docker Desktop com backend WSL 2.
-    
 3. **Antigravity + Remote WSL:** Instalar e conectar ao projeto dentro do Linux.
-    
 4. **Inicialização Ag-Kit:** Executar `npx @vudovn/ag-kit init` no terminal _bash_ do WSL.
-    
 
 ### Fase 2: Governança (Cérebro)
 
 1. **Charter e Planejamento:** Criar `PROJECT_CHARTER.md` com a visão do DataEngOS.
-    
 2. **Instalar Skill de Planejamento:** Clonar `OthmanAdi/planning-with-files` para `.agent/skills/planning-with-files` dentro do WSL.
-    
 3. **Conectar Backlog:** Configurar o `mcp.json` com o servidor do GitHub Projects para conectar o agente ao quadro Kanban.
-    
 
 ### Fase 3: Execução (Ciclo Vibe Coding)
 
 1. **Brainstorm:** Usar o agente para gerar o PRD da primeira feature ("Ingestão de Dados").
-    
 2. **Refinamento:** Pedir ao agente para converter o PRD em tarefas atômicas no `task_plan.md`, seguindo o SOP de granularidade.
-    
 3. **Codificação:** Instruir o agente a pegar a primeira tarefa, escrever o teste (usando Docker MCP para mocks se necessário), implementar e validar.
-    
 4. **Feedback:** O humano revisa o `task_plan.md` e o quadro Kanban (atualizado automaticamente pelo agente) para manter a visão macro, intervindo apenas nos PRs ou decisões arquiteturais.
-    
 
 ---
 
@@ -232,11 +206,7 @@ A construção do DataEngOS utilizando Google Antigravity e Ag-Kit no WSL não �
 ### Referências
 
 - Google Antigravity & Agent Manager.
-    
 - WSL Integration & Performance.
-    
 - Planning with Files Methodology.
-    
 - MCP Servers (Docker, DB, GitHub).
-    
 - Ag-Kit Framework & Installation.
