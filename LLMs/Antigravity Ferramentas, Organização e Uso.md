@@ -34,19 +34,19 @@ A "Super-Pilha" proposta pelo usuário visa preencher as lacunas do modelo base:
 
 Para compreender a integração, devemos primeiro dissecar a função de cada componente dentro da arquitetura proposta.
 
-| **Componente** | **Função Primária**     | **Papel na Arquitetura**       |
+| **Componente**         | **Função Primária**             | **Papel na Arquitetura**                                                                                                       |
 | ---------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Google Antigravity** | Host / Kernel   | A interface central que hospeda o Gerente de Agentes e o Editor de Código.     |
-| **Ag-Kit**     | Força de Trabalho       | Fornece _Personas_ especializadas (ex: Especialista em Backend, Auditor de Segurança) e habilidades modulares. |
-| **OpenSpec**   | Planta Baixa (Blueprint)| Define _o que_ construir através de uma estrutura de especificações rigorosa baseada em diretórios, eliminando a ambiguidade.  |
-| **Ralph**      | Motor de Execução       | Um loop autônomo que persiste o estado em arquivos (`progress.txt`) para superar a amnésia de contexto e iterar até o sucesso. |
-| **ARC Protocol**       | Supervisor de Processo  | Impõe disciplina (Analisar → Executar → Confirmar) e atua como uma camada de coordenação para prevenir erros de execução.      |
-| **GitHub PM MCP**      | Gerente de Projeto      | Gerencia o quadro de tarefas, gera PRDs (Documentos de Requisitos do Produto) e rastreia requisitos até o código.      |
-| **OpenMemory** | Córtex (Memória de Longo Prazo) | Armazena conhecimento baseado em grafos sobre o projeto, prevenindo a perda de decisões arquiteturais entre sessões.   |
-| **Smart Coding MCP**   | Olhos (Busca Semântica) | Fornece compreensão semântica da base de código existente, permitindo busca por significado e não apenas palavras-chave.       |
-| **RLM**| Leitor (Contexto Infinito)      | Processa documentações massivas ou logs que excedem as janelas de contexto padrão através de decomposição recursiva.   |
+| **Google Antigravity** | Host / Kernel                   | A interface central que hospeda o Gerente de Agentes e o Editor de Código.                                                     |
+| **Ag-Kit**             | Força de Trabalho               | Fornece _Personas_ especializadas (ex: Especialista em Backend, Auditor de Segurança) e habilidades modulares.                 |
+| **OpenSpec**           | Planta Baixa (Blueprint)        | Define _o que_ construir através de uma estrutura de especificações rigorosa baseada em diretórios, eliminando a ambiguidade.  |
+| **Ralph**              | Motor de Execução               | Um loop autônomo que persiste o estado em arquivos (`progress.txt`) para superar a amnésia de contexto e iterar até o sucesso. |
+| **ARC Protocol**       | Supervisor de Processo          | Impõe disciplina (Analisar → Executar → Confirmar) e atua como uma camada de coordenação para prevenir erros de execução.      |
+| **GitHub PM MCP**      | Gerente de Projeto              | Gerencia o quadro de tarefas, gera PRDs (Documentos de Requisitos do Produto) e rastreia requisitos até o código.              |
+| **OpenMemory**         | Córtex (Memória de Longo Prazo) | Armazena conhecimento baseado em grafos sobre o projeto, prevenindo a perda de decisões arquiteturais entre sessões.           |
+| **Smart Coding MCP**   | Olhos (Busca Semântica)         | Fornece compreensão semântica da base de código existente, permitindo busca por significado e não apenas palavras-chave.       |
+| **RLM**                | Leitor (Contexto Infinito)      | Processa documentações massivas ou logs que excedem as janelas de contexto padrão através de decomposição recursiva.           |
 | **Plan-With-Files**    | Metodologia de Planejamento     | Uma abordagem para manter o plano de execução em arquivos Markdown vivos, servindo como a "memória de trabalho" do agente.     |
-| **MCP TOON**   | Otimizador de Tokens    | Comprime dados estruturados (JSON) em formatos otimizados para consumo por LLMs, economizando custos e contexto.       |
+| **MCP TOON**           | Otimizador de Tokens            | Comprime dados estruturados (JSON) em formatos otimizados para consumo por LLMs, economizando custos e contexto.               |
 ## 1.3 Referências de "Tools" conhecidas
 
 Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis*:
@@ -56,7 +56,8 @@ Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis*:
 	- Ag-Kit: https://github.com/vudovn/antigravity-kit
 	- Antigravity BMAD Config: https://github.com/salacoste/antigravity-bmad-config
 	- RLM (Recursive Language Model): https://github.com/Hmbown/aleph
-	- Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp
+	- ~~Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp~~
+	 ~~ | Heuristic-MCP vai subistituir. 
 	- ARC Protocol: https://github.com/AshishOP/arc-protocol
 	- Ralph: https://github.com/snarktank/ralph
 	- MCP TOON (JSON -> TOON): https://github.com/jellyjamin/TOON-context-mcp-server
