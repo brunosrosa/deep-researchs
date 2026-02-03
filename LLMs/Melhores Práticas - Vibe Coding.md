@@ -104,7 +104,7 @@ Sempre feche o ciclo atualizando **README**, **checklists**, **TODOs**.
 > **Contexto/Stack**: [ex.: Node 20 + Express + Postgres 15].  
 > **Objetivo**: Gerar um scaffold **rodável** localmente.  
 > **Entregáveis obrigatórios**:
-> 
+
 > - `Dockerfile`, `docker-compose.yml` (db + app).
 > - `Makefile` com `dev`, `test`, `lint`, `build`.
 > - `.env.example` (todas as variáveis) e leitura segura.
@@ -123,7 +123,6 @@ Sempre feche o ciclo atualizando **README**, **checklists**, **TODOs**.
 > **Testes**: adicione testes (fumaça + unitários para [componentes críticos]).  
 > **Docs**: atualize README (endpoints, exemplos de curl).  
 > **Saída**:
-> 
 > 1. Mudanças de código (arquivos/patches).
 > 2. Novos testes e como rodá-los.
 > 3. Ajustes no README.
@@ -210,13 +209,3 @@ Sempre feche o ciclo atualizando **README**, **checklists**, **TODOs**.
 Repita para cada feature/módulo.
 
 ---
-
-## Quer que eu te ajude a **operacionalizar** já?
-
-Posso:
-
-- Gerar um **pacote de prompts** personalizado ao seu **stack** (ex.: Python/FastAPI + Postgres, ou Node/NestJS).
-- Criar uma **lista de DoD** adaptada ao contexto do BB (segurança, auditoria, logs, compliance).
-- Montar um **scaffold completo** (Docker, Makefile, CI, tests, README) para você colar no repositório.
-
-**Qual é seu stack-alvo (linguagem/framework/DB)** e o tipo de projeto (API, ETL, microserviço, lib, front web)? Se quiser, já trago um scaffold com **testes de fumaça** e **CI** prontos para rodar.

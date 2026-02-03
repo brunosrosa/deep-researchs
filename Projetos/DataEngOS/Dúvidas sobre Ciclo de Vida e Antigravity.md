@@ -32,11 +32,8 @@ No modelo de desenvolvimento remoto do VS Code (sobre o qual o Antigravity é co
 Para corrigir a ausência de integração no menu `/`:
 
 1. **Conexão Explicita:** É imperativo garantir que o Antigravity esteja conectado ao WSL. O indicador verde no canto inferior esquerdo deve exibir "WSL: Ubuntu" (ou a distribuição escolhida).
-    
 2. **Instalação no Lado do Servidor:** A instalação do Ag-Kit deve ser realizada estritamente através do **Terminal Integrado** do Antigravity, garantindo que se está operando dentro do shell `bash` ou `zsh` do Linux. O comando `npx @vudovn/ag-kit init` deve ser executado na raiz do projeto dentro do sistema de arquivos Linux.
-    
 3. **Localização das Skills:** O Ag-Kit e o Antigravity varrem diretórios específicos para carregar Skills. No modo WSL, ele prioriza `~/.gemini/antigravity/global_skills` (no Linux) ou a pasta `.agent/skills` na raiz do projeto. Instalações feitas no Windows `AppData` são invisíveis para o agente que opera no contexto Linux.
-    
 
 A adoção do WSL não é apenas uma preferência, mas um requisito técnico para garantir que as ferramentas de orquestração (Ag-Kit) e execução (Docker/MCP) falem a mesma língua que o sistema operacional, eliminando uma classe inteira de erros de "ambiente" que paralisariam os agentes autônomos.
 
@@ -55,22 +52,15 @@ A pesquisa identifica a metodologia "Planning with Files" (popularizada pela fer
 Esta metodologia impõe que, antes de qualquer código ser escrito, o agente deve interagir com três arquivos específicos na raiz do projeto:
 
 1. **`task_plan.md` (O Estado Estratégico):** Este é o "mapa" do projeto. Ele contém a visão macro, dividida em Épicos e Fases. É o único lugar onde a "verdade" sobre o status do projeto reside.
-    
     - _Regra de Governança:_ O agente é proibido de iniciar uma tarefa sem que ela esteja explicitamente listada e marcada como "Em Progresso" neste arquivo.
-        
 2. **`findings.md` (A Base de Conhecimento):** Durante a execução, agentes descobrem informações (ex: "A biblioteca X é incompatível com a versão Y"). Em vez de "esquecer" isso ao final da sessão, o agente deve registrar essas descobertas aqui. Isso evita que agentes futuros repitam pesquisas ou cometam os mesmos erros arquiteturais.
-    
 3. **`progress.md` (O Log Tático):** Um diário de bordo granular onde o agente registra suas tentativas, erros de compilação e micro-decisões. Isso permite que um humano (ou outro agente revisor) entenda _como_ uma solução foi alcançada, facilitando a depuração.
-    
 
 **Integração Técnica com Ag-Kit:** A dúvida sobre a compatibilidade desta Skill com o Ag-Kit é pertinente. A análise indica que **sim, vale a pena e é totalmente integrável**.
 
 - **Mecanismo de Instalação:** Como o Ag-Kit estrutura agentes, mas utiliza o motor do Antigravity/Claude para execução, Skills baseadas em arquivos são agnósticas ao framework.
-    
 - **Procedimento:** Deve-se clonar o repositório `OthmanAdi/planning-with-files` diretamente para dentro da pasta `.agent/skills/planning-with-files` no diretório do projeto (dentro do WSL). O Antigravity detectará automaticamente o arquivo `SKILL.md` e disponibilizará os comandos `/plan` ou a instrução natural para o agente utilizar essa estrutura.
-    
 - **Prevenção de Conflitos:** Para evitar incompatibilidades, recomenda-se namespace nas pastas de Skills (ex: prefixar pastas com `custom_` ou `ext_`). Não há conflito binário, pois Skills são essencialmente prompts estruturados que o LLM lê sob demanda.
-    
 
 ### 3.2 Gestão de Backlog Externo: O "Kanban" Comum
 
@@ -81,19 +71,12 @@ Enquanto o `task_plan.md` gerencia a execução imediata (o "Agora"), a visão d
 Embora o GitHub em si seja uma plataforma proprietária, o recurso "Projects" é gratuito para repositórios públicos (e privados pessoais), está intimamente integrado ao código e, crucialmente, possui suporte robusto via **MCP (Model Context Protocol)**.
 
 - **Integração Visual:** O desenvolvedor humano visualiza um quadro Kanban (To Do, In Progress, Done).
-    
 - **Integração Agêntica:** Através do servidor MCP `github-projects` (como `@taylor-lindores-reeves/mcp-github-projects` ou `kunwarVivek/mcp-github-project-manager`), o agente no Antigravity ganha a capacidade de "ver" e "manipular" esse quadro.
-    
 - **Fluxo de Trabalho:**
-    
     1. O humano cria um Épico no GitHub Projects: "Implementar Camada de Ingestão de Logs".
-        
     2. O agente recebe a instrução: "Verifique o backlog no GitHub Projects, pegue a tarefa de maior prioridade e inicie o planejamento."
-        
     3. O agente usa o MCP para ler o card, move-o para "In Progress", cria o `task_plan.md` correspondente e inicia o trabalho.
-        
     4. Ao finalizar, o agente move o card para "Review" e adiciona um link para o PR.
-        
 
 **Alternativa Open-Source: Linear (Versão Free/Startup)** O Linear é frequentemente citado em contextos de "Vibe Coding" devido à sua API extremamente rápida e amigável a LLMs. Existe um servidor MCP oficial e robusto para o Linear. Embora não seja open-source, sua camada gratuita é generosa para desenvolvedores individuais. A integração via MCP permite que o agente crie tickets, leia especificações e atualize status sem sair do contexto do IDE.
 
@@ -108,10 +91,7 @@ O usuário pergunta: _"Preciso criar primeiro uma documentação do 'Porquê' e 
 Antes de qualquer código, deve-se criar um arquivo `PROJECT_CHARTER.md` na raiz. Este documento serve como a "Constituição" do projeto DataEngOS.
 
 - **Conteúdo:** Missão do projeto, público-alvo (engenheiros de dados), princípios de design (ex: "preferir configuração explícita sobre mágica", "idempotência é obrigatória").
-    
 - **Aplicação:** Uma regra global no Ag-Kit deve instruir todos os agentes a lerem este arquivo antes de iniciar qualquer nova sessão de trabalho. Isso garante alinhamento estratégico automático.
-    
-
 ### 4.2 A Criação de Listas de Tarefas e Checklists
 
 O usuário questiona como criar listas detalhadas que vão desde o teste unitário até a entrega. Isso não deve ser feito manualmente pelo humano, mas sim _orquestrado_ por ele.
@@ -123,7 +103,7 @@ O "Agente da IDE" (geralmente Gemini 3 Pro ou Claude 3.5 Sonnet) tende a ser pre
 1. **Sessão de Arquitetura (Planning Mode):** Inicie uma sessão com o agente em "Planning Mode" (se disponível no Antigravity) ou instrua explicitamente: _"Atue como um Arquiteto de Software Sênior. Não escreva código. Seu objetivo é decompor a Feature X em um plano de implementação atômico."_
 
 2. **Prompt de Decomposição:**
-    
+
     > "Para a feature 'Autenticação de Usuários', gere um `task_plan.md` detalhado. Cada tarefa deve ser atômica (máximo de 1 hora de trabalho). Para cada tarefa, liste:
     > 	 Dependências.
     > 	Arquivos a serem criados/modificados.

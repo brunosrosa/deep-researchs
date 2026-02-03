@@ -23,15 +23,10 @@ Em resposta, surge o **Spec-Driven Development (SDD)**, exemplificado pelo OpenS
 ### 1.2 A Necessidade de Convergência
 
 A análise dos frameworks líderes revela forças complementares que, se unificadas, cobrem todo o ciclo de vida do desenvolvimento de software autônomo:
-
 - **Ag-Kit (Google/Community):** Fornece os "músculos" — uma vasta biblioteca de skills especializadas.
-    
 - **BMAD (Barrett/Method):** Fornece o "roteiro" — workflows estruturados de gerenciamento de produto e arquitetura.
-    
 - **ARC (AshishOP):** Fornece a "disciplina" — subagentes especializados e contratos de validação rigorosos.
-    
 - **OpenSpec (Fission AI):** Fornece a "linguagem" — especificações padronizadas para comunicação máquina-máquina.
-    
 
 O objetivo deste relatório é sintetizar esses componentes em um **Sistema Operacional de Agente Local**, residindo inteiramente na pasta `/.agent`.
 
@@ -50,63 +45,35 @@ A estrutura `/.agent` deve ser tratada como código-fonte: versionada via Git, s
 A arquitetura de pastas proposta funde os requisitos de todos os frameworks analisados:
 
 /.agent
-
 ├── /config # O "BIOS" do Agente
-
 │ ├── soda_core.yaml # Parâmetros do Loop SODA v2 (timeouts, retries)
-
 │ ├── gateway.yaml # Configuração do Docker MCP Gateway (Redes e Skills)
-
 │ └── master_rule.md # A "Regra Mestra" injetada no System Prompt
-
 ├── /memory # A Camada de Persistência (Estado)
-
 │ ├── /hot # Contexto Imediato (Sessão Ralph Loop)
-
 │ │ ├── task_plan.md # O Plano Tático Atual
-
 │ │ ├── findings.md # O Caderno de Descobertas e Fatos
-
 │ │ └── progress.md # O Log Sequencial de Execução (Stream)
-
 │ ├── /cold # Memória de Longo Prazo (Vector Store/Arquivos Mortos)
-
 │ └── /archives # Logs de Sessões Passadas (Auditabilidade)
-
 ├── /skills # Capacidades Executáveis (Ag-Kit + MCP)
-
 │ ├── /core # Skills Fundamentais (Filesystem, Shell)
-
 │ ├── /merged # Skills Polimórficas (PolyCoder, DeepSearch)
-
 │ └── skills_manifest.json # Registro para o Docker Gateway
-
 ├── /sops # Procedimentos Operacionais (BMAD Workflows)
-
 │ ├── /phase_1_discovery # SOPs: PRD, Pesquisa de Mercado
-
 │ ├── /phase_2_arch # SOPs: Design de Sistema, Modelagem de Dados
-
 │ └── /phase_3_dev # SOPs: TDD, Implementação, Refatoração
-
 ├── /subagents # Personas Especializadas (ARC Protocol)
-
 │ ├── alpha_researcher.md # Definição da Persona de Pesquisa
-
 │ ├── beta_coder.md # Definição da Persona de Desenvolvimento
-
 │ └── gamma_auditor.md # Definição da Persona de QA e Segurança
-
 └── PROJECT_CHARTER.md # A Constituição do Projeto (Verdade Única)
-
 ### 2.2 Racionalização dos Componentes
 
 1. **Unificação de Configurações:** Em vez de espalhar configurações em `.cursor`, `.claude` e `.gemini`, o arquivo `master_rule.md` serve como a fonte da verdade. Scripts de inicialização (como o `setup_arc.py` do ARC v2.1 ) devem ser adaptados para gerar symlinks ou injetar o conteúdo de `master_rule.md` nos arquivos de configuração específicos de cada IDE, garantindo consistência entre plataformas (Cursor, Windsurf, VS Code).
-    
 2. **Repositório de SOPs:** A pasta `/sops` substitui os comandos slash isolados do BMAD (`/prd`, `/arch`) por arquivos Markdown estruturados. Isso permite que o modelo SODA v2 "carregue" um SOP inteiro como contexto, transformando o agente de um generalista para um especialista naquela fase específica do projeto.
-    
 3. **Memória Estruturada:** A distinção entre `/hot` e `/cold` resolve o problema de poluição de contexto. O diretório `/memory` torna-se o ponto de montagem para o servidor MCP de memória (OpenMemory), permitindo que o estado persista entre reinicializações do ambiente Docker.
-    
 
 ---
 
@@ -149,88 +116,57 @@ O diferencial do SODA v2 é a fase de **Triagem (Screen)** e a integração prof
 #### 4.1.1 Screen (Triagem/Percepção)
 
 Antes de processar qualquer input, o agente realiza uma varredura do ambiente.
-
 - **Mecanismo:** Leitura do arquivo `/memory/hot/progress.md` e execução de ferramentas de diagnóstico passivo (ex: `git status`, verificação de logs de erro).
-    
 - **Objetivo:** Estabelecer a "Situational Awareness". O agente verifica se a realidade do sistema (arquivos no disco) corresponde à realidade percebida (memória do chat). Isso combate a alucinação de estado.
-    
 - **Ferramenta:** Utiliza o `Filesystem MCP` em modo somente leitura.
-    
 
 #### 4.1.2 Orient (Orientação/Contextualização)
 
 Com base na triagem, o agente carrega o modelo mental adequado.
-
 - **Trigger:** Se o estado atual é "Design de Banco de Dados", o sistema carrega o SOP `/sops/phase_2_arch/DATABASE_DESIGN.md`.
-    
 - **Context Engineering:** O SOP atua como um "Dynamic System Prompt" , substituindo instruções genéricas por diretrizes específicas da fase.
-    
 - **Memória:** O agente consulta o OpenMemory para recuperar decisões passadas (ex: "Por que rejeitamos MongoDB na fase de PRD?").
-    
 
 #### 4.1.3 Decide (Decisão/Planejamento)
 
 O agente "Orquestrador" (Manager) delega a tarefa para uma sub-persona especializada, conforme o padrão ARC.
-
 - **Lógica:** O Orquestrador não executa; ele despacha.
-    
 - **Seleção de Subagente:**
-    
     - Tarefas de pesquisa -> **Alpha Researcher**.
-        
     - Tarefas de código -> **Beta Coder**.
-        
     - Tarefas de validação -> **Gamma Auditor**.
-        
 - **Output:** Um plano atômico registrado em `/memory/hot/task_plan.md`.
-    
 
 #### 4.1.4 Act (Ação/Execução)
 
 A execução ocorre através do Docker MCP Gateway, garantindo isolamento.
-
 - **Roteamento:** O comando é enviado para o container específico da Skill (ex: container `ag-kit-coder`).
-    
 - **Feedback Loop:** O resultado (stdout/stderr) é capturado e gravado imediatamente em `findings.md` e `progress.md`, fechando o ciclo.
-    
 
 ### 4.2 Integração de SOPs e Ferramentas
 
 Os SOPs no SODA v2 deixam de ser documentos passivos e tornam-se "Software Executável". Um arquivo SOP contém gatilhos (Triggers) e Checkpoints de Saída.
 
 **Exemplo de Lógica de SOP no SODA v2:**
-
 # SOP: Code Review (Fase Dev)
 
 ## Trigger
 
 - Estado em `progress.md` == "CODE_WRITTEN"
-    
-
 ## Ferramentas Habilitadas (Docker Segment)
 
 - `linter_tool` (Ruff/ESLint)
-    
 - `test_runner` (Pytest/Jest)
-    
 - `git_ops` (Apenas branch de feature)
-    
-
 ## Checkpoints (Gamma Auditor)
 
 1. Cobertura de testes > 80%?
-    
 2. Sem erros críticos no Linter?
-    
 3. Conformidade com `PROJECT_CHARTER.md` verificada?
-    
-
 ## Ação de Saída
 
 - Se PASS: Merge para `develop` e atualizar estado para "FEATURE_COMPLETE".
-    
 - Se FAIL: Gerar relatório em `findings.md` e retornar para "CODING_MODE".
-    
 
 Esta estrutura transforma o fluxo de trabalho em uma máquina de estados finitos, onde a transição entre estados é governada por lógica determinística, reduzindo drasticamente o "atrito" de decisão do agente.
 
@@ -246,21 +182,19 @@ A análise propõe a consolidação das skills em cinco categorias "Meta-Skills"
 
 **Tabela 5.1: Matriz de Fusão e Racionalização de Skills**
 
-|**Categoria Ag-Kit Original**|**Skills Redundantes Identificadas**|**Meta-Skill Unificada Proposta**|**Capacidades e Racional**|
-|---|---|---|---|
-|**Desenvolvimento**|`backend-dev`, `frontend-dev`, `game-dev`, `refactor-agent`, `test-writer`|**`PolyCoder`**|**Capacidades:** Escrita de código multi-linguagem, linting, execução de testes.<br><br>  <br><br>**Racional:** O contexto do LLM define a linguagem; a ferramenta apenas executa I/O e processos de compilação. Um único container Docker com todas as runtimes evita _cold starts_.|
-|**Conhecimento**|`seo-specialist`, `market-researcher`, `tech-writer`, `docs-search`|**`DeepSearch`**|**Capacidades:** Navegação web (headless), RAG em docs, sumarização.<br><br>  <br><br>**Racional:** Todas seguem o padrão _Query -> Fetch -> Summarize_. A especialização (ex: SEO) vem do Prompt/SOP, não da ferramenta de busca.|
-|**Infraestrutura**|`docker-manager`, `git-ops`, `deploy-agent`, `ci-cd-pipeline`|**`InfraOps`**|**Capacidades:** Gestão de containers, controle de versão, CLI de nuvem (AWS/GCP).<br><br>  <br><br>**Racional:** Centraliza credenciais sensíveis e operações de terminal privilegiadas. Crítico para a segmentação de segurança.|
-|**Dados**|`data-analyst`, `csv-tool`, `financial-planner`, `metrics-logger`|**`DataOracle`**|**Capacidades:** Análise SQL/Pandas, geração de gráficos, ETL leve.<br><br>  <br><br>**Racional:** Ambiente isolado com bibliotecas pesadas de Data Science, separado do ambiente de dev web leve.|
-|**Criativo**|`ui-designer`, `content-creator`, `social-media-manager`, `brainstorming`|**`CreativeStudio`**|**Capacidades:** Geração de imagem, diagramação (Mermaid/PlantUML), copywriting.<br><br>  <br><br>**Racional:** Foco em geração de _assets_ não-executáveis.|
+| **Categoria Ag-Kit Original** | **Skills Redundantes Identificadas**                                       | **Meta-Skill Unificada Proposta** | **Capacidades e Racional**                                                                                                                                                                                                                                                            |
+| ----------------------------- | -------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Desenvolvimento**           | `backend-dev`, `frontend-dev`, `game-dev`, `refactor-agent`, `test-writer` | **`PolyCoder`**                   | **Capacidades:** Escrita de código multi-linguagem, linting, execução de testes.<br><br>  <br><br>**Racional:** O contexto do LLM define a linguagem; a ferramenta apenas executa I/O e processos de compilação. Um único container Docker com todas as runtimes evita _cold starts_. |
+| **Conhecimento**              | `seo-specialist`, `market-researcher`, `tech-writer`, `docs-search`        | **`DeepSearch`**                  | **Capacidades:** Navegação web (headless), RAG em docs, sumarização.<br><br>  <br><br>**Racional:** Todas seguem o padrão _Query -> Fetch -> Summarize_. A especialização (ex: SEO) vem do Prompt/SOP, não da ferramenta de busca.                                                    |
+| **Infraestrutura**            | `docker-manager`, `git-ops`, `deploy-agent`, `ci-cd-pipeline`              | **`InfraOps`**                    | **Capacidades:** Gestão de containers, controle de versão, CLI de nuvem (AWS/GCP).<br><br>  <br><br>**Racional:** Centraliza credenciais sensíveis e operações de terminal privilegiadas. Crítico para a segmentação de segurança.                                                    |
+| **Dados**                     | `data-analyst`, `csv-tool`, `financial-planner`, `metrics-logger`          | **`DataOracle`**                  | **Capacidades:** Análise SQL/Pandas, geração de gráficos, ETL leve.<br><br>  <br><br>**Racional:** Ambiente isolado com bibliotecas pesadas de Data Science, separado do ambiente de dev web leve.                                                                                    |
+| **Criativo**                  | `ui-designer`, `content-creator`, `social-media-manager`, `brainstorming`  | **`CreativeStudio`**              | **Capacidades:** Geração de imagem, diagramação (Mermaid/PlantUML), copywriting.<br><br>  <br><br>**Racional:** Foco em geração de _assets_ não-executáveis.                                                                                                                          |
 
 ### 5.2 Implementação Técnica da Skill `PolyCoder`
 
 A `PolyCoder` exemplifica a eficiência do modelo. Em vez de cinco definições de ferramenta no JSON do MCP, temos apenas uma interface flexível:
 
-JSON
-
-```
+```JSON
 {
   "name": "PolyCoder",
   "description": "Unified coding interface for full-stack development tasks.",
@@ -302,18 +236,14 @@ A orquestração desses modos é controlada pela "Master Rule", que instrui o SO
 **Excerto Técnico da `master_rule.md`:**
 
 > "REGRA DE SEGURANÇA 01: O Agente NUNCA deve tentar escrever código enquanto estiver no `RESEARCH_MODE`.
-> 
 > GATILHO DE TRANSIÇÃO: Ao concluir a coleta de informações (validado via `findings.md`), o Agente DEVE invocar a ferramenta `Gateway.switch_mode('CODING_MODE')`. Esta ação desconectará os containers de pesquisa e montará os volumes de código-fonte com permissão de escrita.
-> 
 > ERRO ESPERADO: Se o Agente tentar usar `DeepSearch` durante o `CODING_MODE`, o Gateway retornará um erro 'Tool Access Denied'. Isso não é uma falha, é uma restrição de design. O Agente deve usar o conhecimento já adquirido em `findings.md`."
 
 ### 6.3 Configuração do `gateway.yaml`
 
 A implementação técnica utiliza o Docker Compose e as definições de política do Gateway :
 
-YAML
-
-```
+```YAML
 # /.agent/config/gateway.yaml
 services:
   gateway:
@@ -355,19 +285,13 @@ A "Amnesia do Agente" ocorre quando o histórico de conversação excede a janel
 O "Ralph Loop" é um script de automação (geralmente Bash ou Python) que executa o agente em ciclos iterativos. A inovação chave é o **Contexto Fresco**: a cada iteração, a memória RAM do agente (histórico de chat) é limpa, mas o estado persiste em arquivos.
 
 **Arquitetura de Arquivos de Estado (`/.agent/memory/hot`):**
-
 1. **`task_plan.md` (O Mapa):** Contém a decomposição hierárquica das tarefas. O agente marca itens como `[x]` ou `[ ]`. Ele lê este arquivo para saber "Onde estou?".
-    
 2. **`findings.md` (O Caderno):** Repositório de conhecimento acumulado. Se o agente descobre como configurar o CORS no framework escolhido na iteração 1, ele anota aqui. Na iteração 10, ele lê essa anotação em vez de pesquisar novamente. Isso elimina a redundância de pesquisa.
-    
 3. **`progress.md` (O Diário):** Um log imutável de ações e resultados. Serve como auditoria e permite que o agente entenda a causalidade das suas ações anteriores.
-    
 
 **Mecânica do Loop SODA com Arquivos:**
 
-Bash
-
-```
+```Bash
 #!/bin/bash
 # ralph_soda_loop.sh
 
@@ -394,13 +318,9 @@ done
 ### 7.2 Integração com OpenMemory (MCP-Memory)
 
 Para projetos massivos, arquivos Markdown tornam-se grandes demais. Aqui entra o **OpenMemory** (baseado no Mem0/MCP-Memory). O OpenMemory funciona como o hipocampo do agente.
-
 - **Indexação Contínua:** Um serviço em background monitora a pasta de documentação e o código-fonte, criando embeddings vetoriais.
-    
 - **Recuperação Semântica:** No passo `Orient` do SODA, o agente pode invocar a ferramenta `OpenMemory.query("Como lidar com autenticação JWT neste projeto?")`.
-    
 - **Resultado:** O servidor retorna apenas os fragmentos relevantes, economizando milhares de tokens e permitindo que o agente acesse conhecimentos de meses atrás sem carregar todo o histórico.
-    
 
 A combinação de Arquivos Markdown (para estado imediato e tático) com OpenMemory (para conhecimento estratégico e de longo prazo) resolve definitivamente o problema de saturação.
 
@@ -411,40 +331,24 @@ A combinação de Arquivos Markdown (para estado imediato e tático) com OpenMem
 A transição de uma configuração ad-hoc para esta arquitetura unificada exige método.
 
 ### 8.1 Fase 1: Fundação (Dia 1-2)
-
 - **Ação:** Criar a estrutura `/.agent` na raiz do repositório.
-    
 - **Ação:** Escrever o `PROJECT_CHARTER.md` inicial.
-    
 - **Ação:** Instalar o Ag-Kit básico e configurar o `gateway.yaml` com acesso direto (sem segmentação ainda).
-    
 - **Resultado:** Um ambiente organizado onde o agente conhece suas regras básicas.
-    
 
 ### 8.2 Fase 2: Racionalização (Dia 3-5)
-
 - **Ação:** Auditar as skills em uso.
-    
 - **Ação:** Substituir scripts isolados pelos containers das Meta-Skills (`PolyCoder`, `DeepSearch`).
-    
 - **Ação:** Migrar workflows do BMAD para arquivos Markdown em `/sops`.
-    
 - **Resultado:** Redução de latência e simplificação da lista de ferramentas.
-    
 
 ### 8.3 Fase 3: Autonomia e Memória (Dia 6-10)
-
 - **Ação:** Implementar o script do Ralph Loop.
-    
 - **Ação:** Configurar o servidor OpenMemory via Docker.
-    
 - **Ação:** Ativar a segmentação modal no Gateway e a Master Rule.
-    
 - **Resultado:** O sistema torna-se capaz de operar em loops autônomos por horas sem intervenção humana, mantendo o contexto e a segurança.
-    
 
 ---
-
 ## Conclusão
 
 A unificação das configurações de agentes (Ag-Kit, BMAD, ARC, OpenSpec) sob a estrutura `/.agent`, governada por um `PROJECT_CHARTER.md` constitucional e orquestrada pelo modelo SODA v2, representa um salto de maturidade na engenharia de software assistida por IA.
