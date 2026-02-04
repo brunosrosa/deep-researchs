@@ -324,7 +324,7 @@ O SODA substitui a improvisação por um pipeline de engenharia de 6 estágios s
 
 Este arquivo deve residir em `~/.gemini/GEMINI.md` e ser referenciado nas configurações do IDE.
 
-```
+```markdown
 # SODA CONSTITUTION (GLOBAL)
 
 ## 0. PRIME DIRECTIVE
