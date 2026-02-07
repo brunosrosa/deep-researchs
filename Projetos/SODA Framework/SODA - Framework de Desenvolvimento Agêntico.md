@@ -2,6 +2,7 @@
 aliases:
   - SODA | Framework de Desenvolvimento Agêntico
 version: 1.0 (Draft)
+sticker: lucide//box
 ---
 # SODA v1.0: Sistema Operacional de Desenvolvimento Agêntico
 

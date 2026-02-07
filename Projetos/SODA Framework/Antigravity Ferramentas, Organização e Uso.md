@@ -2,6 +2,7 @@
 aliases:
   - "Antigravity: Ferramentas"
   - Organização e Uso
+sticker: lucide//atom
 ---
 # Arquitetura da Fábrica de Software Autônoma: Estratégias de Integração Profunda para o Google Antigravity e Fluxos de Trabalho Agênticos
 
@@ -55,8 +56,8 @@ Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis* (
 	- Plan-With-Files: https://github.com/OthmanAdi/planning-with-files
 	- Ag-Kit: https://github.com/vudovn/antigravity-kit
 	- Antigravity BMAD Config: https://github.com/salacoste/antigravity-bmad-config
-	- RLM (Recursive Language Model): https://github.com/Hmbown/aleph
-	- Heuristic-MCP (vai subistituir Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp)
+	- Aleph - RLM (Recursive Language Model): https://github.com/Hmbown/aleph
+	- Heuristic-MCP: https://github.com/softerist/heuristic-mcp (vai subistituir Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp)
 	- ARC Protocol: https://github.com/AshishOP/arc-protocol
 	- Ralph: https://github.com/snarktank/ralph
 	- MCP TOON (JSON -> TOON): https://github.com/jellyjamin/TOON-context-mcp-server
@@ -67,10 +68,11 @@ Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis* (
 	- GitHub (Official)
 	- Fetch (Reference)
 	- Markitdown
+	- Playwright 
 	- Memory (Reference)
 	- OSP Marketing Tools
 	- Time (Reference)
-	- YouTube Transcripts
+	- YouTube Transcripts: https://github.com/jdepoix/youtube-transcript-api
 
 ---
 

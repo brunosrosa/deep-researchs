@@ -1,3 +1,6 @@
+---
+sticker: lucide//circle-ellipsis
+---
 # SODA Framework v1.0 (refinado)
 
 ## Sistema Operacional de Desenvolvimento Agêntico
