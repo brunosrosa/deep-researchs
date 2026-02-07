@@ -49,22 +49,19 @@ Para compreender a integração, devemos primeiro dissecar a função de cada co
 | **MCP TOON**           | Otimizador de Tokens            | Comprime dados estruturados (JSON) em formatos otimizados para consumo por LLMs, economizando custos e contexto.               |
 ## 1.3 Referências de "Tools" conhecidas
 
-Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis*:
-	- Smolagents: https://github.com/huggingface/smolagents (Possibilidade uso com LLM local em GPU de 2060 6gb VRAM)
+Quero usar no **Antigravity** (e *Agente IDE*) como "**Tools**" *instaláveis* (alguns diretos, outros por MCP, é preciso analisar cada um, opções de instalar, refletir melhor maneira e então fazer não escolher a primeira opção apenas):
+	- Smolagents: https://github.com/huggingface/smolagents (Possibilidade uso com LLM local (Ollama) em GPU de RTX 2060m 6gb VRAM) [Modelos Escolhidos: Qwen3:4B; Phi4-mini; Phi4-mini-reasoning; ]
 	- OpenSpec: https://github.com/Fission-AI/OpenSpec
 	- Plan-With-Files: https://github.com/OthmanAdi/planning-with-files
 	- Ag-Kit: https://github.com/vudovn/antigravity-kit
 	- Antigravity BMAD Config: https://github.com/salacoste/antigravity-bmad-config
 	- RLM (Recursive Language Model): https://github.com/Hmbown/aleph
-	- ~~Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp~~
-	 ~~ | Heuristic-MCP vai subistituir. 
+	- Heuristic-MCP (vai subistituir Smart Coding MCP: https://github.com/omar-haris/smart-coding-mcp)
 	- ARC Protocol: https://github.com/AshishOP/arc-protocol
 	- Ralph: https://github.com/snarktank/ralph
 	- MCP TOON (JSON -> TOON): https://github.com/jellyjamin/TOON-context-mcp-server
 	- OpenMemory: https://github.com/CaviraOSS/OpenMemory
 	- GitHub Project Manager MCP: https://github.com/kunwarVivek/mcp-github-project-manage
-E **MCPs** disponíveis pelo **Docker MCP Toolkit**:
-	- Context7
 	- DuckDuckGo
 	- Exa
 	- GitHub (Official)
