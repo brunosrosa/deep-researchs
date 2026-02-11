@@ -1,6 +1,7 @@
 ---
 sticker: lucide//circle-ellipsis
 ---
+
 # SODA Framework v1.0 (refinado)
 
 ## Sistema Operacional de Desenvolvimento Agêntico
@@ -18,36 +19,23 @@ sticker: lucide//circle-ellipsis
 Para eliminar a ambiguidade semântica entre Operador Humano e Agentes Sintéticos, estabelecemos este vocabulário controlado:
 
 - **Clean Root (Raiz Limpa):** Princípio de design onde a raiz do projeto contém apenas artefatos de _Intenção Humana_ (`PROJECT_CHARTER.md`) e _Produto Final_ (`src`), encapsulando toda a complexidade operacional em diretórios ocultos (`.agent`).
-    
 - **PID-Context (Project Intent Document - Context):** O arquivo `PROJECT_CHARTER.md`. É a "Constituição" injetada no System Prompt de todos os agentes. Define as leis imutáveis do projeto.
-    
 - **PID-Full (Project Intent Document - Full):** O documento socrático completo (`docs/management/PID_FULL.md`), contendo nuances, histórico e detalhes para auditoria humana, mas denso demais para o contexto contínuo da IA.
-    
 - **Memória Tática (`task_plan.md`):** A "Memória RAM" persistida. Um checklist vivo que serve de ponte entre o planejamento (OpenSpec) e a execução (Ralph), sincronizado unidirecionalmente com o GitHub Projects.
-    
 - **Segmentação Modal:** O uso do Docker MCP Gateway para isolar fisicamente conjuntos de ferramentas. Um agente em "Modo Build" não possui rota de rede para a internet aberta, prevenindo distrações e exfiltração.
-    
 - **Ralph Loop:** Um padrão de execução autônoma onde o agente entra em um ciclo de _Tentativa → Erro → Correção → Retentativa_ até que os testes passem ou o _CostGuard_ (limite de segurança) seja acionado.
-    
 - **Armada de Busca:** Uma federação de ferramentas de pesquisa (Exa, Tavily, DuckDuckGo, ArXiv) orquestrada por uma Meta-Skill (`DeepResearch`) que decide qual fonte usar baseada na densidade da pergunta.
-    
 - **Toonificação:** Processo de compressão de dados via formato TOON (Token-Oriented Object Notation), reduzindo o consumo de tokens em até 60% para arquivos estruturados grandes.
-    
 - **Spec-Lock:** Guardrail que impede a geração de código para qualquer funcionalidade que não possua um arquivo de especificação correspondente (`.openspec/features/*.md`).
-    
 
 ## 2. Princípios Fundamentais (Axiomas e Trade-offs)
 
 ### 2.1 As Leis Imutáveis do SODA
 
 1. **Higiene de Contexto é Soberania:** O contexto do LLM é um recurso finito e caro. Agentes nunca devem ter acesso a todo o histórico. O contexto deve ser cirúrgico, injetado _just-in-time_ via RLM ou leitura seletiva.
-    
 2. **A Verdade Habita em Arquivos:** O chat é efêmero; o arquivo é eterno. Todo estado crítico (progresso, decisão arquitetural, erro conhecido) deve ser persistido em Markdown ou no OpenMemory Graph.
-    
 3. **Execução Determinística (Anti-Vibe):** Nenhuma linha de código de produção é escrita sem uma Spec (OpenSpec) associada e um Teste (TDD) que falhe antes de passar.
-    
 4. **Externalização da Função Executiva:** O Framework assume a carga de lembrar "o que vem a seguir", organizar arquivos e gerenciar dependências. O Humano foca exclusivamente na **Estratégia** e **Criatividade**.
-    
 
 ### 2.2 Análise de Trade-offs
 
@@ -140,28 +128,18 @@ Definição precisa de cada componente, sua função axiomática e interações.
 Uma única skill roteia a necessidade do agente para o provedor correto:
 
 - **Fatos Rápidos:** `DuckDuckGo` (Custo Zero).
-    
 - **Pesquisa Semântica:** `Exa` (Metaphor) - Para entender conceitos ("Melhores libs de grafos").
-    
 - **Notícias/Recente:** `Tavily` - Para dados em tempo real.
-    
 - **Acadêmico:** `ArXiv` - Para papers e algoritmos complexos.
-    
 - **Documentação:** `Docfork` - Transforma sites de doc em Markdown limpo. (Fallback: `Rtfmbro`).
-    
 
 ### 4.4 Infraestrutura & Gestão
 
 - **Gateway:** `Docker MCP` - Gerencia perfis (`research`, `build`, `audit`) ligando/desligando containers.
-    
 - **Gestão:** `GitHub PM MCP` - Espelha o `task_plan.md` em Issues do GitHub.
-    
 - **Spec:** `OpenSpec` - Framework de definição técnica.
-    
 - **Tempo:** `Time MCP` - Fornece data/hora atual para logs e cronogramas.
-    
 - **Estratégia:** `OSP Marketing Tools` - Framework para Value Map e Estratégia (Uso na Fase 01).
-    
 
 ## 5. Fluxo de Trabalho Granular (SODA Lifecycle)
 
@@ -172,154 +150,102 @@ O SODA substitui a improvisação por um pipeline de engenharia de 6 estágios s
 #### **`/00-bootstrap` (Infra)**
 
 - **Agente:** `SystemOps`.
-    
 - **Mecânica:**
     
     1. Valida ambiente WSL2, Docker e Drivers NVIDIA (se local).
-        
     2. Instala dependências (`uv`, `npm`, `python`).
-        
     3. Cria a estrutura "Clean Root" se não existir.
-        
     4. Gera chaves SSH e `.env` template.
-        
     5. Inicializa o `soda.db` (SQLite).
         
 - **Saída:** Ambiente operacional ("Green Field").
-    
 
 #### **`/01-inception` (Ideação & Estratégia)**
 
 - **Agente:** `ProductManager` + `Analyst`.
-    
 - **Inputs:** Entrevista Socrática com o Humano.
-    
 - **Ferramentas:** Exa (Pesquisa), OSP Marketing (Estratégia), Time.
-    
 - **SOPs Ativos:** 01 (Brief), 02 (Viabilidade).
-    
 - **Mecânica:**
     
     1. Brainstorming e definição de Value Map.
-        
     2. Geração do **PID-Completo** em `docs/management/`.
-        
     3. Destilação para **PID-Context** (`PROJECT_CHARTER.md`) na raiz.
         
 - **Saída:** `PROJECT_CHARTER.md` aprovado.
-    
 
 #### **`/02-blueprint` (Arquitetura & Spec)**
 
 - **Agente:** `Architect`.
-    
 - **Inputs:** `PROJECT_CHARTER.md`.
-    
 - **Ferramentas:** OpenSpec, RLM (Leitura Docs), GitHub PM, Heuristic (se legado).
-    
 - **SOPs Ativos:** 03 (Arch), 04 (Data), 05 (API).
-    
 - **Mecânica:**
     
     1. RLM lê documentação oficial das libs escolhidas no Charter.
-        
     2. OpenSpec gera arquivos em `.openspec/features/`.
-        
     3. Arquiteto cria o `task_plan.md` (Checklist Técnico Granular).
-        
     4. GitHub PM espelha o plano em Issues no GitHub.
         
 - **Saída:** Plano de Ação validado e Specs técnicas prontas.
-    
 
 #### **`/03-setup` (Preparação)**
 
 - **Agente:** `DevOps`.
-    
 - **Ferramentas:** Docker MCP, FileSystem.
-    
 - **Mecânica:**
     
     1. Configura Repositório Git.
-        
     2. Cria Docker Compose do projeto (DB, Cache).
-        
     3. Configura estrutura de Testes (Playwright/Pytest/Jest).
-        
     4. Configura CI/CD inicial.
-        
 
 #### **`/04-construct` (O Loop de Construção)**
 
 - **Agente:** `Developer` (Ralph + Smolagents).
-    
 - **Ferramentas:** Ralph Loop, Smart Coding, TOON, Smolagents.
-    
 - **SOPs Ativos:** 09 (TDD), 10 (Code).
-    
 - **Mecânica (Ralph Loop):**
     
     1. Lê _uma_ tarefa pendente do `task_plan.md` e sua Spec associada.
-        
     2. (TDD) Escreve teste que falha.
-        
     3. (Smolagents) Se houver lógica matemática/dados, delega para script local.
-        
     4. (LLM) Escreve a implementação.
-        
     5. Roda testes. Falhou? Lê erro -> Corrige. (Max 15 iterações).
-        
     6. Passou? Commita, marca tarefa no Markdown e comenta na Issue do GitHub.
         
 - **Saída:** Código funcional em `/src` coberto por testes.
-    
 
 #### **`/05-verify` (Auditoria)**
 
 - **Agente:** `Auditor` (ARC Protocol).
-    
 - **Ferramentas:** Heuristic-MCP, Linter, Security Scanner.
-    
 - **SOPs Ativos:** 11 (Review), 14 (Sec), 15 (Perf).
-    
 - **Mecânica:**
     
     1. Análise Estática (Linting/Security).
-        
     2. Verificação Semântica: O código obedece ao `PROJECT_CHARTER.md`?
-        
     3. Execução de Testes de Regressão e E2E (Playwright).
         
 - **Saída:** Relatório de Qualidade ou Aprovação para Release.
-    
 
 #### **`/06-release` (Entrega)**
 
 - **Agente:** `ReleaseManager`.
-    
 - **Mecânica:**
     
     1. Gera Changelog (Semântico).
-        
     2. Merge para branch `main`.
-        
     3. Dispara pipeline de Deploy.
-        
     4. Atualiza OpenMemory com lições aprendidas (Retrospectiva).
-        
 
 ### 5.2 Comandos Ad-Hoc (Assíncronos)
 
 - **`/fase-check`:** O Scrum Master analisa o estado atual (`soda.db` e `task_plan.md`) e recomenda a transição de fase ou alerta sobre bloqueios.
-    
 - **`/research "Tópico"`:** Dispara a Armada de Busca e gera um resumo em `docs/research/`.
-    
 - **`/refactor "Alvo"`:** Inicia um mini-loop Ralph focado apenas em melhoria de código, sem alterar comportamento (protegido por testes).
-    
 - **`/fix-hot`:** Permite bypassar o Spec-Lock para correções críticas, exigindo log de justificativa em `docs/management/hotfix_log.md`.
-    
 - **`/status`:** Gera um relatório de progresso textual comparando `task_plan.md` com as Issues do GitHub.
-    
 
 ## 6. Implementação Técnica
 
@@ -363,13 +289,9 @@ A velocidade é secundária à correção.
 O Agente possui uma Skill nativa `switch_profile` que interage com o Docker:
 
 - **Perfil `research`:** Habilita containers da Armada de Busca, OpenMemory, Time. Desabilita acesso de escrita em `/src`.
-    
 - **Perfil `blueprint`:** Habilita OpenSpec, RLM, GitHub PM.
-    
 - **Perfil `construct`:** Habilita Ralph, Smolagents, Smart Coding, Linter. Desabilita Internet Aberta (apenas docs permitidos).
-    
 - **Perfil `audit`:** Habilita ARC, Heuristic, Playwright. Modo Read-Only em `/src`.
-    
 
 ## 7. Segurança e Guardrails (Red Team Analysis)
 
@@ -389,19 +311,18 @@ Mitigação de riscos identificados durante a análise de robustez.
 Passos para instanciar um projeto SODA v1.0:
 
 1. **Clone o Ag-Kit Base (SODA Refactored):**
-    
+
     ```
     git clone git@github.com:seu-user/soda-ag-kit.git .agent
     ```
-    
+
 2. **Instale Docker MCP:** Certifique-se que o Docker Desktop está rodando no WSL2.
-    
 3. **Alias de Terminal:**
     
     No `.bashrc`: `alias soda="python3 .agent/scripts/soda_cli.py"`
     
 4. **Inicie o Ciclo:**
-    
+
     ```
     mkdir meu-novo-projeto
     cd meu-novo-projeto

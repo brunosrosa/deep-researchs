@@ -21,44 +21,30 @@ Para eliminar a entropia comunicativa entre o Arquiteto Humano e a Frota Agênti
 ### 1.1 Entidades de Estado e Governança
 
 - **Clean Root (Raiz Limpa):** Axioma de design onde a raiz do projeto contém apenas a _Intenção_ (`PROJECT_CHARTER.md`) e o _Produto_ (`src`). Toda complexidade operacional é encapsulada em `.agent`.
-    
 - **PID-Context (Project Intent Document):** A "Constituição" do projeto. Define _Non-Goals_ e _Axiomas_. Injetado no System Prompt de todos os agentes para evitar deriva estratégica.
-    
 - **Memória Tática (`task_plan.md`):** O buffer de execução. Agora segmentado pelas 8 fases do SODA v1.3, servindo como o quadro Kanban persistente do projeto.
-    
 - **Ubiquitous Language (SOP-02):** Um dicionário de termos de domínio que deve ser respeitado em todas as camadas (do DB ao Frontend). Se o termo definido é "Cliente", o uso de "Usuário" no código gera erro de linter.
-    
 
 ### 1.2 Artefatos Técnicos Específicos
 
 - **DDR (Data Design Record - SOP-09):** A especificação imutável do esquema de dados. Diferente de uma "migration" (que é código imperativo), o DDR é a _intenção declarativa_ do modelo de dados.
-    
 - **Gherkin Specs (SOP-04):** Critérios de aceite escritos em sintaxe `Dado/Quando/Então`. Servem como contrato de verdade binária entre o Gerente de Produto e o Agente de Testes.
-    
 - **Threat Model (SOP-10):** Documento vivo de análise de riscos (ex: STRIDE), definindo vetores de ataque e superfícies vulneráveis antes que uma linha de código seja escrita.
-    
 
 ### 1.3 Mecanismos de Execução
 
 - **Ralph Loop:** O motor de persistência OODA (Observe-Orient-Decide-Act) que itera sobre erros de compilação ou falhas de teste até o sucesso ou limite de custo.
-    
 - **Segmentação Modal:** Isolamento físico de ferramentas via Docker Gateway (ex: Agente de UX não tem acesso de rede às chaves de Banco de Dados de Produção).
-    
 - **Spec-Lock:** Mecanismo de governança que impede a geração de código (SOP-11) via _pre-commit hook_ simulado, caso não exista um PRD (SOP-03) e um Gherkin (SOP-04) aprovados.
-    
 
 ## 2. Manifesto Arquitetural: A Linha de Montagem Cognitiva
 
 O SODA v1.3 abandona a ideia de "Assistente de Chat" e adota o modelo de **Linha de Montagem Cognitiva Industrial**:
 
 1. **Atomização Radical:** O processo de "Fazer Software" é desconstruído em 22 passos discretos e interdependentes. Isso remove a ansiedade do "por onde começo?" típica do TDAH.
-    
 2. **Imutabilidade de Fase:** O output da Fase N é o input _read-only_ da Fase N+1. O Agente de Código (Fase 5) não pode alterar os Requisitos (Fase 2). Se o código exigir mudança de requisito, o processo deve reiniciar (Rollback), garantindo a integridade da verdade.
-    
 3. **Auditabilidade por Design:** Cada SOP gera um artefato físico auditável (arquivo `.md`, `.mmd`, `.json`, `.yaml`). Se não está no arquivo, não existe. O conhecimento tácito é proibido.
-    
 4. **Neuro-Adaptação:** O sistema externaliza 100% da função executiva de "sequenciamento". O humano foca exclusivamente na _Qualidade da Decisão_ (Review), não na _Gestão da Tarefa_ (Memory).
-    
 
 ## 3. Anatomia do Sistema: A Árvore de Diretórios (Adaptada v1.3)
 
@@ -273,23 +259,23 @@ Atualização das regras globais para suportar o rigor da nova estrutura de 22 S
 Para iniciar um projeto com a estrutura completa de 22 SOPs:
 
 1. **Instalação do Kernel v1.3:**
-    
+
     ```
     git clone git@github.com/seu-user/soda-kernel-v1.3.git .agent
     ```
-    
+
 2. **Inicialização do Registro:**
     
     O script de bootstrap agora cria os placeholders para todos os 22 SOPs e configura o `task_plan.md` com as 8 fases.
-    
+
     ```
     soda /00-bootstrap --mode enterprise
     ```
-    
+
     _Resultado: A estrutura de pastas completa (`docs/business`, `docs/product`, etc) é criada e o plano tático é populado._
     
 3. **Início da Fase 1:**
-    
+
     ```
     soda /01-inception
     ```
