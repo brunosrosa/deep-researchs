@@ -79,9 +79,9 @@ Futuro:
 
 Não Serão Instalados:
 ---
-https://github.com/BloopAI/vibe-kanban
-https://github.com/mindfold-ai/Trellis
-https://github.com/microsoft/graphrag
+- https://github.com/BloopAI/vibe-kanban
+- https://github.com/mindfold-ai/Trellis
+- https://github.com/microsoft/graphrag
 
 
 
