@@ -63,7 +63,7 @@ Diferente de interações baseadas em chat livre, o Bmad impõe uma interação 
 
 #### 2.1.2 Avaliação de Utilidade: Consistência e Repetibilidade
 
-A utilidade primária do Bmad é a **consistência**. Ao forçar o agente a operar através de arquivos Markdown persistentes (como `AGENTS.md` e listas de tarefas), o sistema elimina a "amnésia" comum em sessões longas de LLM. O fluxo "PRD → Arquitetura → Histórias → Implementação → QA" garante que o código gerado esteja alinhado com os requisitos iniciais, mitigando o risco de deriva de escopo. A compatibilidade com o Antigravity é nativa, pois o sistema foi desenhado especificamente para aproveitar a interface de comandos e o sistema de arquivos do IDE.
+A utilidade primária do Bmad é a **consistência**. Ao forçar o agente a operar através de arquivos Markdown persistentes (como `AGENTS.md` e listas de tarefas), o sistema elimina a "amnésia" comum em sessões longas de LLM. O fluxo "**PRD → Arquitetura → Histórias → Implementação → QA**" garante que o código gerado esteja alinhado com os requisitos iniciais, mitigando o risco de deriva de escopo. A compatibilidade com o Antigravity é nativa, pois o sistema foi desenhado especificamente para aproveitar a interface de comandos e o sistema de arquivos do IDE.
 
 A automação aqui não é apenas sobre velocidade, mas sobre a integridade do processo de engenharia. O uso de um script Python `.gemini/transpose_bmad.py` para regenerar fluxos de trabalho demonstra uma capacidade de manutenção avançada, permitindo que a equipe de engenharia (humana) atualize as definições de papéis centralmente e as propague para os agentes.
 
