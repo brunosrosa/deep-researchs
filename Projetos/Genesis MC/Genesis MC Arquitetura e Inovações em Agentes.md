@@ -21,14 +21,14 @@ Como resposta direta a esse inchaço sistêmico, engenheiros recriaram a arquite
 
 Levando a frugalidade ao limite absoluto da engenharia, o projeto NullClaw foi introduzido no mercado utilizando a linguagem Zig. O NullClaw ostenta o título de menor infraestrutura de assistente de IA autônomo, gerando um binário estático de singelos 678 kilobytes. Ao evitar alocações dinâmicas e camadas de tempo de execução, ele consome cerca de 1 megabyte de memória em pico e inicializa em menos de 2 milissegundos em processadores modernos. Totalmente agnóstico, o NullClaw suporta mais de 23 provedores, 18 canais de comunicação e implementa um sistema de isolamento de segurança severo, detectando o melhor ambiente de contenção automaticamente (Landlock, Firejail, Bubblewrap ou Docker) e criptografando chaves locais utilizando o padrão ChaCha20-Poly1305.
 
-|**Métrica Avaliada**|**OpenClaw**|**ZeroClaw**|**NullClaw**|
-|---|---|---|---|
-|**Linguagem Base**|Python / TypeScript|Rust|Zig|
-|**Consumo de RAM (Ocioso)**|> 1.5 GB|< 5 MB|~ 1 MB|
-|**Tempo de Inicialização**|~ 5.98 segundos|< 10 milissegundos|< 2 milissegundos|
-|**Tamanho do Binário**|~ 28 MB (distribuição)|~ 3.4 MB|678 KB|
-|**Segurança e Isolamento**|Permissões via scripts|Segurança de memória nativa do Rust|Sandboxing rigoroso multi-camadas (Landlock, Firejail)|
-|**Filosofia Arquitetural**|Monolítico, focado em features rápidas|Minimalista, orientado a kernel de execução|Sem runtime, zero overhead, alta portabilidade|
+| **Métrica Avaliada**        | **OpenClaw**                           | **ZeroClaw**                                | **NullClaw**                                           |
+| --------------------------- | -------------------------------------- | ------------------------------------------- | ------------------------------------------------------ |
+| **Linguagem Base**          | Python / TypeScript                    | Rust                                        | Zig                                                    |
+| **Consumo de RAM (Ocioso)** | > 1.5 GB                               | < 5 MB                                      | ~ 1 MB                                                 |
+| **Tempo de Inicialização**  | ~ 5.98 segundos                        | < 10 milissegundos                          | < 2 milissegundos                                      |
+| **Tamanho do Binário**      | ~ 28 MB (distribuição)                 | ~ 3.4 MB                                    | 678 KB                                                 |
+| **Segurança e Isolamento**  | Permissões via scripts                 | Segurança de memória nativa do Rust         | Sandboxing rigoroso multi-camadas (Landlock, Firejail) |
+| **Filosofia Arquitetural**  | Monolítico, focado em features rápidas | Minimalista, orientado a kernel de execução | Sem runtime, zero overhead, alta portabilidade         |
 
 Para a viabilização do Genesis MC como um produto unificado multiplataforma de longo prazo, a adoção de um motor de backend inspirado na leveza do ZeroClaw (Rust) ou NullClaw (Zig) é imperativa. A ponte de comunicação interprocessos (IPC) deve ser executada através do framework Tauri 2.0. Diferentemente do Electron, que embarca instâncias pesadas do Chromium, o Tauri utiliza as webviews nativas do sistema operacional, mantendo a frugalidade do binário. A interface gráfica construída em React (ou Vue/Svelte) deve permanecer estritamente passiva, renderizando os componentes visuais, enquanto todo o trabalho transacional pesado (processamento vetorial, busca e orquestração) reside no daemon Rust/Zig. A comunicação deve evitar a serialização JSON massiva para não asfixiar a thread principal do navegador, utilizando passagens de matrizes binárias nativas baseadas em eventos assíncronos.
 
