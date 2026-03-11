@@ -4,7 +4,6 @@ aliases:
     Genesis MC: 
     Arquitetura de Agentes Autônomos Avançada
 ---
-
 # Arquitetura Genesis Mission Control: Fundações Estruturais para um Sistema Operacional Agêntico Soberano
 
 A computação pessoal atravessa uma transição paradigmática irreversível com o advento de infraestruturas locais baseadas em agentes autônomos. O modelo histórico de interfaces reativas, centralizadas em provedores de nuvem e dependentes de diálogos transacionais passo a passo, está sendo substituído por pilhas tecnológicas silenciosas que operam de maneira contínua. O projeto Genesis Mission Control (Genesis MC) transcende a definição de um simples aplicativo de interface; ele é concebido como um Sistema Operacional Agêntico Soberano, um daemon de sistema subjacente focado na privacidade absoluta, inferência local e orquestração de fluxos de trabalho de altíssima complexidade.
@@ -30,7 +29,7 @@ Para operar esse vasto arsenal sem sobrecarga cognitiva, o Genesis MC deve aplic
 
 A adoção de repositórios abertos de _Skills_ introduz riscos catastróficos. O ecossistema de código aberto observou recentemente a proliferação de pacotes maliciosos (como a campanha _ToxicSkills_), onde milhares de agentes foram comprometidos através de injeções de _prompt_ encobertas e envenenamento de ferramentas. As diretrizes do projeto _OWASP Top 10 for Agentic Applications_ de 2026 alertam que a segurança não deve focar apenas no que a IA "diz", mas sim no que ela "faz" com privilégios sistêmicos.
 
-A importação e execução de novas _Skills_ no Genesis MC devem ser regidas por um protocolo de segurança em múltiplas camadas:
+A importação e execução de novas _Skills_ no **Genesis MC** devem ser regidas por um protocolo de segurança em múltiplas camadas:
 
 1. **Scanner de Validação Estática e Semântica:** Antes da implantação, cada artefato importado passa por analisadores como o `mcp-scan`, que avalia a presença de caracteres Unicode invisíveis (utilizados para contrabandear instruções ocultas de _prompt injection_ que sobrevivem à revisão visual humana) e manipulações de dependências.
 2. **Princípio de Menor Privilégio e Zero Trust:** O sistema operacional agêntico assume que toda _Skill_ importada é intrinsecamente hostil. Os acessos são negados por padrão. Permissões para leitura de diretórios, uso de rede e chamadas de subprocessos devem ser explicitamente mapeadas em um arquivo de manifesto e validadas por aprovação humana (_Human-in-the-Loop_) antes da primeira execução.
