@@ -16,11 +16,12 @@ https://github.com/tauri-apps/tauri
 https://github.com/HKUDS/LightRAG
 https://github.com/FalkorDB/FalkorDB
 
---- 
+---
 
 [ Percebi que NÃO temos muitos repositórios que tragam questões para UI. E Pra UI? Quais melhores opções? (seguindo nossas premissas de qualidade de UX total, Experiência do Usuário como excelência, se for algo para apenas para nicho completo de hardusers perde o sentido também, pessoas devem querer engajar em ampliar as capacidades!) ]
 
 ---
+
 Revisão de Rules, Skills e Workflows para estar aderente as melhores práticas e testar:
 ---
 
@@ -124,9 +125,9 @@ https://github.com/microsoft/graphrag
 https://github.com/tensorzero/tensorzero
 
 ---
+
 Instalados:
 ---
-
 
 ---
 
@@ -139,6 +140,7 @@ _Objetivo:_ Definir as regras do jogo e a linguagem antes de qualquer abstraçã
 _Objetivo:_ Traduzir negócio em requisitos funcionais testáveis.
 
 ### 🎨 Fase 3: Experiência e Interface (O Design)
+
 _Objetivo:_ Definir a interação visual e textual antes de codar componentes.
 
 ### 🏗️ Fase 4: Arquitetura Técnica (A Engenharia)
@@ -158,9 +160,9 @@ _Objetivo:_ Garantir a longevidade, conformidade e valor para o usuário.
 
 ##### Tabela 1: Matriz de Persona-Skill BMad
 
-| **Persona BMad**                 | Skills AG Kit Associadas (Sugestão de Configuração)                                         | Racional Técnico                                             |
-| -------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Product Manager (`/pm`)          | `plan-writing`, `brainstorming`, `seo-fundamentals`, `geo-fundamentals`                             | Enriquece o PRD com técnicas de SEO e estruturação de plano.         |
+| **Persona BMad**         | Skills AG Kit Associadas (Sugestão de Configuração)                                                 | Racional Técnico                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Product Manager (`/pm`)  | `plan-writing`, `brainstorming`, `seo-fundamentals`, `geo-fundamentals`                             | Enriquece o PRD com técnicas de SEO e estruturação de plano.         |
 | Architect (`/architect`) | `architecture`, `database-design`, `cloud-infrastructure`, `api-patterns`                           | Garante padrões de design robustos e escaláveis no planeamento.      |
 | Developer (`/dev`)       | `clean-code`, `react-best-practices` (ou stack específica), `typescript-expert`, `git-conventions`  | Assegura qualidade de código, tipagem forte e commits semânticos.    |
 | QA Engineer (`/qa`)      | `testing-patterns`, `webapp-testing` (Playwright), `vulnerability-scanner`, `code-review-checklist` | Transforma o QA em um auditor de segurança e qualidade automatizado. |
@@ -169,6 +171,7 @@ _Objetivo:_ Garantir a longevidade, conformidade e valor para o usuário.
 ---
 
 # Lista as ferramentas específicas para confirmar se existem
+
 winget list --name "Build Tools"
 winget list --name "Rust"
 winget list --name "Node.js"
@@ -248,27 +251,31 @@ Ele resolve o trilema da IA atual: Custo (usa modelos locais), Contexto (usa Gra
 
 ---
 
-### Prompt :::
+# Prompt :::
 
-Ótimo vamos seguir para a próxima pesquisa/novo relatório, com o mesmo contexto do projeto.
+ **Contexto do Projeto:** Estamos engenheirando o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e altíssimo desempenho computacional. A arquitetura exige um núcleo ultraleve e imutável (compilado em Rust/Zig + Tauri) operando como um daemon em background, acoplado a uma interface React (Canvas-first/Multimodal) estritamente passiva via IPC. O sistema repudia o _Context Rot_ (amnésia sistêmica) e a sobrecarga de interpretadores monolíticos contínuos (Python/Node.js). A orquestração baseia-se em agentes efêmeros, roteamento bare-metal inteligente de LLMs (nuvem vs. edge/local) e memórias segmentadas (vetorial e grafos baseados em SQLite/Qdrant).
 
-Contexto do Projeto: Estamos construindo o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade e altíssimo desempenho. A arquitetura visa um núcleo ultraleve e imutável (idealmente em Rust/Zig + Tauri) operando como um daemon de background, acoplado a uma interface React (Canvas-first/Multimodal) estritamente passiva. O sistema precisa evitar o Context Rot (amnésia sistêmica) e o peso de interpretadores monolíticos (Python/Node.js), orquestrando agentes efêmeros, roteamento inteligente de LLMs (nuvem vs. local) e memórias segmentadas (vetorial e grafos).
-O objetivo desta pesquisa é dissecar os repositórios abaixo para entender se eles servem como motor central, sidecars isolados via IPC, bibliotecas de UI, ou se trazem gargalos arquiteturais inaceitáveis para a nossa fundação.
+ **Instrução:** Atue como um Arquiteto de Software e Engenheiro de Dados Sênior. Vou te passar uma lista de repositórios open-source. Para cada um deles, realize uma dissecação técnica e me devolva uma análise estruturada em Markdown com as seguintes chaves de informação:
+ - **Nome do Repositório / Projeto:**
+  - **Problema Principal que Resolve:** (Síntese crua em 1 ou 2 frases).
+  - **Stack Tecnológica Base:** (Linguagens dominantes, frameworks, dependências pesadas).
+  - **Tipo de Integração:** (Framework monolítico? CLI? Daemon local? Biblioteca embutível? Protocolo MCP?).
+  - **Categoria Arquitetural:** (Interface/UI, Roteamento/LLM, Memória/RAG, Orquestração/Loop, Segurança/Sandbox, Automação OS/Web, Ferramenta/Skill Específica).
+  - **Alerta de Conflito (Risco SODA):** (Mapeie sobreposições inaceitáveis. Ex: "Exige Node.js rodando em background", "Acoplamento severo a Docker", "Dependência de banco analítico pesado").
+  - **Ação Mitigadora (Caminho de Adoção SODA):** (Como extrair o valor da ferramenta sem herdar o lixo arquitetural? Ex: "Canibalizar a lógica e reescrever em Rust", "Rodar como binário Wasm isolado", "Instanciar como sidecar efêmero que morre após o output", "Rejeitar infra e absorver apenas os prompts Markdown").
 
-Instrução:
-Atue como um Engenheiro de Dados e Arquiteto de Software. Vou te passar uma lista de projetos open-source. Para cada um deles, pesquise seu escopo atual e me devolva uma tabela ou lista estruturada em Markdown com as seguintes chaves de informação:
+Gere esse relatório com um tom **cru, técnico, direto e analítico** (pessimismo da razão, otimismo da vontade). No final, sintetize tudo em uma **Tabela Comparativa Consolidada**, contendo as colunas: Projeto, Categoria, Vetor de Conflito, e Ação Mitigadora.
+#### **Lote 10: Injeção de Contexto (Skills), Customização e Parsing de Dados**
+_Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigravity/OpenClaw) e extração de dados brutos._
 
-Nome do Repositório / Projeto:
-Problema Principal que Resolve: (Em 1 ou 2 frases curtas).
-Stack Tecnológica Base: (Ex: Python, Rust, TypeScript, LangChain, etc.).
-Tipo de Integração: (É um framework monolítico? Uma biblioteca embutível? Um daemon/serviço local? Um protocolo?)
-Categoria Arquitetural: (Em qual caixinha ele entra: Interface/UI, Roteamento/LLM, Memória/RAG, Orquestração/Loop, Segurança/Sandbox, Ferramenta/Skill Específica).
-Alerta de Conflito: (Quais sobreposições pesadas ele tem para o Genesis MC? Ex: "Traz seu próprio banco de dados", "Exige interpretador Node/Python pesado rodando o tempo todo", "É altamente acoplado a provedor X").
-
-Gere esse relatório de forma crua, técnica e direta.
-No final sintetize e crie também uma tabela unica que apresente todos as "soluções" analisadas em um comparativo.
-
-Lote
+1. [https://lemon.dev.br/pt/blog/ai-coding-agent-customization](https://lemon.dev.br/pt/blog/ai-coding-agent-customization)
+2. [https://github.com/sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
+3. [https://github.com/VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
+4. [https://github.com/Shiritai/sanity-gravity](https://github.com/Shiritai/sanity-gravity)
+5. [https://github.com/blader/humanizer](https://github.com/blader/humanizer)
+6. [https://github.com/kreuzberg-dev/kreuzberg](https://github.com/kreuzberg-dev/kreuzberg)
+7. [https://github.com/intellectronica/ruler](https://github.com/intellectronica/ruler)
+8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 ---
 
@@ -367,13 +374,48 @@ https://github.com/garrytan/gstack
 
 ---
 
-### Novos: 
+### Novos:
 
-https://github.com/abhi1693/openclaw-mission-control
+#### **Lote 8: Frameworks de Orquestração, Hubs e Fluxos Agênticos**
+_Foco: Plataformas complexas, roteadores de agentes, criação de scripts generativos e arquiteturas de loop._
 
+1. [https://github.com/openclaw/clawhub](https://github.com/openclaw/clawhub)
+2. [https://github.com/abhi1693/openclaw-mission-control](https://github.com/abhi1693/openclaw-mission-control)
+3. [https://github.com/MervinPraison/PraisonAI](https://github.com/MervinPraison/PraisonAI)
+4. [https://github.com/microsoft/genaiscript](https://github.com/microsoft/genaiscript)
+5. [https://github.com/ruvnet/claude-flow](https://github.com/ruvnet/claude-flow)
+6. [https://github.com/agno-agi/dash](https://github.com/agno-agi/dash)
+7. [https://github.com/different-ai/openwork](https://github.com/different-ai/openwork)
+8. [https://github.com/adenhq/hive](https://github.com/adenhq/hive)
+9. [https://github.com/stravu/crystal](https://github.com/stravu/crystal)
+10. [https://github.com/Hmbown/aleph](https://github.com/Hmbown/aleph)
+
+#### **Lote 9: Automação Web, Interfaces, Proxies e Protocolos (MCP)**
+_Foco: Agentes que controlam o navegador, UIs de terminal, proxies de LLM e implementações do Model Context Protocol._
+
+1. [https://github.com/vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
+2. [https://github.com/OpenBrowserAI/openbrowser](https://github.com/OpenBrowserAI/openbrowser)
+3. [https://github.com/open-webui/open-terminal](https://github.com/open-webui/open-terminal)
+4. [https://github.com/BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban)
+5. [https://github.com/mindfold-ai/Trellis](https://github.com/mindfold-ai/Trellis)
+6. [https://github.com/llm-proxy/llm-proxy](https://github.com/llm-proxy/llm-proxy)
+7. [https://github.com/jgravelle/jcodemunch-mcp](https://github.com/jgravelle/jcodemunch-mcp)
+8. [https://github.com/jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli)
+9. [https://github.com/google-gemini/genai-processors](https://github.com/google-gemini/genai-processors)
+
+#### **Lote 10: Injeção de Contexto (Skills), Customização e Parsing de Dados**
+_Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigravity/OpenClaw) e extração de dados brutos._
+
+1. [https://lemon.dev.br/pt/blog/ai-coding-agent-customization](https://lemon.dev.br/pt/blog/ai-coding-agent-customization)
+2. [https://github.com/sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
+3. [https://github.com/VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
+4. [https://github.com/Shiritai/sanity-gravity](https://github.com/Shiritai/sanity-gravity)
+5. [https://github.com/blader/humanizer](https://github.com/blader/humanizer)
+6. [https://github.com/kreuzberg-dev/kreuzberg](https://github.com/kreuzberg-dev/kreuzberg)
+7. [https://github.com/intellectronica/ruler](https://github.com/intellectronica/ruler)
+8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 ---
-
 ### Verificando
 
 **✨ Itens Únicos (Aparecem apenas 1 vez)**
