@@ -1,11 +1,16 @@
-# Auditoria Arquitetural SODA: Mapeamento, Críticas e Lacunas
+---
+aliases:
+  - Auditoria Arquitetural "SODA" - Genesis MC
+---
+# Auditoria Arquitetural: Mapeamento, Críticas e Lacunas
 
-Este documento consolida a arquitetura final do Genesis Mission Control, cruza o manifesto com as ferramentas mineradas e expõe brutalmente onde a teoria ainda carece de código real para funcionar.
+Este documento consolida a arquitetura final do **Genesis Mission Control**, cruza o manifesto com as ferramentas mineradas e expõe brutalmente onde a teoria ainda carece de código real para funcionar.
 
 ## 1. O que já resolvemos (Mapeamento Manifesto vs. Nossos 95 Repos)
 
-O seu manifesto já absorveu organicamente o "Ouro" da nossa tabela anterior. O mapeamento mental está correto:
+O seu manifesto já absorveu organicamente o "Ouro" da nossa tabela anterior. 
 
+O mapeamento mental está correto:
 - **Fundação & UI:** `Tauri` + `Tldraw` (Canvas passivo).
 - **Gateway & Roteamento:** `TensorZero` (Gateway Rust) orquestrando chamadas. `LLM Proxy` embutido conceitualmente.
 - **Memória L2 (Episódica):** `Engram (Gent)` + `Beads` (Worktrees isoladas).
@@ -20,7 +25,7 @@ Bruno, a sua mente 2e voou longe e estruturou um sistema perfeito, mas como seu 
 1. **A Falácia do NATS + Redis local:**
     - _O que o texto diz:_ Usa NATS para sinalização e Redis para rate limits.
     - _A Realidade SODA:_ **Isso é um crime termodinâmico.** Você está criando um sistema _bare-metal_ para fugir de infraestruturas pesadas. Rodar instâncias de Redis e NATS localmente para gerenciar 3 ou 4 _workers_ num i9 é usar um canhão para matar uma mosca.
-    - _A Solução Nativa:_ Abandone o NATS/Redis. Como o _daemon_ é em **Rust**, utilize os canais nativos do Tokio (`tokio::sync::mpsc` ou `broadcast`) para a comunicação entre agentes (disparar e esquecer) e use o estado em memória (Mutex/RwLock) do próprio Rust para Rate Limiting. **Zero I/O, Zero latência.**
+    - _A Solução Nativa:_ Abandone o NATS/Redis. Como o _daemon_ é em **Rust**, utilize os canais nativos do Tokio ( `tokio::sync::mpsc` ou `broadcast` ) para a comunicação entre agentes (disparar e esquecer) e use o estado em memória (*Mutex*/*RwLock*) do próprio Rust para Rate Limiting. **Zero I/O, Zero latência.**
 2. **O Overhead do FlatBuffers/Bincode no IPC:**
     - _O que o texto diz:_ Usa FlatBuffers/Bincode para IPC com o Tauri para fugir do JSON.
     - _A Realidade SODA:_ O Tauri v2.0 já otimizou brutalmente o IPC. Introduzir FlatBuffers exige que o React (no frontend) tenha um _parser_ WASM só para decodificar os binários, o que pode engasgar a UI _Canvas-first_.
@@ -33,7 +38,6 @@ Bruno, a sua mente 2e voou longe e estruturou um sistema perfeito, mas como seu 
 Existem "buracos negros" nesta arquitetura que não foram resolvidos pelos 95 repositórios originais. Precisamos fazer uma busca direcionada na web/github para encontrar as ferramentas que farão essa ponte.
 
 Aqui estão os **Grupos de Pesquisa** que precisamos realizar para validar a stack SODA:
-
 ### Pesquisa 1: Motor Inferencial em Rust (A Ponte para o llama.cpp)
 
 Você definiu que usará o `llama.cpp` (com o truque genial do `llama-swap`). Mas como o _daemon_ Rust conversa com ele sem instanciar um servidor Python?
