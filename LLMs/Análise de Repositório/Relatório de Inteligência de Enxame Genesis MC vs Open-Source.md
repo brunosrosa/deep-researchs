@@ -314,11 +314,9 @@ Este documento organiza o ecossistema de 95 repositórios em **Módulos Arquitet
 Você levantou um ponto brilhante: **Qdrant**. A lista original carece de um motor vetorial nativo em Rust.
 
 - **A Escolha Mestra (A Memória Tri-Partide SODA):**
-    
     1. **Memória Semântica (Vetorial):** **`Qdrant`** (ou `Chroma` rodando em Wasm, mas Qdrant em Rust é rei). Fundamental para similaridade rápida ("O que falei sobre X?").
     2. **Memória Estrutural (Grafo/Holística):** **`FalkorDB`** (Rust/C) utilizando os algoritmos roubados do **`GraphRAG / LightRAG`**. É isso que permite ao agente cruzar informações complexas ("Com base no seu perfil 2e e seus objetivos financeiros, notei um padrão...").
     3. **Memória de Curto Prazo (Episódica/KV):** **`Engram (Gent)`**. SQLite local (FTS5) ultra-rápido para manter o histórico da sessão atual da UI.
-        
 - **Plano de Ação (Prioridade 3 - Alta Complexidade):** Integrar os binários `Qdrant` e `FalkorDB` como serviços atrelados ao daemon SODA. Extrair as heurísticas do `GraphRAG` (como o agrupamento de Leiden) e implementá-las diretamente na ponte Rust que alimenta o banco de grafos.
 
 ## 6. Módulo 6: Restrições, Regras e Metodologia (O "Córtex Pré-Frontal")
