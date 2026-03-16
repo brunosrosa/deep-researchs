@@ -253,7 +253,7 @@ Ele resolve o trilema da IA atual: Custo (usa modelos locais), Contexto (usa Gra
 
 # Prompt :::
 
- **Contexto do Projeto:** Estamos engenheirando o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e altíssimo desempenho computacional. A arquitetura exige um núcleo ultraleve e imutável (compilado em Rust/Zig + Tauri) operando como um daemon em background, acoplado a uma interface React (Canvas-first/Multimodal) estritamente passiva via IPC. O sistema repudia o _Context Rot_ (amnésia sistêmica) e a sobrecarga de interpretadores monolíticos contínuos (Python/Node.js). A orquestração baseia-se em agentes efêmeros, roteamento bare-metal inteligente de LLMs (nuvem vs. edge/local) e memórias segmentadas (vetorial e grafos baseados em SQLite/Qdrant).
+**Contexto do Projeto:** Estamos engenheirando o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e altíssimo desempenho computacional. A arquitetura exige um núcleo ultraleve e imutável (compilado em Rust/Zig + Tauri) operando como um daemon em background, acoplado a uma interface React (Canvas-first/Multimodal) estritamente passiva via IPC. O sistema repudia o _Context Rot_ (amnésia sistêmica) e a sobrecarga de interpretadores monolíticos contínuos (Python/Node.js). A orquestração baseia-se em agentes efêmeros, roteamento bare-metal inteligente de LLMs (nuvem vs. edge/local) e memórias segmentadas (vetorial e grafos baseados em SQLite/Qdrant).
 
  **Instrução:** Atue como um Arquiteto de Software e Engenheiro de Dados Sênior. Vou te passar uma lista de repositórios open-source. Para cada um deles, realize uma dissecação técnica e me devolva uma análise estruturada em Markdown com as seguintes chaves de informação:
  - **Nome do Repositório / Projeto:**
@@ -276,6 +276,7 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 6. [https://github.com/kreuzberg-dev/kreuzberg](https://github.com/kreuzberg-dev/kreuzberg)
 7. [https://github.com/intellectronica/ruler](https://github.com/intellectronica/ruler)
 8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
+
 
 ---
 

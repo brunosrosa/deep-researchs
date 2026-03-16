@@ -12,14 +12,14 @@ A representação de dados complexos em superfícies bidimensionais exige motore
 
 O repositório `xyflow/xyflow` consolidou-se como a infraestrutura de fato para a construção de interfaces baseadas em nós, grafos dirigidos e editores visuais interativos. O projeto passou por uma reestruturação arquitetural profunda, evoluindo de uma biblioteca exclusivamente acoplada ao ecossistema React (historicamente conhecida como React Flow v11) para um monorepo agnóstico sob a nomenclatura xyflow versão 12. Esta evolução introduziu suporte nativo para o framework Svelte e abstraiu a complexidade do gerenciamento de estado e matemática vetorial para um pacote de sistema centralizado.
 
-|**Chave de Informação**|**Detalhamento Arquitetural**|
-|---|---|
-|**Nome do Repositório / Projeto**|`xyflow/xyflow` (React Flow / Svelte Flow)|
-|**Problema Principal que Resolve**|Renderização e manipulação interativa de grafos, fluxos de trabalho e diagramas de nós em aplicações web.|
-|**Stack Tecnológica Base**|TypeScript (85.5%), React, Svelte, Playwright, pnpm, Turbo.|
-|**Tipo de Integração**|Biblioteca embutível empacotada em módulos npm (`@xyflow/react`, `@xyflow/svelte`).|
-|**Categoria Arquitetural**|Interface/UI.|
-|**Alerta de Conflito**|Exige licenciamento comercial obrigatório (React Flow Pro) para organizações com fins lucrativos; severo conflito de namespace em migrações da v11 para a v12; acoplamento profundo de estado interno dificulta sincronização com gerenciadores globais.|
+| **Chave de Informação**            | **Detalhamento Arquitetural**                                                                                                                                                                                                                            |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nome do Repositório / Projeto**  | `xyflow/xyflow` (React Flow / Svelte Flow)                                                                                                                                                                                                               |
+| **Problema Principal que Resolve** | Renderização e manipulação interativa de grafos, fluxos de trabalho e diagramas de nós em aplicações web.                                                                                                                                                |
+| **Stack Tecnológica Base**         | TypeScript (85.5%), React, Svelte, Playwright, pnpm, Turbo.                                                                                                                                                                                              |
+| **Tipo de Integração**             | Biblioteca embutível empacotada em módulos npm (`@xyflow/react`, `@xyflow/svelte`).                                                                                                                                                                      |
+| **Categoria Arquitetural**         | Interface/UI.                                                                                                                                                                                                                                            |
+| **Alerta de Conflito**             | Exige licenciamento comercial obrigatório (React Flow Pro) para organizações com fins lucrativos; severo conflito de namespace em migrações da v11 para a v12; acoplamento profundo de estado interno dificulta sincronização com gerenciadores globais. |
 
 A renderização de grafos acíclicos dirigidos (DAGs) no Document Object Model (DOM) apresenta desafios de desempenho exponenciais à medida que o número de arestas e vértices cresce. A arquitetura do `xyflow` mitiga o bloqueio da thread principal do JavaScript implementando um sistema agressivo de "viewport culling", onde apenas os componentes que intersectam ativamente as coordenadas visíveis do usuário sofrem processos de renderização e reconciliação. Para ambientes de engenharia de dados, essa característica transforma o framework na camada de apresentação ideal para pipelines de Extract, Transform, Load (ETL) massivos ou para o mapeamento topológico de redes neurais e interações multagente.
 
