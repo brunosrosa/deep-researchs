@@ -26,9 +26,7 @@ Qualquer configuração que ultrapasse a marca de 5,6 GB de VRAM forçará um _s
 O dimensionamento da janela de contexto tem um impacto direto no consumo de VRAM devido à necessidade de armazenar o KV Cache. Para solucionar este problema em dispositivos de borda com 6GB, a indústria adotou arquiteturas alternativas:
 
 - **Grouped-Query Attention (GQA):** Utilizada em modelos como Mistral e Qwen, a GQA compartilha as cabeças de chaves e valores (KV) entre múltiplas cabeças de consulta (Query), reduzindo a pegada do cache em um fator de 4x a 8x.
-    
 - **Multi-Head Latent Attention (MLA):** Introduzida pela série DeepSeek (V2, V3 e R1), a MLA comprime os tensores KV em um espaço vetorial de dimensão muito menor. Esta inovação permite uma redução de até 93% do tamanho do KV Cache em comparação com implementações tradicionais, tornando contextos massivos viáveis na VRAM restrita da RTX 2060m.
-    
 
 ## 2. Avaliação Exaustiva de Modelos Fundacionais
 
@@ -38,10 +36,10 @@ A seleção dos modelos para o Genesis MC agora se beneficia da capacidade de fa
 
 A série Qwen 3.5 adota uma arquitetura híbrida inovadora que funde redes de atenção linear (_Gated Delta Networks_) com mecanismos de atenção tradicional.
 
-|**Modelo (Série Qwen 3.5)**|**Quantização**|**VRAM Estática Exigida**|**Arquitetura**|**Janela de Contexto Nativa**|
-|---|---|---|---|---|
-|**Qwen 3.5 4B**|Q4_K_M|~3.49 GB|Híbrida / GQA|262k|
-|**Qwen 3.5 9B**|Q4_K_M|~6.49 GB|Híbrida / GQA|262k|
+| **Modelo (Série Qwen 3.5)** | **Quantização** | **VRAM Estática Exigida** | **Arquitetura** | **Janela de Contexto Nativa** |
+| --------------------------- | --------------- | ------------------------- | --------------- | ----------------------------- |
+| **Qwen 3.5 4B**             | Q4_K_M          | ~3.49 GB                  | Híbrida / GQA   | 262k                          |
+| **Qwen 3.5 9B**             | Q4_K_M          | ~6.49 GB                  | Híbrida / GQA   | 262k                          |
 
 **Análise de Viabilidade:** O modelo **Qwen 3.5 9B** exige 6,49 GB estáticos o que excede levemente o total de 6GB da GPU. Em um sistema com 16GB, isso seria um gargalo doloroso. Contudo, com seus **32 GB de RAM**, você pode alocar confortavelmente as últimas camadas e o vasto KV Cache para a memória do sistema. Como a maior parte do modelo (~85%) caberá na RTX 2060m, a queda de performance será mínima, operando a velocidades altamente funcionais (entre 20 e 30 tps) enquanto lida com raciocínio agêntico de alto nível.
 
@@ -50,49 +48,37 @@ A série Qwen 3.5 adota uma arquitetura híbrida inovadora que funde redes de at
 O modelo **Ministral 3 8B** possui 8.4 bilhões de parâmetros para raciocínio lógico e um codificador de visão nativo de 400M, concedendo habilidade inata de analisar fluxos multimodais.
 
 - **Gestão de Memória:** Na quantização Q4_K_M (aproximadamente 4,5 a 5 GB), o modelo atinge o teto da VRAM disponível. Ele suporta uma vasta janela de contexto de 256.000 tokens. Com seus 32 GB de RAM, o contexto pode se expandir livremente para a RAM principal quando o limite da VRAM for atingido.
-    
 - **Potencial Agêntico:** A Mistral calibrou este modelo para aderência estrita a chamadas de função (Tool Calling / JSON outputs) tornando-o um cérebro de orquestração perfeito para o Genesis MC, roteando tarefas sem alucinar a sintaxe.
-    
 
 ### 2.3. Rnj-1: O Especialista em Código
 
 O modelo **Rnj-1 (8.3B)** foi concebido puramente do zero com foco implacável em geração de código de alta complexidade.
 
 - **Desafio de Memória:** Diferente de outros modelos, o Rnj-1 utiliza exclusivamente atenção global em todas as suas 32 camadas (sem janelas deslizantes). Isso resulta em um consumo de VRAM formidável quando o contexto de 32k se expande. A quantização Q4_K_M comprime os pesos para cerca de 4,8 GB.
-    
 - **A Vantagem dos 32GB:** O KV Cache expansivo do Rnj-1 transbordará da RTX 2060m rapidamente. No entanto, os seus 32GB de RAM absorverão esse cache perfeitamente. Ele deve ser convocado para sessões isoladas de geração de código profundo, onde a acurácia é mais importante que a velocidade extrema de tokens.
-    
 
 ### 2.4. DeepSeek-R1-Distill (7B/14B) e DeepSeek V4
 
 A série R1 destilada emula as cadeias de pensamento (Chain-of-Thought) de modelos massivos.
 
 - **DeepSeek-R1-Distill-Qwen-7B:** Exige cerca de 4,5 a 4,8 GB de VRAM em Q4_K_M. Isso cabe perfeitamente na sua cota efetiva de 5,6 GB. É o modelo ideal de raciocínio passo a passo residente na GPU.
-    
 - **DeepSeek-R1-Distill-Qwen-14B:** Em Q4_K_M, os pesos ocupam cerca de 8 a 10 GB. Graças aos seus 32 GB de RAM, é plenamente possível rodar o 14B através de _layer offloading_ (ex: 20 camadas na GPU, 20 na CPU). A velocidade cairá para ~15 tps, mas a qualidade analítica em refatorações complexas será muito superior.
-    
 - **DeepSeek V4:** Esperado para introduzir memórias condicionais _Engram_ e atenção hiper-restrita (mHC), permitindo contextos de 1 milhão de tokens de forma muito mais barata. Quando versões destiladas do V4 saírem, o impacto na VRAM será ainda menor.
-    
 
 ### 2.5. FunctionGemma: O Paradigma de Tool Calling Extremo
 
 O **FunctionGemma 3 270M** foi treinado com o propósito exclusivo de traduzir intenções não-estruturadas em saídas determinísticas de API.
 
 - **Consumo Invisível:** O modelo consome míseros 288 MB no armazenamento em INT8 e opera com um pico de RAM em torno de 550 MB.
-    
 - **Uso Estratégico:** Com um Time-To-First-Token (TTFT) de 0,3 segundos ele pode viver permanentemente rodando na sua RAM do sistema ou na iGPU da Intel (mais sobre isso abaixo), servindo como o porteiro hiper-rápido do seu SO.
-    
 
 ## 3. Exploração Aberta: Contextos Massivos (32k+) em Modelos Emergentes
 
 A alocação de contextos de 32k a 128k requer GBs adicionais para o KV Cache. A sua configuração de 32 GB de RAM combinada com 6 GB de VRAM permite explorar os seguintes modelos que suportam contextos massivos:
 
 1. **Llama 3.3 8B Instruct (Variantes Abliteradas):** Suporta nativamente 128.000 tokens. Compactando o KV Cache no llama.cpp (Flash Attention), você pode inserir livros inteiros no contexto usando a folga da RAM do sistema.
-    
 2. **Phi-4 Mini (3.8B):** Um modelo denso de 3.8B com forte capacidade de raciocínio que ocupa apenas ~3.5GB em RAM/VRAM combinadas, ideal para rodar integralmente dentro da RTX 2060m deixando gigabytes livres para um contexto gigantesco.
-    
 3. **Qwen 2.5 Coder 7B / OpenCoder 8B:** Essenciais para ingerir múltiplos arquivos e diretórios simultaneamente durante sessões de codificação agêntica.
-    
 
 ## 4. Análise de Ferramentas de Execução e Orquestração VRAM/RAM
 
@@ -117,9 +103,7 @@ Você pode instruir o sistema a instanciar o **FunctionGemma 270M** compilado co
 Dado o seu generoso pool de 32 GB de RAM, manter modelos densos simultaneamente é totalmente possível usando o **llama-swap**.
 
 - Ao habilitar a flag oculta `GGML_CUDA_ENABLE_UNIFIED_MEMORY=1`, o llama-swap utiliza a RAM principal como um estacionamento morno para os pesos do modelo.
-    
 - Se o Rnj-1 estiver na VRAM codificando, e o agente rotear uma validação para o DeepSeek R1 7B, o Rnj-1 é empurrado inteiramente para a RAM do i9, e o DeepSeek (que já estava na RAM) é copiado para a VRAM. Usando as vias rápidas do PCIe Gen3/4, a troca dos 5GB de pesos leva de **2 a 5 segundos**. Isso é uma ordem de magnitude mais rápido que uma carga a frio do SSD.
-    
 
 ## 5. Proposta de Topologia de Inferência Local para o Genesis MC
 
@@ -132,20 +116,13 @@ Considerando o hardware otimizado (RTX 2060m Headless de 6GB, i9 9ª Ger, 32GB R
 ### Nível 2: Executores Especialistas (Heavy Workers)
 
 **Modelos em Repouso Quente (RAM de 32 GB):**
-
 - Especialista em Código/Engenharia: `Rnj-1 8B` (Q4_K_M).
-    
 - Raciocínio Matemático e Lógico: `DeepSeek-R1-Distill-Qwen-7B` (Q4_K_M).
-    
 - Fluxos Multimodais/Generalista: `Ministral 3 8B` (Q4_K_M).
-    
 
-**Mecanismo de Execução:** Proxy Llama-swap com `GGML_CUDA_ENABLE_UNIFIED_MEMORY=1`. **Alocação Ativa:** NVIDIA RTX 2060m (6GB VRAM Efetiva). **Fluxo Operacional:**
-
+**Mecanismo de Execução:** Proxy Llama-swap com `GGML_CUDA_ENABLE_UNIFIED_MEMORY=1`. **Alocação Ativa:** NVIDIA RTX 2060m (6GB VRAM Efetiva). 
+**Fluxo Operacional:**
 1. Quando uma tarefa complexa é identificada, o Llama-swap injeta o especialista correspondente (ex: `Rnj-1`) da RAM (onde estava armazenado) para a VRAM da RTX 2060m em 2 a 5 segundos.
-    
 2. Todo o poder computacional dos Tensor Cores da NVIDIA é direcionado ao modelo selecionado, garantindo entre 30 a 50 tokens por segundo.
-    
 3. Como a RTX 2060m não está lidando com nenhuma renderização de telas, o limite de 6GB é aproveitado em sua totalidade (cerca de 5,6GB livres), permitindo manter um contexto imenso na placa gráfica sem travar. O que exceder este limite flui pacificamente para os 32GB de RAM do i9.
-    
 4. Após o trabalho, o modelo retorna à RAM, aguardando o próximo passo do ciclo agêntico, garantindo um Sistema Operacional fluido, local e altamente responsivo.
