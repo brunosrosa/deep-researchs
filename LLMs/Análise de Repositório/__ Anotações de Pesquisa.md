@@ -417,46 +417,10 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 ---
-### Verificando
+### Novos
 
-**✨ Itens Únicos (Aparecem apenas 1 vez)**
+https://github.com/knowsuchagency/mcp2cli
 
-**Exclusivos da 1ª Lista (29 itens)**
-1. `https://lemon.dev.br/pt/blog/ai-coding-agent-customization`
-2. `https://github.com/blader/humanizer`
-3. `https://github.com/openclaw/clawhub`
-4. `https://github.com/sickn33/antigravity-awesome-skills`
-5. `https://github.com/VoltAgent/awesome-openclaw-skills`
-6. `https://github.com/Hmbown/aleph`
-7. `https://github.com/open-webui/open-terminal`
-8. `https://github.com/jgravelle/jcodemunch-mcp`
-9. `https://github.com/intellectronica/ruler`
-10. `https://github.com/stravu/crystal`
-11. `https://github.com/Shiritai/sanity-gravity`
-12. `https://github.com/Fosowl/agenticSeek`
-13. `https://github.com/adenhq/hive`
-14. `https://github.com/ruvnet/claude-flow`
-15. `https://github.com/agno-agi/dash`
-16. `https://github.com/kreuzberg-dev/kreuzberg`
-17. `https://github.com/vercel-labs/agent-browser`
-18. `https://github.com/jacob-bd/notebooklm-mcp-cli`
-19. `https://github.com/different-ai/openwork`
-20. `https://github.com/MervinPraison/PraisonAI`
-21. `https://github.com/google-gemini/genai-processors`
-22. `https://github.com/microsoft/genaiscript`
-23. `https://github.com/OpenBrowserAI/openbrowser`
-24. `https://github.com/llm-proxy/llm-proxy` 
-25. `https://github.com/BloopAI/vibe-kanban`
-26. `https://github.com/mindfold-ai/Trellis`
-27. `https://github.com/samuelfaj/distill` 
-28. `https://github.com/JohnRiceML/clawport-ui`
-29. `https://github.com/kapishdima/fonttrio`
-30. `https://github.com/abhi1693/openclaw-mission-control`
-
-**Exclusivos da 2ª Lista (7 itens)**
-1. `https://github.com/xyflow/xyflow`
-2. `https://github.com/tldraw/tldraw`
-3. `https://github.com/shadcn-ui/ui`
-4. `https://github.com/TypeCellOS/BlockNote`
-5. `https://github.com/open-jarvis/OpenJarvis`
-6. `https://github.com/garrytan/gstack`
+Falta uma analise ampla de várias possibilidades de MCPs
+Como também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar o uso dos MCPs/CLIs. 
+Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender. 
