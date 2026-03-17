@@ -419,8 +419,74 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 ---
 ### Novos
 
-https://github.com/knowsuchagency/mcp2cli
+##### MCPs
 
-Falta uma analise ampla de várias possibilidades de MCPs
-Como também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar o uso dos MCPs/CLIs. 
-Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender. 
+Faltam algumas analises amplas:
+- Uma das várias possibilidades de MCPs que existem, quais essenciais, quais interessantes estão se popularizando, quais mais serão de grande ajuda e possibilidade, como também verificar se existe alguma maneira de "descobrir" novos MCPs "*on-the-go*", sei que isso toma um tempo para levantar o MCP muitas vezes e tal... mas provavelmente já existem soluções que buscam manter um cache das mais utilizadas para evitar gargalos após esse "cold-start" inicial. Verificar também. 
+- Também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar/ensinar o uso dos MCPs/CLIs. 
+- Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender. 
+- Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores..... 
+
+Links de "Soluções":
+https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
+
+##### RLM (Recursive Language Models)
+
+"Explorar modelos de linguagem que chamam a si mesmos ou a outros LLMs recursivamente antes de fornecer uma resposta final. O objetivo é permitir o processamento de contextos de entrada e saída de comprimento essencialmente ilimitado e mitigar a degradação causada pela "deterioração do contexto"."
+
+Pra que? Pq? Quando? Como utilizar? Como integrar a nossa estrutura do Genesis MC? Como/Quando ele será automaticamente solicitado utilizado?
+
+https://github.com/fullstackwebdev/rlm_repl
+https://alexzhang13.github.io/blog/2025/rlm/
+https://github.com/ysz/recursive-llm
+https://github.com/alexzhang13/rlm
+
+
+---
+
+## LLMs:
+
+### 🏠 Locais
+
+#### Multimodais
+
+- Qwen 3.5 (4B ou 9B)
+- Ministral 3 (8B)
+- Outras? Quais? Pq? Para Que?
+
+#### Raciocínio / Código
+
+- Qwen 3.5 (4B ou 9B)
+- Deepseek R1
+	- DeepSeek-R1-Distill-Qwen-7B
+	- DeepSeek-R1-Distill-Qwen-14B
+- Phi-4-mini
+- Phi-4-mini-reasoning
+- Rnj-1
+- Outras? Quais? Pq? Para Que?
+
+#### Tool Calling
+
+- FunctionGemma 3 270M
+- Outras? Quais? Pq? Para que?
+
+#### Voz
+
+- Whisper-MLX
+- Nvidia Parakeet
+- Outras? Quais? Pq? Para Que?
+
+### Imagem
+
+- GLM-OCR (novo) (0.9b)
+- Outras? Quais? Pq? Para Que?
+
+### ☁️ Cloud ("Brain" & "Top Medium Layer")
+
+- Claude Opus 4.6
+- Gemini 3.1 Pro
+- Kimi K2.5
+- Claude Sonnet 4.6
+- MiniMax M2.5
+- ChatGPT 5.4
+- Outras? Quais? Pq? Para Que?

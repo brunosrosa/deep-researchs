@@ -34,14 +34,14 @@ O GLM 5 (Zhipu AI) posiciona-se como um competidor formidável para tarefas de r
 
 ### 2.3. Tabela de Matriz FinOps para APIs REST de Fronteira
 
-|**Provedor de Modelo**|**Designação do Modelo**|**Preço de Entrada (US$ / 1M)**|**Preço de Saída (US$ / 1M)**|**Janela de Contexto (Tokens)**|**Perfil de Roteamento para GenAI FinOps**|
-|---|---|---|---|---|---|
-|Anthropic|Claude Opus 4.6|$ 5.00 - $ 15.00|$ 25.00 - $ 75.00|200K+|_Premium Tier_ - Raciocínio multi-arquivos e orquestração mestre.|
-|OpenAI|ChatGPT 5.4|$ 2.50 - $ 10.00|$ 15.00 - $ 30.00|272K+|_Core Flagship_ - Planejamento executivo e síntese estruturada.|
-|Anthropic|Claude Sonnet 4.6|$ 3.00|$ 15.00|200K+|_Fast Brain_ - Codificação ágil e confiável.|
-|Google|Gemini 3.1 Pro|$ 2.00 - $ 4.00|$ 12.00 - $ 18.00|1.000.000+|_Volume Flagship_ - Ingestão massiva de repositórios.|
-|Moonshot AI|Kimi K2.5|$ 0.47|$ 2.00|256.000|_Multimodal Edge_ - Análise visual orgânica e RAG volumoso.|
-|MiniMax|MiniMax M2.5|$ 0.25|$ 1.20|196.600|_Massive Agentic_ - Operações autônomas escaláveis em background.|
+| **Provedor de Modelo** | **Designação do Modelo** | **Preço de Entrada (US$ / 1M)** | **Preço de Saída (US$ / 1M)** | **Janela de Contexto (Tokens)** | **Perfil de Roteamento para GenAI FinOps**                        |
+| ---------------------- | ------------------------ | ------------------------------- | ----------------------------- | ------------------------------- | ----------------------------------------------------------------- |
+| Anthropic              | Claude Opus 4.6          | $ 5.00 - $ 15.00                | $ 25.00 - $ 75.00             | 200K+                           | _Premium Tier_ - Raciocínio multi-arquivos e orquestração mestre. |
+| OpenAI                 | ChatGPT 5.4              | $ 2.50 - $ 10.00                | $ 15.00 - $ 30.00             | 272K+                           | _Core Flagship_ - Planejamento executivo e síntese estruturada.   |
+| Anthropic              | Claude Sonnet 4.6        | $ 3.00                          | $ 15.00                       | 200K+                           | _Fast Brain_ - Codificação ágil e confiável.                      |
+| Google                 | Gemini 3.1 Pro           | $ 2.00 - $ 4.00                 | $ 12.00 - $ 18.00             | 1.000.000+                      | _Volume Flagship_ - Ingestão massiva de repositórios.             |
+| Moonshot AI            | Kimi K2.5                | $ 0.47                          | $ 2.00                        | 256.000                         | _Multimodal Edge_ - Análise visual orgânica e RAG volumoso.       |
+| MiniMax                | MiniMax M2.5             | $ 0.25                          | $ 1.20                        | 196.600                         | _Massive Agentic_ - Operações autônomas escaláveis em background. |
 
 A disparidade visualizada acima dita as regras do desenvolvimento agêntico. O faturamento estrito via API REST condena qualquer sistema operativo autônomo ao insucesso financeiro se o roteamento for homogêneo. Sub-rotinas do Genesis MC, como formatação contínua de respostas e validações de linting, não podem acessar a camada superior. A mitigação deste risco absoluto conduz à adoção sistemática de interfaces não-API suportadas por mensalidades fixas.
 
@@ -101,8 +101,8 @@ O encolhimento de modelos de fronteira para matrizes sub-6GB sem amputar a intel
 
 Baseando-se nos limites matemáticos delineados, e considerando benchmarks de 2026 testados sobre placas da geração 2060, os modelos candidatos a ocupar o trono de Roteador de Nível 0 e Motor de Triagem no Genesis MC são :
 
-1. **Qwen 2.5 Coder (3B / 7B):** A iteração de 3 bilhões de parâmetros desta arquitetura caberá integralmente em menos de 3 GB de VRAM, permitindo espaço contíguo de 3 GB para o cache de contexto. Ele providencia capacidades linguísticas polivalentes e formatação de código assustadoramente coerente. A versão expandida de 7B, na mais rígida quantização 4-bit, alocará aproximadamente de 5 a 5.5 GB de RAM de vídeo , representando o limite superior de preenchimento admissível, retendo a resiliência intelectual máxima sem deflagrar engasgos por escassez de espaço lógico, entregando cerca de 25 tokens por segundo.
-2. **Llama 3.2 (3B) ou Phi-4-mini:** Operam excelentemente como agentes classificados para "sim/não". Excelentes candidatos à sub-rede de roteamento estrutural, podem atuar apenas analisando strings json para avaliar se uma requisição carece de intervenção superior, executando essa verificação consumindo porções fracionais da memória disponível e deixando a GPU pronta rapidamente.
+1. **Qwen 3.5 (4B / 8B):** A iteração de 3 bilhões de parâmetros desta arquitetura caberá integralmente em menos de 3 GB de VRAM, permitindo espaço contíguo de 3 GB para o cache de contexto. Ele providencia capacidades linguísticas polivalentes e formatação de código assustadoramente coerente. A versão expandida de 7B, na mais rígida quantização 4-bit, alocará aproximadamente de 5 a 5.5 GB de RAM de vídeo , representando o limite superior de preenchimento admissível, retendo a resiliência intelectual máxima sem deflagrar engasgos por escassez de espaço lógico, entregando cerca de 25 tokens por segundo.
+2. **Llama (3B) ou Phi-4-mini:** Operam excelentemente como agentes classificados para "sim/não". Excelentes candidatos à sub-rede de roteamento estrutural, podem atuar apenas analisando strings json para avaliar se uma requisição carece de intervenção superior, executando essa verificação consumindo porções fracionais da memória disponível e deixando a GPU pronta rapidamente.
 3. **DeepSeek-R1 (1.5B):** O monarca inconteste da velocidade e síntese de intenções. Devido ao uso fracionário mínimo (ocupando pouco mais de 1.5 GB), garante inferências que superam largamente 50 a 60 tokens por segundo em hardwares antigos. Pode atuar simultaneamente a um navegador rodando paralelamente devido à sobra enorme de banda.
 
 ## 5. Arquitetura da Matriz de Roteamento em Cascata para o Genesis MC

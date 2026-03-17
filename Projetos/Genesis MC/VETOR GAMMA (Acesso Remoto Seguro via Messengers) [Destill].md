@@ -32,14 +32,14 @@ A seleção da infraestrutura de transporte define as garantias criptográficas 
 
 ### 1. Ecossistema Telegram: Bot API e MTProto
 
-O Telegram oferece a Bot API (baseada em HTTP) e a interação direta via MTProto.
+O **Telegram** oferece a Bot API (baseada em HTTP) e a interação direta via MTProto.
 
 - **Bot API:** É o caminho de menor atrito para engenharia, utilizando bibliotecas Rust maduras (como `teloxide` ou `frankenstein`). No entanto, possui uma falha estrutural intransponível: **ausência de E2EE** para bots. O Telegram detém as chaves de criptografia e acessa as mensagens em texto claro antes de empacotá-las na API. Isso viola frontalmente a regra de "zero processamento em nuvem".
 - **MTProto (Userbot):** Utilizar bibliotecas como `grammers` para forçar o uso de "Secret Chats" (que possuem E2EE nativo) é teoricamente possível. Contudo, a implementação de Secret Chats via clientes não-oficiais em Rust ainda é imatura, propensa a instabilidades de sessão, e o uso de contas automatizadas (Userbots) apresenta alto risco de banimento na plataforma.
 
 ### 2. Protocolo Matrix: Descentralização e Vazamento de Metadados
 
-A rede Matrix é federada e possui suporte a E2EE (Olm/Megolm) de primeira classe. O crate oficial `matrix-rust-sdk` é robusto e mantido pela própria fundação.
+A rede **Matrix** é federada e possui suporte a E2EE (Olm/Megolm) de primeira classe. O crate oficial `matrix-rust-sdk` é robusto e mantido pela própria fundação.
 
 Historicamente, o Matrix sofria com alto consumo de recursos, mas a adoção recente do _Simplified Sliding Sync_ (MSC4186) incorporado nativamente aos servidores eliminou a sobrecarga de largura de banda e bateria, operando via chamadas eficientes de Long Polling.
 
@@ -47,7 +47,7 @@ Entretanto, a Matrix falha no quesito privacidade de **metadados**. A natureza d
 
 ### 3. Protocolo Signal: Criptografia Padrão-Ouro e Dispositivos Vinculados
 
-O Signal é o padrão ouro da indústria para minimização de metadados e E2EE (Double Ratchet).
+O **Signal** é o padrão ouro da indústria para minimização de metadados e E2EE (Double Ratchet).
 
 Através da biblioteca Rust `presage` (que envelopa o `libsignal` oficial), é possível registrar o daemon do Genesis MC como um **Dispositivo Secundário Vinculado** (Linked Device). O processo opera de forma idêntica ao Signal Desktop:
 
