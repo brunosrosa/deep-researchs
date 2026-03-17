@@ -419,6 +419,12 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 ---
 ### Novos
 
+https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
+https://github.com/NVIDIA/NeMo-Agent-Toolkit
+https://github.com/NVIDIA/OpenShell
+https://github.com/NVIDIA/TransformerEngine
+
+
 ##### MCPs
 
 Faltam algumas analises amplas:
@@ -427,15 +433,16 @@ Faltam algumas analises amplas:
 - Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender. 
 - Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores..... 
 
-Links de "Soluções":
-https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
-
+Link de "Soluções":
+- https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
+- (procurar outras soluções)
 ##### RLM (Recursive Language Models)
 
 "Explorar modelos de linguagem que chamam a si mesmos ou a outros LLMs recursivamente antes de fornecer uma resposta final. O objetivo é permitir o processamento de contextos de entrada e saída de comprimento essencialmente ilimitado e mitigar a degradação causada pela "deterioração do contexto"."
 
 Pra que? Pq? Quando? Como utilizar? Como integrar a nossa estrutura do Genesis MC? Como/Quando ele será automaticamente solicitado utilizado?
 
+Repositórios / Estudos / Soluções:
 https://github.com/fullstackwebdev/rlm_repl
 https://alexzhang13.github.io/blog/2025/rlm/
 https://github.com/ysz/recursive-llm
@@ -465,7 +472,8 @@ https://github.com/alexzhang13/rlm
 - Rnj-1
 - Outras? Quais? Pq? Para Que?
 
-#### Tool Calling
+#### Tool Calling 
+(Quais outras "LLMs" pequenas especializadas poderiam ajudar ainda mais o Genesis MC?) (e que "tipos" existem?)
 
 - FunctionGemma 3 270M
 - Outras? Quais? Pq? Para que?
@@ -474,6 +482,7 @@ https://github.com/alexzhang13/rlm
 
 - Whisper-MLX
 - Nvidia Parakeet
+- granite-4.8.1b-speech (IBM)
 - Outras? Quais? Pq? Para Que?
 
 ### Imagem
