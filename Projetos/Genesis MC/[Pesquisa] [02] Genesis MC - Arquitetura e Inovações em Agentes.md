@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Genesis MC: Arquitetura e Inovações em Agentes"
+sticker: lucide//zoom-in
 ---
 
 # Genesis Mission Control: Visão Arquitetural, Engenharia de Ecossistemas Agênticos e Experiência do Usuário (UX)

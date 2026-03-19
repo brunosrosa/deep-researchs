@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de IA Híbrida e Orquestração de Inferência: Especificação Técnica do Projeto GENESIS MC (SODA)
 
 ## Fundamentos Arquiteturais e Restrições de Hardware de Borda

@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Comunicação Segura e Descentralizada para Sistemas Operacionais de Agentes Autônomos (SODA): O Vetor Gamma
 
 A evolução de sistemas operacionais baseados em agentes autônomos, conceitualmente definidos como Sovereign Agentic OS (SODA), exige uma reavaliação profunda dos paradigmas tradicionais de comunicação em rede. O projeto Genesis MC, desenvolvido integralmente na linguagem Rust para execução estritamente local em hardware de desktop, apresenta um desafio arquitetural formidável. O sistema tem como foco um usuário com perfil cognitivo de Dupla Excepcionalidade e Transtorno de Déficit de Atenção e Hiperatividade (2e/TDAH). Para este perfil, o agente atua como um "Life Coach" proativo. A indisponibilidade do agente quando o usuário se afasta do desktop anula a eficácia terapêutica do sistema.

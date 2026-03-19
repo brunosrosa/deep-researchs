@@ -1,6 +1,7 @@
 ---
 aliases:
   - VETOR ALPHA (Memória Vetorial/Grafos Embutida) Arquitetura em Rust
+sticker: lucide//corner-up-right
 ---
 # Relatório Arquitetural: Sistema Operacional Agêntico Soberano e Memória Tri-Partite
 

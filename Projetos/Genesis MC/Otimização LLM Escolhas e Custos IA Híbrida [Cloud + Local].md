@@ -1,3 +1,6 @@
+---
+sticker: lucide//bot
+---
 # Relatório Financeiro e Técnico: Otimização de Custos e Roteamento Híbrido para Sistemas Operacionais Agênticos
 
 ## 1. O Paradigma de FinOps para Inteligência Artificial Agêntica

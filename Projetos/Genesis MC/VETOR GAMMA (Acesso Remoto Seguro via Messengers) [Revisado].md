@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Comunicação Segura e Descentralizada para Sistemas Operacionais de Agentes Autônomos (SODA): O Vetor Gamma
 
 A evolução de sistemas operacionais baseados em agentes autônomos, definidos como **Sovereign Agentic OS (SODA)**, exige uma reavaliação profunda dos paradigmas de comunicação e segurança. O projeto **Genesis MC**, desenvolvido integralmente em **Rust** para execução local em desktop, apresenta um desafio formidável.

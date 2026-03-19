@@ -3,6 +3,7 @@ aliases:
   - |-
     Genesis MC: 
     Arquitetura de Agentes Autônomos Avançada
+sticker: lucide//zoom-in
 ---
 # Arquitetura Genesis Mission Control: Fundações Estruturais para um Sistema Operacional Agêntico Soberano
 

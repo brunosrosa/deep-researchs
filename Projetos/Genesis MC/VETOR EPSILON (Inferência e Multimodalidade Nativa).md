@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Relatório Técnico de Engenharia: Arquitetura de Inferência de Inteligência Artificial Embarcada em Borda (Projeto GENESIS MC - SODA)
 
 ## O Paradigma da Computação de Borda e a Missão Vetor Epsilon

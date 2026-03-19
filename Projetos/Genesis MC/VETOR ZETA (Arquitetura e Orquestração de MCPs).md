@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Orquestração de Integrações e Protocolo de Contexto de Modelos (MCP) no Ecossistema SODA
 
 O advento dos sistemas operacionais agênticos exige uma arquitetura de integração que transcenda de forma contundente as limitações tradicionais das chamadas de função (function calling) estabelecidas nas primeiras gerações de Modelos de Linguagem de Grande Escala (LLMs). O projeto Genesis MC, que culmina no desenvolvimento do Sistema Operacional Agêntico SODA, apresenta um desafio de engenharia altamente específico: a necessidade de operar localmente em um hardware com restrições arquiteturais rígidas. O ambiente de execução é governado por um processador i9 e 32GB de RAM, mas o verdadeiro gargalo computacional reside na GPU RTX 2060m de 6GB, cuja VRAM já se encontra parcialmente comprometida pela renderização de um monitor Ultrawide. Sob estas fronteiras físicas, a economia rigorosa do consumo de VRAM e a eficiência de execução tornam-se imperativos absolutos.

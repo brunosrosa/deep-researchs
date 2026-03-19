@@ -1,3 +1,6 @@
+---
+sticker: lucide//bot
+---
 # Relatório de Engenharia: Orquestração e Viabilidade de Inferência Agêntica em Hardware Restrito (Edge Computing)
 
 ## 1. Análise de Contenção de Hardware e Física de Memória

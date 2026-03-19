@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Relatório de Pesquisa: Arquiteturas de Modelos de Linguagem Recursivos (RLM) para Inferência no Edge e Mitigação de Degradação de Contexto
 
 ## Síntese Teórica: O Paradigma dos Modelos de Linguagem Recursivos e a Física do Edge

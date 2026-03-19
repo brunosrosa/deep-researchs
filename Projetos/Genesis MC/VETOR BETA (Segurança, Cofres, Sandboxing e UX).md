@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Relatório de Pesquisa: Arquitetura Zero-Trust, Sandboxing e UX HITL para Sistemas Operacionais Agênticos (SODA)
 
 A ascensão de fluxos de trabalho guiados por Inteligência Artificial (IA) exige uma reavaliação profunda e fundamental dos paradigmas de segurança de sistemas operacionais. No contexto específico do desenvolvimento de um Sistema Operacional Agêntico Soberano (SODA) — onde Agentes baseados em Modelos de Linguagem de Grande Escala (LLMs) possuem a capacidade de raciocinar, planejar, escrever e executar código de forma autônoma — o modelo de segurança tradicional baseado em permissões estáticas de usuário torna-se irremediavelmente obsoleto. Modelos de Inteligência Artificial, por sua própria natureza estocástica e suscetível a manipulações, operam como "representantes inerentemente confusos" (inherently confusable deputies). Isto significa que um agente dotado de privilégios elevados de sistema pode ser facilmente induzido a executar comandos maliciosos caso seja exposto a um ataque de injeção de prompt indireto (indirect prompt injection) através de dados não confiáveis, como um documento de texto ou uma página web.

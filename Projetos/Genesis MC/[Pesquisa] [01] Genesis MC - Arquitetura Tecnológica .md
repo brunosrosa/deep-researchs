@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Arquitetura Genesis: Pesquisa Tecnológica"
+sticker: lucide//zoom-in
 ---
 # **Arquitetura de Sistemas Operacionais Agênticos Locais: Uma Análise Exaustiva do Genesis \- Mission Control** V1
 

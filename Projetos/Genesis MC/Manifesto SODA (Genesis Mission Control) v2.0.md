@@ -1,3 +1,6 @@
+---
+sticker: lucide//atom
+---
 # O Manifesto SODA: Genesis Mission Control
 
 O **Genesis Mission Control (Genesis MC)** não é um aplicativo, um "wrapper" de IA ou um chatbot glorificado. É a fundação material de um **Sistema Operacional Agêntico Soberano (SODA)**. Ele atua como um exoesqueleto cognitivo: uma camada de infraestrutura de computação contínua, invisível e subjacente, desenhada para orquestrar inteligência autônoma diretamente no _bare-metal_ do hardware do usuário, garantindo simbiose humana, privacidade criptográfica e eficiência termodinâmica.

@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de IA Proativa e Observabilidade de Sistema: Design de um Agente SODA para Perfis de Dupla Excepcionalidade (2e/TDAH)
 
 A transição de modelos de linguagem de grande escala (LLMs) puramente reativos para ecossistemas agênticos autônomos e proativos representa uma mudança de paradigma fundamental na computação pessoal e na interação humano-computador. No contexto do projeto Genesis MC e da arquitetura SODA (Systemic Observability and Decision Agent), o desafio transcende a engenharia de software tradicional. O objetivo central consiste em construir um agente local em linguagem Rust que atue como um "Sparring Partner" coevolutivo e um "Life Coach" para um perfil de usuário especificamente delineado: a Dupla Excepcionalidade (2e), caracterizada pela intersecção entre Altas Habilidades (Superdotação) e o Transtorno do Déficit de Atenção com Hiperatividade (TDAH).
