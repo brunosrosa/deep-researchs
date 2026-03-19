@@ -79,4 +79,3 @@ O arquivo `Cargo.toml` base do Genesis MC será composto fundamentalmente por:
 - **Ponte Remota:** `presage` (Comunicação segura via Signal).
 - **Segurança:** `secrecy` (Memória sensível zero-trust).
 - **Frontend (Tauri):** React, `shadcn-ui`, `tldraw` / `xyflow` (Para a renderização passiva do Blast Radius e Canvas de pensamento).
-
