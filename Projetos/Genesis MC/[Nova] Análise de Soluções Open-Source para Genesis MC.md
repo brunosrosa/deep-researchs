@@ -1,3 +1,6 @@
+---
+sticker: lucide//zoom-in
+---
 # Relatório Arquitetural Exaustivo: Sistemas Operacionais Agênticos, Orquestração de Inteligência Artificial e a Visão do Genesis MC (SODA)
 
 ## 1. Fundamentação Epistemológica e Arquitetural do Genesis MC (Sovereign OS)

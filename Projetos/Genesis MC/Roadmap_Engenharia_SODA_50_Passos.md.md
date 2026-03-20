@@ -1,3 +1,6 @@
+---
+sticker: lucide//cog
+---
 # Roadmap de Engenharia SODA: O Caminho para o Genesis MC
 
 **Versão:** 1.0 (Plano de Batalha de Execução)

@@ -1,3 +1,6 @@
+---
+sticker: lucide//book-down
+---
 # Relatório de Engenharia e Arquitetura Agêntica: Fundação e Orquestração do Sistema Operacional SODA (Genesis MC)
 
 A concepção do Genesis MC, operando sob a insígnia SODA (Sovereign OS), representa um paradigma de engenharia de ponta focado na criação de um sistema operacional agêntico de execução "local-first", estritamente focado em privacidade e estruturado em tecnologias de alta performance como Rust, Tauri e bancos de dados SQLite locais. O princípio basilar desta arquitetura é o "Metal Nu" (Bare Metal), uma filosofia que exige uma sobrecarga de memória microscópica e a eliminação sumária de runtimes interpretados pesados, como Node.js ou daemons contínuos em Python, que tradicionalmente ancoram sistemas de Inteligência Artificial. A ambição de absorver, canibalizar e transmutar lógicas de projetos open-source estabelecidos — tais como OpenFang, ZeroClaw, GraphBit e Paperclip AI — introduz desafios severos na gestão de dependências, arquitetura de adaptação e fluxos de trabalho agênticos. Este documento fornece uma análise exaustiva e um guia de implementação prático para consolidar a fundação de engenharia do SODA, mitigando riscos de regressão sistêmica e maximizando a inteligência iterativa do Antigravity IDE.

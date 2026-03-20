@@ -1,3 +1,6 @@
+---
+sticker: lucide//at-sign
+---
 # Protocolo de Pesquisa Profunda Fase 2: O "Córtex" do SODA
 
 _Instruções de Uso:_ Copie e cole o conteúdo integral de cada Bloco (incluindo o Novo Contexto Mestre) em uma sessão LIMPA e NOVA de uma ferramenta de Deep Research (Gemini Advanced, ChatGPT Pro, etc).

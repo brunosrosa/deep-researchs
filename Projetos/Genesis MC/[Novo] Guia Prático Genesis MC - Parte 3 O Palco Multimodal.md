@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//chevron-right-square
 ---
 
 # Genesis MC: Guia Prático - Parte 3 (O "Palco" Multimodal)

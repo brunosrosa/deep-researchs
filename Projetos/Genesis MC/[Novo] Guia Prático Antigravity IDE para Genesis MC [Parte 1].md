@@ -1,3 +1,6 @@
+---
+sticker: lucide//chevron-right-square
+---
 # Guia Prático e Definitivo de Orquestração Agêntica para o Genesis MC no Antigravity IDE
 
 A engenharia de um Sistema Operacional Agêntico (Sovereign OS) focado em privacidade e execução local-first, designado como Genesis MC (SODA), impõe desafios arquiteturais singulares. A fundação de baixo nível estabelecida por Rust, o motor de interface encapsulado pelo Tauri e a persistência atômica via SQLite criam um ecossistema de extrema eficiência e segurança. Contudo, a introdução de agentes autônomos baseados em Large Language Models (LLMs) neste ambiente exige uma infraestrutura de controle rigorosa. O desenvolvimento orientado a inteligência artificial frequentemente sofre de degradação de contexto ("context rot"), alucinações de código ("vibe coding") e consumo predatório de recursos de hardware. O Google Antigravity IDE emerge como a plataforma primária de "Mission Control" para mitigar estas falhas, orquestrando agentes assíncronos que planejam, executam e verificam tarefas complexas através de uma arquitetura estritamente orientada a especificações.
