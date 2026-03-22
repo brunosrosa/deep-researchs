@@ -140,7 +140,6 @@ _Objetivo:_ Definir as regras do jogo e a linguagem antes de qualquer abstraçã
 _Objetivo:_ Traduzir negócio em requisitos funcionais testáveis.
 
 ### 🎨 Fase 3: Experiência e Interface (O Design)
-
 _Objetivo:_ Definir a interação visual e textual antes de codar componentes.
 
 ### 🏗️ Fase 4: Arquitetura Técnica (A Engenharia)
@@ -265,18 +264,8 @@ Ele resolve o trilema da IA atual: Custo (usa modelos locais), Contexto (usa Gra
   - **Ação Mitigadora (Caminho de Adoção SODA):** (Como extrair o valor da ferramenta sem herdar o lixo arquitetural? Ex: "Canibalizar a lógica e reescrever em Rust", "Rodar como binário Wasm isolado", "Instanciar como sidecar efêmero que morre após o output", "Rejeitar infra e absorver apenas os prompts Markdown").
 
 Gere esse relatório com um tom **cru, técnico, direto e analítico** (pessimismo da razão, otimismo da vontade). No final, sintetize tudo em uma **Tabela Comparativa Consolidada**, contendo as colunas: Projeto, Categoria, Vetor de Conflito, e Ação Mitigadora.
-#### **Lote 10: Injeção de Contexto (Skills), Customização e Parsing de Dados**
-_Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigravity/OpenClaw) e extração de dados brutos._
 
-1. [https://lemon.dev.br/pt/blog/ai-coding-agent-customization](https://lemon.dev.br/pt/blog/ai-coding-agent-customization)
-2. [https://github.com/sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
-3. [https://github.com/VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills)
-4. [https://github.com/Shiritai/sanity-gravity](https://github.com/Shiritai/sanity-gravity)
-5. [https://github.com/blader/humanizer](https://github.com/blader/humanizer)
-6. [https://github.com/kreuzberg-dev/kreuzberg](https://github.com/kreuzberg-dev/kreuzberg)
-7. [https://github.com/intellectronica/ruler](https://github.com/intellectronica/ruler)
-8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
-
+**Lote XX**
 
 ---
 
@@ -373,11 +362,7 @@ https://github.com/penso/arbor
 https://github.com/open-jarvis/OpenJarvis
 https://github.com/garrytan/gstack
 
----
-
-### Novos:
-
-#### **Lote 8: Frameworks de Orquestração, Hubs e Fluxos Agênticos**
+**Lote 8: Frameworks de Orquestração, Hubs e Fluxos Agênticos**
 _Foco: Plataformas complexas, roteadores de agentes, criação de scripts generativos e arquiteturas de loop._
 
 1. [https://github.com/openclaw/clawhub](https://github.com/openclaw/clawhub)
@@ -391,7 +376,7 @@ _Foco: Plataformas complexas, roteadores de agentes, criação de scripts genera
 9. [https://github.com/stravu/crystal](https://github.com/stravu/crystal)
 10. [https://github.com/Hmbown/aleph](https://github.com/Hmbown/aleph)
 
-#### **Lote 9: Automação Web, Interfaces, Proxies e Protocolos (MCP)**
+**Lote 9: Automação Web, Interfaces, Proxies e Protocolos (MCP)**
 _Foco: Agentes que controlam o navegador, UIs de terminal, proxies de LLM e implementações do Model Context Protocol._
 
 1. [https://github.com/vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser)
@@ -404,7 +389,7 @@ _Foco: Agentes que controlam o navegador, UIs de terminal, proxies de LLM e impl
 8. [https://github.com/jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli)
 9. [https://github.com/google-gemini/genai-processors](https://github.com/google-gemini/genai-processors)
 
-#### **Lote 10: Injeção de Contexto (Skills), Customização e Parsing de Dados**
+**Lote 10: Injeção de Contexto (Skills), Customização e Parsing de Dados**
 _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigravity/OpenClaw) e extração de dados brutos._
 
 1. [https://lemon.dev.br/pt/blog/ai-coding-agent-customization](https://lemon.dev.br/pt/blog/ai-coding-agent-customization)
@@ -417,7 +402,7 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 ---
-### Novos
+### Nvidia Respositórios
 
 https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
 https://github.com/NVIDIA/NeMo-Agent-Toolkit
@@ -485,7 +470,7 @@ https://github.com/alexzhang13/rlm
 - granite-4.8.1b-speech (IBM)
 - Outras? Quais? Pq? Para Que?
 
-### Imagem
+### 👁️ Visão
 
 - GLM-OCR (novo) (0.9b)
 - Outras? Quais? Pq? Para Que?
@@ -499,3 +484,145 @@ https://github.com/alexzhang13/rlm
 - MiniMax M2.5
 - ChatGPT 5.4
 - Outras? Quais? Pq? Para Que?
+
+---
+
+# Novos Repositórios para Análise 
+## Skills base (bMAD e SDD)
+
+https://github.com/bmad-code-org/BMAD-METHOD
+https://github.com/LarsCowe/bmalph
+
+https://github.com/Fission-AI/OpenSpec
+https://github.com/github/spec-kit
+https://github.com/gotalab/cc-sdd
+### Complemento?
+
+https://github.com/buildermethods/agent-os
+
+---
+
+## Prompts
+
+#### PROMPT 1: Canibalização de Skills e Metodologias
+
+ATUE COMO UM ARQUITETO DE SOFTWARE E ENGENHEIRO REVERSO SÊNIOR.
+
+**CONTEXTO MESTRE:**
+Estamos desenvolvendo o **Genesis MC (SODA)**, um Sistema Operacional Agêntico Local focado em privacidade, execução "Bare-Metal" (Rust + Tauri + SQLite) em hardware restrito (6GB VRAM) e desenhado para um usuário 2e/TDAH. Utilizamos o Antigravity IDE com agentes Cloud (Gemini) para o desenvolvimento.
+
+**MISSÃO:**
+Abaixo fornecerei uma lista de repositórios open-source focados em Skills Agênticas, Workflows e governança (ex: BMAD, Spec-Driven Development). Não queremos importar esses repositórios inteiros. Queremos aplicar a estratégia de "Cherry-Picking" e extração de lógica algorítmica.
+
+**O QUE VOCÊ DEVE FAZER:**
+1. Analise a premissa de cada repositório listado.
+2. Extraia o "Suprassumo" de cada um: quais são as regras, prompts de sistema ou lógicas de governança que realmente geram valor.
+3. Proponha a fusão das melhores partes em "Super Skills" otimizadas para o nosso contexto. Precisamos urgentemente de:
+   - Uma **Super Skills de Governança (BMAD SODA)** para garantir qualidade de produtos e controle de commits atômicos e seguros.
+   - Uma **Super Skills de SDD (Spec-Driven Development)** para forçar o agente a planejar antes de codar.
+   - Uma **Super Skill de Rust Seguro**, blindando o agente contra falhas de concorrência (`tokio`) e _Borrow Checker_.
+   - Outas várias possibilidades de Skills que trouxerem ganhos para nosso uso, verifique as opções com um olhar ampliado e não se limite em trazer um conjunto ampliado de opções.
+   - Se for interessante unir metodologias e skills, explique como fazê-los. E como utilizar. 
+
+Apresente o relatório de análise e a estrutura proposta (resumida) para essas novas Super Skills, explicando como instalaremos e instruiremos no Antigravity a utilizá-las sem causar confusão cognitiva.
+
+[ MINHA LISTA DE REPOSITÓRIOS ABAIXO ]:
+	- https://github.com/bmad-code-org/BMAD-METHOD 
+	- https://github.com/LarsCowe/bmalph
+	- https://github.com/salacoste/antigravity-bmad-config
+	- https://github.com/Fission-AI/OpenSpec
+	- https://github.com/github/spec-kit
+	- https://github.com/gotalab/cc-sdd
+	- https://github.com/AshishOP/arc-protocol
+	- https://github.com/obra/superpowers
+	- https://github.com/vudovn/antigravity-kit
+	- https://github.com/sickn33/antigravity-awesome-skills
+	- https://github.com/iml1s/antigravity_for_loop
+	- https://github.com/Shiritai/sanity-gravity
+
+---
+
+#### PROMPT 2: Triagem e Integração de MCPs
+
+ATUE COMO UM ARQUITETO DE INFRAESTRUTURA E ENGENHEIRO DE INTEGRAÇÃO.
+
+**CONTEXTO MESTRE:**
+Continuamos na arquitetura do **Genesis MC (SODA)** via Antigravity IDE. Para maximizar a inteligência dos nossos agentes (Gemini) e evitar o "Context Rot", precisamos plugar ferramentas do mundo real usando o Model Context Protocol (MCP).
+
+**MISSÃO:**
+Fornecerei uma lista de servidores MCP identificados como críticos. O objetivo agora é equipar o Antigravity IDE com essas ferramentas de forma sustentável, para que os agentes possam interagir com o sistema, ter melhor contexto, escrever melhor código, ter noção clara de tempo, ler documentos de forma inteligente, gerenciar tarefas.
+
+**O QUE VOCÊ DEVE FAZER:**
+1. Analise cada MCP listado quanto à sua utilidade específica para o nosso cenário (desenvolvimento em Rust/Tauri, compressão de contexto e gestão de issues).
+2. Descreva o fluxo exato de como um agente, no meio de uma refatoração, usará um MCP de Gerenciamento de Projetos (ex: GitHub Projects) para abrir uma *Issue* nova de forma totalmente autônoma.
+3. Forneça o formato exato (o JSON de configuração) e as instruções de como registrar e manter esses MCPs ativados automaticamente no ambiente do Antigravity IDE, sem precisarmos lembrar o agente da existência deles a cada prompt.
+
+[ MINHA LISTA DE SERVIDORES MCP ABAIXO ]:
+	- `jcodemunch` (leitura e chunking de diretórios) https://github.com/jgravelle/jcodemunch-mcp
+	- MCP nativo de **SQLite**
+	- MCP de **File System** (arquivos locais) (O Antigravity já tem isso não?)
+	- https://github.com/jacob-bd/notebooklm-mcp-cli (serviria como um "RAG" dos documentos que temos vinculados à um notebook, faz sentido?)
+	- https://github.com/yokingma/time-mcp
+	- https://github.com/softerist/heuristic-mcp
+	- https://github.com/jellyjamin/TOON-context-mcp-server
+	- E para o controle automatizado do Github (commits atômicos e etc?)? 
+	- Github Projects?
+	- Sequencial Thinking
+	- "Playwright" (é preciso? O Antigravity já tem algo nativo igual? Existe outra solução melhor?)
+	- "Context7" (sei que ele é pago, existem outras opções "free" melhor? Qual a melhor?)
+	- "Markitdown" (O uso para ler documentações da web, para ajudar a criar novas skills? faz sentido? quais outros usos? Devemos instalar?)
+	- "Google Stitch" para integração entre a protitipação de UI e a criação?
+
+
+Segunda parte deve verificar o que fazer pra ter essa quantidade de MCPs sem gerar problema de excesso de contexto e piorar a questão de context-rot. Quais soluções de vanguarda buscam resolver isso e que poderíamos trazer para resolver o problema? Pesquisar a vanguarda sobre soluções open-source, estudos, artigos e testes que buscam abordar esse problema e conseguir descobrir a melhor solução. Sei que existe algo como um "gateway" para MCPs, transformar eles em CLI, e provavelmente outras soluções. Devemos usar o motor de MCP do próprio Antigravity? Devemos usar no Docker? Devemos usar de outra maneira? Se não usar o nativo do Antigravity, é preciso fazer algo no antigravity para que o agente tenha a visão e o processo automático de como buscar e usar mcps? 
+
+Pesquisa única: https://mcpmarket.com/leaderboards
+
+---
+
+#### PROMPT 3: A Caça ao Micro-Roteador (SLMs para iGPU)
+
+ATUE COMO UM ENGENHEIRO DE MACHINE LEARNING ESPECIALISTA EM EDGE COMPUTING E SLMs (Small Language Models).
+
+**CONTEXTO MESTRE:**
+Estamos desenvolvendo o **Genesis MC (SODA)**, um Sistema Operacional Agêntico Local. A nossa arquitetura de hardware exige separação estrita: 
+- A GPU Dedicada (RTX 2060m, 6GB) fica desligada/ociosa a maior parte do tempo, reservada apenas para tarefas pesadas.
+- O "Roteador Nível 0" (O Maestro) deve rodar 24/7 de forma contínua e invisível, utilizando exclusivamente a iGPU (Intel UHD/Iris) e a RAM do sistema (DDR4, do i9).
+
+**A MISSÃO:**
+Precisamos definir qual é o melhor "Micro-Modelo" (abaixo de 1.5B de parâmetros) disponível hoje (início de 2026) para assumir o papel de Roteador Nível 0. 
+O trabalho do Roteador NÃO é conversar. O trabalho dele é:
+1. Ler o prompt do usuário.
+2. Classificar a intenção (Intent Classification).
+3. Cuspir um JSON estruturado invocando a ferramenta MCP correta ou decidindo qual modelo maior acordar.
+
+**O QUE VOCÊ DEVE FAZER:**
+Faça uma análise comparativa profunda e pragmática dos melhores SLMs atuais para esta função específica. Considere obrigatoriamente na sua análise:
+- **Qwen 3.5:0.8B** (Mencionado pelo Arquiteto como fortíssimo candidato).
+- **Qwen 2.5:0.5B**
+- Família **SmolLM2** (135M, 360M, 1.7B)
+- **Llama 3.2 1B Instruct**
+- **FunctionGemma** (e variantes focadas em função)
+- Outro modelo SOTA sub-1B que você considere superior para Tool Calling.
+
+**FORMATO DE SAÍDA (Relatório Técnico):**
+1. **Quadro Comparativo:** RAM consumida (em GGUF Q4 e Q8), Velocidade teórica na iGPU (Tokens por segundo) e Capacidade de Tool Calling nativo.
+2. **O Veredito:** Qual modelo escolhemos e por quê? Justifique com base no equilíbrio entre "Zero Latência" e "Precisão no Roteamento".
+3. **Parâmetros de Inferência:** Quais flags do `llama.cpp` ou Ollama devemos usar para fixar esse modelo permanentemente na iGPU/CPU sem vazar para a RTX 2060m.
+
+---
+
+#### PROMPT 4: Pesquisa em Design
+
+"Atue como um Arquiteto de Software Especialista em Inteligência Artificial e Vibe Design. Estamos construindo o projeto Gênesis MC, uma plataforma de software (nosso SODA) focada em altíssima performance utilizando o framework Tauri v2 e React no frontend. Nosso objetivo é atingir um nível de excelência visual AAA+++ e evitar a 'homogeneização visual' comum em interfaces geradas por IA. Para isso, utilizamos um fluxo de trabalho orquestrado entre o Antigravity IDE, Google Stitch (como tela de design) e o Gemini CLI.
+
+Preciso que você realize uma pesquisa aprofundada focada exclusivamente em encontrar as melhores soluções, repositórios do GitHub e ferramentas **open-source e gratuitas** que se integrem nativamente a esse nosso ecossistema para automatizar o seguinte pipeline:
+
+1. **Descoberta de Branding Agentiva:** Como utilizar frameworks de agentes autônomos open-source com personas corporativas para conduzir a descoberta de marca, definir a identidade visual e o 'feel' do Gênesis MC de forma automatizada.
+    
+2. **Criação de um Design System Agêntico:** Infraestruturas open-source (agent-native design systems) que permitam criar, compilar e gerenciar um sistema de design que atue como uma única fonte de verdade legível por agentes de código.
+    
+3. **Geração Automatizada do manifesto DESIGN.md:** Identifique ferramentas, pacotes de Agent Skills oficiais ou da comunidade, e servidores Model Context Protocol (MCP) que consigam ler um projeto de UI diretamente do Google Stitch, extrair a paleta de cores e tipografia, e gerar automaticamente o arquivo `DESIGN.md` no diretório raiz do projeto.
+    
+
+Traga nomes de repositórios reais, instruções conceituais de como conectá-los ao Antigravity e ao Gemini CLI, e explique como orquestrar essas três etapas em um fluxo de trabalho contínuo."
