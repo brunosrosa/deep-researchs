@@ -457,6 +457,8 @@ https://github.com/alexzhang13/rlm
 - Rnj-1
 - Outras? Quais? Pq? Para Que?
 
+#### Usos Específicos
+- [vaultbox](https://ollama.com/vaultbox)/[qwen3.5-uncensored](https://ollama.com/vaultbox/qwen3.5-uncensored "qwen3.5-uncensored")
 #### Tool Calling 
 (Quais outras "LLMs" pequenas especializadas poderiam ajudar ainda mais o Genesis MC?) (e que "tipos" existem?)
 
@@ -524,7 +526,7 @@ Abaixo fornecerei uma lista de repositórios open-source focados em Skills Agên
    - Outas várias possibilidades de Skills que trouxerem ganhos para nosso uso, verifique as opções com um olhar ampliado e não se limite em trazer um conjunto ampliado de opções.
    - Se for interessante unir metodologias e skills, explique como fazê-los. E como utilizar. 
 
-Apresente o relatório de análise e a estrutura proposta (resumida) para essas novas Super Skills, explicando como instalaremos e instruiremos no Antigravity a utilizá-las sem causar confusão cognitiva.
+Apresente o relatório de análise e a estrutura proposta (resumida, poderemos detalhar em documentos posteriores) para essas novas Super Skills, explicando como instalaremos e instruiremos no Antigravity a utilizá-las sem causar confusão cognitiva.
 
 [ MINHA LISTA DE REPOSITÓRIOS ABAIXO ]:
 	- https://github.com/bmad-code-org/BMAD-METHOD 
@@ -539,6 +541,25 @@ Apresente o relatório de análise e a estrutura proposta (resumida) para essas 
 	- https://github.com/sickn33/antigravity-awesome-skills
 	- https://github.com/iml1s/antigravity_for_loop
 	- https://github.com/Shiritai/sanity-gravity
+
+--- 
+
+Dúvidas apenas para responder diretamente: 
+- O bMAD, SDD e etc, eles tem vários "papeis" e consequentemente um conjunto de skills, também correto? Como fica isso, vamos captar esses papeis e skills e unificar tudo num processo único que pode "instanciar" cada persona/skill de acordo com a necessidade? As "superskills" serão esse "gateway" para iniciar? No exemplo do bMAD mesmo, vc diz sobre o CONTRACTS.md, mas se ele não existir, o agente vai trocar de persona e agir para gerar esse contract, conversando com o usuário?
+- Precisaremos então criar os arquivos de SKILLS.md refinados com base nos originais citados anteriormente para unificar em "superskills" de (certo?):
+	- soda-governance
+	- soda-sdd
+	- soda-rust-expert
+	- soda-autonomous-loop
+	- soda-frontend-expert
+	- soda-archivist
+
+Acredito que precisamos de uma pesquisa complementar: 
+Sobre Skills v2 (lançado a pouco tempo): 
+- O que se difere da v1?
+- Qual o mais seguro, atualizado, revisado, auditado e evoluído repositório de Skills que utilizem melhorias de v2 (já) e que poderíamos ter como referência de confiança e qualidade? (quando precisar-mos buscar novas skills específicas)
+- As Skills em v2 são planejadas para um aprendizado/evolução constante? Como podemos aplicar isso as nossas skills? 
+Vale uma pesquisa sobre essas questões, inclusive para que antes de criar as "superskills" já adotemos as melhorias e melhores práticas que podem estar relacionadas as "Skills v2", certo? Se sim, então vamos realizar essa pesquisa, depois seguiremos para criar as "superskills" (uma a uma), verificar se deveremos ter um serviço que encontra novas skills (utilizando o repositório confiável de referência) e por fim, testar como fica o fluxo de trabalho utilizando as skills. Entendido? 
 
 ---
 
@@ -573,8 +594,11 @@ Fornecerei uma lista de servidores MCP identificados como críticos. O objetivo 
 	- "Markitdown" (O uso para ler documentações da web, para ajudar a criar novas skills? faz sentido? quais outros usos? Devemos instalar?)
 	- "Google Stitch" para integração entre a protitipação de UI e a criação?
 
+--- 
 
 Segunda parte deve verificar o que fazer pra ter essa quantidade de MCPs sem gerar problema de excesso de contexto e piorar a questão de context-rot. Quais soluções de vanguarda buscam resolver isso e que poderíamos trazer para resolver o problema? Pesquisar a vanguarda sobre soluções open-source, estudos, artigos e testes que buscam abordar esse problema e conseguir descobrir a melhor solução. Sei que existe algo como um "gateway" para MCPs, transformar eles em CLI, e provavelmente outras soluções. Devemos usar o motor de MCP do próprio Antigravity? Devemos usar no Docker? Devemos usar de outra maneira? Se não usar o nativo do Antigravity, é preciso fazer algo no antigravity para que o agente tenha a visão e o processo automático de como buscar e usar mcps? 
+
+--- 
 
 Pesquisa única: https://mcpmarket.com/leaderboards
 
@@ -619,10 +643,9 @@ Faça uma análise comparativa profunda e pragmática dos melhores SLMs atuais p
 Preciso que você realize uma pesquisa aprofundada focada exclusivamente em encontrar as melhores soluções, repositórios do GitHub e ferramentas **open-source e gratuitas** que se integrem nativamente a esse nosso ecossistema para automatizar o seguinte pipeline:
 
 1. **Descoberta de Branding Agentiva:** Como utilizar frameworks de agentes autônomos open-source com personas corporativas para conduzir a descoberta de marca, definir a identidade visual e o 'feel' do Gênesis MC de forma automatizada.
-    
 2. **Criação de um Design System Agêntico:** Infraestruturas open-source (agent-native design systems) que permitam criar, compilar e gerenciar um sistema de design que atue como uma única fonte de verdade legível por agentes de código.
-    
 3. **Geração Automatizada do manifesto DESIGN.md:** Identifique ferramentas, pacotes de Agent Skills oficiais ou da comunidade, e servidores Model Context Protocol (MCP) que consigam ler um projeto de UI diretamente do Google Stitch, extrair a paleta de cores e tipografia, e gerar automaticamente o arquivo `DESIGN.md` no diretório raiz do projeto.
-    
 
 Traga nomes de repositórios reais, instruções conceituais de como conectá-los ao Antigravity e ao Gemini CLI, e explique como orquestrar essas três etapas em um fluxo de trabalho contínuo."
+
+
