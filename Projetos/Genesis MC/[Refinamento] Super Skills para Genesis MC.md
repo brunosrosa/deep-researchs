@@ -59,7 +59,7 @@ A segunda parte é o _Markdown Body_, que consiste na injeção profunda de cont
 
 ## Síntese e Fusão: As Super Skills Otimizadas para o SODA
 
-A fusão das partes mais valiosas da literatura de código aberto analisada culmina no desenvolvimento de "Super Skills" arquitetadas sob medida para as restrições do hardware local (6GB VRAM) e para a otimização cognitiva do usuário 2e/TDAH. A seguir, detalhamos a composição, a lógica processual e o mecanismo de instalação de cada Super Skill central.
+A fusão das partes mais valiosas da literatura de código aberto analisada culmina no desenvolvimento de "Super Skills" arquitetadas sob medida para as restrições do hardware local (6GB VRAM) e para a otimização cognitiva do usuário **2e**/**TDAH**. A seguir, detalhamos a composição, a lógica processual e o mecanismo de instalação de cada Super Skill central.
 
 ### Super Skill 1: Governança Atômica e Segurança (BMAD SODA)
 

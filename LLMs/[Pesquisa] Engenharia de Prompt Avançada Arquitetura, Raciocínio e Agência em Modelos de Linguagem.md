@@ -1,7 +1,8 @@
 ---
 aliases: []
-sticker: lucide//view
+sticker: lucide//medal
 ---
+
 # Engenharia de Prompt Avançada: Arquitetura, Raciocínio e Agência em Modelos de Linguagem
 
 ---
@@ -37,15 +38,10 @@ A eficácia de arquiteturas de prompt sofisticadas, como os Sistemas de Lógica 
 Vários problemas inerentes à tokenização podem minar a integridade de um prompt estruturado:
 
 - **Inconsistência na Atribuição de IDs:** Os tokenizadores são construídos com base em vocabulários finitos derivados de seus dados de treinamento. Palavras comuns como "John" podem existir como um único token, enquanto nomes menos comuns como "Rickard" podem ser divididos em subpalavras, como "Rick" e "ard". Isso significa que a frase "John Rickard" pode ser tokenizada em três unidades distintas: ``.3 Para um prompt que depende do reconhecimento consistente de entidades, essa fragmentação pode quebrar a lógica pretendida.
-    
 - **Sensibilidade a Maiúsculas/Minúsculas:** A maioria dos tokenizadores é sensível a maiúsculas e minúsculas. As palavras "hello", "Hello" e "HELLO" podem ser representadas por tokens completamente diferentes. Em alguns casos, "HELLO" pode até ser dividido em múltiplos tokens como `[“HE”, “LL”, “O”]`.3 Isso cria um desafio para prompts que precisam tratar palavras de forma semanticamente equivalente, independentemente da capitalização, exigindo normalização explícita ou lidando com múltiplas representações de token para o mesmo conceito.
-    
 - **Fragmentação Inconsistente de Dígitos:** A representação de números também pode ser inconsistente. Uma string como "12o" pode ser um único token, enquanto um número puro como "124" pode ser dividido em dois tokens, `[“12”, “4”]`.3 Essa irregularidade no tratamento de dígitos pode ter um impacto significativo na precisão de tarefas que envolvem operações matemáticas ou manipulação numérica, pois a representação do número para o modelo não é coesa.
-    
 - **Impacto do Espaço em Branco Final:** A presença ou ausência de um espaço em branco no final de uma palavra ou frase pode alterar a forma como ela é tokenizada. Por exemplo, "in a forest " (com espaço) pode ser tokenizado como `[“in”, “ a”, “ forest”, “ ”]`, enquanto a frase "in a forest clearing" pode ter uma tokenização diferente para a palavra "forest" devido à ausência do espaço.3 Como a previsão do próximo token é altamente dependente da sequência de tokens anterior, essa sensibilidade ao espaço em branco pode alterar sutilmente as probabilidades e o comportamento do modelo.
-    
 - **Tokenização Específica do Modelo:** Não existe um tokenizador universal. Diferentes modelos, mesmo aqueles que usam a mesma técnica de tokenização subjacente, como a Codificação de Par de Bytes (BPE), terão vocabulários e regras de mesclagem diferentes.3 Isso significa que um prompt perfeitamente otimizado para um modelo pode ter um desempenho inferior em outro, criando desafios significativos para a portabilidade e a engenharia de prompt multi-modelo.
-    
 
 Além disso, um problema profundo surge em contextos multilíngues. Muitos dos principais LLMs são treinados predominantemente em dados em inglês. Consequentemente, seus tokenizadores são altamente otimizados para o inglês. Para outros idiomas, especialmente os não alfabéticos, o tokenizador muitas vezes recorre à segmentação em nível de byte. Isso tem uma desvantagem crítica: limita severamente o comprimento máximo de entrada e saída que pode ser processado, pois uma única palavra pode se transformar em muitos tokens de byte, consumindo rapidamente a janela de contexto do modelo.5 Portanto, a própria arquitetura de tokenização pode introduzir um viés fundamental que prejudica o desempenho em idiomas que não o inglês.
 
@@ -70,17 +66,11 @@ A busca por controle de alto nível, como o prometido pelos Sistemas de Lógica 
 A abordagem modular ao design de prompts traça uma forte analogia com a Programação Orientada a Objetos (OOP) e a arquitetura de microsserviços.9 Em vez de escrever um único prompt monolítico que contém todas as instruções, o design modular o divide em componentes ou módulos independentes, cada um com uma função específica e bem definida.9 Por exemplo, um sistema de prompt modular pode ter componentes separados para:
 
 - **Definição de Papel (Role):** Um módulo que instrui o LLM a adotar uma persona específica (por exemplo, "Você é um analista financeiro sênior").
-    
 - **Contexto (Context):** Um módulo que fornece informações de fundo relevantes para a tarefa.
-    
 - **Instruções da Tarefa (Task Instructions):** Um módulo que descreve a tarefa específica a ser executada.
-    
 - **Formato de Saída (Output Format):** Um módulo que especifica como a saída deve ser estruturada (por exemplo, JSON, XML, Markdown).
-    
 - **Exemplos (Examples):** Módulos contendo exemplos de poucos disparos (few-shot) para guiar o comportamento do modelo.
-    
 - **Restrições e Grades de Proteção (Constraints and Guardrails):** Módulos que definem o que o modelo não deve fazer.
-    
 
 Os benefícios dessa abordagem espelham diretamente os da engenharia de software moderna. A **modularidade** torna o sistema de prompt mais flexível e mais fácil de depurar. Se o formato de saída estiver incorreto, apenas o módulo de formato de saída precisa ser ajustado, sem tocar na lógica da tarefa principal.9 Isso leva a uma
 
@@ -95,11 +85,8 @@ A arquitetura de prompt em camadas é uma aplicação específica do design modu
 A hierarquia de camadas de prompt, conforme identificada na pesquisa e nas especificações do modelo, geralmente segue esta estrutura de precedência 12:
 
 1. **Camada de Fundação (Foundation Layer - Provedor do Modelo):** Esta é a camada mais interna e com a maior prioridade. Ela consiste em prompts de sistema implementados pelos desenvolvedores do modelo de fundação (por exemplo, OpenAI, Google, Anthropic). Esses prompts definem os comportamentos centrais, a persona padrão, as diretrizes éticas e as grades de proteção fundamentais do modelo. Eles têm precedência sobre todas as outras instruções.12
-    
 2. **Camada do Desenvolvedor/Implementador (Deployer Layer):** Esta camada é adicionada por desenvolvedores que constroem uma aplicação sobre o modelo de fundação. Os prompts nesta camada adaptam o modelo para um domínio ou tarefa específica. Por exemplo, uma empresa que cria um chatbot de suporte ao cliente adicionaria um prompt de sistema nesta camada para instruir o modelo sobre seus produtos, políticas e tom de voz desejado. Isso permite a criação de um produto de IA de propósito geral com personalização específica do cliente.11
-    
 3. **Camada do Usuário Final (End-User Layer):** Esta é a camada mais externa e com a menor precedência. Ela contém o prompt fornecido pelo usuário final em cada interação. O modelo processa essa entrada dentro do contexto estabelecido pelas camadas de fundação e do implementador.12
-    
 
 Essa arquitetura espelha as melhores práticas de engenharia de software, como a reutilização de código e a separação de interesses. Ela permite que as equipes de desenvolvimento reutilizem a lógica de prompt principal na camada do implementador, enquanto adaptam seletivamente as partes que exigem personalização, sem ter que reconstruir todo o sistema de prompt para cada novo cliente.11
 
@@ -112,13 +99,9 @@ As vantagens práticas dessa abordagem são significativas. Ela leva a uma redu�
 A implementação de um prompt hierárquico segue um processo sistemático 13:
 
 1. **Definir o objetivo primário:** Qual é o resultado final desejado?
-    
 2. **Decompor os requisitos:** Dividir a tarefa complexa em uma série de etapas ou componentes lógicos.
-    
 3. **Criar sequências de prompt progressivas:** Projetar prompts que guiem o modelo através de cada etapa da decomposição.
-    
 4. **Estabelecer pontos de transição claros:** Definir como a saída de uma etapa se torna a entrada para a próxima.
-    
 
 Um exemplo prático pode ser visto no design de um agente de automação de fluxo de trabalho.14 Em vez de pedir ao agente para "automatizar o envio de um relatório semanal", um prompt hierárquico primeiro pediria para decompor a tarefa. O prompt do sistema definiria heurísticas para a decomposição, como "cada subtarefa deve ter um propósito claro e conciso" e "pesquisar informações é estritamente proibido, a menos que explicitamente solicitado". O agente então geraria uma lista de subtarefas (por exemplo, 1. Abrir o aplicativo de planilha. 2. Navegar para a aba 'Dados de Vendas'. 3. Copiar o intervalo A1:F50. 4. Colar os dados em um novo e-mail. 5. Enviar o e-mail para 'gestao@empresa.com'). Cada uma dessas subtarefas pode então ser executada sequencialmente.
 
@@ -169,9 +152,7 @@ A diferença em relação ao prompt padrão é gritante. Em um prompt padrão (o
 Existem duas variações principais do CoT, que diferem na quantidade de orientação fornecida ao modelo:
 
 - **CoT de Poucos Disparos (Few-Shot CoT):** Esta é a abordagem original e mais robusta. O prompt inclui um ou mais exemplos completos (exemplares) que demonstram o processo de raciocínio passo a passo para um problema análogo.19 Isso fornece ao modelo um modelo claro a seguir.
-    
 - **CoT de Disparo Zero (Zero-Shot CoT):** Esta é uma simplificação que não requer a criação de exemplares. Em vez disso, uma instrução simples é anexada ao prompt da pergunta, como "Vamos pensar passo a passo" ou "Explique seu raciocínio".18 Embora geralmente menos eficaz que o Few-Shot CoT, ele ainda pode proporcionar melhorias significativas em relação ao prompt padrão e é muito mais fácil de implementar.
-    
 
 Os casos de uso primários para o CoT são tarefas que não podem ser resolvidas com uma única etapa de recuperação de informação. Isso inclui principalmente problemas de palavras matemáticas (como os encontrados no benchmark GSM8K), que exigem a decomposição do problema em várias etapas de cálculo, e tarefas de raciocínio de senso comum e simbólico, onde as conexões lógicas entre os fatos precisam ser explicitadas.18
 
@@ -188,13 +169,9 @@ O ToT é um framework que aprimora as capacidades de resolução de problemas do
 O framework é composto por quatro componentes chave que orquestram essa exploração 24:
 
 1. **Decomposição do Pensamento:** O problema geral é dividido em etapas ou "pensamentos" intermediários. Cada pensamento é uma unidade de progresso coerente na resolução do problema.
-    
 2. **Geração de Pensamento:** Em cada nó da árvore (representando um estado atual), o LLM é usado como um "gerador de propostas". Com um "prompt de proposta", ele gera vários próximos passos ou pensamentos possíveis, criando múltiplos galhos a partir do nó atual. Por exemplo, no Jogo de 24 com os números (4, 6, 8, 10), o gerador poderia propor `4+6=10`, `8-4=4`, e `10+4=14` como os primeiros passos possíveis.25
-    
 3. **Avaliação de Estado:** Cada novo pensamento (nó) gerado é avaliado para determinar sua promessa de levar a uma solução final. Essa avaliação é frequentemente realizada pelo próprio LLM, usando um "prompt de valor". O modelo pode ser solicitado a atribuir uma pontuação numérica (por exemplo, de 1 a 10) ou uma classificação qualitativa (por exemplo, "certeiro", "provável", "impossível") a cada estado.25
-    
 4. **Algoritmo de Busca:** Um algoritmo de busca sistemática é usado para decidir qual nó expandir em seguida, com base nas avaliações de estado. Os algoritmos comuns são a Busca em Largura (Breadth-First Search - BFS), que explora todos os nós em um nível antes de passar para o próximo, ou a Busca em Profundidade (Depth-First Search - DFS), que segue um único caminho até o fim antes de retroceder.24 A busca permite que o sistema pode galhos não promissores e concentre os recursos computacionais nos caminhos mais prováveis.
-    
 
 A capacidade mais distintiva do ToT é o **retrocesso (backtracking)**. Se um caminho de raciocínio leva a uma contradição ou a um beco sem saída (por exemplo, um estado avaliado como "impossível"), o framework pode abandonar esse galho e retornar a um nó anterior para explorar uma alternativa.24 O CoT não possui essa capacidade; uma vez que comete um erro, ele geralmente continua nesse caminho falho.
 
@@ -205,11 +182,8 @@ O poder exploratório do ToT tem um custo. A técnica é significativamente mais
 O ToT supera o CoT em tarefas que se beneficiam intrinsecamente da exploração, do planejamento estratégico ou da consideração de múltiplas alternativas. Os casos de uso ideais incluem 25:
 
 - **Resolução de Puzzles e Jogos:** Tarefas como o Jogo de 24, onde múltiplos caminhos de cálculo precisam ser explorados.
-    
 - **Escrita Criativa:** Gerar diferentes planos ou arcos de história para uma passagem de texto e depois selecionar e elaborar o mais promissor.
-    
 - **Planejamento de Tarefas:** Quando um objetivo complexo precisa ser decomposto em uma sequência de ações e existem várias sequências possíveis.
-    
 
 A decisão de usar o ToT deve ser baseada em uma análise de custo-benefício. Ele deve ser reservado para tarefas intelectualmente exigentes que não podem ser resolvidas de forma confiável com técnicas mais simples e mais baratas como o CoT.25
 
@@ -228,11 +202,8 @@ A Autoconsistência é um método de prompt que substitui a decodificação "gan
 A metodologia de implementação da Autoconsistência é a seguinte 21:
 
 1. **Comece com um Prompt de CoT:** A técnica é construída sobre a Cadeia de Pensamento. Geralmente, um prompt de CoT de poucos disparos é usado como base.
-    
 2. **Gere Múltiplos Caminhos de Raciocínio:** Em vez de gerar uma única resposta, o mesmo prompt é enviado ao LLM várias vezes. Para gerar saídas diversas, a amostragem é feita com uma "temperatura" maior que zero, o que introduz aleatoriedade no processo de seleção de tokens. Isso resulta em um conjunto de diferentes cadeias de pensamento.
-    
 3. **Selecione a Resposta Mais Consistente:** Após gerar um conjunto de saídas (por exemplo, 40), as respostas finais de cada cadeia de pensamento são extraídas. A resposta final do sistema é aquela que aparece com mais frequência no conjunto, determinada por uma votação majoritária.
-    
 
 Essa abordagem tem se mostrado extremamente eficaz para melhorar a precisão em tarefas de raciocínio aritmético, de senso comum e simbólico, superando consistentemente o CoT padrão.23
 
@@ -243,11 +214,8 @@ A principal limitação da Autoconsistência padrão é sua dependência de uma 
 A Autoconsistência Universal (Universal Self-Consistency - USC) foi desenvolvida para superar essa limitação. Em vez de usar um mecanismo de votação baseado em regras, a USC emprega o próprio LLM como o juiz final.23 O processo é o seguinte:
 
 1. Gerar múltiplas saídas diversas para uma tarefa de formato livre, assim como na Autoconsistência padrão.
-    
 2. Concatenar todas as saídas geradas em um único prompt.
-    
 3. Fazer uma chamada final ao LLM com um prompt que lhe pede para analisar as diferentes saídas e selecionar a "mais consistente" ou a "melhor" com base em certos critérios. Por exemplo: "Eu gerei as seguintes três versões de um post no LinkedIn. Selecione a mais consistente e eficaz.".23
-    
 
 A USC estende os benefícios da robustez estatística para uma gama muito mais ampla de casos de uso, incluindo geração de código, sumarização de longo contexto e resposta a perguntas abertas, mostrando um desempenho que iguala ou supera a Autoconsistência padrão em benchmarks relevantes.23
 
@@ -280,11 +248,8 @@ O framework ReAct (Reasoning and Acting) é um paradigma seminal que une o racio
 O ReAct é um framework para construir agentes de IA que interagem com seus ambientes de forma estruturada e adaptável, quebrando a barreira entre a tomada de decisão e a execução da tarefa.27 A arquitetura do ReAct estrutura a atividade de um agente em um padrão formal e iterativo, conhecido como o ciclo Pensamento-Ação-Observação 27:
 
 1. **Pensamento (Thought):** Dada uma tarefa ou pergunta do usuário, o agente primeiro entra em um estado de "pensamento". O LLM, atuando como o cérebro do agente, usa o raciocínio no estilo CoT para decompor o problema e formular um plano. Ele verbaliza sua análise da situação e decide qual ação tomar a seguir para se aproximar da solução. Por exemplo: "A pergunta é sobre a capital da França. Eu sei essa informação, então devo responder diretamente." ou "A pergunta é sobre o tempo atual em Tóquio. Eu não tenho acesso a dados em tempo real. Preciso usar a ferramenta de busca de tempo.".27
-    
 2. **Ação (Action):** Com base no pensamento, o LLM seleciona uma ferramenta de um conjunto predefinido e gera os argumentos necessários para executá-la. A ação é uma chamada a uma API externa, uma consulta a um banco de dados ou qualquer outra função que o desenvolvedor tenha disponibilizado ao agente. Por exemplo: `Action: search(query='tempo atual em Tóquio')`.28
-    
 3. **Observação (Observation):** O resultado da execução da ação é retornado ao agente. Essa observação é a nova informação do ambiente externo. Por exemplo: `Observation: O tempo em Tóquio é de 25°C e ensolarado.`.28
-    
 
 Este ciclo se repete. A observação da etapa anterior é adicionada ao contexto do agente, que então entra em um novo estado de pensamento para analisar a nova informação e decidir o próximo passo. O ciclo continua até que o agente determine que tem informações suficientes para responder à pergunta original do usuário e gera uma resposta final.27 Esse processo iterativo permite que o agente crie, mantenha e ajuste dinamicamente seus planos com base no feedback em tempo real do ambiente.29
 
@@ -313,17 +278,11 @@ _não executa_ a função; ele apenas gera a solicitação para executá-la.32
 O fluxo de trabalho completo da chamada de função envolve uma dança de ida e volta entre o código do desenvolvedor e o LLM 32:
 
 1. **Definição do Esquema da Ferramenta:** O desenvolvedor define um conjunto de ferramentas (funções) disponíveis para o LLM. Para cada ferramenta, um esquema em formato JSON é criado, especificando o `name` da função, uma `description` clara de seu propósito e os `parameters` que ela aceita (incluindo tipo e descrição de cada parâmetro).7
-    
 2. **Chamada ao Modelo:** O desenvolvedor envia o prompt do usuário para o LLM, juntamente com a lista de esquemas de ferramentas disponíveis.30
-    
 3. **Resposta do Modelo com Chamada de Ferramenta:** O LLM analisa o prompt do usuário e os esquemas de ferramentas. Se decidir que uma ferramenta é necessária para responder à pergunta, em vez de gerar uma resposta em texto, ele retorna um objeto `tool_calls`. Este objeto contém o `name` da função a ser chamada e um objeto `arguments` com os valores extraídos do prompt do usuário.32
-    
 4. **Execução da Função pelo Desenvolvedor:** O código do aplicativo do desenvolvedor recebe essa resposta estruturada. Ele analisa o JSON, identifica qual função foi solicitada e com quais argumentos, e então executa a função correspondente em seu próprio ambiente (por exemplo, fazendo uma chamada a uma API de tempo real, consultando um banco de dados).
-    
 5. **Retorno do Resultado ao Modelo:** O resultado da execução da função (a "Observação" no ciclo ReAct) é então enviado de volta ao LLM em uma nova chamada, como parte do histórico da conversa.
-    
 6. **Geração da Resposta Final:** Com o resultado da função agora em seu contexto, o LLM tem as informações de que precisava e gera uma resposta final em linguagem natural para o usuário, sintetizando a informação obtida.
-    
 
 Tanto a OpenAI 7 quanto o Google (com Vertex AI e Gemini) 33 oferecem implementações robustas desse fluxo, permitindo chamadas de múltiplas funções em paralelo para otimizar a latência.
 
@@ -332,29 +291,21 @@ Tanto a OpenAI 7 quanto o Google (com Vertex AI e Gemini) 33 oferecem implementa
 A chamada de função desbloqueia uma vasta gama de aplicações que antes eram impraticáveis ou extremamente frágeis:
 
 - **Conversão de Linguagem Natural em Chamadas de API:** Este é o caso de uso canônico. Um usuário pode dizer "Qual o tempo em Belize?" e o sistema traduz isso diretamente para uma chamada de função como `get_current_weather(location="Belize", unit="celsius")`.30
-    
 - **Extração de Dados Estruturados:** Um LLM pode receber um bloco de texto não estruturado e usar uma função como `extract_entities(text=...)` para extrair informações específicas (nomes, datas, empresas) e retorná-las em um formato JSON limpo, pronto para ser inserido em um banco de dados.7
-    
 - **Automação de Fluxo de Trabalho:** Agentes podem usar chamadas de função para interagir com sistemas de negócios, como agendar reuniões em um calendário, criar um pedido em um sistema de CRM ou enviar um e-mail.37
-    
 
 Para implementar a chamada de função de forma eficaz, as melhores práticas incluem 36:
 
 - **Descrições Claras:** As descrições das funções e de seus parâmetros são cruciais. O LLM as usa para decidir qual ferramenta usar. Elas devem ser claras, específicas e inequívocas.
-    
 - **Validação e Higienização de Entradas:** Nunca confie cegamente nos argumentos fornecidos pelo LLM. Sempre valide e higienize as entradas no seu código antes de executá-las para prevenir vulnerabilidades de segurança.
-    
 - **Tratamento Robusto de Falhas:** As chamadas de API externas podem falhar. Seu código deve ter uma lógica robusta de tratamento de erros e tentativas (retry), e ser capaz de relatar a falha de volta ao LLM para que ele possa tentar uma abordagem diferente.
-    
 
 #### 7.3. Chamada de Função vs. RAG (Retrieval-Augmented Generation)
 
 É importante distinguir a chamada de função da Geração Aumentada por Recuperação (RAG). Embora ambos sejam métodos para fornecer conhecimento externo a um LLM, seus propósitos são diferentes 37:
 
 - **RAG:** É para **recuperação de conhecimento**. Ele busca informações em um corpus de documentos estáticos (por exemplo, PDFs, páginas da web, base de conhecimento interna) para responder a uma pergunta com base nesse conteúdo. A fonte de dados é passiva.
-    
 - **Chamada de Função:** É para **ação e recuperação de dados dinâmicos**. Ela interage com sistemas externos para executar uma ação (por exemplo, enviar um e-mail) ou obter dados que mudam com o tempo (por exemplo, o preço de uma ação, o tempo atual). A fonte de dados é ativa.
-    
 
 A sinergia entre os dois é onde os agentes mais avançados operam. Um agente pode usar RAG para recuperar o histórico de um cliente de uma base de conhecimento e, em seguida, usar uma chamada de função para agendar uma reunião de acompanhamento com base nesse histórico.37
 
@@ -375,22 +326,16 @@ A pesquisa demonstrou que essa capacidade tem um impacto profundo no desempenho.
 Vários frameworks foram propostos para implementar a reflexão e a autocorreção em agentes:
 
 - **Reflexion:** Este é um dos primeiros e mais influentes frameworks, que dota um agente de memória dinâmica e capacidades de autorreflexão em tempo de inferência. O Reflexion usa uma heurística para permitir que o agente detecte seus próprios erros, como alucinações ou repetições em sequências de ações. Após uma falha, o agente gera uma "reflexão" verbal em linguagem natural sobre o que deu errado e adiciona essa reflexão à sua memória de trabalho. Nas tentativas subsequentes, essa reflexão serve como um guia para evitar cometer o mesmo erro.38
-    
 - **STeP (Self-Reflected Trajectories and Partial Masking):** Este método foca em como treinar LLMs menores e mais eficientes para se tornarem agentes capazes de se autocorrigir. Ele utiliza um "modelo professor" maior e mais capaz para supervisionar o agente "aluno". Quando o aluno comete um erro, o professor intervém em tempo real, fornecendo uma reflexão e uma correção para guiar o aluno de volta ao caminho certo. Essas trajetórias corrigidas são então usadas para continuar o fine-tuning do aluno, ensinando-o efetivamente a se autocorrigir.40
-    
 - **InSeC (Internalized Self-Correction):** Esta abordagem inovadora move o processo de autocorreção do tempo de inferência para o tempo de treinamento. Em vez de aprender apenas com exemplos positivos, o modelo é treinado em um conjunto de dados que inclui deliberadamente erros e suas correções correspondentes. Por exemplo, uma sequência de treinamento pode conter uma frase incorreta seguida por um token especial de autocorreção e a frase correta. Ao ser treinado nesse formato, o modelo "internaliza" a capacidade de reconhecer e corrigir seus próprios erros, como alucinações ou desvios de instrução, sem a necessidade de um loop de reflexão explícito em tempo de inferência.42
-    
 
 #### 8.3. O Futuro da Autonomia: Uso de Ferramentas e Descoberta Científica
 
 A capacidade de reflexão e autocorreção é um passo crucial na jornada dos LLMs de meras ferramentas de automação para agentes verdadeiramente autônomos.43 Uma taxonomia proposta para a autonomia de LLMs na descoberta científica ilustra essa progressão 43:
 
 - **Nível 1: LLM como Ferramenta:** O LLM executa tarefas específicas e bem definidas sob supervisão humana direta (por exemplo, resumir um artigo, gerar um snippet de código).
-    
 - **Nível 2: LLM como Analista:** O LLM exibe maior autonomia, funcionando como um agente passivo capaz de executar fluxos de trabalho de múltiplos estágios (por exemplo, analisar um conjunto de dados e gerar um relatório preliminar).
-    
 - **Nível 3: LLM como Cientista:** O LLM atinge um alto grau de autonomia, capaz de navegar por quase todas as etapas do método científico, desde a formulação de hipóteses até o planejamento de experimentos, a análise de dados e a redação de conclusões.
-    
 
 Atingir os níveis mais altos de autonomia depende criticamente da capacidade de autocorreção. Pesquisas sobre Agentes de Simulação Autônomos (ASA) mostram que LLMs equipados com frameworks de planejamento e correção podem gerenciar investigações científicas completas, como executar simulações remotas, analisar os resultados e escrever relatórios, com mínima ou nenhuma intervenção humana.44
 
