@@ -1,3 +1,6 @@
+---
+sticker: lucide//bookmark-plus
+---
 # 🏛️ SODA: Master Vision & Architecture Decision Records (ADRs)
 
 **Projeto:** Genesis Mission Control | **Alvo:** Bare-Metal Edge (32GB RAM, RTX 2060m 6GB)

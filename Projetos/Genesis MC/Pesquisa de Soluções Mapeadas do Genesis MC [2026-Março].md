@@ -1,3 +1,6 @@
+---
+sticker: lucide//anchor
+---
 # Relatório de Pesquisa: Inovações de Fronteira e Oportunidades de Integração Arquitetural para o Genesis Mission Control (Genesis MC)
 
 ## Introdução: A Topologia do Sistema Operacional Agêntico Soberano e as Fronteiras de Otimização

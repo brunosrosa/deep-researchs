@@ -1,6 +1,7 @@
 ---
 aliases:
   - "TurboQuant e Genesis MC: Integração"
+sticker: lucide//lightbulb
 ---
 # Relatório de Pesquisa: Integração Arquitetural do TurboQuant ao Ecossistema Genesis MC
 

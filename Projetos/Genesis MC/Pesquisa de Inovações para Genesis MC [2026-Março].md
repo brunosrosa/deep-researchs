@@ -1,3 +1,6 @@
+---
+sticker: lucide//zoom-in
+---
 # Relatório de Pesquisa: Novas Fronteiras e Substitutos Arquiteturais Inéditos para o Genesis Mission Control (Genesis MC)
 
 ## Introdução: Reavaliando o Ecossistema SODA com Tecnologias Emergentes de 2026
