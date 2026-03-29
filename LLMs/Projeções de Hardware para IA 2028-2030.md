@@ -1,3 +1,6 @@
+---
+sticker: lucide//airplay
+---
 # Projeções de Infraestrutura de IA Local: Ecossistema SODA (Genesis MC) para 2028 e 2030
 
 ## Plano de Pesquisa e Vetores de Desenvolvimento Tecnológico
