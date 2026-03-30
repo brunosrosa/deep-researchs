@@ -1,3 +1,6 @@
+---
+sticker: lucide//zoom-in
+---
 # Relatório Técnico: Engenharia de Prompts e Vibe Design para Interfaces em Ecossistemas Agênticos
 
 ## A Evolução do Vibe Design e a Arquitetura de Sistemas Autônomos

@@ -4,8 +4,9 @@ aliases:
 type: Architecture Decision Record & Software Design Document (SDD)
 project: Genesis MC (SODA - Sovereign Operating Data Architecture)
 domain: UI/UX, Frontend State, Tauri IPC
-author: Bruno & SODA Master Architect 
+author: Bruno & SODA Master Architect
 status: APPROVED / ACTIVE DIRECTIVE
+sticker: lucide//bookmark-plus
 ---
 
 # 🔴 DIRETRIZ SOBERANA: Arquitetura de Interface, UX para 2e/TDAH e Gestão de Estado

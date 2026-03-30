@@ -1,5 +1,5 @@
 ---
-sticker: lucide//book-up
+sticker: lucide//bookmark-plus
 ---
 ## PROMPT: [RECORTAR]
 
