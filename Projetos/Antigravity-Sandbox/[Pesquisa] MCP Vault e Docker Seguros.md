@@ -510,3 +510,183 @@ secrets:
 ```
 
 Basta executar `docker-compose up -d --build` neste diretório. A combinação do comando `tail -f /dev/null` no `CMD` do Dockerfile com a diretiva de inicialização garantirá que o contêiner permaneça ocioso e seguro, até que o MCP Vault efetue o disparo de _Late-Binding_ por meio do comando `docker exec` definido no `vault.json`.
+
+---
+
+# [Pesquisa Ampliada] MCP Vault e Docker Seguros (v2.0)
+
+**Data:** Abril de 2026 | **Foco:** Orquestração de MCPs, Dependências e Automação de Navegadores
+
+Este documento estabelece as configurações imutáveis para o "MCP Vault" no ecossistema SODA, corrige as quebras de API de dependências Python (FastMCP) e disseca o cenário de agentes de navegação, respondendo aos dilemas arquiteturais entre desenvolvimento e produção.
+
+## 1. A Resolução do Bloqueio FastMCP (Sem Downgrade)
+
+**O Problema:** A biblioteca `FastMCP` atualizou sua API, removendo o parâmetro `log_level` da inicialização principal para forçar um design mais limpo nos transportes assíncronos. O `mcpv` (MCP Vault) ainda invoca a API antiga, causando o `TypeError`.
+
+**A Dúvida (Advogado do Diabo):** _"Utilizar um FastMCP anterior num pode dar problema?"_
+
+**Sim, problemas catastróficos.** Fazer downgrade do FastMCP (`<1.0.0`) no final de 2025/2026 quebraria a compatibilidade com as novas especificações do protocolo (como paginação, _Resource Templates_ e o recém-lançado _Agentic Roots_). Você perderia a capacidade de conectar ferramentas modernas.
+
+**A Solução Definitiva:** Manter o FastMCP atualizado e injetar a variável de ambiente exigida pela nova API, contornando o erro de código do `mcpv` sem tocar nos binários.
+
+**Comando de Instalação e Execução via `uv` no Windows (PowerShell):**
+
+```bash
+# 1. Garanta a instalação limpa e atualizada
+uv tool install mcpv --force
+
+# 2. Configure a variável no seu perfil (Permanente)
+[Environment]::SetEnvironmentVariable("FASTMCP_LOG_LEVEL", "DEBUG", "User")
+
+# 3. Ou inicie o roteador injetando a variável na hora (Efêmero)
+$env:FASTMCP_LOG_LEVEL="DEBUG"; mcpv init
+```
+
+## 2. A Estrutura do Cofre (`vault.json` com Late-Binding)
+
+O conceito de **Late-Binding** (Amarração Tardia) é vital para o seu hardware (32GB RAM / 6GB VRAM). Se todos os servidores MCP subirem no boot, sua máquina congela. O `vault.json` abaixo instrui o roteador a apresentar o _schema_ (o menu de opções) para a IA, mas **só ligar o servidor quando a IA decidir usar a ferramenta**.
+
+**Caminho:** `~/.mcpv/vault.json`
+
+```JSON
+{
+  "vault_version": "2.1",
+  "global_strategy": "late-binding",
+  "servers": {
+    "jcodemunch": {
+      "command": "uvx",
+      "args": ["jcodemunch-mcp"],
+      "strategy": "late-binding",
+      "idle_timeout_ms": 120000,
+      "description": "Busca O(1) em código fonte via AST."
+    },
+    "sqlite-core": {
+      "command": "uvx",
+      "args": ["mcp-sqlite", "--db", "C:/SODA/memory/hippocampus.db"],
+      "strategy": "persistent", 
+      "description": "Acesso de leitura imediata à memória de curto prazo."
+    },
+    "notebooklm": {
+      "command": "uvx",
+      "args": ["notebooklm-mcp-cli"],
+      "strategy": "late-binding",
+      "idle_timeout_ms": 300000,
+      "description": "Pesquisa profunda em grafos documentais."
+    },
+    "docling": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "${WORKSPACE_ROOT}:/data:ro", "docling-serve-local", "uvx", "--from", "docling-mcp", "docling-mcp-server", "--transport", "stdio"],
+      "strategy": "late-binding",
+      "idle_timeout_ms": 60000,
+      "description": "OCR e extração pesada de PDFs (Container efêmero, morre após o uso)."
+    },
+    "browser-use": {
+      "command": "docker",
+      "args": ["exec", "-i", "soda-browser-sidecar", "python", "-m", "browser_use.mcp_server"],
+      "strategy": "late-binding",
+      "description": "Navegação autônoma na web. Conecta a um container em background."
+    }
+  }
+}
+```
+## 3. Build Seguro do Browser-Use (Imutável e Local)
+
+Para evitar as imagens corrompidas do `ghcr.io`, você compilará o sidecar localmente.
+
+**Arquivo 1: `Dockerfile`** (Bloqueio de telemetria e injeção do VNC seguro)
+
+```dockerfile
+FROM python:3.11-slim-bookworm
+
+# Instalação de dependências do sistema, Xvfb (Display virtual) e X11VNC
+RUN apt-get update && apt-get install -y \
+    wget gnupg xvfb x11vnc fluxbox dbus-x11 \
+    libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxcomposite1 \
+    libxrandr2 libxdamage1 libxkbcommon0 libgbm1 libasound2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalação do gerenciador UV
+RUN pip install uv
+
+WORKDIR /app
+
+# Instalação das dependências Python e Playwright
+RUN uv pip install --system browser-use playwright mcp
+RUN playwright install chromium
+RUN playwright install-deps
+
+# Bloqueio estrito de telemetria
+ENV ANONYMIZED_TELEMETRY=false
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+ENV BROWSER_HEADLESS=false
+ENV DISPLAY=:99
+
+# Script de entrada para segurar o container vivo e iniciar o VNC
+RUN echo '#!/bin/bash\n\
+Xvfb :99 -screen 0 1280x800x24 -nolisten tcp &\n\
+fluxbox &\n\
+x11vnc -display :99 -forever -nopw -shared -bg -xkb &\n\
+echo "SODA Browser Sidecar operante."\n\
+tail -f /dev/null' > /app/entrypoint.sh
+
+RUN chmod +x /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
+```
+
+**Arquivo 2: `docker-compose.yml`**
+
+```yaml
+version: '3.8'
+services:
+  soda-browser-sidecar:
+    build: .
+    container_name: soda-browser-sidecar
+    ports:
+      - "5900:5900" # Porta VNC para você assistir o agente (Vibe Testing)
+    shm_size: '2gb' # Evita crash do Chromium na memória RAM
+    environment:
+      - ANONYMIZED_TELEMETRY=false
+    restart: unless-stopped
+```
+
+_Comando para subir: `docker compose up -d --build`._
+## 4. A Dissecação dos Agentes de Navegação
+
+Suas dúvidas tocam no coração da arquitetura de IA. Vamos desmistificar o que cada ferramenta faz, o consumo de recursos e onde o SODA se encaixa.
+
+### 4.1. Playwright vs. Browser-Use vs. Vercel Agent Browser
+
+- **O que o Antigravity já faz:** Ele apenas "abre um navegador" para você ver o resultado do código ou rodar testes unitários estáticos. É passivo.
+- **Playwright / Puppeteer:** São **volantes e pedais**. Eles não têm cérebro. Eles exigem que o programador escreva scripts estritos (`click('#botao-login')`). Se o botão mudar de ID amanhã, o script quebra.
+- **Browser-Use:** Este é o **piloto automático**. Ele não é um script; é um _Agente Autônomo_. Ele entra numa página, olha para a Árvore do DOM (ou tira um print), envia para o LLM, o LLM raciocina ("O botão de login está no canto superior direito"), e ele clica. **Sim, ele atua por procuração.** Você diz: "Cancele minha assinatura na Netflix", e ele faz o trabalho sujo.
+- **Vercel Agent Browser:** É a resposta corporativa/Cloud para o Browser-Use. As **pegadinhas:** Ele é _Cloud-Native_. É otimizado para rodar nas infraestruturas da Vercel e depende massivamente das APIs deles (AI SDK). Para um sistema "Air-Gapped" e Bare-Metal como o Genesis MC, ele viola a premissa de Soberania.
+
+### 4.2. Skyvern e OpenBrowser vs. Browser-Use (A Batalha da VRAM)
+
+- **Skyvern:** É genial para automação corporativa, pois usa _Computer Vision_ profunda. Ele tira prints da tela e manda a imagem para o LLM analisar. **O Custo:** Enviar imagens exige modelos Vision (GPT-4o, Claude 3.5 Sonnet) ou modelos locais gigantes (LlaVA, Qwen-VL de 14B+). **Seu problema:** Isso extermina seus 6GB de VRAM. A placa derrete.
+- **Browser-Use:** É flexível. Ele converte a página HTML em um texto simplificado (Accessibility Tree) e manda como _texto_ para o LLM. Textos são minúsculos. Pode ser rodado com modelos locais de 7B-8B (como o Qwen 2.5 Coder) economizando milhares de tokens.
+- **OpenBrowser:** Promete ser "privacy-first", mas ainda é um projeto incipiente e fragmentado se comparado à maturidade da biblioteca Python do `browser-use`.
+
+### 4.3. O Desafio dos Modelos Locais
+
+Para rodar agentes de navegação localmente **bem** nos seus 6GB de VRAM:
+
+Você precisa de um modelo compacto e altamente capacitado em lógica e chamadas de função (Function Calling). O **Qwen 2.5 Coder 7B (GGUF Q4_K_M)** ou o **Phi-4-mini** são as únicas escolhas lógicas atuais. Eles conseguem processar a árvore HTML do `browser-use` e tomar decisões acertadas sem fritar seu hardware.
+
+## 5. A Decisão Arquitetural (O Veredito)
+
+Como você bem notou, um agente precisa de ferramentas flexíveis e intercambiáveis para o futuro. Mas precisamos de balizas sólidas para hoje.
+
+### Para o Ambiente de Desenvolvimento (Antigravity IDE):
+
+**A Escolha: `browser-use` via Sidecar Docker (com VNC).**
+
+- **Por quê?** No ambiente de desenvolvimento, você _quer_ ver o que a IA está fazendo. O VNC permite que você abra uma janela e veja o agente "clicando" na tela fantasma do Docker (isso é o **Vibe Testing** puro!). O Docker protege sua máquina principal (host) contra qualquer burrice que o agente faça na web. Ele é o padrão ouro para testar fluxos hoje e funciona perfeitamente com a infraestrutura atual do MCP Vault.
+
+### Para o Sistema Final (O Daemon SODA do Genesis MC):
+
+**A Escolha: Abstração Nativa em Rust (Zero-UI DOM Parsing).**
+
+- **Por quê?** O Genesis MC será um daemon invisível. Manter o Chromium + Node/Python rodando em background para sempre consome RAM passiva (Daemon Bloat). Quando o Gênesis MC estiver pronto, ele não usará "navegadores completos" para tarefas invisíveis. Ele canibalizará a lógica de extração do _rtrvr.ai_ (DOM Tree inteligente) e usará bibliotecas nativas em Rust (`reqwest` + `scraper` ou `headless_chrome` enxuto) para buscar informações na web, processar como texto puro e entregar para o LLM. Isso custa 0% de VRAM ociosa. O `browser-use` será reservado apenas para tarefas complexas, acionado sob demanda e morto assim que a tarefa terminar (Sidecar Efêmero).
+
+**Resumo da Doutrina:** Use o `browser-use` blindado no Docker agora para construir as fundações de orquestração no Antigravity. Ao forjar o núcleo SODA em Rust, você descartará o Chromium sempre que uma simples requisição HTTP pura puder resolver o problema.
