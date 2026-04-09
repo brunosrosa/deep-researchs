@@ -2,7 +2,6 @@
 aliases:
   - Diagnóstico e Integração AgentGateway Tauri
 ---
-
 # Relatório de Pesquisa e Arquitetura: Diagnóstico, Roteamento e Integração IPC Avançada do AgentGateway (CNCF) com Tauri v2 no Ecossistema SODA
 
 ## 1. Introdução e Contexto Arquitetural do Sistema Operacional Agêntico
