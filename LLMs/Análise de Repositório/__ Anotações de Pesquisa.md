@@ -1,3 +1,6 @@
+---
+sticker: lucide//box-select
+---
 # Bases:
 
 Repositórios importantes de analisar para Orquestração:
@@ -134,27 +137,35 @@ Instalados:
 ## SOP's Fases:
 
 ### 🟢 Fase 1: Fundação de Negócio (A Bússola)
+
 _Objetivo:_ Definir as regras do jogo e a linguagem antes de qualquer abstração técnica.
 
 ### 🔵 Fase 2: Definição de Produto (O Planejamento)
+
 _Objetivo:_ Traduzir negócio em requisitos funcionais testáveis.
 
 ### 🎨 Fase 3: Experiência e Interface (O Design)
+
 _Objetivo:_ Definir a interação visual e textual antes de codar componentes.
 
 ### 🏗️ Fase 4: Arquitetura Técnica (A Engenharia)
+
 _Objetivo:_ Projetar a estrutura invisível e os contratos de dados.
 
 ### 💻 Fase 5: Construção (A Execução)
+
 _Objetivo:_ Materializar a arquitetura em código limpo e seguro.
 
 ### 🧪 Fase 6: Qualidade (A Verificação)
+
 _Objetivo:_ Garantir que o construído reflete o planejado e não quebra.
 
 ### 🚀 Fase 7: Operações (O Lançamento)
+
 _Objetivo:_ Levar o código ao ambiente produtivo com segurança e reversibilidade.
 
 ### 🏁 Fase 8: Entrega e Manutenção (O Ciclo Vivo)
+
 _Objetivo:_ Garantir a longevidade, conformidade e valor para o usuário.
 
 ##### Tabela 1: Matriz de Persona-Skill BMad
@@ -402,25 +413,55 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
 ---
+
 ### Nvidia Respositórios
 
 https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
 https://github.com/NVIDIA/NeMo-Agent-Toolkit
-https://github.com/NVIDIA/OpenShell
-https://github.com/NVIDIA/TransformerEngine
-
+OpenShell: https://github.com/NVIDIA/OpenShell
+TransformerEngine: https://github.com/NVIDIA/TransformerEngine
+Waza https://github.com/tw93/waza
+AutoAgent https://github.com/kevinrgu/autoagent
+Research Companion https://github.com/andrehuang/research-companion
+marknative https://github.com/liyown/marknative
+GitReverse https://github.com/filiksyos/gitreverse
+mail-app https://github.com/ankitvgupta/mail-app
+autoskills https://github.com/midudev/autoskills
+Compozy https://github.com/compozy/compozy
+JSON Alexander https://github.com/wesbos/JSON-Alexander
+career-ops https://github.com/santifer/career-ops
+Sheets https://github.com/maaslalani/sheets
+apfel https://github.com/Arthur-Ficial/apfel
+agentfiles https://github.com/Railly/agentfiles
+boneyard https://github.com/0xGF/boneyard
+jot https://github.com/badlogic/jot
+Supply Chain Monitor https://github.com/elastic/supply-chain-monitor
+port-whisperer https://github.com/LarsenCundric/port-whisperer
+OpenHarness https://github.com/HKUDS/OpenHarness
+Math Curve Loaders https://github.com/Paidax01/math-curve-loaders
+Pika Skills Open https://github.com/Pika-Labs/Pika-Skills
+Cabinet https://github.com/hilash/cabinet
+iron-proxy https://github.com/ironsh/iron-proxy
+hermes-webui https://github.com/nesquena/hermes-webui
+any-buddy https://github.com/cpaczek/any-buddy
+cuLA https://github.com/inclusionAI/cuLA
+see-through https://github.com/shitagaki-lab/see-through
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill (inclusive adorei, pretendo mudar o Desing que estava imaginando para o Genesis MC para ter algo mais parecido com isso)
+three.wasm https://github.com/mrdoob/three.wasm
+refugiOS https://github.com/Ganso/refugiOS
 
 ##### MCPs
 
 Faltam algumas analises amplas:
-- Uma das várias possibilidades de MCPs que existem, quais essenciais, quais interessantes estão se popularizando, quais mais serão de grande ajuda e possibilidade, como também verificar se existe alguma maneira de "descobrir" novos MCPs "*on-the-go*", sei que isso toma um tempo para levantar o MCP muitas vezes e tal... mas provavelmente já existem soluções que buscam manter um cache das mais utilizadas para evitar gargalos após esse "cold-start" inicial. Verificar também. 
-- Também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar/ensinar o uso dos MCPs/CLIs. 
-- Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender. 
-- Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores..... 
+- Uma das várias possibilidades de MCPs que existem, quais essenciais, quais interessantes estão se popularizando, quais mais serão de grande ajuda e possibilidade, como também verificar se existe alguma maneira de "descobrir" novos MCPs "*on-the-go*", sei que isso toma um tempo para levantar o MCP muitas vezes e tal... mas provavelmente já existem soluções que buscam manter um cache das mais utilizadas para evitar gargalos após esse "cold-start" inicial. Verificar também.
+- Também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar/ensinar o uso dos MCPs/CLIs.
+- Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender.
+- Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores.....
 
 Link de "Soluções":
 - https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
 - (procurar outras soluções)
+
 ##### RLM (Recursive Language Models)
 
 "Explorar modelos de linguagem que chamam a si mesmos ou a outros LLMs recursivamente antes de fornecer uma resposta final. O objetivo é permitir o processamento de contextos de entrada e saída de comprimento essencialmente ilimitado e mitigar a degradação causada pela "deterioração do contexto"."
@@ -432,7 +473,6 @@ https://github.com/fullstackwebdev/rlm_repl
 https://alexzhang13.github.io/blog/2025/rlm/
 https://github.com/ysz/recursive-llm
 https://github.com/alexzhang13/rlm
-
 
 ---
 
@@ -458,8 +498,11 @@ https://github.com/alexzhang13/rlm
 - Outras? Quais? Pq? Para Que?
 
 #### Usos Específicos
+
 - [vaultbox](https://ollama.com/vaultbox)/[qwen3.5-uncensored](https://ollama.com/vaultbox/qwen3.5-uncensored "qwen3.5-uncensored")
-#### Tool Calling 
+
+#### Tool Calling
+
 (Quais outras "LLMs" pequenas especializadas poderiam ajudar ainda mais o Genesis MC?) (e que "tipos" existem?)
 
 - FunctionGemma 3 270M
@@ -489,7 +532,8 @@ https://github.com/alexzhang13/rlm
 
 ---
 
-# Novos Repositórios para Análise 
+# Novos Repositórios para Análise
+
 ## Skills base (bMAD e SDD)
 
 https://github.com/bmad-code-org/BMAD-METHOD
@@ -498,6 +542,7 @@ https://github.com/LarsCowe/bmalph
 https://github.com/Fission-AI/OpenSpec
 https://github.com/github/spec-kit
 https://github.com/gotalab/cc-sdd
+
 ### Complemento?
 
 https://github.com/buildermethods/agent-os
@@ -524,12 +569,12 @@ Abaixo fornecerei uma lista de repositórios open-source focados em Skills Agên
    - Uma **Super Skills de SDD (Spec-Driven Development)** para forçar o agente a planejar antes de codar.
    - Uma **Super Skill de Rust Seguro**, blindando o agente contra falhas de concorrência (`tokio`) e _Borrow Checker_.
    - Outas várias possibilidades de Skills que trouxerem ganhos para nosso uso, verifique as opções com um olhar ampliado e não se limite em trazer um conjunto ampliado de opções.
-   - Se for interessante unir metodologias e skills, explique como fazê-los. E como utilizar. 
+   - Se for interessante unir metodologias e skills, explique como fazê-los. E como utilizar.
 
 Apresente o relatório de análise e a estrutura proposta (resumida, poderemos detalhar em documentos posteriores) para essas novas Super Skills, explicando como instalaremos e instruiremos no Antigravity a utilizá-las sem causar confusão cognitiva.
 
 [ MINHA LISTA DE REPOSITÓRIOS ABAIXO ]:
-	- https://github.com/bmad-code-org/BMAD-METHOD 
+	- https://github.com/bmad-code-org/BMAD-METHOD
 	- https://github.com/LarsCowe/bmalph
 	- https://github.com/salacoste/antigravity-bmad-config
 	- https://github.com/Fission-AI/OpenSpec
@@ -542,9 +587,9 @@ Apresente o relatório de análise e a estrutura proposta (resumida, poderemos d
 	- https://github.com/iml1s/antigravity_for_loop
 	- https://github.com/Shiritai/sanity-gravity
 
---- 
+---
 
-Dúvidas apenas para responder diretamente: 
+Dúvidas apenas para responder diretamente:
 - O bMAD, SDD e etc, eles tem vários "papeis" e consequentemente um conjunto de skills, também correto? Como fica isso, vamos captar esses papeis e skills e unificar tudo num processo único que pode "instanciar" cada persona/skill de acordo com a necessidade? As "superskills" serão esse "gateway" para iniciar? No exemplo do bMAD mesmo, vc diz sobre o CONTRACTS.md, mas se ele não existir, o agente vai trocar de persona e agir para gerar esse contract, conversando com o usuário?
 - Precisaremos então criar os arquivos de SKILLS.md refinados com base nos originais citados anteriormente para unificar em "superskills" de (certo?):
 	- soda-governance
@@ -554,12 +599,12 @@ Dúvidas apenas para responder diretamente:
 	- soda-frontend-expert
 	- soda-archivist
 
-Acredito que precisamos de uma pesquisa complementar: 
-Sobre Skills v2 (lançado a pouco tempo): 
+Acredito que precisamos de uma pesquisa complementar:
+Sobre Skills v2 (lançado a pouco tempo):
 - O que se difere da v1?
 - Qual o mais seguro, atualizado, revisado, auditado e evoluído repositório de Skills que utilizem melhorias de v2 (já) e que poderíamos ter como referência de confiança e qualidade? (quando precisar-mos buscar novas skills específicas)
-- As Skills em v2 são planejadas para um aprendizado/evolução constante? Como podemos aplicar isso as nossas skills? 
-Vale uma pesquisa sobre essas questões, inclusive para que antes de criar as "superskills" já adotemos as melhorias e melhores práticas que podem estar relacionadas as "Skills v2", certo? Se sim, então vamos realizar essa pesquisa, depois seguiremos para criar as "superskills" (uma a uma), verificar se deveremos ter um serviço que encontra novas skills (utilizando o repositório confiável de referência) e por fim, testar como fica o fluxo de trabalho utilizando as skills. Entendido? 
+- As Skills em v2 são planejadas para um aprendizado/evolução constante? Como podemos aplicar isso as nossas skills?
+Vale uma pesquisa sobre essas questões, inclusive para que antes de criar as "superskills" já adotemos as melhorias e melhores práticas que podem estar relacionadas as "Skills v2", certo? Se sim, então vamos realizar essa pesquisa, depois seguiremos para criar as "superskills" (uma a uma), verificar se deveremos ter um serviço que encontra novas skills (utilizando o repositório confiável de referência) e por fim, testar como fica o fluxo de trabalho utilizando as skills. Entendido?
 
 ---
 
@@ -586,7 +631,7 @@ Fornecerei uma lista de servidores MCP identificados como críticos. O objetivo 
 	- https://github.com/yokingma/time-mcp
 	- https://github.com/softerist/heuristic-mcp
 	- https://github.com/jellyjamin/TOON-context-mcp-server
-	- E para o controle automatizado do Github (commits atômicos e etc?)? 
+	- E para o controle automatizado do Github (commits atômicos e etc?)?
 	- Github Projects?
 	- Sequencial Thinking
 	- "Playwright" (é preciso? O Antigravity já tem algo nativo igual? Existe outra solução melhor?)
@@ -594,11 +639,11 @@ Fornecerei uma lista de servidores MCP identificados como críticos. O objetivo 
 	- "Markitdown" (O uso para ler documentações da web, para ajudar a criar novas skills? faz sentido? quais outros usos? Devemos instalar?)
 	- "Google Stitch" para integração entre a protitipação de UI e a criação?
 
---- 
+---
 
-Segunda parte deve verificar o que fazer pra ter essa quantidade de MCPs sem gerar problema de excesso de contexto e piorar a questão de context-rot. Quais soluções de vanguarda buscam resolver isso e que poderíamos trazer para resolver o problema? Pesquisar a vanguarda sobre soluções open-source, estudos, artigos e testes que buscam abordar esse problema e conseguir descobrir a melhor solução. Sei que existe algo como um "gateway" para MCPs, transformar eles em CLI, e provavelmente outras soluções. Devemos usar o motor de MCP do próprio Antigravity? Devemos usar no Docker? Devemos usar de outra maneira? Se não usar o nativo do Antigravity, é preciso fazer algo no antigravity para que o agente tenha a visão e o processo automático de como buscar e usar mcps? 
+Segunda parte deve verificar o que fazer pra ter essa quantidade de MCPs sem gerar problema de excesso de contexto e piorar a questão de context-rot. Quais soluções de vanguarda buscam resolver isso e que poderíamos trazer para resolver o problema? Pesquisar a vanguarda sobre soluções open-source, estudos, artigos e testes que buscam abordar esse problema e conseguir descobrir a melhor solução. Sei que existe algo como um "gateway" para MCPs, transformar eles em CLI, e provavelmente outras soluções. Devemos usar o motor de MCP do próprio Antigravity? Devemos usar no Docker? Devemos usar de outra maneira? Se não usar o nativo do Antigravity, é preciso fazer algo no antigravity para que o agente tenha a visão e o processo automático de como buscar e usar mcps?
 
---- 
+---
 
 Pesquisa única: https://mcpmarket.com/leaderboards
 
@@ -609,12 +654,12 @@ Pesquisa única: https://mcpmarket.com/leaderboards
 ATUE COMO UM ENGENHEIRO DE MACHINE LEARNING ESPECIALISTA EM EDGE COMPUTING E SLMs (Small Language Models).
 
 **CONTEXTO MESTRE:**
-Estamos desenvolvendo o **Genesis MC (SODA)**, um Sistema Operacional Agêntico Local. A nossa arquitetura de hardware exige separação estrita: 
+Estamos desenvolvendo o **Genesis MC (SODA)**, um Sistema Operacional Agêntico Local. A nossa arquitetura de hardware exige separação estrita:
 - A GPU Dedicada (RTX 2060m, 6GB) fica desligada/ociosa a maior parte do tempo, reservada apenas para tarefas pesadas.
 - O "Roteador Nível 0" (O Maestro) deve rodar 24/7 de forma contínua e invisível, utilizando exclusivamente a iGPU (Intel UHD/Iris) e a RAM do sistema (DDR4, do i9).
 
 **A MISSÃO:**
-Precisamos definir qual é o melhor "Micro-Modelo" (abaixo de 1.5B de parâmetros) disponível hoje (início de 2026) para assumir o papel de Roteador Nível 0. 
+Precisamos definir qual é o melhor "Micro-Modelo" (abaixo de 1.5B de parâmetros) disponível hoje (início de 2026) para assumir o papel de Roteador Nível 0.
 O trabalho do Roteador NÃO é conversar. O trabalho dele é:
 1. Ler o prompt do usuário.
 2. Classificar a intenção (Intent Classification).
@@ -648,4 +693,89 @@ Preciso que você realize uma pesquisa aprofundada focada exclusivamente em enco
 
 Traga nomes de repositórios reais, instruções conceituais de como conectá-los ao Antigravity e ao Gemini CLI, e explique como orquestrar essas três etapas em um fluxo de trabalho contínuo."
 
+---
 
+# NOVAS PESQUISAS DE SOLUÇÕES
+
+---
+
+### 🛠️ Novo Prompt Otimizado (Fase 3: Infraestrutura, Design e Extração)
+
+Contexto do Projeto: 
+Estamos "engenheirando" o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas em sandboxes estritas (Wasmtime).
+
+Instrução: 
+Atue como um Arquiteto de Software e Engenheiro DevSecOps Sênior. Disseque a lista de repositórios abaixo. Devolva uma análise estruturada em Markdown, sendo cru, implacável e focado na extração de valor matemático/lógico quando não possível utilizar diretamente, com as seguintes chaves para cada projeto:
+
+Nome do Repositório / Projeto:
+- Problema Principal que Resolve: (1 ou 2 frases precisas).
+- Stack Tecnológica Base: (Linguagens dominantes, frameworks, peso de dependências).
+- Tipo de Integração Atual: (App monolítico? CLI? Framework Web? Biblioteca nativa?).
+- Categoria Arquitetural: (Motor Low-Level, Interface/Design, Utilitário de Parsing, Agente/Skill, Proxy/Roteamento).
+- Vetor de Risco (Conflito SODA): (Exponha dívidas técnicas pesadas. Ex: "Polui a VRAM", "Exige Electron/Python em background", "Acoplamento severo à nuvem").
+- Ação Mitigadora (Canibalização): (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Adaptar o CSS para Tailwind v4 no Tauri", "Embutir como sub-módulo Wasm", "Ignorar código, absorver apenas heurística do prompt").
+- "Devemos Canalabalizar? e PQ?" (A ideia é dar uma indicação se devemos ou não trazer para nosso SODA (Genesis MC), não importa exatamente quando, a não se que a solução se apresente como algo que se deva priorizar).
+- "Score de 'Vale a pena?'": (Um "Score" entre 0 - 10 que defina um valor de se "Vale a pena" trazer pro nosso SODA).
+
+Gere o relatório SEM FLOREIOS.
+
+No final, consolide uma Tabela Comparativa (Projeto, Categoria, Vetor de Risco, Ação Mitigadora, "Devemos Canalabalizar? e PQ?", "Score de 'Vale a pena?'").
+
+**[Lista do Lote X]** _(Inserir links aqui)_
+
+---
+
+### 📦 Divisão Estratégica dos Novos Lotes
+
+#### **Lote 11: Motores Low-Level, Infraestrutura e Renderização** (FEITO)
+
+_Foco: Maximização de hardware, aceleração NVIDIA, Wasm e fundações de sistema._
+
+1. [https://github.com/NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell)
+2. [https://github.com/NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine)
+3. [https://github.com/HKUDS/OpenHarness](https://github.com/HKUDS/OpenHarness)
+4. [https://github.com/inclusionAI/cuLA](https://github.com/inclusionAI/cuLA)
+5. [https://github.com/Paidax01/math-curve-loaders](https://github.com/Paidax01/math-curve-loaders)
+6. [https://github.com/mrdoob/three.wasm](https://github.com/mrdoob/three.wasm)
+7. [https://github.com/Ganso/refugiOS](https://github.com/Ganso/refugiOS)
+
+#### **Lote 12: Paradigmas de Interface, UI Generativa e Proxies** (FEITO)
+
+_Foco: Visual minimalista (Nothing design), componentes de front-end passivos e roteadores de tráfego agêntico._
+
+1. [https://github.com/dominikmartn/nothing-desing-skill](https://github.com/dominikmartn/nothing-desing-skill)
+2. [https://github.com/compozy/compozy](https://github.com/compozy/compozy)
+3. [https://github.com/tw93/waza](https://github.com/tw93/waza)
+4. [https://github.com/Arthur-Ficial/apfel](https://github.com/Arthur-Ficial/apfel)
+5. [https://github.com/nesquena/hermes-webui](https://github.com/nesquena/hermes-webui)
+6. [https://github.com/shitagaki-lab/see-through](https://github.com/shitagaki-lab/see-through)
+7. [https://github.com/ironsh/iron-proxy](https://github.com/ironsh/iron-proxy)
+8. [https://github.com/LarsenCundric/port-whisperer](https://github.com/LarsenCundric/port-whisperer)
+
+#### **Lote 13: Ferramentas Agênticas, Skills e Automação de Tarefas**
+
+_Foco: Heurísticas aplicadas, automação de processos específicos e companheiros cognitivos._
+
+1. [https://github.com/kevinrgu/autoagent](https://github.com/kevinrgu/autoagent)
+2. https://github.com/karpathy/autoresearch
+3. [https://github.com/andrehuang/research-companion](https://github.com/andrehuang/research-companion)
+4. [https://github.com/midudev/autoskills](https://github.com/midudev/autoskills)
+5. [https://github.com/Pika-Labs/Pika-Skills](https://github.com/Pika-Labs/Pika-Skills)
+6. [https://github.com/santifer/career-ops](https://github.com/santifer/career-ops)
+7. [https://github.com/cpaczek/any-buddy](https://github.com/cpaczek/any-buddy)
+8. [https://github.com/Railly/agentfiles](https://github.com/Railly/agentfiles)
+9. [https://github.com/elastic/supply-chain-monitor](https://github.com/elastic/supply-chain-monitor)
+
+#### **Lote 14: Utilitários, Parsers, Conversores e Gestão de Arquivos**
+
+_Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e integração com ferramentas de produtividade tradicionais sem depender de APIs pesadas._
+
+1. [https://github.com/liyown/marknative](https://github.com/liyown/marknative)
+2. [https://github.com/wesbos/JSON-Alexander](https://github.com/wesbos/JSON-Alexander)
+3. [https://github.com/filiksyos/gitreverse](https://github.com/filiksyos/gitreverse)
+4. [https://github.com/ankitvgupta/mail-app](https://github.com/ankitvgupta/mail-app)
+5. [https://github.com/maaslalani/sheets](https://github.com/maaslalani/sheets)
+6. [https://github.com/0xGF/boneyard](https://github.com/0xGF/boneyard)
+7. [https://github.com/badlogic/jot](https://github.com/badlogic/jot)
+8. [https://github.com/hilash/cabinet](https://github.com/hilash/cabinet)
+9. https://github.com/paperclipai/paperclip
