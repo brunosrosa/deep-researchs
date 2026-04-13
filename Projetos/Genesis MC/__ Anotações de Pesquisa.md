@@ -794,7 +794,6 @@ _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e
 02:51 - bouncer https://github.com/imbue-ai/bouncer
 03:16 - debug-agent https://github.com/millionco/debug-agent
 03:45 - hermes-hudui https://github.com/joeynyc/hermes-hudui
-04:11 - ShichiZip https://github.com/idawnlight/ShichiZip
 04:36 - quip-node-manager https://github.com/QuipNetwork/quip-n...
 05:01 - liteparse_samples https://github.com/jerryjliu/litepars...
 05:27 - rattles https://github.com/vyfor/rattles
@@ -817,6 +816,5 @@ _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e
 12:32 - mesurer https://github.com/ibelick/mesurer
 12:55 - personalized-podcast https://github.com/zarazhangrui/perso...
 13:22 - ProgressiveBlurHeader https://github.com/dominikmartn/Progr...
-13:47 - PureMac https://github.com/momenbasel/PureMac
 14:12 - hypatia https://github.com/MarchLiu/hypatia
 14:36 - sciwrite https://github.com/labarba/sciwrite
