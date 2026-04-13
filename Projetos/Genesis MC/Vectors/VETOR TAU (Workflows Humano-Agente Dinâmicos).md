@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Sistemas Agênticos Multimodais: Redefinindo o Kanban Dinâmico através do Design Orientado a Especificações e Engenharia de Processos Adaptativos
 
 A evolução das interfaces de produtividade e gestão de tarefas atinge um ponto de inflexão com a rejeição dos modelos estáticos de visualização de fluxo, como o Kanban tradicional de três colunas (To-Do, In Progress, Done). No contexto do Projeto Genesis MC (SODA), a transição para um Canvas Multimodal baseado em React Flow e Tldraw exige uma reengenharia completa da forma como humanos e agentes de inteligência artificial interagem com a estrutura de trabalho. Este relatório técnico analisa as arquiteturas de sistemas agênticos, as heurísticas de design cognitivo e as metodologias de desenvolvimento orientadas a especificações (Spec-Driven Development) necessárias para sustentar workflows declarativos e dinâmicos, capazes de se adaptar a qualquer domínio da vida ou do trabalho, desde o planejamento financeiro até a pesquisa acadêmica complexa.[1, 2, 3]

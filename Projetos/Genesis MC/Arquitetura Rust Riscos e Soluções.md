@@ -2,7 +2,6 @@
 aliases:
   - "Arquitetura Rust: Riscos e Soluções"
 ---
-
 # Relatório Analítico de Engenharia de Sistemas: Resolução de Riscos Arquiteturais em Ambientes Agentic OS Bare-Metal (SODA - Genesis MC)
 
 A engenharia de um Sistema Operacional Agêntico local e _bare-metal_ apresenta desafios arquiteturais de altíssima complexidade, especialmente quando submetida a restrições operacionais rígidas. O projeto SODA (Genesis MC), operando estritamente em ambiente Windows sobre hardware de alta performance (Intel i9, 32GB RAM, RTX 2060m 6GB), exige uma orquestração perfeita entre o _daemon_ nativo em Rust, o _frontend_ passivo em React mediado pelo framework Tauri v2 e a persistência de dados em SQLite. A imposição de regras arquiteturais paranoicas — eliminação sumária de processos contínuos em Node.js ou Python, proibição de empacotamento de motores Chromium via Electron ou Playwright, e a necessidade imperativa de isolamento absoluto contra _Memory Leaks_ e _Context Rot_ — força a reavaliação de paradigmas tradicionais de desenvolvimento de software.

@@ -1,7 +1,6 @@
 ---
 aliases: []
 ---
-
 # Especificação Técnica de Interceptação RAG-MCP (Late-Binding) e Orquestração JSON-RPC no AgentGateway
 
 ## 1. Fundamentação Arquitetural e o Desafio do Contexto em Sistemas Bare-Metal

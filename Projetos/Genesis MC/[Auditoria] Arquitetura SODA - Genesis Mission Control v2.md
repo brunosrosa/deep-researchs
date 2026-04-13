@@ -3,7 +3,6 @@ aliases:
   - Auditoria Arquitetural "SODA" - Genesis MC
 sticker: lucide//book-down
 ---
-
 # Auditoria Arquitetural Definitiva: Genesis Mission Control (SODA)
 
 **Versão:** 2.0 (Pós-Deep Research) | **Foco:** Engenharia Edge, Roteamento Híbrido, RLM e Foco 2e/TDAH

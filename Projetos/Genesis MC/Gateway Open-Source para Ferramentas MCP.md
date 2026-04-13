@@ -1,7 +1,6 @@
 ---
 sticker: lucide//book-down
 ---
-
 # Relatório de Pesquisa: Arquitetura de Gateways MCP Open-Source e Orquestração de Identidade para Agentes de IA
 
 A transição de modelos de linguagem de grande escala (LLMs) puramente baseados em texto para sistemas de inteligência artificial ancorados em agentes autônomos introduziu uma nova e profunda camada de complexidade na arquitetura de software: a necessidade de interação segura, governada e escalável com sistemas do mundo real. O Model Context Protocol (MCP) emergiu rapidamente como o padrão aberto definitivo que atua como uma interface universal, conectando de forma padronizada aplicações de IA a fontes de dados, ferramentas de produtividade e fluxos de trabalho externos corporativos. No entanto, a adoção do MCP em ambientes de produção revela de imediato um gargalo arquitetural crítico em torno da autorização, da governança de acessos e do roteamento de tráfego.

@@ -2,7 +2,6 @@
 aliases: []
 sticker: lucide//chevron-right-square
 ---
-
 # Genesis MC: Guia Prático - Parte 3 (O "Palco" Multimodal)
 
 O chat linear morreu. O **SODA (Sovereign OS)** utiliza um Canvas Espacial para interação. Isso reduz drasticamente a carga cognitiva, permitindo que você (o humano) veja a árvore de decisão do agente e expanda apenas as partes que importam.

@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Dados Resiliente para Sistemas Agênticos Local-First no Paradigma Rust e Tauri
 
 A engenharia de sistemas operacionais agênticos com arquitetura de dados _local-first_, especialmente aqueles concebidos para operar ininterruptamente como motores cognitivos e assistentes de vida (Life Coaches) para usuários neurodivergentes, exige um rigor arquitetônico absoluto no que tange à preservação do estado e à confiabilidade da memória de longo prazo. No ecossistema estrutural do "Genesis Mission Control" (SODA), a adoção de uma "Memória Tri-Partite" ancorada em SQLite, operando em modo Write-Ahead Log (WAL) com extensões de pesquisa de texto completo (FTS5), e acoplada a motores de busca vetorial semântica como LanceDB ou Qdrant, impõe desafios de engenharia profundos. A máquina do usuário é, por definição fundamental, um ambiente de computação extremamente hostil e imprevisível. Quedas abruptas de energia elétrica, encerramentos forçados de processos pelo sistema operacional (sinais SIGKILL), falhas de hardware, esgotamento súbito de espaço em disco e interferências diretas de softwares antivírus ou do próprio usuário são ameaças onipresentes e constantes.

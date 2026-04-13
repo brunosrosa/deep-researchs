@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura de Rebase Semântico e Sincronização Zero-Copy para Sistemas Agênticos Local-First
 
 A engenharia de sistemas de software locais que integram Inteligência Artificial autônoma e interfaces de interação humana requer o estabelecimento de restrições arquiteturais rigorosas, particularmente quando o ambiente operacional subjacente impõe limitações físicas inflexíveis. O desenvolvimento do "Genesis Mission Control", um Sistema Operacional Agêntico Local-First, representa um desafio computacional formidável. A infraestrutura de hardware alvo, composta por um processador Intel Core i9, 32GB de memória RAM e, de forma mais crítica, uma unidade de processamento gráfico RTX 2060m com um teto absoluto de 6GB de VRAM, exige uma orquestração microscópica dos recursos do sistema. Modelos de Inteligência Artificial modernos operando localmente saturam a VRAM quase que instantaneamente. Quando esse limite de 6GB é excedido, o sistema operacional hospedeiro é forçado a realizar o transbordo (swapping) dos tensores da IA para a memória RAM principal do sistema, saturando o barramento PCIe e degradando catastroficamente o desempenho geral do computador.

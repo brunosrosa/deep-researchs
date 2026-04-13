@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Relatório de Arquitetura: Genesis Mission Control – Sistema de Renderização Híbrida via Ilhas WebGL, WebAssembly e IPC Zero-Copy
 
 ## 1. Fundamentação Arquitetural e o Desafio da Densidade Topológica

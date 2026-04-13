@@ -2,7 +2,6 @@
 aliases: []
 sticker: lucide//chevron-right-square
 ---
-
 # Genesis MC: Guia Prático - Parte 5 (A Fonte da Verdade e SDD)
 
 A premissa aqui é o **Pessimismo da razão, otimismo da vontade**: assuma que o Agente (LLM) vai tentar ser prolixo, esquecer regras de infraestrutura e sugerir bibliotecas pesadas. Para extrair a genialidade da IA (otimismo), precisamos algemá-la com especificações determinísticas (razão).

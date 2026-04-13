@@ -2,7 +2,6 @@
 aliases: []
 sticker: lucide//chevron-right-square
 ---
-
 # Genesis MC: Guia Prático - Parte 2 (O Motor SODA)
 
 Este documento detalha a implementação do backend do **Genesis MC (SODA)** usando **Rust, Tauri e SQLite**. O objetivo deste motor é ser brutalmente eficiente, consumindo o mínimo de RAM e CPU, deixando a VRAM livre para os seus SLMs locais (Phi-4-mini, Qwen, etc).

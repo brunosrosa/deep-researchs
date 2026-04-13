@@ -1,6 +1,7 @@
 ---
 aliases:
   - VETOR SIGMA (O "Agente Mestre" e a Hierarquia UX)
+sticker: lucide//corner-up-right
 ---
 # Arquitetura de Interação em Sistemas Operacionais Agênticos: Nomenclatura, UX e Delegação Transparente
 

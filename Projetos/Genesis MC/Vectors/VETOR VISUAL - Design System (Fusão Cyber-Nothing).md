@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//corner-up-right
 ---
 # Arquitetura de Interface para Sistemas Agênticos: A Fusão "Cyber-Nothing" no Projeto Genesis Mission Control
 

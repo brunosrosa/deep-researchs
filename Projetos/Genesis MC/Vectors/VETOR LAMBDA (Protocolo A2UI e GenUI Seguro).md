@@ -1,3 +1,6 @@
+---
+sticker: lucide//corner-up-right
+---
 # Arquitetura do Motor de Renderização A2UI: Segurança e Desempenho em Interfaces Gerativas via Tauri v2
 
 ## Fundamentos Arquitetônicos do Paradigma A2UI no Genesis Mission Control
