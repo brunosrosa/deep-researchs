@@ -10,13 +10,9 @@ Você vai projetar a interface principal do "Gênesis MC", um sistema desktop de
 ---
 
 - **Tema Principal:** Dark mode nativo e obrigatório. O ambiente deve ser super agradável, profundo e focado.
-    
 - **Materialidade e Textura:** Utilize backgrounds em tons escuros de grafite, ônix e "midnight black". Aplique efeitos de _glassmorphism_ sutil e materiais translúcidos nativos (como _Mica_ e _Acrylic_ do Windows 11) para elevação espacial e hierarquia.
-    
 - **Paleta de Cores:** Tons modernos e vibrantes de roxo (cyber-purple, neon-violet) como cor primária de destaque e _call-to-action_, equilibrados com cores neutras de altíssimo contraste para garantir conformidade de acessibilidade AAA.
-    
 - **Sentimento:** A interface deve evocar clareza, sofisticação cibernética, calma e poder absoluto. Não deve parecer uma ferramenta de trabalho corporativa chata, mas sim um "cockpit" de produtividade de vanguarda.
-    
 
 ---
 
@@ -25,7 +21,5 @@ A interface deve ser projetada para ser "Compute-Aware". Antecipe onde haverá p
 **[Output Format & Constraints]**
 
 1. Gere o layout de alta fidelidade para o dashboard principal (Dashboard Gênesis MC).
-    
 2. Não utilize padrões visuais genéricos ou "mesmice" ocidental padrão; ouse na disposição geométrica dos painéis laterais e áreas de trabalho.
-    
 3. Extraia e consolide todas as regras visuais, paleta de cores, tipografia (fontes modernas sem serifa, pesos dinâmicos) e tokens de espaçamento em um formato compatível para a posterior geração do documento `DESIGN.md`.
