@@ -779,3 +779,6 @@ _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e
 7. [https://github.com/badlogic/jot](https://github.com/badlogic/jot)
 8. [https://github.com/hilash/cabinet](https://github.com/hilash/cabinet)
 9. https://github.com/paperclipai/paperclip
+
+-----
+
