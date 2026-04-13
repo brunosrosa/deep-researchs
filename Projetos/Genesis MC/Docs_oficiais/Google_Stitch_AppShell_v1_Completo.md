@@ -1,3 +1,6 @@
+---
+sticker: lucide//banana
+---
 ========================================
 
 📋 ARTEFATO 1: DESIGN.MD GERADO

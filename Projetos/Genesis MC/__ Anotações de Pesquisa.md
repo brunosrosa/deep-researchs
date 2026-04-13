@@ -782,3 +782,41 @@ _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e
 
 -----
 
+
+# NEW NEW NEW
+
+00:12 - 3dsvg https://github.com/renatoworks/3dsvg
+00:41 - Markdown Viewer https://github.com/markdown-viewer/sk...
+01:06 - quien https://github.com/retlehs/quien
+01:31 - fireworks-tech-graph https://github.com/yizhiyanhua-ai/fir...
+01:59 - ios-marketing-capture https://github.com/ParthJadhav/ios-ma...
+02:25 - gbrain https://github.com/garrytan/gbrain
+02:51 - bouncer https://github.com/imbue-ai/bouncer
+03:16 - debug-agent https://github.com/millionco/debug-agent
+03:45 - hermes-hudui https://github.com/joeynyc/hermes-hudui
+04:11 - ShichiZip https://github.com/idawnlight/ShichiZip
+04:36 - quip-node-manager https://github.com/QuipNetwork/quip-n...
+05:01 - liteparse_samples https://github.com/jerryjliu/litepars...
+05:27 - rattles https://github.com/vyfor/rattles
+05:54 - helixent https://github.com/MagicCube/helixent
+06:19 - tsnapi https://github.com/antfu/tsnapi
+06:42 - miniblue https://github.com/moabukar/miniblue
+07:09 - tmux-agent-sidebar https://github.com/hiroppy/tmux-agent...
+07:34 - File_Converter_Pro https://github.com/Hyacinthe-primus/F...
+07:58 - llmwiki https://github.com/lucasastorian/llmwiki
+08:24 - HiVG https://github.com/ximinng/HiVG
+08:52 - claude-obsidian https://github.com/AgriciDaniel/claud...
+09:17 - styleseed https://github.com/bitjaru/styleseed
+09:44 - sip https://github.com/standardagents/sip
+10:11 - SwiftMTP https://github.com/Neighbor-Z/SwiftMTP
+10:32 - remocn https://github.com/kapishdima/remocn
+10:56 - coderaft https://github.com/pithings/coderaft
+11:19 - boxsh https://github.com/xicilion/boxsh
+11:43 - hw-smi https://github.com/ProjectPhysX/hw-smi
+12:06 - cli-to-js https://github.com/millionco/cli-to-js
+12:32 - mesurer https://github.com/ibelick/mesurer
+12:55 - personalized-podcast https://github.com/zarazhangrui/perso...
+13:22 - ProgressiveBlurHeader https://github.com/dominikmartn/Progr...
+13:47 - PureMac https://github.com/momenbasel/PureMac
+14:12 - hypatia https://github.com/MarchLiu/hypatia
+14:36 - sciwrite https://github.com/labarba/sciwrite
