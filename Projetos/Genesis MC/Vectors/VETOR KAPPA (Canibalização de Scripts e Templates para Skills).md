@@ -42,6 +42,7 @@ O documento de especificação requer uma estrutura léxica estrita, preferencia
 
 O conteúdo a seguir deve ser salvo inalterado como `assets/spec_template.md`.
 
+```
 # Especificação: <Nome da Funcionalidade, Domínio ou Módulo>
 
 ## Propósito
@@ -76,7 +77,7 @@ O sistema SHALL/MUST <nova descrição do comportamento exato>. (Anteriormente: 
 ### Requirement:
 
 (Descontinuado e removido arquiteturalmente em favor de <justificativa ou nova abordagem de integração>).
-
+```
 ### 2.2. Templates de Proposta e Plano de Tarefas (`assets/proposal_template.md` e `assets/tasks_template.md`)
 
 O ecossistema SODA exige que o fluxo de trabalho não sofra gargalos cognitivos. A geração simultânea de dezenas de tarefas complexas sobrecarrega o limite de tokens da IA. O `proposal.md` serve como a declaração de intenção inicial, enquanto o `tasks.md` atua como uma lista de verificação granular com caixas de seleção que rastreiam o estado da implementação.
@@ -85,6 +86,7 @@ Estes artefatos operam em um estado de "Blocked -> Ready -> Done" na lógica de 
 
 Conteúdo puro para `assets/proposal_template.md`:
 
+```
 # Proposta de Arquitetura e Negócios: <Nome da Mudança>
 
 ## Why (Motivação e Intenção)
@@ -107,7 +109,7 @@ Conteúdo puro para `assets/tasks_template.md`:
 
 - [ ] 2.1 <Descrição da implementação com chamadas claras a APIs recém construídas no Grupo 1>. (Dependências: Tarefas 1.1, 1.2)
 - [ ] 2.2 <Descrição de integração do sistema de mensageria IPC Tauri>. (Dependências: Tarefa 2.1)
-
+```
 ### 2.3. Raciocínio Espacial e Topologia Dinâmica: O Modelo de Design (`assets/design_template.md`)
 
 A extração técnica mais profunda do CC-SDD evidencia que a inteligência artificial adquire um entendimento muito mais robusto de dependências de código quando forçada a representar esses componentes visualmente através da linguagem Mermaid. A renderização de modelos C4 (Contexto, Contêineres, Componentes, Código), diagramas de estado para processos assíncronos e diagramas de sequência para trocas de eventos do sistema confina o raciocínio do modelo de linguagem a uma lógica estrita, proibindo arquiteturas circulares.
@@ -270,7 +272,7 @@ PROJECT_ROOT="${SCRIPT_DIR}/../.."
 
 # Códigos de controle de cor ANSI fornecem pistas lexicais fortes ao processamento da LLM,
 # sinalizando inequivocamente falhas fatais que a IA precisa corrigir autônomamente.
-COLOR_RED='\033 <comando_de_teste_entre_aspas>${COLOR_NC}"
+COLOR_RED="\033 <comando_de_teste_entre_aspas>${COLOR_NC}"
     echo "Exemplo: $0 red \"cargo test --package core_logic -- test_user_creation\""
     exit 1
 }
@@ -371,7 +373,7 @@ case "$PHASE" in
         exit 1
         ;;
 esac
-````
+```
 
 ### 3.2. Governança Defensiva de Branch: Hook Pre-Commit (`scripts/pre-commit-hook.sh`)
 
