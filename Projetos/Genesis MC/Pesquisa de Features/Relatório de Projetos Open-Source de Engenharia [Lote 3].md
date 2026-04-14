@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório Técnico e Arquitetural: Engenharia de Arnês, Metodologias e Loops em Agentes Autônomos
 
 A engenharia de software orquestrada por inteligência artificial transicionou de modelos conversacionais estáticos para arquiteturas de execução autônoma em malha fechada. Esta mudança fundamental exige a introdução da disciplina de Engenharia de Arnês (_Harness Engineering_), que foca no estabelecimento de restrições determinísticas, mecanismos de controle de estado e laços iterativos (_loops_) projetados para isolar, guiar e reiniciar Modelos de Linguagem de Grande Escala (LLMs). O objetivo central desta arquitetura é mitigar a degradação da janela de contexto, suprimir devaneios arquiteturais (alucinações lógicas prolongadas) e forçar a consistência eventual através de pressão de retorno (_backpressure_) baseada em compiladores e testes automatizados. O presente relatório disseca tecnicamente o lote de projetos focados neste paradigma, analisando suas pilhas tecnológicas, vetores de integração e anomalias arquiteturais.

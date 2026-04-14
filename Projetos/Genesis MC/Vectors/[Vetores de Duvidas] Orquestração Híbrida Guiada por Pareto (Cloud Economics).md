@@ -1,6 +1,9 @@
+---
+sticker: lucide//corner-up-right
+---
 **Atue como um Engenheiro de FinOps de IA e Arquiteto de Nuvem Híbrida (Estado da Arte de 2026).**
 
-**CONTEXTO DO PROJETO (SODA - Genesis MC):** O SODA é o nosso ecossistema agêntico local. O roteador (escrito em Rust com Máquina de Estados) decide instantaneamente se uma tarefa roda localmente (na nossa CPU i9 ou na dGPU RTX 2060m com estritos 6GB de VRAM) ou se precisa de "Fallback" para a nuvem via Model Context Protocol (MCP).
+**CONTEXTO DO PROJETO (SODA - Genesis MC):** O *SODA* é o nosso ecossistema agêntico local. O roteador (escrito em Rust com Máquina de Estados) decide instantaneamente se uma tarefa roda localmente (na nossa CPU i9 ou na dGPU RTX 2060m com estritos 6GB de VRAM) ou se precisa de "Fallback" para a nuvem via Model Context Protocol (MCP).
 
 Para a nuvem, o mercado de IA se dividiu em dois regimes econômicos: temos assinaturas "Flat-Rate" com tokens ilimitados (como Featherless.ai para modelos de peso aberto hiper-otimizados) ótimas para alto volume, e APIs Premium cobradas por token (ex: Claude 4.5/4.6, GPT-5.x) em gateways como o OpenRouter para tarefas de missão crítica de raciocínio.
 

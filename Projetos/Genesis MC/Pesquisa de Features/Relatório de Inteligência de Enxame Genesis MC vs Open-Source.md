@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Relatório de Inteligência de Enxame: Genesis MC vs Open-Source"
+sticker: lucide//pocket
 ---
 # Relatório de Inteligência de Enxame: Dissecação Massiva para o Genesis Mission Control (SODA)
 

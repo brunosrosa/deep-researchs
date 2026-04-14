@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Dissecação Arquitetural e Engenharia DevSecOps: Infraestrutura SODA (Genesis MC)
 
 A engenharia do Genesis Mission Control (Genesis MC) estabelece parâmetros implacáveis e inegociáveis para a construção de um Sistema Operacional Agêntico Soberano (SODA). O foco em execução estritamente local (air-gapped) e privacidade absoluta colide diametralmente com os paradigmas modernos de desenvolvimento em nuvem, ecossistemas interpretados e arquiteturas monolíticas dependentes de hipervisores de contêineres comerciais. O ambiente de hardware restrito ao qual o sistema está confinado — um processador Intel Core i9, 32GB de memória RAM e, criticamente, uma unidade de processamento gráfico NVIDIA RTX 2060m com limite severo de 6GB de VRAM, baseada na arquitetura Turing (Compute Capability 7.5) — exige uma rejeição sumária de qualquer framework que introduza vazamento de memória, sobrecarga de contexto contínua (Context Rot) ou ciclos de execução parasitários.

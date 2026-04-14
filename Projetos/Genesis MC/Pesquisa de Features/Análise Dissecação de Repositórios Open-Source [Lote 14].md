@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório Arquitetural Definitivo: Dissecação e Canibalização de Repositórios para o Sistema Operacional Agêntico Soberano (SODA)
 
 A engenharia do Genesis Mission Control (Genesis MC) estabelece um paradigma de tolerância zero para ineficiências computacionais e vazamentos de abstração. Ao projetar um Sistema Operacional Agêntico Soberano (SODA) com execução estritamente local e "air-gapped", o hardware alvo dita as leis fundamentais da arquitetura: um processador i9, 32GB de memória RAM e uma GPU RTX 2060m com um limite inegociável de 6GB de VRAM. Este envelope de recursos restringe severamente a orquestração de Large Language Models (LLMs) e agentes autônomos. A sobrecarga de VRAM implica que não podemos manter modelos contextuais gigantescos carregados perpetuamente, exigindo que os agentes sejam entidades efêmeras, roteadas assincronamente, que executam suas inferências, interagem com sandboxes isoladas via Wasmtime e liberam a memória gráfica imediatamente após a conclusão da tarefa.

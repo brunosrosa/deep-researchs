@@ -1,3 +1,6 @@
+---
+sticker: lucide//album
+---
 # Relatório Arquitetural Definitivo: Configuração Standalone do AgentGateway para Orquestração MCP em Ambiente Windows Bare-Metal
 
 A ascensão de ecossistemas baseados em Inteligência Artificial (IA) agentiva estabeleceu novos paradigmas para a infraestrutura de rede, exigindo que arquiteturas em nuvem e bare-metal se adaptem a protocolos de comunicação stateful, de longa duração e semanticamente complexos. O Model Context Protocol (MCP) e o protocolo Agent-to-Agent (A2A) diferem fundamentalmente do tráfego RESTful stateless tradicional. Para suprir a lacuna entre essas novas exigências e as limitações dos gateways de API convencionais, o projeto AgentGateway, mantido de forma open-source sob a governança da Linux Foundation (após doação pela Solo.io), emergiu como um data plane otimizado especificamente para conectividade de IA. Este relatório técnico exaustivo destrincha a implementação e a resolução de falhas do AgentGateway operando em modo standalone local sobre o sistema operacional Windows, com foco estrito na topologia sintática YAML necessária para a orquestração precisa de alvos MCP.

@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//apple
 ---
 # Integração Arquitetural de Protocolos de Contexto de Modelos (MCP) e Interfaces de Linha de Comando (CLI) para Agentes Autônomos no Projeto Genesis MC
 

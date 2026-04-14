@@ -412,67 +412,109 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 7. [https://github.com/intellectronica/ruler](https://github.com/intellectronica/ruler)
 8. [https://github.com/Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
 
----
+### 📦 Divisão Estratégica dos Novos Lotes
 
-### Nvidia Respositórios
+#### **Lote 11: Motores Low-Level, Infraestrutura e Renderização** (FEITO)
+_Foco: Maximização de hardware, aceleração NVIDIA, Wasm e fundações de sistema._
 
-https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
-https://github.com/NVIDIA/NeMo-Agent-Toolkit
-OpenShell: https://github.com/NVIDIA/OpenShell
-TransformerEngine: https://github.com/NVIDIA/TransformerEngine
-Waza https://github.com/tw93/waza
-AutoAgent https://github.com/kevinrgu/autoagent
-Research Companion https://github.com/andrehuang/research-companion
-marknative https://github.com/liyown/marknative
-GitReverse https://github.com/filiksyos/gitreverse
-mail-app https://github.com/ankitvgupta/mail-app
-autoskills https://github.com/midudev/autoskills
-Compozy https://github.com/compozy/compozy
-JSON Alexander https://github.com/wesbos/JSON-Alexander
-career-ops https://github.com/santifer/career-ops
-Sheets https://github.com/maaslalani/sheets
-apfel https://github.com/Arthur-Ficial/apfel
-agentfiles https://github.com/Railly/agentfiles
-boneyard https://github.com/0xGF/boneyard
-jot https://github.com/badlogic/jot
-Supply Chain Monitor https://github.com/elastic/supply-chain-monitor
-port-whisperer https://github.com/LarsenCundric/port-whisperer
-OpenHarness https://github.com/HKUDS/OpenHarness
-Math Curve Loaders https://github.com/Paidax01/math-curve-loaders
-Pika Skills Open https://github.com/Pika-Labs/Pika-Skills
-Cabinet https://github.com/hilash/cabinet
-iron-proxy https://github.com/ironsh/iron-proxy
-hermes-webui https://github.com/nesquena/hermes-webui
-any-buddy https://github.com/cpaczek/any-buddy
-cuLA https://github.com/inclusionAI/cuLA
-see-through https://github.com/shitagaki-lab/see-through
-nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill (inclusive adorei, pretendo mudar o Desing que estava imaginando para o Genesis MC para ter algo mais parecido com isso)
-three.wasm https://github.com/mrdoob/three.wasm
-refugiOS https://github.com/Ganso/refugiOS
+1. [https://github.com/NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell)
+2. [https://github.com/NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine)
+3. [https://github.com/HKUDS/OpenHarness](https://github.com/HKUDS/OpenHarness)
+4. [https://github.com/inclusionAI/cuLA](https://github.com/inclusionAI/cuLA)
+5. [https://github.com/Paidax01/math-curve-loaders](https://github.com/Paidax01/math-curve-loaders)
+6. [https://github.com/mrdoob/three.wasm](https://github.com/mrdoob/three.wasm)
+7. [https://github.com/Ganso/refugiOS](https://github.com/Ganso/refugiOS)
 
-##### MCPs
+#### **Lote 12: Paradigmas de Interface, UI Generativa e Proxies** (FEITO)
+_Foco: Visual minimalista (Nothing design), componentes de front-end passivos e roteadores de tráfego agêntico._
 
-Faltam algumas analises amplas:
-- Uma das várias possibilidades de MCPs que existem, quais essenciais, quais interessantes estão se popularizando, quais mais serão de grande ajuda e possibilidade, como também verificar se existe alguma maneira de "descobrir" novos MCPs "*on-the-go*", sei que isso toma um tempo para levantar o MCP muitas vezes e tal... mas provavelmente já existem soluções que buscam manter um cache das mais utilizadas para evitar gargalos após esse "cold-start" inicial. Verificar também.
-- Também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar/ensinar o uso dos MCPs/CLIs.
-- Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender.
-- Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores.....
+1. [https://github.com/dominikmartn/nothing-desing-skill](https://github.com/dominikmartn/nothing-desing-skill)
+2. [https://github.com/compozy/compozy](https://github.com/compozy/compozy)
+3. [https://github.com/tw93/waza](https://github.com/tw93/waza)
+4. [https://github.com/Arthur-Ficial/apfel](https://github.com/Arthur-Ficial/apfel)
+5. [https://github.com/nesquena/hermes-webui](https://github.com/nesquena/hermes-webui)
+6. [https://github.com/shitagaki-lab/see-through](https://github.com/shitagaki-lab/see-through)
+7. [https://github.com/ironsh/iron-proxy](https://github.com/ironsh/iron-proxy)
+8. [https://github.com/LarsenCundric/port-whisperer](https://github.com/LarsenCundric/port-whisperer)
 
-Link de "Soluções":
-- https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
-- (procurar outras soluções)
+#### **Lote 13: Ferramentas Agênticas, Skills e Automação de Tarefas**
+_Foco: Heurísticas aplicadas, automação de processos específicos e companheiros cognitivos._
 
-##### RLM (Recursive Language Models)
+1. [https://github.com/kevinrgu/autoagent](https://github.com/kevinrgu/autoagent)
+2. https://github.com/karpathy/autoresearch
+3. [https://github.com/andrehuang/research-companion](https://github.com/andrehuang/research-companion)
+4. [https://github.com/midudev/autoskills](https://github.com/midudev/autoskills)
+5. [https://github.com/Pika-Labs/Pika-Skills](https://github.com/Pika-Labs/Pika-Skills)
+6. [https://github.com/santifer/career-ops](https://github.com/santifer/career-ops)
+7. [https://github.com/cpaczek/any-buddy](https://github.com/cpaczek/any-buddy)
+8. [https://github.com/Railly/agentfiles](https://github.com/Railly/agentfiles)
+9. [https://github.com/elastic/supply-chain-monitor](https://github.com/elastic/supply-chain-monitor)
 
-"Explorar modelos de linguagem que chamam a si mesmos ou a outros LLMs recursivamente antes de fornecer uma resposta final. O objetivo é permitir o processamento de contextos de entrada e saída de comprimento essencialmente ilimitado e mitigar a degradação causada pela "deterioração do contexto"."
+#### **Lote 14: Utilitários, Parsers, Conversores e Gestão de Arquivos**
+_Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e integração com ferramentas de produtividade tradicionais sem depender de APIs pesadas._
 
-Pra que? Pq? Quando? Como utilizar? Como integrar a nossa estrutura do Genesis MC? Como/Quando ele será automaticamente solicitado utilizado?
+1. [https://github.com/liyown/marknative](https://github.com/liyown/marknative)
+2. [https://github.com/wesbos/JSON-Alexander](https://github.com/wesbos/JSON-Alexander)
+3. [https://github.com/filiksyos/gitreverse](https://github.com/filiksyos/gitreverse)
+4. [https://github.com/ankitvgupta/mail-app](https://github.com/ankitvgupta/mail-app)
+5. [https://github.com/maaslalani/sheets](https://github.com/maaslalani/sheets)
+6. [https://github.com/0xGF/boneyard](https://github.com/0xGF/boneyard)
+7. [https://github.com/badlogic/jot](https://github.com/badlogic/jot)
+8. [https://github.com/hilash/cabinet](https://github.com/hilash/cabinet)
+9. https://github.com/paperclipai/paperclip
 
-Repositórios / Estudos / Soluções:
-https://github.com/fullstackwebdev/rlm_repl
-https://alexzhang13.github.io/blog/2025/rlm/
-https://github.com/ysz/recursive-llm
-https://github.com/alexzhang13/rlm
+#### **Lote 15: Agentes, LLMs e Gestão de Conhecimento (Wiki/Docs)**
+Este lote foca em ferramentas que usam IA para processar informação, criar wikis inteligentes ou atuar como agentes de pesquisa.
+Onyx - https://github.com/onyx-dot-app/onyx
+goose - https://github.com/aaif-goose/goose
+Understand-Anything - https://github.com/Lum1104/Understand-Anything
+llmwiki - https://github.com/lucasastorian/llmwiki
+PandaWiki - https://github.com/chaitin/PandaWiki
+llm-wiki-compiler - https://github.com/atomicmemory/llm-wiki-compiler
+llm-wiki-agent - https://github.com/SamurAIGPT/llm-wiki-agent
+sciwrite - https://github.com/labarba/sciwrite
+claude-obsidian - https://github.com/AgriciDaniel/claude-obsidian
+Markdown Viewer - https://github.com/markdown-viewer/skills
+
+#### **Lote 16: Infraestrutura de Agentes, Workflow e Automação**
+Ferramentas voltadas para o "backstage" da IA: orquestração, segurança de agentes e pipelines de dados.
+bouncer - https://github.com/imbue-ai/bouncer
+sip - https://github.com/standardagents/sip
+gbrain - https://github.com/garrytan/gbrain
+fireworks-tech-graph - https://github.com/yizhiyanhua-ai/fireworks-tech-graph
+liteparse_samples - https://github.com/jerryjliu/liteparse_samples
+hermes-hudui - https://github.com/joeynyc/hermes-hudui
+quip-node-manager - https://github.com/QuipNetwork/quip-node-manager
+quien - https://github.com/retlehs/quien
+hypatia - https://github.com/MarchLiu/hypatia
+tribev2 - https://github.com/facebookresearch/tribev2
+
+#### **Lote 17: Ferramentas de Dev, CLI e Debugging**
+Focado na produtividade do desenvolvedor, desde terminais inteligentes até conversores de código e monitoramento.
+debug-agent - https://github.com/millionco/debug-agent
+cli-to-js - https://github.com/millionco/cli-to-js
+tmux-agent-sidebar - https://github.com/hiroppy/tmux-agent-sidebar
+boxsh - https://github.com/xicilion/boxsh
+coderaft - https://github.com/pithings/coderaft
+tsnapi - https://github.com/antfu/tsnapi
+hw-smi - https://github.com/ProjectPhysX/hw-smi
+remocn - https://github.com/kapishdima/remocn
+File_Converter_Pro - https://github.com/Hyacinthe-primus/File_Converter_Pro
+rattles - https://github.com/vyfor/rattles
+
+#### **Lote 18: UI, Visualização e Experiências Multimídia**
+Tudo que envolve o "olhar": de renderização 3D/SVG a componentes de interface e podcasts personalizados.
+3dsvg - https://github.com/renatoworks/3dsvg
+HiVG - https://github.com/ximinng/HiVG
+ProgressiveBlurHeader - https://github.com/dominikmartn/ProgressiveBlurHeader
+mesurer - https://github.com/ibelick/mesurer
+styleseed - https://github.com/bitjaru/styleseed
+personalized-podcast - https://github.com/zarazhangrui/personalized-podcast
+clicky - https://github.com/farzaa/clicky
+MiroFish - https://github.com/666ghj/MiroFish
+MiroFish-Offline - https://github.com/nikmcfly/MiroFish-Offline
+helixent - https://github.com/MagicCube/helixent
+miniblue - https://github.com/moabukar/miniblue
 
 ---
 
@@ -530,9 +572,69 @@ https://github.com/alexzhang13/rlm
 - ChatGPT 5.4
 - Outras? Quais? Pq? Para Que?
 
+
 ---
 
+##### MCPs
+
+Faltam algumas analises amplas:
+- Uma das várias possibilidades de MCPs que existem, quais essenciais, quais interessantes estão se popularizando, quais mais serão de grande ajuda e possibilidade, como também verificar se existe alguma maneira de "descobrir" novos MCPs "*on-the-go*", sei que isso toma um tempo para levantar o MCP muitas vezes e tal... mas provavelmente já existem soluções que buscam manter um cache das mais utilizadas para evitar gargalos após esse "cold-start" inicial. Verificar também.
+- Também utilizar a ideia de um gateway ou transformar em cli não perdendo qualidade, ter skills para facilitar/ensinar o uso dos MCPs/CLIs.
+- Pesquisar o que de vanguarda tem sobre o uso de MCPs/CLIs, uso de ferramentas, diminuir o contexto e ao mesmo tempo entregar o melhor uso de ferramentas para agentes, evitar context rot e todas as melhores práticas, além de facilidade de integração e uso. Nessa pesquisa também buscar soluções, repositórios, estudos que componham a definição clara de melhor maneira (e mais eficiente/inteligente) de utilizar mesmo tendo um conjunto "massivo" de possibilidades de MCPs/CLIs/"Tools". A solução "mc2cli" parece um desenvolvimento nesse caminho, não sei se o melhor caminho, pra isso precisaremos pesquisar e entender.
+- Buscar também versões alternativas de MCPs "famosos" e muito citados, por opções open-source (free), as vezes até melhores.....
+
+Link de "Soluções":
+- https://github.com/knowsuchagency/mcp2cli (uma solução para melhoria de uso dos MCPs)
+- (procurar outras soluções)
+
+##### RLM (Recursive Language Models)
+
+"Explorar modelos de linguagem que chamam a si mesmos ou a outros LLMs recursivamente antes de fornecer uma resposta final. O objetivo é permitir o processamento de contextos de entrada e saída de comprimento essencialmente ilimitado e mitigar a degradação causada pela "deterioração do contexto"."
+
+Pra que? Pq? Quando? Como utilizar? Como integrar a nossa estrutura do Genesis MC? Como/Quando ele será automaticamente solicitado utilizado?
+
+Repositórios / Estudos / Soluções:
+https://github.com/fullstackwebdev/rlm_repl
+https://alexzhang13.github.io/blog/2025/rlm/
+https://github.com/ysz/recursive-llm
+https://github.com/alexzhang13/rlm
+
+---
 # Novos Repositórios para Análise
+
+https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
+https://github.com/NVIDIA/NeMo-Agent-Toolkit
+OpenShell: https://github.com/NVIDIA/OpenShell
+TransformerEngine: https://github.com/NVIDIA/TransformerEngine
+Waza https://github.com/tw93/waza
+AutoAgent https://github.com/kevinrgu/autoagent
+Research Companion https://github.com/andrehuang/research-companion
+marknative https://github.com/liyown/marknative
+GitReverse https://github.com/filiksyos/gitreverse
+mail-app https://github.com/ankitvgupta/mail-app
+autoskills https://github.com/midudev/autoskills
+Compozy https://github.com/compozy/compozy
+JSON Alexander https://github.com/wesbos/JSON-Alexander
+career-ops https://github.com/santifer/career-ops
+Sheets https://github.com/maaslalani/sheets
+apfel https://github.com/Arthur-Ficial/apfel
+agentfiles https://github.com/Railly/agentfiles
+boneyard https://github.com/0xGF/boneyard
+jot https://github.com/badlogic/jot
+Supply Chain Monitor https://github.com/elastic/supply-chain-monitor
+port-whisperer https://github.com/LarsenCundric/port-whisperer
+OpenHarness https://github.com/HKUDS/OpenHarness
+Math Curve Loaders https://github.com/Paidax01/math-curve-loaders
+Pika Skills Open https://github.com/Pika-Labs/Pika-Skills
+Cabinet https://github.com/hilash/cabinet
+iron-proxy https://github.com/ironsh/iron-proxy
+hermes-webui https://github.com/nesquena/hermes-webui
+any-buddy https://github.com/cpaczek/any-buddy
+cuLA https://github.com/inclusionAI/cuLA
+see-through https://github.com/shitagaki-lab/see-through
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill (inclusive adorei, pretendo mudar o Desing que estava imaginando para o Genesis MC para ter algo mais parecido com isso)
+three.wasm https://github.com/mrdoob/three.wasm
+refugiOS https://github.com/Ganso/refugiOS
 
 ## Skills base (bMAD e SDD)
 
@@ -695,126 +797,143 @@ Traga nomes de repositórios reais, instruções conceituais de como conectá-lo
 
 ---
 
-# NOVAS PESQUISAS DE SOLUÇÕES
+# === NOVAS PESQUISAS DE SOLUÇÕES ===
 
 ---
 
 ### 🛠️ Novo Prompt Otimizado (Fase 3: Infraestrutura, Design e Extração)
 
-Contexto do Projeto: 
-Estamos "engenheirando" o Genesis Mission Control (Genesis MC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas em sandboxes estritas (Wasmtime).
+**CONTEXTO DO PROJETO:** 
+Estamos "engenheirando" o Genesis Mission Control (SoustractionMC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva 2e/TDAH), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas em sandboxes estritas (Wasmtime). Nossa filosofia é a "Canibalização Cirúrgica": extrair a alma matemática das ferramentas e descartar o lixo tóxico das dependências.
 
-Instrução: 
-Atue como um Arquiteto de Software e Engenheiro DevSecOps Sênior. Disseque a lista de repositórios abaixo. Devolva uma análise estruturada em Markdown, sendo cru, implacável e focado na extração de valor matemático/lógico quando não possível utilizar diretamente, com as seguintes chaves para cada projeto:
+**INSTRUÇÃO DE EXECUÇÃO (PAINEL DE ESPECIALISTAS):** 
+Para dissecar a lista de repositórios abaixo, você não atuará como uma única entidade. Você deve emular um debate interno entre **TRÊS ESPECIALISTAS** com focos distintos:
 
-Nome do Repositório / Projeto:
-- Problema Principal que Resolve: (1 ou 2 frases precisas).
-- Stack Tecnológica Base: (Linguagens dominantes, frameworks, peso de dependências).
-- Tipo de Integração Atual: (App monolítico? CLI? Framework Web? Biblioteca nativa?).
-- Categoria Arquitetural: (Motor Low-Level, Interface/Design, Utilitário de Parsing, Agente/Skill, Proxy/Roteamento).
-- Vetor de Risco (Conflito SODA): (Exponha dívidas técnicas pesadas. Ex: "Polui a VRAM", "Exige Electron/Python em background", "Acoplamento severo à nuvem").
-- Ação Mitigadora (Canibalização): (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Adaptar o CSS para Tailwind v4 no Tauri", "Embutir como sub-módulo Wasm", "Ignorar código, absorver apenas heurística do prompt").
-- "Devemos Canalabalizar? e PQ?" (A ideia é dar uma indicação se devemos ou não trazer para nosso SODA (Genesis MC), não importa exatamente quando, a não se que a solução se apresente como algo que se deva priorizar).
-- "Score de 'Vale a pena?'": (Um "Score" entre 0 - 10 que defina um valor de se "Vale a pena" trazer pro nosso SODA).
+1. **O Arquiteto Bare-Metal (DevSecOps):** O "Pessimista da Razão". Focado em performance, limites da VRAM, segurança zero-trust e arquitetura Rust/Tauri. Ele odeia dependências pesadas e julga o "Lixo Tóxico".
+2. **O Estrategista de Valor e Neuro-UX (Produto):** Focado em utilidade prática, redução de carga cognitiva e "inspirações". Ele olha para a interface, fluxos de uso e pergunta: "Isso ajuda nosso usuário 2e/TDAH? Tem algum componente visual aqui que podemos replicar no nosso Canvas?".
+3. **O Engenheiro de Transpilação (O Canibal):** O extrator de valor. Ele ignora a stack ruim e foca na inteligência pura. Ele procura a "alma matemática": heurísticas de prompt, algoritmos de roteamento, expressões regulares, modelos de banco de dados ou fluxogramas lógicos que podemos roubar e reescrever.
 
-Gere o relatório SEM FLOREIOS.
+**DIRETRIZ DE SAÍDA:**
+Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente uma análise estruturada contendo:
 
-No final, consolide uma Tabela Comparativa (Projeto, Categoria, Vetor de Risco, Ação Mitigadora, "Devemos Canalabalizar? e PQ?", "Score de 'Vale a pena?'").
+### [Nome do Repositório / Projeto]
+* **Visão do Enxame (Síntese dos 3 Especialistas):** Um parágrafo brutal e direto resumindo o consenso do debate entre o Arquiteto, o Estrategista de UX e o Canibal.
+* **Problema Principal que Resolve/Valor de Uso:** (1 ou 2 frases precisas).
+* **Stack Tecnológica Base:** (Linguagens dominantes, frameworks, peso de dependências).
+* **Tipo de Integração Atual:** (App monolítico? CLI? Framework Web? Biblioteca nativa? ...).
+* **Categorias Arquiteturais:** (Motor Low-Level, Interface/Design, Utilitário de Parsing, Agente/Skill, Proxy/Roteamento, ...).
+* **Vetores de Risco (O Lixo Tóxico):** (Visão do Arquiteto: exponha dívidas técnicas pesadas, acoplamento a nuvem, uso de Node/Python em background, etc).
+* **Ouro Oculto e Inspirações (Visão UX/Produto):** (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?).
+* **Ações Mitigadoras (O Plano de Canibalização):** (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt").
+* **Devemos Canibalizar? e PQ?:** (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).
+* **Score de 'Vale a pena?':** (Um "Score" entre 0 - 10).
+
+---
+
+**TABELA DE CONSOLIDAÇÃO:**
+No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Categoria | Risco Principal | Ouro/Inspiração a Extrair | Devemos Canibalizar? | Score).
 
 **[Lista do Lote X]** _(Inserir links aqui)_
 
 ---
 
-### 📦 Divisão Estratégica dos Novos Lotes
+#### **Lote 15: Agentes, LLMs e Gestão de Conhecimento (Wiki/Docs)**
+Este lote foca em ferramentas que usam IA para processar informação, criar wikis inteligentes ou atuar como agentes de pesquisa.
+Onyx - https://github.com/onyx-dot-app/onyx
+goose - https://github.com/aaif-goose/goose
+Understand-Anything - https://github.com/Lum1104/Understand-Anything
+llmwiki - https://github.com/lucasastorian/llmwiki
+PandaWiki - https://github.com/chaitin/PandaWiki
+llm-wiki-compiler - https://github.com/atomicmemory/llm-wiki-compiler
+llm-wiki-agent - https://github.com/SamurAIGPT/llm-wiki-agent
+sciwrite - https://github.com/labarba/sciwrite
+claude-obsidian - https://github.com/AgriciDaniel/claude-obsidian
+Markdown Viewer - https://github.com/markdown-viewer/skills
 
-#### **Lote 11: Motores Low-Level, Infraestrutura e Renderização** (FEITO)
+#### **Lote 16: Infraestrutura de Agentes, Workflow e Automação**
+Ferramentas voltadas para o "backstage" da IA: orquestração, segurança de agentes e pipelines de dados.
+bouncer - https://github.com/imbue-ai/bouncer
+sip - https://github.com/standardagents/sip
+gbrain - https://github.com/garrytan/gbrain
+fireworks-tech-graph - https://github.com/yizhiyanhua-ai/fireworks-tech-graph
+liteparse_samples - https://github.com/jerryjliu/liteparse_samples
+hermes-hudui - https://github.com/joeynyc/hermes-hudui
+quip-node-manager - https://github.com/QuipNetwork/quip-node-manager
+quien - https://github.com/retlehs/quien
+hypatia - https://github.com/MarchLiu/hypatia
+tribev2 - https://github.com/facebookresearch/tribev2
 
-_Foco: Maximização de hardware, aceleração NVIDIA, Wasm e fundações de sistema._
+#### **Lote 17: Ferramentas de Dev, CLI e Debugging**
+Focado na produtividade do desenvolvedor, desde terminais inteligentes até conversores de código e monitoramento.
+debug-agent - https://github.com/millionco/debug-agent
+cli-to-js - https://github.com/millionco/cli-to-js
+tmux-agent-sidebar - https://github.com/hiroppy/tmux-agent-sidebar
+boxsh - https://github.com/xicilion/boxsh
+coderaft - https://github.com/pithings/coderaft
+tsnapi - https://github.com/antfu/tsnapi
+hw-smi - https://github.com/ProjectPhysX/hw-smi
+remocn - https://github.com/kapishdima/remocn
+File_Converter_Pro - https://github.com/Hyacinthe-primus/File_Converter_Pro
+rattles - https://github.com/vyfor/rattles
 
-1. [https://github.com/NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell)
-2. [https://github.com/NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine)
-3. [https://github.com/HKUDS/OpenHarness](https://github.com/HKUDS/OpenHarness)
-4. [https://github.com/inclusionAI/cuLA](https://github.com/inclusionAI/cuLA)
-5. [https://github.com/Paidax01/math-curve-loaders](https://github.com/Paidax01/math-curve-loaders)
-6. [https://github.com/mrdoob/three.wasm](https://github.com/mrdoob/three.wasm)
-7. [https://github.com/Ganso/refugiOS](https://github.com/Ganso/refugiOS)
-
-#### **Lote 12: Paradigmas de Interface, UI Generativa e Proxies** (FEITO)
-
-_Foco: Visual minimalista (Nothing design), componentes de front-end passivos e roteadores de tráfego agêntico._
-
-1. [https://github.com/dominikmartn/nothing-desing-skill](https://github.com/dominikmartn/nothing-desing-skill)
-2. [https://github.com/compozy/compozy](https://github.com/compozy/compozy)
-3. [https://github.com/tw93/waza](https://github.com/tw93/waza)
-4. [https://github.com/Arthur-Ficial/apfel](https://github.com/Arthur-Ficial/apfel)
-5. [https://github.com/nesquena/hermes-webui](https://github.com/nesquena/hermes-webui)
-6. [https://github.com/shitagaki-lab/see-through](https://github.com/shitagaki-lab/see-through)
-7. [https://github.com/ironsh/iron-proxy](https://github.com/ironsh/iron-proxy)
-8. [https://github.com/LarsenCundric/port-whisperer](https://github.com/LarsenCundric/port-whisperer)
-
-#### **Lote 13: Ferramentas Agênticas, Skills e Automação de Tarefas**
-
-_Foco: Heurísticas aplicadas, automação de processos específicos e companheiros cognitivos._
-
-1. [https://github.com/kevinrgu/autoagent](https://github.com/kevinrgu/autoagent)
-2. https://github.com/karpathy/autoresearch
-3. [https://github.com/andrehuang/research-companion](https://github.com/andrehuang/research-companion)
-4. [https://github.com/midudev/autoskills](https://github.com/midudev/autoskills)
-5. [https://github.com/Pika-Labs/Pika-Skills](https://github.com/Pika-Labs/Pika-Skills)
-6. [https://github.com/santifer/career-ops](https://github.com/santifer/career-ops)
-7. [https://github.com/cpaczek/any-buddy](https://github.com/cpaczek/any-buddy)
-8. [https://github.com/Railly/agentfiles](https://github.com/Railly/agentfiles)
-9. [https://github.com/elastic/supply-chain-monitor](https://github.com/elastic/supply-chain-monitor)
-
-#### **Lote 14: Utilitários, Parsers, Conversores e Gestão de Arquivos**
-
-_Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e integração com ferramentas de produtividade tradicionais sem depender de APIs pesadas._
-
-1. [https://github.com/liyown/marknative](https://github.com/liyown/marknative)
-2. [https://github.com/wesbos/JSON-Alexander](https://github.com/wesbos/JSON-Alexander)
-3. [https://github.com/filiksyos/gitreverse](https://github.com/filiksyos/gitreverse)
-4. [https://github.com/ankitvgupta/mail-app](https://github.com/ankitvgupta/mail-app)
-5. [https://github.com/maaslalani/sheets](https://github.com/maaslalani/sheets)
-6. [https://github.com/0xGF/boneyard](https://github.com/0xGF/boneyard)
-7. [https://github.com/badlogic/jot](https://github.com/badlogic/jot)
-8. [https://github.com/hilash/cabinet](https://github.com/hilash/cabinet)
-9. https://github.com/paperclipai/paperclip
+#### **Lote 18: UI, Visualização e Experiências Multimídia**
+Tudo que envolve o "olhar": de renderização 3D/SVG a componentes de interface e podcasts personalizados.
+3dsvg - https://github.com/renatoworks/3dsvg
+HiVG - https://github.com/ximinng/HiVG
+ProgressiveBlurHeader - https://github.com/dominikmartn/ProgressiveBlurHeader
+mesurer - https://github.com/ibelick/mesurer
+styleseed - https://github.com/bitjaru/styleseed
+personalized-podcast - https://github.com/zarazhangrui/personalized-podcast
+clicky - https://github.com/farzaa/clicky
+MiroFish - https://github.com/666ghj/MiroFish
+MiroFish-Offline - https://github.com/nikmcfly/MiroFish-Offline
+helixent - https://github.com/MagicCube/helixent
+miniblue - https://github.com/moabukar/miniblue
 
 -----
 
-
 # NEW NEW NEW
 
-00:12 - 3dsvg https://github.com/renatoworks/3dsvg
-00:41 - Markdown Viewer https://github.com/markdown-viewer/sk...
-01:06 - quien https://github.com/retlehs/quien
-01:31 - fireworks-tech-graph https://github.com/yizhiyanhua-ai/fir...
-01:59 - ios-marketing-capture https://github.com/ParthJadhav/ios-ma...
-02:25 - gbrain https://github.com/garrytan/gbrain
-02:51 - bouncer https://github.com/imbue-ai/bouncer
-03:16 - debug-agent https://github.com/millionco/debug-agent
-03:45 - hermes-hudui https://github.com/joeynyc/hermes-hudui
-04:36 - quip-node-manager https://github.com/QuipNetwork/quip-n...
-05:01 - liteparse_samples https://github.com/jerryjliu/litepars...
-05:27 - rattles https://github.com/vyfor/rattles
-05:54 - helixent https://github.com/MagicCube/helixent
-06:19 - tsnapi https://github.com/antfu/tsnapi
-06:42 - miniblue https://github.com/moabukar/miniblue
-07:09 - tmux-agent-sidebar https://github.com/hiroppy/tmux-agent...
-07:34 - File_Converter_Pro https://github.com/Hyacinthe-primus/F...
-07:58 - llmwiki https://github.com/lucasastorian/llmwiki
-08:24 - HiVG https://github.com/ximinng/HiVG
-08:52 - claude-obsidian https://github.com/AgriciDaniel/claud...
-09:17 - styleseed https://github.com/bitjaru/styleseed
-09:44 - sip https://github.com/standardagents/sip
-10:11 - SwiftMTP https://github.com/Neighbor-Z/SwiftMTP
-10:32 - remocn https://github.com/kapishdima/remocn
-10:56 - coderaft https://github.com/pithings/coderaft
-11:19 - boxsh https://github.com/xicilion/boxsh
-11:43 - hw-smi https://github.com/ProjectPhysX/hw-smi
-12:06 - cli-to-js https://github.com/millionco/cli-to-js
-12:32 - mesurer https://github.com/ibelick/mesurer
-12:55 - personalized-podcast https://github.com/zarazhangrui/perso...
-13:22 - ProgressiveBlurHeader https://github.com/dominikmartn/Progr...
-14:12 - hypatia https://github.com/MarchLiu/hypatia
-14:36 - sciwrite https://github.com/labarba/sciwrite
+3dsvg https://github.com/renatoworks/3dsvg
+Markdown Viewer https://github.com/markdown-viewer/skills
+quien https://github.com/retlehs/quien
+fireworks-tech-graph https://github.com/yizhiyanhua-ai/fireworks-tech-graph
+gbrain https://github.com/garrytan/gbrain
+bouncer https://github.com/imbue-ai/bouncer
+debug-agent https://github.com/millionco/debug-agent
+hermes-hudui https://github.com/joeynyc/hermes-hudui
+quip-node-manager https://github.com/QuipNetwork/quip-node-manager
+liteparse_samples https://github.com/jerryjliu/liteparse_samples
+rattles https://github.com/vyfor/rattles
+helixent https://github.com/MagicCube/helixent
+tsnapi https://github.com/antfu/tsnapi
+miniblue https://github.com/moabukar/miniblue
+tmux-agent-sidebar https://github.com/hiroppy/tmux-agent-sidebar
+File_Converter_Pro https://github.com/Hyacinthe-primus/File_Converter_Pro
+llmwiki https://github.com/lucasastorian/llmwiki
+HiVG https://github.com/ximinng/HiVG
+claude-obsidian https://github.com/AgriciDaniel/claude-obsidian
+styleseed https://github.com/bitjaru/styleseed
+sip https://github.com/standardagents/sip
+remocn https://github.com/kapishdima/remocn
+coderaft https://github.com/pithings/coderaft
+boxsh https://github.com/xicilion/boxsh
+hw-smi https://github.com/ProjectPhysX/hw-smi
+cli-to-js https://github.com/millionco/cli-to-js
+mesurer https://github.com/ibelick/mesurer
+personalized-podcast https://github.com/zarazhangrui/personalized-podcast
+ProgressiveBlurHeader https://github.com/dominikmartn/ProgressiveBlurHeader
+hypatia https://github.com/MarchLiu/hypatia
+sciwrite https://github.com/labarba/sciwrite
+Onyx - https://github.com/onyx-dot-app/onyx
+goose https://github.com/aaif-goose/goose
+Understand-Anything https://github.com/Lum1104/Understand-Anything
+PandaWiki https://github.com/chaitin/PandaWiki
+llm-wiki-compiler https://github.com/atomicmemory/llm-wiki-compiler
+llm-wiki-agent https://github.com/SamurAIGPT/llm-wiki-agent
+clicky https://github.com/farzaa/clicky
+MiroFish-Offline https://github.com/nikmcfly/MiroFish-Offline
+MiroFish https://github.com/666ghj/MiroFish
+tribev2 https://github.com/facebookresearch/tribev2
+
+

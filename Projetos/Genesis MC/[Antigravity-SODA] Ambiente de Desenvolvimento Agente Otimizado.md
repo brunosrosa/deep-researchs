@@ -1,3 +1,6 @@
+---
+sticker: lucide//hammer
+---
 # Relatório Arquitetural: Engenharia de Ambiente de Desenvolvimento Agêntico para o Projeto Genesis (SODA)
 
 A engenharia de software em 2026 consolidou uma transição paradigmática irreversível, movendo-se de assistentes de código baseados em autocompletar reativo para Ambientes de Desenvolvimento Automatizados (ADEs) orientados a agentes. O Antigravity IDE representa o pináculo desta evolução, operando não meramente como um editor de texto, mas como um centro de comando ("Mission Control") capaz de orquestrar múltiplos sub-agentes assíncronos, validar artefatos estruturados e executar interações complexas com o sistema operacional e navegadores de forma totalmente autônoma.

@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Engenharia e Arquitetura: Avaliação de Soluções para o Genesis Mission Control (SODA)
 
 A engenharia do Genesis Mission Control (Genesis MC) exige uma fundação arquitetural que rompe diametralmente com as práticas convencionais do atual ecossistema de Inteligência Artificial. A proposição de um Sistema Operacional Agêntico Soberano (SODA) impõe a necessidade de um núcleo ultraleve e imutável. A escolha do uso de linguagens de compilação nativa com controle estrito de alocação de memória, notadamente Rust e Zig, integradas através do framework Tauri, dita um ambiente operacional de restrições severas. O Genesis MC deve operar como um daemon de background invisível e de altíssimo desempenho, onde a interface de usuário em React é estritamente passiva, renderizando estados multimodais através de abstrações Canvas-first sem deter nenhuma lógica de orquestração.

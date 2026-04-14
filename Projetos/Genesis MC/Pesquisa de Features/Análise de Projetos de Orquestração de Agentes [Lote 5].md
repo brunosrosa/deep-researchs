@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Engenharia e Arquitetura: Avaliação de Sidecars e Orquestradores para o Genesis Mission Control (SODA)
 
 A transição arquitetural para um Sistema Operacional Agêntico Soberano (SODA), materializado no projeto Genesis Mission Control (Genesis MC), exige uma ruptura fundamental com os paradigmas de desenvolvimento de software tradicionais baseados em nuvem e interpretadores de alto nível. A premissa de estabelecer um núcleo ultraleve e imutável, programado em linguagens de compilação nativa e gerenciamento manual de memória (como Rust ou Zig) encapsuladas em um ambiente de distribuição Tauri, impõe restrições termodinâmicas e computacionais severas. O objetivo deste daemon de background é orquestrar roteamento inteligente de Modelos de Linguagem de Grande Escala (LLMs), gerenciar agentes efêmeros e manter memórias segmentadas (vetoriais e em grafos) sem sacrificar a privacidade local do usuário ou a responsividade de uma interface React estritamente passiva (Canvas-first).

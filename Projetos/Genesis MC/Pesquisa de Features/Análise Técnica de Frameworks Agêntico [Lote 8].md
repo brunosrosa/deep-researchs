@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Dissecação Arquitetural: Frameworks de Orquestração, Hubs e Fluxos Agênticos para o Genesis Mission Control
 
 A engenharia do Genesis Mission Control (Genesis MC) estabelece um paradigma inflexível no cenário contemporâneo de engenharia de software: a construção de um Sistema Operacional Agêntico Soberano (SODA). Este ecossistema não é uma mera aplicação, mas uma camada fundamental de computação focada em execução estritamente local, isolamento de rede absoluto (air-gapped) e uma eficiência computacional que exige operação bare-metal. A fundação arquitetural repousa sobre um núcleo ultraleve e imutável, compilado nativamente em Rust/Zig e empacotado através do framework Tauri. Este núcleo opera como um _daemon_ silencioso e implacável em background, acoplado a uma interface React desenhada sob a filosofia _Canvas-first_ e multimodal, que se mantém estritamente passiva, comunicando-se exclusivamente via Inter-Process Communication (IPC).

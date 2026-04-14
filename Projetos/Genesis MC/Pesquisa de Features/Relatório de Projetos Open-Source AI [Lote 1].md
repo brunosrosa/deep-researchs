@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Arquitetura e Engenharia de Dados: Análise Estrutural e Avaliação de Conflitos em Repositórios Open-Source de Inteligência Artificial
 
 A evolução da infraestrutura de software de inteligência artificial (IA) migrou de uma abordagem focada primariamente na invocação sem estado de modelos de linguagem de grande escala (LLMs) baseados em nuvem para o desenvolvimento de sistemas compostos de IA e fluxos de trabalho agentais autônomos. Esta transição arquitetural exige uma base de dados contínua e persistente, capacidades de roteamento dinâmico, renderização de interface otimizada para borda (edge) e topologias de memória que vão além da simples similaridade de cossenos em bancos vetoriais. O presente relatório técnico disseca uma matriz de projetos open-source projetados para suportar esse ecossistema, mapeando suas pilhas tecnológicas, padrões de integração, categorizações arquiteturais e, criticamente, as fricções e sobreposições inerentes às suas implementações operacionais em ambientes de produção.

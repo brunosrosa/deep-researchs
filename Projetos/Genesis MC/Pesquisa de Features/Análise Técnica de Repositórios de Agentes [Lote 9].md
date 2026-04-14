@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Dissecação Arquitetural: Genesis Mission Control (SODA) - Lote 9
 
 A engenharia de um Sistema Operacional Agêntico Soberano (Sovereign Agentic OS - SODA), materializado sob a égide do projeto Genesis Mission Control (Genesis MC), exige uma ruptura dogmática e implacável com os paradigmas contemporâneos de desenvolvimento de software voltado para Inteligência Artificial. O ecossistema de código aberto atual sofre de uma miopia arquitetural crônica e terminal, delegando a orquestração de rotinas locais e sistemas de inferência a interpretadores de script massivamente pesados, monolíticos e irremediavelmente dependentes de conexões de rede constantes. A construção do Genesis MC repudia frontalmente esta fragilidade. A arquitetura fundacional exige um núcleo de execução ultraleve, determinístico e imutável, obrigatoriamente compilado em linguagens de programação de baixo nível que ofereçam controle estrito de alocação de memória e garantias de concorrência sem coleta de lixo randômica, especificamente Rust e Zig.

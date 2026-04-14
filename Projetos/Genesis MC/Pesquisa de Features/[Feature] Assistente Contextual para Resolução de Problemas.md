@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//apple
 ---
 # Proposta Arquitetural para Assistente de Contexto Profundo Baseado em Sobreposição Multimodal e Processamento de Borda
 

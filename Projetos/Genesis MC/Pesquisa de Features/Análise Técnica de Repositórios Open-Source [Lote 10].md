@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Dissecação Arquitetural: Genesis Mission Control e a Engenharia de Sistemas Agênticos Soberanos
 
 ## Fundamentação da Arquitetura SODA e Repúdio ao Lixo Computacional

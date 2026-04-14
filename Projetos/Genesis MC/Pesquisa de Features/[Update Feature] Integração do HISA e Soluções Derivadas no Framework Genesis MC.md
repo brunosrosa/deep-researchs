@@ -1,3 +1,6 @@
+---
+sticker: lucide//apple
+---
 # Paradigmas Avançados de Atenção Esparsa para Arquiteturas de IA Edge-Native: Integração do HISA e Soluções Derivadas no Framework Genesis MC
 
 ## O Contexto Arquitetural e o Gargalo Computacional no Edge

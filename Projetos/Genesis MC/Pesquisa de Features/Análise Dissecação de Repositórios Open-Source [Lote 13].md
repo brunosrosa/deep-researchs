@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório Analítico de Arquitetura e Engenharia de Canibalização: Subsistema de Agentes e Skills (SODA - Genesis MC)
 
 A concepção e a engenharia de um Sistema Operacional Agêntico Soberano (SODA), materializado sob o codinome Genesis Mission Control (Genesis MC), exigem uma rejeição sumária e dogmática dos paradigmas atuais de desenvolvimento de software em nuvem e de ecossistemas interpretados. O ambiente de execução alvo estabelece restrições termodinâmicas e matemáticas absolutas: um processador i9 (cujo excesso de paralelismo imperativo pode induzir estrangulamento térmico prematuro), 32GB de memória RAM unificada, e uma barreira arquitetural crítica na forma de uma GPU RTX 2060m limitando a VRAM a escassos 6 Gigabytes. Sob essas condições de contorno geofísico, qualquer operação computacional que introduza latência não determinística, poluição global de pacotes ou consumo passivo de memória é classificada como uma falha arquitetural catastrófica.

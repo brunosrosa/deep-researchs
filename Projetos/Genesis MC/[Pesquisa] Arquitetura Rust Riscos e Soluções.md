@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Arquitetura Rust: Riscos e Soluções"
+sticker: lucide//zoom-in
 ---
 # Relatório Analítico de Engenharia de Sistemas: Resolução de Riscos Arquiteturais em Ambientes Agentic OS Bare-Metal (SODA - Genesis MC)
 

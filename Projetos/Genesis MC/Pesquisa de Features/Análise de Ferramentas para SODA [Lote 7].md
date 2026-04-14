@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Pesquisa Arquitetural: Avaliação de Componentes para o Genesis Mission Control (Lote 7)
 
 ## Fundamentos Arquiteturais e Critérios de Avaliação do SODA

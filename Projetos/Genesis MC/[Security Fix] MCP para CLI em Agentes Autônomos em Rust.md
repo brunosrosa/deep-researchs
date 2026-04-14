@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//bug
 ---
 # Projeto Genesis MC / SODA: Arquitetura de Segurança de Nível L7 e Isolamento de Execução para Agentes Autônomos
 

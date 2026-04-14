@@ -1,3 +1,6 @@
+---
+sticker: lucide//pocket
+---
 # Relatório de Engenharia de Dados e Arquitetura de Software: A Fronteira Visual e Multimodal (UI/UX & Canvas)
 
 A evolução das interfaces baseadas em inteligência artificial está ultrapassando o paradigma estrito de interações textuais sequenciais, convergindo para ecossistemas visuais, espacialmente cientes e dinamicamente gerados. A arquitetura de software contemporânea exige que os modelos de linguagem grandes (LLMs) interajam não apenas através de fluxos de caracteres, mas manipulem componentes de interface complexos, grafos de conhecimento bidimensionais e editores de documentos estruturados. Este documento técnico fornece uma dissecação exaustiva de nove projetos de código aberto que definem o estado da arte na fronteira visual e multimodal, com foco nas implicações diretas para a engenharia de dados, topologias de integração, protocolos de transporte em rede e sobreposições arquiteturais severas.
