@@ -817,6 +817,8 @@ Para dissecar a lista de repositórios abaixo, você não atuará como uma únic
 Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente uma análise estruturada contendo:
 
 ### [Nome do Repositório / Projeto]
+- **Score de 'Vale a pena?':** (Um "Score" entre 0 - 10).
+- **Originalmente serve para:** (Para adicionar um "resuminho" de qual é a proposta original da solução)
 * **Visão do Enxame (Síntese dos 3 Especialistas):** Um parágrafo brutal e direto resumindo o consenso do debate entre o Arquiteto, o Estrategista de UX e o Canibal.
 * **Problema Principal que Resolve/Valor de Uso:** (1 ou 2 frases precisas).
 * **Stack Tecnológica Base:** (Linguagens dominantes, frameworks, peso de dependências).
@@ -826,12 +828,14 @@ Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente 
 * **Ouro Oculto e Inspirações (Visão UX/Produto):** (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?).
 * **Ações Mitigadoras (O Plano de Canibalização):** (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt").
 * **Devemos Canibalizar? e PQ?:** (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).
-* **Score de 'Vale a pena?':** (Um "Score" entre 0 - 10).
+
 
 ---
 
 **TABELA DE CONSOLIDAÇÃO:**
-No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Categoria | Risco Principal | Ouro/Inspiração a Extrair | Devemos Canibalizar? | Score).
+No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Score | Categoria | Devemos Canibalizar? | Risco Principal | Ouro/Inspiração a Extrair).
+
+---
 
 **[Lista do Lote X]** _(Inserir links aqui)_
 
