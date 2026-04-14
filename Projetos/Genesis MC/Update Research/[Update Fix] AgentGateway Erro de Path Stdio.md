@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//activity
 ---
 # Relatório de Engenharia Arquitetural: Resiliência de Fan-out, Resolução de Caminhos no Windows e Interoperabilidade do Protocolo MCP no AgentGateway
 
