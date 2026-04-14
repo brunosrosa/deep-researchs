@@ -1,7 +1,6 @@
 ---
 sticker: lucide//pocket
 ---
-
 # Relatório de Pesquisa e Arquitetura: Canibalização Cirúrgica de Agentes e Gestão de Conhecimento para o SoustractionMC
 
 | **Projeto**             | **Categoria**                | **Risco Principal (O Lixo Tóxico)**                           | **Ouro/Inspiração a Extrair**                                  | **Devemos Canibalizar?**       | **Score** |
@@ -46,11 +45,11 @@ sticker: lucide//pocket
 - **Vetores de Risco (O Lixo Tóxico):** A presença de camadas frontend pesadas em TypeScript/JavaScript e o uso do motor V8 (`vendor/v8`) introduzem vulnerabilidades de memória e um overhead de comunicação inter-processos (IPC) inaceitável para o nosso daemon. A telemetria implícita em frameworks desktop genéricos polui um ambiente estritamente air-gapped e zero-trust.
 - **Ouro Oculto e Inspirações (Visão UX/Produto):** O design de "Workflow Recipes" (`release_risk_check`). Transformar ações operacionais complexas em gatilhos determinísticos de clique único elimina a carga executiva severa enfrentada por usuários com TDAH. O "Provider Agnosticism" permite que a UI do Canvas permaneça imutável, independentemente de o motor estar rodando um modelo quantizado de 4-bit na RTX 2060m ou roteando via ACP.
 
-|**Componente Extraído**|**Função no SoustractionMC (SODA)**|**Método de Canibalização**|
-|---|---|---|
-|`crates/goose-mcp`|Comunicação padronizada com ferramentas externas.|Compilação direta no daemon Rust.|
-|`goose-acp`|Roteamento de fallback assíncrono.|Transpilação de macros para IPC Tauri.|
-|`workflow_recipes/`|Automação de tarefas estruturadas.|Conversão para grafos JSON executáveis.|
+| **Componente Extraído** | **Função no SoustractionMC (SODA)**               | **Método de Canibalização**             |
+| ----------------------- | ------------------------------------------------- | --------------------------------------- |
+| `crates/goose-mcp`      | Comunicação padronizada com ferramentas externas. | Compilação direta no daemon Rust.       |
+| `goose-acp`             | Roteamento de fallback assíncrono.                | Transpilação de macros para IPC Tauri.  |
+| `workflow_recipes/`     | Automação de tarefas estruturadas.                | Conversão para grafos JSON executáveis. |
 
 - **Ações Mitigadoras (O Plano de Canibalização):** A camada de interface UI/Electron será sumariamente extirpada. Os diretórios vitais, especificamente `crates/goose` e as implementações MCP/ACP, serão isolados. O código Rust será canibalizado e compilado como sub-rotinas integradas diretamente no daemon de background do SODA. Para garantir a segurança zero-trust, as ferramentas do MCP serão enclausuradas e executadas através do nosso motor Wasmtime, garantindo que nenhum script gerado pelo agente tenha acesso irrestrito ao sistema hospedeiro.
 - **Devemos Canibalizar? e PQ?:** Sim, com prioridade máxima. A implementação do Model Context Protocol (MCP) em Rust puro é um ativo inestimável que economiza meses de engenharia, fornecendo a fundação matemática para a interoperabilidade de ferramentas em execução local sem onerar o hardware.
@@ -125,11 +124,9 @@ sticker: lucide//pocket
 - **Vetores de Risco (O Lixo Tóxico):** A inicialização repetida do runtime Node.js em uma arquitetura CLI degrada a eficiência de inicialização a frio e pulveriza memória RAM. Além disso, o acoplamento estrito e hardcoded à API da Anthropic viola o princípio soberano, offline e "air-gapped" obrigatório para o SODA operando na RTX 2060m.
 - **Ouro Oculto e Inspirações (Visão UX/Produto):** O mecanismo de "Truncamento Honesto", que injeta explicitamente a flag `truncated: true` no frontmatter quando um documento excede o limite de contexto. Isso previne ativamente as "alucinações cognitivas" e o overpromising, estabelecendo limites claros que ancoram as expectativas do usuário 2e/TDAH. As anotações de proveniência em nível de parágrafo (usando a sintaxe `^[filename.md]`) mantêm uma rastreabilidade impecável e granular sem introduzir poluição visual na interface do Canvas.
 - **Ações Mitigadoras (O Plano de Canibalização):** A engine será totalmente reescrita em Rust.
-    
     1. O loop de validação de arquivos incrementais será codificado através do crate genérico `sha2`, validando estados estáticos de documentos em microssegundos matemáticos: $H(state_{t}) = \text{SHA-256}(\text{source\_content})$.
     2. O pipeline bifásico (Fase 1: Extração de Conceitos independente de ordem $\rightarrow$ Fase 2: Geração Definitiva de Página) será traduzido em chamadas isoladas e determinísticas enviadas aos modelos Llama.cpp (em formato GGUF) via Wasmtime no backend Rust.
     3. A restrição e dependência da Anthropic será roteada e contornada para usar exclusivamente os modelos rodando localmente na GPU.
-        
 - **Devemos Canibalizar? e PQ?:** Sim. A filosofia central de "Compilar Conhecimento" em contraposição a "Consultar Vetores em Tempo Real" reduz maciçamente a pressão sobre os exíguos 6GB de VRAM, transferindo inteligentemente o ônus computacional para as operações de escrita em disco em momentos de ociosidade do sistema.
 - **Score de 'Vale a pena?':** 8.5
 
@@ -152,11 +149,9 @@ sticker: lucide//pocket
 |**Clustering (Louvain)**|Divisão de grafos por modularidade.|Implementação de matriz esparsa usando crate `nalgebra`.|
 
 - **Ações Mitigadoras (O Plano de Canibalização):** A essência puramente matemática será extraída e portada:
-    
     1. As operações ineficientes de processamento de grafos do Python serão extirpadas e reescritas usando o crate Rust nativo `petgraph`, garantindo execução em tempos sub-milissegundos e layouts de memória adjacentes e compactos.
     2. O algoritmo de detecção de comunidades de Louvain será recodificado usando matemática de baixo nível. A operação, que matematicamente maximiza o índice de modularidade $Q = \frac{1}{2m} \sum_{i,j} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)$, será processada em matrizes esparsas através do ecossistema `nalgebra`.
     3. As threads de passagem de extração (léxica e semântica) serão encapsuladas em workers assíncronos de baixo custo no Rust, isoladas em sandboxes Wasmtime.
-        
 - **Devemos Canibalizar? e PQ?:** Sim, classificando-se como extração de prioridade emergencial. Uma arquitetura de inteligência interconectada baseada puramente em grafos estruturais (eliminando a necessidade de bancos de dados complexos) é o pilar ideal para a persistência assíncrona, imutável e descentralizada almejada pelo SODA.
 - **Score de 'Vale a pena?':** 9.5
 
@@ -188,10 +183,8 @@ sticker: lucide//pocket
 - **Vetores de Risco (O Lixo Tóxico):** A subordinação de fluxos de controle a runtimes de execução externa, sabidamente vulneráveis e notórios por consumo excessivo de RAM (como é o caso de Plugins não assinados do Obsidian, integrações de API REST em loop local contínuo e a base Electron). Estruturar a orquestração de lógica neural complexa em bash/shell scripts expõe a aplicação a race conditions inerentes a I/O, possíveis vetores de injeção de comandos não higienizados e quebras previsíveis em ambientes não-POSIX.
 - **Ouro Oculto e Inspirações (Visão UX/Produto):** A elegância arquitetural incutida no arquivo de retenção `wiki/hot.md` (o núcleo do conceito de "Hot Cache"). Imediatamente após a conclusão da sessão interativa, o agente é instruído a condensar os vetores factuais e referenciar as _threads_ de hiperfoco mantidas ativas, armazenando-os num bloco textual rígido de até 500 palavras. A iteração de sessão subsequente sofre um bootstrap alimentado por esta cápsula de context. Em um contexto 2e/TDAH — onde os indivíduos são assaltados por distorções de "cegueira temporal" e frequentes disrupções abruptas de ciclos de hiperfoco —, garantir a reidratação automática e orgânica das balizas do contexto da tarefa atua como uma prótese de acessibilidade neurológica crítica e indispensável.
 - **Ações Mitigadoras (O Plano de Canibalização):** O ecossistema do Obsidian e os arquivos shell scripts orquestradores serão terminantemente erradicados.
-    
     1. A lógica algorítmica por trás da injeção do "Hot Cache" (ancorada em arquivos `hooks.json` engatilhando vetores SessionStart e SessionStop) será integralmente transportada para a thread isolada do core em Rust, escrita como parte de um serviço nativo e altamente performático do Event Loop assíncrono (utilizando os paradigmas robustos do `tokio`). Esse vetor de cache transiente ficará abrigado criptograficamente nos segmentos de dados do binário, induzindo exatos zero bytes de overhead de transferência à limitada VRAM da GPU.
     2. O ciclo autônomo e infinito do diretório `/autoresearch`, balizado em 3 estágios lógicos estritos (Pesquisa Parametrizada $\rightarrow$ Captura de Dados $\rightarrow$ Síntese Factual $\rightarrow$ Escrita e Armazenamento via Gap-Filling dinâmico) será transcrito matematicamente em uma FSM (Máquina de Estados Finitos/State Machine) sólida escrita no núcleo do backend em Rust, forçando todo o tráfego de rotinas de captura de rede (Scraping/Fetches) a operar estritamente a partir das fronteiras das sandboxes determinísticas providas pelas instâncias efêmeras do motor Wasmtime.
-        
 - **Devemos Canibalizar? e PQ?:** Sim, motivados estritamente pela eficácia operacional provada pela mecânica do "Hot Cache". Essa heurística específica converte o limite de parede de tijolos dos pequenos buffers de contexto ditados por hardware portátil e GPUs de 6GB de VRAM em janelas de processamento semi-infinita, forjando uma estrutura sintética de pseudo-memória persistente, barata e altamente funcional, que sobrevive aos reinícios de runtime.
 - **Score de 'Vale a pena?':** 7.5
 

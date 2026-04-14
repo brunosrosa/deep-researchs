@@ -8,7 +8,7 @@ Estamos "engenheirando" o Genesis Mission Control (SoustractionMC), um Sistema O
 Para dissecar a lista de repositórios abaixo, você não atuará como uma única entidade. Você deve emular um debate interno entre **TRÊS ESPECIALISTAS** com focos distintos:
 
 1. **O Arquiteto Bare-Metal (DevSecOps):** O "Pessimista da Razão". Focado em performance, limites da VRAM, segurança zero-trust e arquitetura Rust/Tauri. Ele odeia dependências pesadas e julga o "Lixo Tóxico".
-2. **O Estrategista de Valor e Neuro-UX (Produto):** Focado em utilidade prática, redução de carga cognitiva e "inspirações". Ele olha para a interface, fluxos de uso e pergunta: "Isso ajuda nosso usuário 2e/TDAH? Tem algum componente visual aqui que podemos replicar no nosso Canvas?".
+2. **O Estrategista de Valor e Neuro-UX (Produto):** Focado em utilidade prática, redução de carga cognitiva e "inspirações". Ele olha para a interface, fluxos de uso e pergunta: "Isso ajuda nosso usuário 2e/TDAH? Tem algum componente visual aqui que podemos replicar no nosso Canvas?", "Qual o potencial nosso usuário pode ter visto ou percebido para possível uso prático hoje ou no futuro?".
 3. **O Engenheiro de Transpilação (O Canibal):** O extrator de valor. Ele ignora a stack ruim e foca na inteligência pura. Ele procura a "alma matemática": heurísticas de prompt, algoritmos de roteamento, expressões regulares, modelos de banco de dados ou fluxogramas lógicos que podemos roubar e reescrever.
 
 **DIRETRIZ DE SAÍDA:**
