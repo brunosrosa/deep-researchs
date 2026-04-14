@@ -88,24 +88,3 @@ Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente 
 * **Ouro Oculto e Inspirações (Visão UX/Produto):** (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?).
 * **Ações Mitigadoras (O Plano de Canibalização):** (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt").
 * **Devemos Canibalizar? e PQ?:** (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).
-
-
----
-
-**TABELA DE CONSOLIDAÇÃO:**
-No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Categoria | Risco Principal | Ouro/Inspiração a Extrair | Devemos Canibalizar? | Score).
-
----
-#### **Lote 18: UI, Visualização e Experiências Multimídia**
-Tudo que envolve o "olhar": de renderização 3D/SVG a componentes de interface e podcasts personalizados.
-3dsvg - https://github.com/renatoworks/3dsvg
-HiVG - https://github.com/ximinng/HiVG
-ProgressiveBlurHeader - https://github.com/dominikmartn/ProgressiveBlurHeader
-mesurer - https://github.com/ibelick/mesurer
-styleseed - https://github.com/bitjaru/styleseed
-personalized-podcast - https://github.com/zarazhangrui/personalized-podcast
-clicky - https://github.com/farzaa/clicky
-MiroFish - https://github.com/666ghj/MiroFish
-MiroFish-Offline - https://github.com/nikmcfly/MiroFish-Offline
-helixent - https://github.com/MagicCube/helixent
-miniblue - https://github.com/moabukar/miniblue
