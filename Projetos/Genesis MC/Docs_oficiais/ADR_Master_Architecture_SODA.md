@@ -110,7 +110,7 @@ _Objetivo: Comunicação auditiva e controle remoto via celular com Zero Trust._
 
 - **M36:** Acesso Remoto E2EE: Integração do Signal Protocol (crate `presage`) no Rust. Pareamento via QR Code (Dispositivo Vinculado).
 - **M37:** _Long-Polling Task_ do Signal. O SODA fica aguardando mensagens em background consumindo \approx 0\% de CPU.
-- **M38:** Integração do `Whisper.cpp` roteado estritamente para a iGPU (deixando a RTX 2060m livre).
+- **M38:** Integração do `Whisper.cpp` roteado estritamente para as threads nativas da CPU i9 (deixando a RTX 2060m livre).
 - **M39:** Brain Dumping Remoto: O usuário manda um áudio do celular na rua. O Signal desencripta, o Whisper transcreve, o SODA salva a ideia no Hippocampus.
 - **M40:** Síntese de Voz (Opcional): Integração de um TTS leve (Kokoro/Piper) via ONNX. O SODA responde em áudio no desktop.
 
@@ -168,7 +168,7 @@ Aqui estão as respostas brutais e definitivas para os pontos cegos da fundaçã
 
 - **O Problema:** A VRAM (RTX 2060m) está em 100% inferindo código. Entra um áudio via Signal (Vetor Gamma) para a iGPU. O barramento PCIe congestiona e o sistema engasga.
 - **A Decisão (Advogado do Diabo):** Inferência em lotes (Batched Inference) e **Fila de Prioridade Preemptiva**. Você não pode pausar um kernel CUDA no meio de uma multiplicação de matrizes.
-- **A Execução:** O `llama.cpp` no Rust não pedirá ao LLM para gerar a resposta inteira de uma vez. Ele pedirá blocos de 5 em 5 tokens e fará um `yield` (devolverá o controle para o SO). O Rust terá um `HardwareTicketManager`. O Áudio Humano (Vetor Gamma) tem **Prioridade 0 (Interrupção)**. Se o áudio chegar, o Rust para de pedir blocos de tokens para a VRAM, processa o Whisper na iGPU em silêncio de barramento, e depois retoma a VRAM.
+- **A Execução:** O `llama.cpp` no Rust não pedirá ao LLM para gerar a resposta inteira de uma vez. Ele pedirá blocos de 5 em 5 tokens e fará um `yield` (devolverá o controle para o SO). O Rust terá um `HardwareTicketManager`. O Áudio Humano (Vetor Gamma) tem **Prioridade 0** (Interrupção). Se o áudio chegar, o Rust suspende o LLM na VRAM e processa o Whisper diretamente nas threads ociosas da CPU i9 usando instruções AVX2, mantendo a VRAM intacta, e depois retoma a execução.
 
 ## PARTE 2: O HORIZONTE DE EVENTOS (ROADMAP SODA v1 a v50)
 
@@ -187,7 +187,7 @@ _Onde construímos o esqueleto mudo e surdo, mas inquebrável._
 
 _Onde acendemos a VRAM e a máquina passa a compreender._
 
-- **M11 a M13:** Acoplamento de `llama.cpp` via FFI no Rust. Carregamento do modelo roteador ultra-leve (FunctionGemma 270M) usando iGPU/RAM.
+- **M11 a M13:** Acoplamento de `llama.cpp` via FFI no Rust. Carregamento do modelo roteador (Qwen3-0.6B ou SmolLM2) rodando de forma perpétua diretamente nas threads da CPU i9 via AVX2.
 - **M14 a M16:** Ingestão do modelo analítico (Phi-4-mini ou Qwen 2.5 Coder) limitado aos 4.5GB efetivos da RTX 2060m.
 - **M17 a M19:** Implementação da Memória L3 (Vetorial) com `LanceDB` embarcado. A máquina aprende a associar similaridades de cossenos para buscas locais de contexto.
 - **M20:** O SODA respira. Primeiro RAG 100% local e offline funcionando perfeitamente, consultando arquivos da máquina sem travar a interface.

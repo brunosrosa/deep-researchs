@@ -415,6 +415,7 @@ _Foco: Heurísticas estáticas, habilidades para frameworks específicos (Antigr
 ### 📦 Divisão Estratégica dos Novos Lotes
 
 #### **Lote 11: Motores Low-Level, Infraestrutura e Renderização** (FEITO)
+
 _Foco: Maximização de hardware, aceleração NVIDIA, Wasm e fundações de sistema._
 
 1. [https://github.com/NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell)
@@ -426,6 +427,7 @@ _Foco: Maximização de hardware, aceleração NVIDIA, Wasm e fundações de sis
 7. [https://github.com/Ganso/refugiOS](https://github.com/Ganso/refugiOS)
 
 #### **Lote 12: Paradigmas de Interface, UI Generativa e Proxies** (FEITO)
+
 _Foco: Visual minimalista (Nothing design), componentes de front-end passivos e roteadores de tráfego agêntico._
 
 1. [https://github.com/dominikmartn/nothing-desing-skill](https://github.com/dominikmartn/nothing-desing-skill)
@@ -438,6 +440,7 @@ _Foco: Visual minimalista (Nothing design), componentes de front-end passivos e 
 8. [https://github.com/LarsenCundric/port-whisperer](https://github.com/LarsenCundric/port-whisperer)
 
 #### **Lote 13: Ferramentas Agênticas, Skills e Automação de Tarefas**
+
 _Foco: Heurísticas aplicadas, automação de processos específicos e companheiros cognitivos._
 
 1. [https://github.com/kevinrgu/autoagent](https://github.com/kevinrgu/autoagent)
@@ -451,6 +454,7 @@ _Foco: Heurísticas aplicadas, automação de processos específicos e companhei
 9. [https://github.com/elastic/supply-chain-monitor](https://github.com/elastic/supply-chain-monitor)
 
 #### **Lote 14: Utilitários, Parsers, Conversores e Gestão de Arquivos**
+
 _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e integração com ferramentas de produtividade tradicionais sem depender de APIs pesadas._
 
 1. [https://github.com/liyown/marknative](https://github.com/liyown/marknative)
@@ -464,6 +468,7 @@ _Foco: Extração/Utilização de dados brutos (Markdown/JSON) de forma visual e
 9. https://github.com/paperclipai/paperclip
 
 #### **Lote 15: Agentes, LLMs e Gestão de Conhecimento (Wiki/Docs)**
+
 Este lote foca em ferramentas que usam IA para processar informação, criar wikis inteligentes ou atuar como agentes de pesquisa.
 Onyx - https://github.com/onyx-dot-app/onyx
 goose - https://github.com/aaif-goose/goose
@@ -477,6 +482,7 @@ claude-obsidian - https://github.com/AgriciDaniel/claude-obsidian
 Markdown Viewer - https://github.com/markdown-viewer/skills
 
 #### **Lote 16: Infraestrutura de Agentes, Workflow e Automação**
+
 Ferramentas voltadas para o "backstage" da IA: orquestração, segurança de agentes e pipelines de dados.
 bouncer - https://github.com/imbue-ai/bouncer
 sip - https://github.com/standardagents/sip
@@ -490,6 +496,7 @@ hypatia - https://github.com/MarchLiu/hypatia
 tribev2 - https://github.com/facebookresearch/tribev2
 
 #### **Lote 17: Ferramentas de Dev, CLI e Debugging**
+
 Focado na produtividade do desenvolvedor, desde terminais inteligentes até conversores de código e monitoramento.
 debug-agent - https://github.com/millionco/debug-agent
 cli-to-js - https://github.com/millionco/cli-to-js
@@ -503,6 +510,7 @@ File_Converter_Pro - https://github.com/Hyacinthe-primus/File_Converter_Pro
 rattles - https://github.com/vyfor/rattles
 
 #### **Lote 18: UI, Visualização e Experiências Multimídia**
+
 Tudo que envolve o "olhar": de renderização 3D/SVG a componentes de interface e podcasts personalizados.
 3dsvg - https://github.com/renatoworks/3dsvg
 HiVG - https://github.com/ximinng/HiVG
@@ -572,7 +580,6 @@ miniblue - https://github.com/moabukar/miniblue
 - ChatGPT 5.4
 - Outras? Quais? Pq? Para Que?
 
-
 ---
 
 ##### MCPs
@@ -600,6 +607,7 @@ https://github.com/ysz/recursive-llm
 https://github.com/alexzhang13/rlm
 
 ---
+
 # Novos Repositórios para Análise
 
 https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
@@ -803,10 +811,10 @@ Traga nomes de repositórios reais, instruções conceituais de como conectá-lo
 
 ### 🛠️ Novo Prompt Otimizado (Fase 3: Infraestrutura, Design e Extração)
 
-**CONTEXTO DO PROJETO:** 
+**CONTEXTO DO PROJETO:**
 Estamos "engenheirando" o Genesis Mission Control (SoustractionMC), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped) e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva 2e/TDAH), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas em sandboxes estritas (Wasmtime). Nossa filosofia é a "Canibalização Cirúrgica": extrair a alma matemática das ferramentas e descartar o lixo tóxico das dependências.
 
-**INSTRUÇÃO DE EXECUÇÃO (PAINEL DE ESPECIALISTAS):** 
+**INSTRUÇÃO DE EXECUÇÃO (PAINEL DE ESPECIALISTAS):**
 Para dissecar a lista de repositórios abaixo, você não atuará como uma única entidade. Você deve emular um debate interno entre **TRÊS ESPECIALISTAS** com focos distintos:
 
 1. **O Arquiteto Bare-Metal (DevSecOps):** O "Pessimista da Razão". Focado em performance, limites da VRAM, segurança zero-trust e arquitetura Rust/Tauri. Ele odeia dependências pesadas e julga o "Lixo Tóxico".
@@ -817,6 +825,7 @@ Para dissecar a lista de repositórios abaixo, você não atuará como uma únic
 Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente uma análise estruturada contendo:
 
 ### [Nome do Repositório / Projeto]
+
 - **Score de 'Vale a pena?':** (Um "Score" entre 0 - 10).
 - **Originalmente serve para:** (Para adicionar um "resuminho" de qual é a proposta original da solução)
 * **Visão do Enxame (Síntese dos 3 Especialistas):** Um parágrafo brutal e direto resumindo o consenso do debate entre o Arquiteto, o Estrategista de UX e o Canibal.
@@ -828,7 +837,6 @@ Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE. Para cada projeto, apresente 
 * **Ouro Oculto e Inspirações (Visão UX/Produto):** (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?).
 * **Ações Mitigadoras (O Plano de Canibalização):** (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt").
 * **Devemos Canibalizar? e PQ?:** (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).
-
 
 ---
 
@@ -842,6 +850,7 @@ No início absoluto da sua resposta (antes das análises individuais), consolide
 ---
 
 #### **Lote 15: Agentes, LLMs e Gestão de Conhecimento (Wiki/Docs)**
+
 Este lote foca em ferramentas que usam IA para processar informação, criar wikis inteligentes ou atuar como agentes de pesquisa.
 Onyx - https://github.com/onyx-dot-app/onyx
 goose - https://github.com/aaif-goose/goose
@@ -855,6 +864,7 @@ claude-obsidian - https://github.com/AgriciDaniel/claude-obsidian
 Markdown Viewer - https://github.com/markdown-viewer/skills
 
 #### **Lote 16: Infraestrutura de Agentes, Workflow e Automação**
+
 Ferramentas voltadas para o "backstage" da IA: orquestração, segurança de agentes e pipelines de dados.
 bouncer - https://github.com/imbue-ai/bouncer
 sip - https://github.com/standardagents/sip
@@ -868,6 +878,7 @@ hypatia - https://github.com/MarchLiu/hypatia
 tribev2 - https://github.com/facebookresearch/tribev2
 
 #### **Lote 17: Ferramentas de Dev, CLI e Debugging**
+
 Focado na produtividade do desenvolvedor, desde terminais inteligentes até conversores de código e monitoramento.
 debug-agent - https://github.com/millionco/debug-agent
 cli-to-js - https://github.com/millionco/cli-to-js
@@ -881,6 +892,7 @@ File_Converter_Pro - https://github.com/Hyacinthe-primus/File_Converter_Pro
 rattles - https://github.com/vyfor/rattles
 
 #### **Lote 18: UI, Visualização e Experiências Multimídia**
+
 Tudo que envolve o "olhar": de renderização 3D/SVG a componentes de interface e podcasts personalizados.
 3dsvg - https://github.com/renatoworks/3dsvg
 HiVG - https://github.com/ximinng/HiVG
@@ -898,46 +910,57 @@ miniblue - https://github.com/moabukar/miniblue
 
 # NEW NEW NEW
 
-3dsvg https://github.com/renatoworks/3dsvg
-Markdown Viewer https://github.com/markdown-viewer/skills
-quien https://github.com/retlehs/quien
-fireworks-tech-graph https://github.com/yizhiyanhua-ai/fireworks-tech-graph
-gbrain https://github.com/garrytan/gbrain
-bouncer https://github.com/imbue-ai/bouncer
-debug-agent https://github.com/millionco/debug-agent
-hermes-hudui https://github.com/joeynyc/hermes-hudui
-quip-node-manager https://github.com/QuipNetwork/quip-node-manager
-liteparse_samples https://github.com/jerryjliu/liteparse_samples
-rattles https://github.com/vyfor/rattles
-helixent https://github.com/MagicCube/helixent
-tsnapi https://github.com/antfu/tsnapi
-miniblue https://github.com/moabukar/miniblue
-tmux-agent-sidebar https://github.com/hiroppy/tmux-agent-sidebar
-File_Converter_Pro https://github.com/Hyacinthe-primus/File_Converter_Pro
-llmwiki https://github.com/lucasastorian/llmwiki
-HiVG https://github.com/ximinng/HiVG
-claude-obsidian https://github.com/AgriciDaniel/claude-obsidian
-styleseed https://github.com/bitjaru/styleseed
-sip https://github.com/standardagents/sip
-remocn https://github.com/kapishdima/remocn
-coderaft https://github.com/pithings/coderaft
-boxsh https://github.com/xicilion/boxsh
-hw-smi https://github.com/ProjectPhysX/hw-smi
-cli-to-js https://github.com/millionco/cli-to-js
-mesurer https://github.com/ibelick/mesurer
-personalized-podcast https://github.com/zarazhangrui/personalized-podcast
-ProgressiveBlurHeader https://github.com/dominikmartn/ProgressiveBlurHeader
-hypatia https://github.com/MarchLiu/hypatia
-sciwrite https://github.com/labarba/sciwrite
-Onyx - https://github.com/onyx-dot-app/onyx
-goose https://github.com/aaif-goose/goose
-Understand-Anything https://github.com/Lum1104/Understand-Anything
-PandaWiki https://github.com/chaitin/PandaWiki
-llm-wiki-compiler https://github.com/atomicmemory/llm-wiki-compiler
-llm-wiki-agent https://github.com/SamurAIGPT/llm-wiki-agent
-clicky https://github.com/farzaa/clicky
-MiroFish-Offline https://github.com/nikmcfly/MiroFish-Offline
-MiroFish https://github.com/666ghj/MiroFish
-tribev2 https://github.com/facebookresearch/tribev2
+1. Dados e Backend
+
+- **pg_textsearch**: https://github.com/timescale/pg_textsearch
+- **clickhouse-etl**: https://github.com/glassflow/clickhouse-etl
+- **multigres-operator**: https://github.com/multigres/multigres-operator
+- **dinobase**: https://github.com/DinobaseHQ/dinobase
+- **keeper**: https://github.com/agberohq/keeper
+- **go-bt**: https://github.com/rvitorper/go-bt
+- **turbovec**: https://github.com/RyanCodrai/turbovec
+- **hippo-memory**: https://github.com/kitfunso/hippo-memory
+- **luce-megakernel**: https://github.com/Luce-Org/luce-megakernel
 
 
+1. Infraestrutura e Ferramentas Dev
+
+- **git bayesect**: https://github.com/hauntsaninja/git_bayesect
+- **Zerobox**: https://github.com/afshinm/zerobox
+- **korb**: https://github.com/yannick-cw/korb
+- **skrun**: https://github.com/skrun-dev/skrun
+- **numa**: https://github.com/razvandimescu/numa
+- **mtproto.zig**: https://github.com/sleep3r/mtproto.zig
+- - **OberonSystem3Native**: https://github.com/rochus-keller/OberonSystem3Native
+- **onWatch**: [https://github.com/onllm-dev/onWatch](https://github.com/onllm-dev/onWatch)
+- **runablehq-memory**: https://github.com/runablehq/memory
+
+1. IA, Agentes e Automação
+
+- **Agents Observe**: https://github.com/simple10/agents-observe
+- **finalrun-agent**: https://github.com/final-run/finalrun-agent
+- **marimo-pair**: https://github.com/marimo-team/marimo-pair
+- **DecisionNode**: https://github.com/decisionnode/DecisionNode
+- **Raincast**: https://github.com/tihiera/raincast
+
+4. Web, UI e Utilitários
+
+- **react-rewrite**: https://github.com/donghaxkim/react-rewrite
+- **zoneless**: https://github.com/zonelessdev/zoneless
+- **Openbrowser**: https://github.com/JasonHonKL/Openbrowser
+- **fast-ebook**: https://github.com/arc53/fast-ebook
+- **tui-use**: https://github.com/onesuper/tui-use
+- **brightbean-studio**: https://github.com/brightbeanxyz/brightbean-studio
+- **mdarena**: https://github.com/HudsonGri/mdarena
+- **ttf-doom**: https://github.com/4RH1T3CT0R7/ttf-doom
+- **baremail**: https://github.com/matt-virgo/baremail
+- **modo**: https://github.com/mohshomis/modo
+
+5. Outros Projetos
+
+- **Kiyeovo**: https://github.com/Realman78/Kiyeovo
+- **claudraband**: https://github.com/halfwhey/claudraband
+- **Pegboard**: https://github.com/virpo/pegboard
+- **craft**: https://github.com/randerson112/craft
+
+-----

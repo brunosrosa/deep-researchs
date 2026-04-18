@@ -95,11 +95,9 @@ O **vLLM** e seu _PagedAttention_ otimizam o KV Cache magistralmente. Contudo, o
 
 O **llama.cpp** é a escolha definitiva. O uso da chamada de sistema `mmap()` significa que os 32 GB de RAM e o NVMe atuarão como um cache hiper-eficiente. Ao alocar modelos que excedam os 6GB (como o Qwen 3.5 9B ou o DeepSeek 14B), o llama.cpp divide matematicamente o processamento das camadas entre a sua CPU i9 e a RTX 2060m de forma linear, mantendo uma geração de tokens perfeitamente utilizável para agentes autônomos. O recente "Router Mode" permite gerenciar requisições e manter contextos em memória sem precisar religar os servidores.
 
-### 4.3. Isolamento Multi-GPU (Intel iGPU + NVIDIA dGPU)
+### 4.3. Isolamento CPU/GPU e Roteamento na Borda
 
-Com o monitor na porta HDMI (gerida pela iGPU Intel UHD), a arquitetura `llama.cpp` suporta execução distribuída híbrida (SYCL e CUDA simultaneamente).
-
-Você pode instruir o sistema a instanciar o **FunctionGemma 270M** compilado com o backend SYCL (Intel) diretamente na iGPU, utilizando os 32GB de RAM do sistema. Simultaneamente, o servidor CUDA lida com os pesos pesados (7B/9B) exclusivamente na RTX 2060m. Isso cria uma rodovia livre de colisões térmicas e de dados.
+A arquitetura `llama.cpp` suporta execução distribuída híbrida. Você pode instruir o sistema a instanciar o modelo roteador ultraleve **Qwen3-0.6B** (ou **SmolLM2**) compilado puramente para a CPU, utilizando as instruções *AVX2* do processador Intel i9 e a RAM do sistema. Simultaneamente, o servidor *CUDA* lida com os pesos pesados (7B/9B) exclusivamente na RTX 2060m. Isso cria uma rodovia livre de colisões, deixando o roteador "sempre acordado" com custo zero de VRAM.
 
 ### 4.4. Llama-swap e a Mecânica do "Swap" Ultrarrápido
 
