@@ -1,3 +1,6 @@
+---
+sticker: lucide//book-down
+---
 # Arquitetura SODA: Isolamento Físico e Proteção de Event Loop em Ambientes Rust Bare-Metal
 
 ## Introdução e Contexto Arquitetural Operacional
