@@ -3,7 +3,7 @@ sticker: lucide//component
 ---
 # 00_MANIFESTO_SODA: Sovereign Operating Data Architecture
 
-**Versão:** 3.0 (Definitiva - Bare-Metal Precision)
+**Versão:** 3.2 (Definitiva - Bare-Metal Precision)
 **Status:** ATIVO E INEGOCIÁVEL
 **Alvo da Leitura:** Agentes Orquestradores (Antigravity IDE), Engenheiros de Sistema, Arquitetos de Solução.
 
@@ -30,7 +30,7 @@ Todo código gerado para o ecossistema SODA deve obedecer irrestritamente a este
 
 - **Zero Interpretadores em Background:** É terminantemente **PROIBIDA** a execução de daemons contínuos em Node.js, Python, Electron ou Java. Eles geram _Daemon Bloat_ e engasgam a CPU com _Garbage Collection_.
 - **O Núcleo é Rust:** Todo o backend, roteamento, interceptação L7 e persistência de dados rodam em **Rust assíncrono (Tokio)**. O bloqueio da thread principal (Event Loop Starvation) é uma falha inaceitável.
-- **Zero-Copy IPC:** A comunicação entre o cérebro (Rust) e a interface (React) trafega dados binários puros. A serialização JSON pesada está banida das vias expressas.
+- **Zero-Copy IPC:** A comunicação entre o cérebro (Rust) e a interface (SvelteKit) trafega dados binários puros. A serialização JSON pesada está banida das vias expressas.
 
 ### II. Hipocampo: Memória Neuro-Sintética (MNS)
 
@@ -53,7 +53,7 @@ A máquina presume que a rede, as ferramentas de terceiros e o próprio LLM são
 
 A interface não é um site comercial; é um instrumento clínico, tátil e de precisão.
 
-- **Canvas-First & Passividade:** A UI (React/Xyflow/Tailwind v4) é **estritamente passiva**. Nenhuma lógica de negócios reside no frontend.
+- **Canvas-First & Passividade:** A UI (Svelte 5/Svelte Flow/Tailwind v4) é **estritamente passiva**. Nenhuma lógica de negócios reside no frontend.
 - **Rebase Semântico Atômico:** CRDTs pesados (Yjs/Automerge) estão banidos por consumirem recursos excessivos. A concorrência de edição no Canvas é resolvida por um Árbitro Autoritário na base Rust.
 - **UX de Neurodiversidade:** Implementação agressiva de **Divulgação Progressiva** e **Focus Rack** (limite rígido de contextos). O _Nothing Design_ impõe cores profundas, contraste absoluto e ausência de animações supérfluas. A instância mecânica deve responder em $< 50ms$.
 

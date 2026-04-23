@@ -1,11 +1,11 @@
 ---
 sticker: lucide//component
 ---
-# 07_PRD_MILESTONE_01: O Esqueleto Bare-Metal (Fundação SODA)
+# PRD_MILESTONE_01: O Esqueleto Bare-Metal (Fundação SODA)
 
-**Versão:** 3.1 (Definitiva - Tactical Execution)
+**Versão:** 3.2 (Definitiva - Tactical Execution)
 **Status:** ATIVO E PRONTO PARA EXECUÇÃO
-**Alvo da Leitura:** Agentes Codificadores (Antigravity IDE), Engenheiros Rust/React.
+**Alvo da Leitura:** Agentes Codificadores (Antigravity IDE), Engenheiros Rust/Svelte 5.
 
 ## 1. OBJETIVO DO MILESTONE 01
 
@@ -13,7 +13,7 @@ Construir a "Planta Baixa" mecânica do Genesis Mission Control (SODA).
 
 Neste _Milestone_, **NÃO HAVERÁ NENHUMA INFERÊNCIA DE IA, LLMS OU MCPs**. O objetivo é estritamente subir o daemon em Rust, configurar a ponte de comunicação (IPC Zero-Copy), instanciar a base SQLite (WAL) e renderizar a Casca Visual (App Shell) passiva no Tauri v2.
 
-- **Critério de Sucesso Master:** O aplicativo deve compilar nativamente via `cargo tauri dev`, o banco de dados `genesis.db` deve ser gerado no disco sem bloqueios, e o React deve receber um "Ping" binário do Rust em menos de 5ms, exibindo a interface base a cravados 60 FPS.
+- **Critério de Sucesso Master:** O aplicativo deve compilar nativamente via `cargo tauri dev`, o banco de dados `genesis.db` deve ser gerado no disco sem bloqueios, e o Svelte 5 deve receber um "Ping" binário do Rust em menos de 5ms, exibindo a interface base a cravados 60 FPS.
 
 ## 2. REGRAS DE GOVERNANÇA (BMAD) PARA ESTE MILESTONE
 
@@ -26,10 +26,10 @@ O Agente encarregado de executar estas tarefas está **PROIBIDO** de pular etapa
 
 ### TASK 1: Scaffolding e Limpeza do Workspace (Rust/Tauri)
 
-- **Ação:** Inicializar o projeto padrão do Tauri v2 utilizando Vite + React + TypeScript.
+- **Ação:** Inicializar o projeto padrão do Tauri v2 utilizando Vite + Svelte 5 + TypeScript.
 - **Limpeza:** Excluir todo o código de boilerplate gerado (logos, contadores, CSS padrão).
-- **Configuração de UI:** Instalar e configurar `Tailwind CSS v4` e `lucide-react` (apenas estes).
-- **Restrição:** Certifique-se de que o `package.json` NÃO contenha dependências pesadas de backend Node.js. Toda a infraestrutura deve ser estritamente voltada para compilação estática do React.
+- **Configuração de UI:** Instalar e configurar `Tailwind CSS v4` e `lucide-svelte` (apenas estes).
+- **Restrição:** Certifique-se de que o `package.json` NÃO contenha dependências pesadas de backend Node.js. Toda a infraestrutura deve ser estritamente voltada para compilação estática do Svelte 5.
 
 ### TASK 2: O Córtex Motor (Tokio Runtime)
 
@@ -46,14 +46,14 @@ O Agente encarregado de executar estas tarefas está **PROIBIDO** de pular etapa
 
 ### TASK 4: A Casca Visual (Cyber-Neuro App Shell)
 
-- **Ação:** No diretório `src` (React), deletar o `App.tsx` padrão e construir o layout estrito baseado no _DESIGN.md_ (Nothing Design + Glassmorphism).
+- **Ação:** No diretório `src`, deletar o `App.svelte` padrão e construir o layout estrito baseado no _DESIGN.md_ (Nothing Design + Glassmorphism).
 - **Layout Fixo:** Implementar o grid principal usando Flexbox/Grid que contenha:
-    - `TopHeader.tsx` (h-12, fixo no topo).
-    - `GovernorRail.tsx` (Menu esquerdo, w-16 ou w-64 expansível via `transform: translateX`).
-    - `Nexus.tsx` (Área central expandida `flex-1`).
-    - `TerminalFooter.tsx` (h-8, fixo no rodapé).
-- **Estado:** Configurar o `Zustand` para gerenciar a abertura/fechamento do _Governor Rail_ sem causar _Layout Shifts_ (sem mexer na largura da área central).
-- **Teste IPC:** O `Nexus.tsx` deve invocar o `system_ping` do Rust (Task 2) ao ser montado (useEffect) e exibir o resultado latencial na tela em fonte monoespaçada.
+    - `TopHeader.svelte` (h-12, fixo no topo).
+    - `GovernorRail.svelte` (Menu esquerdo, w-16 ou w-64 expansível via `transform: translateX`).
+    - `Nexus.svelte` (Área central expandida `flex-1`).
+    - `TerminalFooter.svelte` (h-8, fixo no rodapé).
+- **Estado:** Configurar o `Runes` do `Svelte 5` (`$state`, `$derived`) para gerenciar a abertura/fechamento do _Governor Rail_ sem causar _Layout Shifts_ (sem mexer na largura da área central).
+- **Teste IPC:** O `Nexus.svelte` deve invocar o `system_ping` do Rust (Task 2) ao ser montado (`onMount`) e exibir o resultado latencial na tela em fonte monoespaçada.
 
 ## 4. DEFINIÇÃO DE PRONTO (DoD - DEFINITION OF DONE)
 

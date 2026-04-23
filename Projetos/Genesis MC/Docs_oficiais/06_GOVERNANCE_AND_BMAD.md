@@ -1,9 +1,10 @@
 ---
 sticker: lucide//component
 ---
+
 # 06_GOVERNANCE_AND_BMAD: O Protocolo de Desenvolvimento e Governança
 
-**Versão:** 3.1 (Definitiva - Zero-Vibe Coding)
+**Versão:** 3.2 (Definitiva - Zero-Vibe Coding)
 **Status:** ATIVO E INEGOCIÁVEL
 **Alvo da Leitura:** Agentes Orquestradores (Antigravity/Claude Code/Gemini CLI), Engenheiros de DevSecOps, Mantenedores do SODA.
 
@@ -13,7 +14,7 @@ O desenvolvimento dentro do ecossistema SODA (Genesis Mission Control) repudia a
 
 Todo o desenvolvimento **deve** obedecer ao pipeline de **Spec-Driven Development (SDD)**. O Agente está expressamente proibido de gerar código-fonte sem antes:
 
-1. Validar a intenção contra o `00_MANIFESTO_SODA.md`.
+1. Validar a intenção contra o `manifesto_soda.md`.
 2. Escrever e aprovar um artefato estático e imutável de planejamento (`proposal.md`, `design.md`, `tasks.md`).
 3. Somente após a validação humana ou de um _Red Teamer Agent_ sobre as especificações, o agente recebe a permissão para iniciar a escrita do código em Rust ou React.
 

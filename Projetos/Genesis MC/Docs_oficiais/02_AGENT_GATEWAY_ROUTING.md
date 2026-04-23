@@ -3,7 +3,7 @@ sticker: lucide//component
 ---
 # 02_AGENT_GATEWAY_ROUTING: O Sistema Nervoso e Protocolo MCP
 
-**Versão:** 3.1 (Definitiva - Zero-Trust Network & FinOps)
+**Versão:** 3.2 (Definitiva - Zero-Trust Network & FinOps)
 **Status:** ATIVO E INEGOCIÁVEL
 **Alvo da Leitura:** Agentes Orquestradores, Engenheiros de Rede, DevOps e Arquitetos de Segurança.
 
@@ -44,7 +44,8 @@ O SODA implementa uma **Máquina de Estados Finitos (FSM)** no Rust para Roteame
 
 1. **Nível 0 (Triagem Mecanicista CPU):** O prompt é avaliado em $< 50ms$ por um modelo ultraleve (ex: Qwen3-0.6B) ou via _Separabilidade de Fisher_ na CPU i9. Se for trivial, resolve-se localmente a custo US$ 0,00.
 2. **Nível 1 (Edge Node GPU):** Tarefas de código seguras e contextos curtos ($< 8000$ tokens) são roteadas para a RTX 2060m local.
-3. **Nível 2 (Subscription Hacking / Cloud Fallback):** Se a complexidade for extrema ou a VRAM estiver cheia (risco de Out-Of-Memory), o roteador Rust ativa **Sidecars Efêmeros em Docker** conectados aos clientes oficiais via linha de comando (_Gemini CLI_ ou _Claude Code CLI_).
+3. **Nível 2 (Subscription Hacking / Cloud Fallback):** Se a complexidade for extrema ou a VRAM estiver cheia (risco de Out-Of-Memory), o roteador Rust ativa **Sidecars Efêmeros em Docker** conectados aos clientes oficiais via linha de comando (_Gemini CLI_ ~~ou _Claude Code CLI_~~).
     - _A Tática:_ O SODA "abusa" das assinaturas mensais Flat-Rate pagas pelo usuário (ex: Google One AI Premium), empurrando a carga de trabalho massiva pela CLI em background via MCP, poupando a máquina local de derreter e reduzindo o faturamento marginal por token a zero.
+    - Há também a *possibilidade* de uso de **APIs** do **OpenRouter**, tanto uma para uso de modelos *FREE*, quanto algumas *configuradas com limites claros de crédito* disponível. 
 
 _Fim da Especificação de Roteamento L7. A barreira de rede e a economia sistêmica estão seladas._

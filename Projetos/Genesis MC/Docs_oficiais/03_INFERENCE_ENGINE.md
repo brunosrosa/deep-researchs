@@ -3,7 +3,7 @@ sticker: lucide//component
 ---
 # 03_INFERENCE_ENGINE: O Motor de Raciocínio Híbrido
 
-**Versão:** 3.1 (Definitiva - Hardware-Aware Inference)
+**Versão:** 3.2 (Definitiva - Hardware-Aware Inference)
 **Status:** ATIVO E INEGOCIÁVEL
 **Alvo da Leitura:** Engenheiros de Machine Learning, Desenvolvedores Rust, Agentes Orquestradores (Antigravity).
 
@@ -33,8 +33,8 @@ O SODA não possui um "LLM Único". Ele é uma Mistura de Especialistas (MoE) or
 
 ### Nível 0: Gateway Cognitivo (Always-On)
 
-- **Modelos:** _FunctionGemma 3 (270M)_ ou _Qwen3-0.6B_.
-- **Alocação:** Estritamente CPU (Instruções AVX2) ou iGPU (Intel UHD).
+- **Modelos:** ~~_FunctionGemma 3 (270M)_~~ ou _Qwen3-0.6B_.
+- **Alocação:** Estritamente CPU (Instruções AVX2) ~~ou iGPU (Intel UHD)~~.
 - **Missão:** Operar a latência próxima de zero. Analisar intenções, disparar chamadas de ferramentas (JSON) proativamente e rotear o fluxo sem acordar a placa NVIDIA. Custo zero de VRAM.
 
 ### Nível 1: Executores Especialistas (dGPU)
@@ -45,7 +45,7 @@ O SODA não possui um "LLM Único". Ele é uma Mistura de Especialistas (MoE) or
 
 ### Nível 2: Cloud Fallback (Subscription Hacking / ParetoBandit)
 
-- **Ferramentas:** Cli comerciais efêmeras (_Gemini CLI_, _Claude Code CLI_) empacotadas via sidecars Docker e expostas via protocolo MCP.
+- **Ferramentas:** Cli comerciais efêmeras (_Gemini CLI_, _~~Claude Code CLI~~_) empacotadas via sidecars Docker e expostas via protocolo MCP.
 - **Missão:** O orquestrador em Rust calcula a equação _ParetoBandit_ (Custo vs Qualidade vs Latência). Se a tarefa for uma refatoração massiva (ex: 80.000 tokens), o SODA delega assincronamente a tarefa para a Nuvem utilizando a cota Flat-Rate (mensalidade já paga do usuário) das CLIs, garantindo custo marginal zero (Inference Bill Shock = 0).
 
 ## 4. A SOBREVIVÊNCIA DO KV CACHE (ATENÇÃO ESPARSA)

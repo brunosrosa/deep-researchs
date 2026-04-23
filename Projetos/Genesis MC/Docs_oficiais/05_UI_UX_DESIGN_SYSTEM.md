@@ -3,9 +3,9 @@ sticker: lucide//component
 ---
 # 05_UI_UX_DESIGN_SYSTEM: Cyber-Neuro Synthesis e Protocolo A2UI
 
-**Versão:** 3.1 (Definitiva - Neuro-Inclusão & Zero-Lag)
+**Versão:** 3.2 (Definitiva - Neuro-Inclusão & Zero-Lag)
 **Status:** ATIVO E INEGOCIÁVEL
-**Alvo da Leitura:** Engenheiros de Frontend (React/Tauri), Designers de Interface, Agentes de UI Generativa (@vibe-designer).
+**Alvo da Leitura:** Engenheiros de Frontend (Svelte 5/Tauri), Designers de Interface, Agentes de UI Generativa (@vibe-designer).
 
 ## 1. O NORTE CRIATIVO: "CYBER-NEURO SYNTHESIS"
 
@@ -17,7 +17,7 @@ Rejeitamos o "brutalismo estático" e a "sopa de metáforas visuais" (bordas exc
 
 A carga cognitiva imposta por interfaces desordenadas resulta em fadiga e paralisia de decisão. O SODA rege-se por quatro leis de neuro-acessibilidade:
 
-1. **Progressive Disclosure (Divulgação Progressiva):** O Canvas (Xyflow/Tldraw) começa em "Estado Zen" (vazio). A complexidade só se desdobra sob demanda explícita. Menus não possuem 20 opções empilhadas; eles possuem gavetas lógicas de 1 nível.
+1. **Progressive Disclosure (Divulgação Progressiva):** O Canvas (Svelte Flow) começa em "Estado Zen" (vazio). A complexidade só se desdobra sob demanda explícita. Menus não possuem 20 opções empilhadas; eles possuem gavetas lógicas de 1 nível.
 2. **Mechanical Instancy (Zero Lag e Dopamina):** O cérebro TDAH necessita de fechamento de loops de recompensa. O feedback tátil a um clique (mudança de estado `:active` ou `:hover`) deve ocorrer em $< 50ms$. A IA pode demorar 10 segundos para inferir uma resposta pesada no Rust, mas a UI _jamais_ pode parecer congelada.
 3. **Spatial Predictability (Bússola Fixa):** O Header (Compass) e o Footer (Engine Room/Terminal) são âncoras inamovíveis. Eles garantem a orientação espacial do usuário durante estados de hiperfoco profundo. Se o usuário se perder no Canvas infinito, a visão periférica o ancora de volta à realidade do sistema.
 4. **Zero Layout Shift:** A expansão ou retração de menus e painéis deve ser obrigatoriamente manipulada via transformações de GPU (`transform: translateX` ou `scale`). Alterar larguras via `width` (causando flexbox reflow) gera engasgos na renderização (frame-drops) e poluição visual, sendo uma prática expressamente proibida.
@@ -35,7 +35,7 @@ A IA geradora de código visual deve obedecer estritamente a este dicionário:
 
 Um erro fatal de sistemas legados é permitir que o LLM gere e injete HTML/JSX cru no DOM, o que abre vetores de ataque (XSS) e destrói o layout.
 
-- **Macro-Componentes:** O frontend React possui um dicionário pré-aprovado de Macro-Componentes (wrappers de _Shadcn UI_).
+- **Macro-Componentes:** O frontend React possui um dicionário pré-aprovado de Macro-Componentes (wrappers de _Shadcn Svete_).
 - **Comunicação Segura:** A IA residente no Rust **não escreve UI**. Ela emite "Envelopes Semânticos" (JSON) via a ponte IPC Binária Zero-Copy do Tauri. Exemplo: `{"intent": "createSurface", "type": "DataTable", "data": [...]}`.
 - **Renderização Passiva:** O React apenas lê o JSON e hidrata o Macro-Componente correspondente em tempo de complexidade $\mathcal{O}(1)$. Se a IA alucinar um componente inexistente, o React descarta o pacote silenciosamente, protegendo a integridade da tela.
 

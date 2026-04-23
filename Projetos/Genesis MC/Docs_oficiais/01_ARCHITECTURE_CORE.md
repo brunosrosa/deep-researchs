@@ -3,7 +3,7 @@ sticker: lucide//component
 ---
 # 01_ARCHITECTURE_CORE: A Fundação Bare-Metal e Gestão de Processos
 
-**Versão:** 3.1 (Definitiva - Zero-Trust Execution)
+**Versão:** 3.2 (Definitiva - Zero-Trust Execution)
 **Status:** ATIVO E INEGOCIÁVEL
 **Alvo da Leitura:** Agentes Desenvolvedores (Rust), Especialistas em Sistemas e DevOps.
 
@@ -11,7 +11,7 @@ sticker: lucide//component
 
 A infraestrutura do Genesis Mission Control (SODA) repudia arquiteturas baseadas em microsserviços espalhados ou interpretadores persistentes (como `node` ou `python` rodando em background). O SODA é compilado em um **único binário nativo em Rust**, envelopado pela infraestrutura do **Tauri v2**.
 
-- **O Frontend é Estúpido:** O React/Xyflow atua apenas como um "vidro de exibição" (Canvas passivo). Não há lógica de roteamento de IA, processamento de arquivos ou regras de negócio rodando no motor V8 do JavaScript.
+- **O Frontend é Estúpido:** O Svelte Flow atua apenas como um "vidro de exibição" (Canvas passivo). Não há lógica de roteamento de IA, processamento de arquivos ou regras de negócio rodando no motor V8 do JavaScript.
 - **O Backend é Soberano:** Toda a inteligência, controle de concorrência e acesso a disco habitam o binário Rust.
 
 ## 2. ORQUESTRAÇÃO ASSÍNCRONA E A PREVENÇÃO DO EVENT LOOP STARVATION
@@ -24,7 +24,7 @@ A paralisia do sistema ocorre quando o Agente trava a thread principal. Para evi
 
 1. **Thread Principal (UI/IPC):** Exclusiva para a comunicação Tauri. Deve responder em $< 10ms$. Nenhuma leitura de arquivo ou requisição de rede ocorre aqui.
 2. **Thread Pool de I/O (Tokio Asynchronous):** Gerencia as requisições de rede, WebSocket e comunicação com o banco SQLite.
-3. **Threads Matemáticas Bloqueantes (AVX2 P-Cores):** Tarefas pesadas na CPU (ex: transcrição local Whisper, roteamento mecanicista da SharedTrunkNet, embeddings SLM) são ejetadas do Tokio via `tokio::task::spawn_blocking`.
+3. **Threads Matemáticas Bloqueantes (AVX2 P-Cores):** Tarefas pesadas na CPU (ex: transcrição local ~~Whisper~~, roteamento mecanicista da SharedTrunkNet, embeddings SLM) são ejetadas do Tokio via `tokio::task::spawn_blocking`.
     - _Afinidade:_ Utilizando a biblioteca `core_affinity`, esses processos bloqueantes são fixados nos _Performance Cores_ (P-Cores) do i9, aproveitando o cache L1/L2 exclusivo e as instruções AVX2/FMA3, sem corromper as threads de comunicação.
 
 ## 3. A PRISÃO VIRTUAL: SANDBOXING VIA WASMTIME
