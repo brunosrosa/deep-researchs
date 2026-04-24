@@ -1,7 +1,6 @@
 ---
 aliases: []
 ---
-
 # Plano de Pesquisa Arquitetural: Resolução de Gargalos em Aplicações Híbridas de Altíssimo Desempenho
 
 ## Introdução e Contextualização do Paradigma Híbrido
