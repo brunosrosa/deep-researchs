@@ -910,7 +910,6 @@ miniblue - https://github.com/moabukar/miniblue
 
 # NEW NEW NEW
 
-1. Dados e Backend
 
 - **pg_textsearch**: https://github.com/timescale/pg_textsearch
 - **clickhouse-etl**: https://github.com/glassflow/clickhouse-etl
@@ -923,7 +922,6 @@ miniblue - https://github.com/moabukar/miniblue
 - **luce-megakernel**: https://github.com/Luce-Org/luce-megakernel
 
 
-1. Infraestrutura e Ferramentas Dev
 
 - **git bayesect**: https://github.com/hauntsaninja/git_bayesect
 - **Zerobox**: https://github.com/afshinm/zerobox
@@ -931,11 +929,10 @@ miniblue - https://github.com/moabukar/miniblue
 - **skrun**: https://github.com/skrun-dev/skrun
 - **numa**: https://github.com/razvandimescu/numa
 - **mtproto.zig**: https://github.com/sleep3r/mtproto.zig
-- - **OberonSystem3Native**: https://github.com/rochus-keller/OberonSystem3Native
-- **onWatch**: [https://github.com/onllm-dev/onWatch](https://github.com/onllm-dev/onWatch)
+- **OberonSystem3Native**: https://github.com/rochus-keller/OberonSystem3Native
+- **onWatch**: https://github.com/onllm-dev/onWatch
 - **runablehq-memory**: https://github.com/runablehq/memory
 
-1. IA, Agentes e Automação
 
 - **Agents Observe**: https://github.com/simple10/agents-observe
 - **finalrun-agent**: https://github.com/final-run/finalrun-agent
@@ -943,7 +940,6 @@ miniblue - https://github.com/moabukar/miniblue
 - **DecisionNode**: https://github.com/decisionnode/DecisionNode
 - **Raincast**: https://github.com/tihiera/raincast
 
-4. Web, UI e Utilitários
 
 - **react-rewrite**: https://github.com/donghaxkim/react-rewrite
 - **zoneless**: https://github.com/zonelessdev/zoneless
@@ -956,7 +952,6 @@ miniblue - https://github.com/moabukar/miniblue
 - **baremail**: https://github.com/matt-virgo/baremail
 - **modo**: https://github.com/mohshomis/modo
 
-5. Outros Projetos
 
 - **Kiyeovo**: https://github.com/Realman78/Kiyeovo
 - **claudraband**: https://github.com/halfwhey/claudraband
@@ -966,4 +961,112 @@ miniblue - https://github.com/moabukar/miniblue
 -----
 
 - **OpenMythos** - https://github.com/kyegomez/OpenMythos
-- 
+- **design.md** - https://github.com/google-labs-code/design.md
+
+
+zennotes https://github.com/ZenNotes/zennotes  
+pgque https://github.com/NikolayS/pgque  
+cc-design https://github.com/ZeroZ-lab/cc-design  
+browser-harness  https://github.com/browser-use/browser-harness
+AutoProber https://github.com/GainSec/AutoProber  
+lingbot-map https://github.com/Robbyant/lingbot-map  
+activeframe  https://github.com/activetheory/activeframe
+diagram-design https://github.com/cathrynlavery/diagram-design
+hostc https://github.com/akazwz/hostc  
+design-md-chrome https://github.com/bergside/design-md-chrome
+agentic-stack https://github.com/codejunkie99/agentic-stack
+nemesis https://github.com/assai-id/nemesis  
+your-everyday-tools https://github.com/listyantidewi1/your-everyday-tools
+open-carrusel https://github.com/Hainrixz/open-carrusel
+tiks https://github.com/rexa-developer/tiks  
+dinky https://github.com/heyderekj/dinky  
+gridex https://github.com/gridex/gridex  
+mdv https://github.com/drasimwagan/mdv  
+USB-Uncensored-LLM  https://github.com/techjarves/USB-Uncensored-LLM
+Phosphor https://github.com/momenbasel/Phosphor  
+MD-This-Page https://github.com/Ademking/MD-This-Page  
+cydintosh https://github.com/likeablob/cydintosh  
+tokenjuice https://github.com/vincentkoc/tokenjuice  
+animate https://github.com/vyfor/animate  
+claudemap https://github.com/QuinnAho/claudemap  
+macterm https://github.com/thdxg/macterm  
+superspider https://github.com/Lyx3314844-03/superspider
+fetch https://github.com/areofyl/fetch  
+Boxer3D https://github.com/Barath19/Boxer3D  
+memkraft https://github.com/seojoonkim/memkraft  
+PsUi https://github.com/jlabon2/PsUi  
+aube https://github.com/endevco/aube
+
+
+PPT-Design-Prompt https://github.com/Russell-cell/PPT-Design-Prompt
+agent-simulator https://github.com/jasonkneen/agent-simulator
+cavemem https://github.com/JuliusBrussee/cavemem  
+privacy-filter https://github.com/openai/privacy-filter  
+CrabTrap https://github.com/brexhq/CrabTrap  
+OpenGame https://github.com/leigest519/OpenGame  
+open-codesign https://github.com/OpenCoworkAI/open-codesign
+pi-computer-use https://github.com/injaneity/pi-computer-use
+CubeSandbox https://github.com/TencentCloud/CubeSandbox
+mercury-agent https://github.com/cosmicstack-labs/mercury-agent
+OpenChronicle https://github.com/Einsia/OpenChronicle  
+claude-desktop-buddy https://github.com/vthinkxie/claude-desktop-buddy
+Auto-Quant https://github.com/TraderAlice/Auto-Quant
+browser-harness-js https://github.com/browser-use/browser-harness-js
+alice https://github.com/simoncirstoiu/alice  
+token-dashboard https://github.com/nateherkai/token-dashboard
+moltui https://github.com/kszenes/moltui  
+git-newspaper https://github.com/LordAizen1/git-newspaper
+LeanKG https://github.com/FreePeak/LeanKG  
+cc-statusline https://github.com/NYCU-Chung/cc-statusline
+expo-agent-spinners https://github.com/Eronred/expo-agent-spinners
+kittyfarm https://github.com/dnakov/kittyfarm  
+ui https://github.com/pacifio/ui  
+Vibecode-Cleaner-Fartrun https://github.com/ChuprinaDaria/Vibecode-Cleaner-Fartrun
+OpenGuider https://github.com/mo-tunn/OpenGuider  
+awawausb https://github.com/ArcaneNibble/awawausb  
+codex-voice https://github.com/anthnykr/codex-voice  
+vigil-tui https://github.com/GIN-SYSTEMS/vigil-tui  
+prax-agent https://github.com/ChanningLua/prax-agent
+ActivSpot https://github.com/Devvvmn/ActivSpot  
+pith https://github.com/abhisekjha/pith  
+10x https://github.com/10x-app-builder/10x  
+auto-memory https://github.com/dezgit2025/auto-memory
+ephemera https://github.com/vmi-rs/ephemera  
+tabula-docs https://github.com/Lauwed/tabula-docs
+
+
+saasmail https://github.com/choyiny/saasmail  
+hister https://github.com/asciimoo/hister  
+recipes https://github.com/TandoorRecipes/recipes
+bindery https://github.com/vavallee/bindery  
+kyoo https://github.com/zoriya/kyoo  
+VaulTLS https://github.com/7ritn/VaulTLS  
+budgetbee https://github.com/budgetbee/budgetbee  
+tududi https://github.com/chrisvel/tududi  
+jcorp-nomad https://github.com/Jstudner/jcorp-nomad  
+OpenVidReview https://github.com/davidguva/OpenVidReview
+hortusfox-web https://github.com/danielbrendel/hortusfox-web
+papermerge-core https://github.com/papermerge/papermerge-core
+trailbase https://github.com/trailbaseio/trailbase  
+NetAlertX https://github.com/netalertx/NetAlertX  
+selfsync https://github.com/loyalpartner/selfsync  
+simpleShare https://github.com/cigoria/simpleShare  
+newt https://github.com/fosrl/newt  
+panel https://github.com/calagopus/panel  
+borg-ui https://github.com/karanhudia/borg-ui  
+Octopoda-OS https://github.com/RyjoxTechnologies/Octopoda-OS
+SoulSync https://github.com/Nezreka/SoulSync  
+BookLore https://github.com/the-booklore/booklore  
+snacks https://github.com/derekshreds/snacks  
+Maintainerr https://github.com/Maintainerr/Maintainerr
+qlib https://github.com/microsoft/qlib  
+Lidify https://github.com/TheWicklowWolf/Lidify  
+note-mark https://github.com/enchant97/note-mark  
+reisenotiz https://github.com/MrModest/reisenotiz  
+noton https://github.com/bartvantuijn/noton  
+tinyfeed https://github.com/TheBigRoomXXL/tinyfeed
+paikka https://github.com/dedicatedcode/paikka  
+squarebox https://github.com/SquareWaveSystems/squarebox
+trackarr https://github.com/leandrobattochio/trackarr
+familiar https://github.com/seethroughlab/familiar
+modelship https://github.com/alez007/modelship
