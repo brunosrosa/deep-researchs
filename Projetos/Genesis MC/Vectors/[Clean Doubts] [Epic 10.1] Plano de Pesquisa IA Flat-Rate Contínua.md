@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Plano de Pesquisa: IA Flat-Rate Contínua"
+sticker: lucide//cloud-lightning
 ---
 
 # Relatório de Pesquisa e Arquitetura: Infraestrutura de Taxa Fixa, Roteamento Dinâmico e Agentes de Codificação 24/7

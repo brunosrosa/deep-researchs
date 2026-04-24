@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//cloud-lightning
 ---
 # Plano de Pesquisa Arquitetural: Resolução de Gargalos em Aplicações Híbridas de Altíssimo Desempenho
 

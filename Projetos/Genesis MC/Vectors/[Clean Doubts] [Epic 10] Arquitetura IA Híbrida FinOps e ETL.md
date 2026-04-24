@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//cloud-lightning
 ---
 
 # Relatório de Pesquisa e Engenharia: Arquitetura FinOps e Roteamento Híbrido para ETL Cognitivo no Ecossistema SODA

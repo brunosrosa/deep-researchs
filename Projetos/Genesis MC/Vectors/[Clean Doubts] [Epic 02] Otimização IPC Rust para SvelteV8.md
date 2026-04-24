@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//cloud-lightning
 ---
 # Relatório de Engenharia: Arquitetura de Comunicação Zero-Copy e Reatividade de Alta Frequência entre Rust e V8
 
