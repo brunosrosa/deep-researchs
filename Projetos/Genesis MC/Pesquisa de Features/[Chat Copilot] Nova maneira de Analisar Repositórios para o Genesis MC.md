@@ -867,8 +867,7 @@ Decisão inequívoca, **defensável daqui a 6 meses**.
 ---
 
 # 4️⃣ PROMPT DE AUTOAVALIAÇÃO
-
-## (Governança do GenesisMC)
+ (Governança do GenesisMC)
 
 🎯 **Objetivo**
 Evitar apodrecimento arquitetural.
@@ -881,7 +880,7 @@ Evitar apodrecimento arquitetural.
 
 ---
 
-### 🪞 PROMPT — AUTOAVALIAÇÃO
+## 🪞 PROMPT — AUTOAVALIAÇÃO
 
 ```
 CONTEXTO:
@@ -910,7 +909,7 @@ MODULO DO GENESISMC:
 Governança contínua e sanidade arquitetural.
 
 ---
-## ✅ Resumo Final (muito importante)
+### ✅ Resumo Final (muito importante)
 
 |Prompt|Função|
 |---|---|
@@ -1095,7 +1094,7 @@ Isso evita:
 - Depois: **automação**
 
 -----
-# Modelo Antigo do Prompt (Original, última versão), completo:
+## ⚠️ Modelo Antigo do Prompt (Original, última versão), completo:
 
 ```
 CONTEXTO DO PROJETO:  
@@ -1132,9 +1131,9 @@ No início absoluto da sua resposta (antes das análises individuais), consolide
 ```
 
 ---
-## 3️⃣ Agora sim: PROMPTS (completos, final)
+## 3️⃣ Agora sim: NOVOS PROMPTS (completos, final)
 
-### ✅ Prompt de CONVERSÃO (Markdown → Google Sheets)
+#### ✅ Prompt de CONVERSÃO (Markdown → Google Sheets)
 
 > **Este é o primeiro que você deve usar.  
 > Não pule. Não misture.**
