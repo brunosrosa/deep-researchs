@@ -198,7 +198,7 @@ Pouquíssimos projetos fazem isso conscientemente.
 
 ---
 
-# ✅ Resumo direto
+## ✅ Resumo direto
 
 - ✅ Sim, faz total sentido refazer
 - ❌ Não, não vale refazer tudo à mão
@@ -910,7 +910,7 @@ MODULO DO GENESISMC:
 Governança contínua e sanidade arquitetural.
 
 ---
-# ✅ Resumo Final (muito importante)
+## ✅ Resumo Final (muito importante)
 
 |Prompt|Função|
 |---|---|
@@ -1094,8 +1094,45 @@ Isso evita:
 - Agora: **disciplina mental**
 - Depois: **automação**
 
+-----
+# Modelo Antigo do Prompt (Original, última versão), completo:
+
+```
+CONTEXTO DO PROJETO:  
+Estamos "engenheirando" o 'Genesis Mission Control' (GenesisMC até se transformar no 'SoustractionMC'), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped), segurança e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva (2e) AH-SD/TDAH), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas preferencialmente em sandboxes estritas (Wasmtime). Nossa filosofia é a "Canibalização Cirúrgica": extrair a alma matemática das ferramentas ou soluções acopláveis e descartar o lixo tóxico de dependências. 
+
+INSTRUÇÃO DE EXECUÇÃO (PAINEL DE ESPECIALISTAS): 
+Para dissecar a lista de repositórios abaixo, você não atuará como uma única entidade. Você deve emular um debate interno entre TRÊS ESPECIALISTAS com focos distintos: 
+	- O Arquiteto Bare-Metal (DevSecOps): O "Pessimista da Razão". Focado em performance, limites dos recursos e principalmente VRAM, segurança zero-trust e arquitetura Rust/Tauri. Ele odeia dependências pesadas e julga o "Lixo Tóxico".
+	- O Estrategista de Valor e Neuro-UX (Produto): Focado em utilidades práticas, inovações, ampliação de capacidades do "Mission Control", "inspirações" e/ou redução de carga cognitiva. Ele olha para a "funcionalidades", interface, fluxos de uso e pergunta: "Isso traz alguma novidade interessante? Como essa(s) funcionalidade(s) se complementam ao que já temos estruturado ou idealizado? Isso ajuda nosso usuário 2e/TDAH? Tem algum componente visual aqui que podemos trazer para nosso Canvas adaptativo?". 
+	- O Engenheiro de Transpilação (O Canibal): O extrator de valor. Ele ignora a stack ruim e foca na inteligência pura. Ele procura a "alma matemática": heurísticas de prompt, algoritmos de roteamento, expressões regulares, modelos de banco de dados ou fluxogramas lógicos que podemos roubar e reescrever.  
+
+DIRETRIZ DE SAÍDA: 
+Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE.
+Para cada projeto, apresente uma análise estruturada contendo: 
+
+[Nome do Repositório / Projeto] 
+	- Score de 'Vale a pena?': (Um "Score" entre 0 - 10);
+	- Originalmente serve para: (Para adicionar um "resuminho" de qual é a proposta original da solução);
+	- Problema Principal que Resolve/Valor de Uso: (1 ou 2 frases precisas);
+	- Visão do Enxame (Síntese dos 3 Especialistas): Um parágrafo brutal e direto resumindo o consenso do debate entre o Arquiteto, o Estrategista de UX e o 'Canibal';
+	- Stack Tecnológica Base: (Linguagens dominantes, frameworks, peso de dependências);
+	- Tipo de Integração Atual: (App monolítico? CLI? Framework Web? Biblioteca nativa? …);
+	- Categorias Arquiteturais: (Motor Low-Level, Interface/Design, Utilitário de Parsing, Agente/Skill, Proxy/Roteamento, …);
+	- Vetores de Risco (O Lixo Tóxico): (Visão do Arquiteto: exponha dívidas técnicas pesadas, acoplamento a nuvem, uso de Node/Python em background, etc);
+	- Ouro Oculto e Inspirações (Visão UX/Produto): (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?);
+	- Ações Mitigadoras (O Plano de Canibalização): (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt");
+	- Devemos Canibalizar? e PQ?: (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).  
+
+TABELA DE CONSOLIDAÇÃO: 
+No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Score | Categoria | Devemos Canibalizar? | Risco Principal | Ouro/Inspiração a Extrair).
+
+[Lista do Lote X] 
+(Inserir links aqui)  
+```
+
 ---
-## 3️⃣ Agora sim: PROMPT 1 (completo, final)
+## 3️⃣ Agora sim: PROMPTS (completos, final)
 
 ### ✅ Prompt de CONVERSÃO (Markdown → Google Sheets)
 
@@ -1154,7 +1191,7 @@ TEXTO A CONVERTER:
 ```
 
 ---
-## ✅ Como usar na prática (bem direto)
+#### ✅ Como usar na prática (bem direto)
 
 1. Abre o Google Sheets
 2. Aba `oss_canibalization_master`
@@ -1167,7 +1204,7 @@ Só depois disso: ➡️ Prompt Exploratório
 ➡️ Prompt de Autoavaliação
 
 ---
-## Fechamento (importante)
+#### Fechamento (importante)
 
 Você agora tem:
 - ✅ Um **schema híbrido validado**
@@ -1183,42 +1220,6 @@ Você agora tem:
 Você saiu oficialmente do “pesquisar repos”  e entrou no **“engenheirar conhecimento”**.
 
 ------
-
-------
-Modelo Antigo do Prompt, completo:
-```  
-CONTEXTO DO PROJETO:  
-Estamos "engenheirando" o 'Genesis Mission Control' (GenesisMC até se transformar no 'SoustractionMC'), um Sistema Operacional Agêntico Soberano (SODA) focado em execução local, privacidade absoluta (air-gapped), segurança e eficiência para hardware restrito (i9, 32GB RAM, RTX 2060m com 6GB VRAM limite). A fundação exige um núcleo ultraleve e imutável (compilado em Rust + Tauri) operando como daemon de background. A interface React é estritamente passiva (Canvas-first, design minimalista e utilitário focado em reduzir carga cognitiva (2e) AH-SD/TDAH), comunicando-se via IPC. Repudiamos o Context Rot e a sobrecarga de runtimes interpretados contínuos (Node.js/Python). Agentes são efêmeros, roteados assincronamente e rodam ferramentas preferencialmente em sandboxes estritas (Wasmtime). Nossa filosofia é a "Canibalização Cirúrgica": extrair a alma matemática das ferramentas ou soluções acopláveis e descartar o lixo tóxico de dependências. 
-
-INSTRUÇÃO DE EXECUÇÃO (PAINEL DE ESPECIALISTAS): 
-Para dissecar a lista de repositórios abaixo, você não atuará como uma única entidade. Você deve emular um debate interno entre TRÊS ESPECIALISTAS com focos distintos: 
-	- O Arquiteto Bare-Metal (DevSecOps): O "Pessimista da Razão". Focado em performance, limites dos recursos e principalmente VRAM, segurança zero-trust e arquitetura Rust/Tauri. Ele odeia dependências pesadas e julga o "Lixo Tóxico".
-	- O Estrategista de Valor e Neuro-UX (Produto): Focado em utilidades práticas, inovações, ampliação de capacidades do "Mission Control", "inspirações" e/ou redução de carga cognitiva. Ele olha para a "funcionalidades", interface, fluxos de uso e pergunta: "Isso traz alguma novidade interessante? Como essa(s) funcionalidade(s) se complementam ao que já temos estruturado ou idealizado? Isso ajuda nosso usuário 2e/TDAH? Tem algum componente visual aqui que podemos trazer para nosso Canvas adaptativo?". 
-	- O Engenheiro de Transpilação (O Canibal): O extrator de valor. Ele ignora a stack ruim e foca na inteligência pura. Ele procura a "alma matemática": heurísticas de prompt, algoritmos de roteamento, expressões regulares, modelos de banco de dados ou fluxogramas lógicos que podemos roubar e reescrever.  
-
-DIRETRIZ DE SAÍDA: 
-Gere um relatório SEM FLOREIOS e SEM VERBOSIDADE.
-Para cada projeto, apresente uma análise estruturada contendo: 
-
-[Nome do Repositório / Projeto] 
-	- Score de 'Vale a pena?': (Um "Score" entre 0 - 10);
-	- Originalmente serve para: (Para adicionar um "resuminho" de qual é a proposta original da solução);
-	- Problema Principal que Resolve/Valor de Uso: (1 ou 2 frases precisas);
-	- Visão do Enxame (Síntese dos 3 Especialistas): Um parágrafo brutal e direto resumindo o consenso do debate entre o Arquiteto, o Estrategista de UX e o 'Canibal';
-	- Stack Tecnológica Base: (Linguagens dominantes, frameworks, peso de dependências);
-	- Tipo de Integração Atual: (App monolítico? CLI? Framework Web? Biblioteca nativa? …);
-	- Categorias Arquiteturais: (Motor Low-Level, Interface/Design, Utilitário de Parsing, Agente/Skill, Proxy/Roteamento, …);
-	- Vetores de Risco (O Lixo Tóxico): (Visão do Arquiteto: exponha dívidas técnicas pesadas, acoplamento a nuvem, uso de Node/Python em background, etc);
-	- Ouro Oculto e Inspirações (Visão UX/Produto): (O que há de genial aqui além do código? Uma mecânica de tela? Uma lógica de negócio? Uma forma diferente de resolver um problema humano?);
-	- Ações Mitigadoras (O Plano de Canibalização): (Como extrair a lógica pura para o SODA? Ex: "Reescrever parser em Rust usando regex puro", "Roubar a paleta de cores para o Tailwind v4", "Ignorar código, absorver apenas heurística do prompt");
-	- Devemos Canibalizar? e PQ?: (Indicação final se devemos trazer para o SoustractionMC, prioridade da extração e os ganhos esperados).  
-
-TABELA DE CONSOLIDAÇÃO: 
-No início absoluto da sua resposta (antes das análises individuais), consolide uma Tabela Comparativa contendo as colunas: (Projeto | Score | Categoria | Devemos Canibalizar? | Risco Principal | Ouro/Inspiração a Extrair).
-
-[Lista do Lote X] 
-(Inserir links aqui)  
-```
 
 ------
 
@@ -1570,24 +1571,4 @@ Contexto de criação (quando/por quê):
 ```
 
 
-
 -------------------------------------------------------------------------
-
-## 3. Tendências emergentes RAG Temporal (2026+)
-(**Exemplos**: 
-TG‑RAG _ou_ TimeRAG _ou_ ChronoQA _ou_ Temporal Query Decomposition + RL (Memory‑T1))
-
-Com base nos surveys e papers mais recentes:
-### ✅ O que **está funcionando**
-
-- **Retrieval híbrido** (denso + simbólico + temporal)
-- **Representações explícitas de tempo**
-- **RAGs incrementais** (update ≠ re‑indexação total)
-- **Decomposição temporal da query**
-### 🚫 O que **não escala bem**
-
-- Apenas “recency boosting” no ranking
-- Embeddings temporais rasos
-- Janelas longas sem estrutura temporal
-
-Síntese bem feita no survey da Springer (2026).
