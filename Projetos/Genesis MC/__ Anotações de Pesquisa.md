@@ -610,8 +610,8 @@ https://github.com/alexzhang13/rlm
 
 # Novos Repositórios para Análise
 
-https://github.com/NVIDIA/NemoClaw ( o que trazem de novo? o que poderíamos usar/integrar/inovar com Genesis MC com base nas novidades apresentadas?)
-https://github.com/NVIDIA/NeMo-Agent-Toolkit
+NemoClaw https://github.com/NVIDIA/NemoClaw
+NeMo-Agent-Toolkit https://github.com/NVIDIA/NeMo-Agent-Toolkit
 OpenShell: https://github.com/NVIDIA/OpenShell
 TransformerEngine: https://github.com/NVIDIA/TransformerEngine
 Waza https://github.com/tw93/waza
@@ -640,10 +640,17 @@ hermes-webui https://github.com/nesquena/hermes-webui
 any-buddy https://github.com/cpaczek/any-buddy
 cuLA https://github.com/inclusionAI/cuLA
 see-through https://github.com/shitagaki-lab/see-through
-nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill (inclusive adorei, pretendo mudar o Desing que estava imaginando para o Genesis MC para ter algo mais parecido com isso)
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill 
 three.wasm https://github.com/mrdoob/three.wasm
 refugiOS https://github.com/Ganso/refugiOS
-
+mcp2cli https://github.com/knowsuchagency/mcp2cli 
+rlm_repl https://github.com/fullstackwebdev/rlm_repl
+recursive-llm https://github.com/ysz/recursive-llm
+agent-os https://github.com/buildermethods/agent-os
+bmalph https://github.com/LarsCowe/bmalph
+OpenSpec https://github.com/Fission-AI/OpenSpec
+spec-kit https://github.com/github/spec-kit
+cc-sdd https://github.com/gotalab/cc-sdd
 ## Skills base (bMAD e SDD)
 
 https://github.com/bmad-code-org/BMAD-METHOD
@@ -911,6 +918,73 @@ miniblue - https://github.com/moabukar/miniblue
 # NEW NEW NEW
 
 
+
+debug-agent - https://github.com/millionco/debug-agent
+cli-to-js - https://github.com/millionco/cli-to-js
+tmux-agent-sidebar - https://github.com/hiroppy/tmux-agent-sidebar
+boxsh - https://github.com/xicilion/boxsh
+coderaft - https://github.com/pithings/coderaft
+tsnapi - https://github.com/antfu/tsnapi
+hw-smi - https://github.com/ProjectPhysX/hw-smi
+remocn - https://github.com/kapishdima/remocn
+File_Converter_Pro - https://github.com/Hyacinthe-primus/File_Converter_Pro
+rattles - https://github.com/vyfor/rattles
+
+3dsvg - https://github.com/renatoworks/3dsvg
+HiVG - https://github.com/ximinng/HiVG
+ProgressiveBlurHeader - https://github.com/dominikmartn/ProgressiveBlurHeader
+mesurer - https://github.com/ibelick/mesurer
+styleseed - https://github.com/bitjaru/styleseed
+personalized-podcast - https://github.com/zarazhangrui/personalized-podcast
+clicky - https://github.com/farzaa/clicky
+MiroFish - https://github.com/666ghj/MiroFish
+MiroFish-Offline - https://github.com/nikmcfly/MiroFish-Offline
+helixent - https://github.com/MagicCube/helixent
+miniblue - https://github.com/moabukar/miniblue
+
+
+NemoClaw https://github.com/NVIDIA/NemoClaw
+NeMo-Agent-Toolkit https://github.com/NVIDIA/NeMo-Agent-Toolkit
+OpenShell: https://github.com/NVIDIA/OpenShell
+TransformerEngine: https://github.com/NVIDIA/TransformerEngine
+Waza https://github.com/tw93/waza
+AutoAgent https://github.com/kevinrgu/autoagent
+Research Companion https://github.com/andrehuang/research-companion
+marknative https://github.com/liyown/marknative
+GitReverse https://github.com/filiksyos/gitreverse
+mail-app https://github.com/ankitvgupta/mail-app
+autoskills https://github.com/midudev/autoskills
+Compozy https://github.com/compozy/compozy
+JSON Alexander https://github.com/wesbos/JSON-Alexander
+career-ops https://github.com/santifer/career-ops
+Sheets https://github.com/maaslalani/sheets
+apfel https://github.com/Arthur-Ficial/apfel
+agentfiles https://github.com/Railly/agentfiles
+boneyard https://github.com/0xGF/boneyard
+jot https://github.com/badlogic/jot
+Supply Chain Monitor https://github.com/elastic/supply-chain-monitor
+port-whisperer https://github.com/LarsenCundric/port-whisperer
+OpenHarness https://github.com/HKUDS/OpenHarness
+Math Curve Loaders https://github.com/Paidax01/math-curve-loaders
+Pika Skills Open https://github.com/Pika-Labs/Pika-Skills
+Cabinet https://github.com/hilash/cabinet
+iron-proxy https://github.com/ironsh/iron-proxy
+hermes-webui https://github.com/nesquena/hermes-webui
+any-buddy https://github.com/cpaczek/any-buddy
+cuLA https://github.com/inclusionAI/cuLA
+see-through https://github.com/shitagaki-lab/see-through
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill 
+three.wasm https://github.com/mrdoob/three.wasm
+refugiOS https://github.com/Ganso/refugiOS
+mcp2cli https://github.com/knowsuchagency/mcp2cli 
+rlm_repl https://github.com/fullstackwebdev/rlm_repl
+recursive-llm https://github.com/ysz/recursive-llm
+agent-os https://github.com/buildermethods/agent-os
+bmalph https://github.com/LarsCowe/bmalph
+OpenSpec https://github.com/Fission-AI/OpenSpec
+spec-kit https://github.com/github/spec-kit
+cc-sdd https://github.com/gotalab/cc-sdd
+
 - **pg_textsearch**: https://github.com/timescale/pg_textsearch
 - **clickhouse-etl**: https://github.com/glassflow/clickhouse-etl
 - **multigres-operator**: https://github.com/multigres/multigres-operator
@@ -920,7 +994,6 @@ miniblue - https://github.com/moabukar/miniblue
 - **turbovec**: https://github.com/RyanCodrai/turbovec
 - **hippo-memory**: https://github.com/kitfunso/hippo-memory
 - **luce-megakernel**: https://github.com/Luce-Org/luce-megakernel
-
 
 
 - **git bayesect**: https://github.com/hauntsaninja/git_bayesect
@@ -1070,3 +1143,31 @@ squarebox https://github.com/SquareWaveSystems/squarebox
 trackarr https://github.com/leandrobattochio/trackarr
 familiar https://github.com/seethroughlab/familiar
 modelship https://github.com/alez007/modelship
+
+
+coleam00/Archon https://github.com/coleam00/Archon
+microsoft/markitdown https://github.com/microsoft/markitdown
+mattpocock/skills https://github.com/mattpocock/skills
+trycua/cua https://github.com/trycua/cua
+lsdefine/GenericAgent https://github.com/lsdefine/GenericAgent
+mksglu/context-mode https://github.com/mksglu/context-mode
+Yeachan-Heo/oh-my-codex https://github.com/Yeachan-Heo/oh-my-codex
+shiyu-coder/Kronos https://github.com/shiyu-coder/Kronos
+google-ai-edge/gallery https://github.com/google-ai-edge/gallery
+CJackHwang/ds2api https://github.com/CJackHwang/ds2api
+Fincept-Corporation/FinceptTerminal https://github.com/Fincept-Corporation/FinceptTerminal
+zilliztech/claude-context https://github.com/zilliztech/claude-context
+forrestchang/andrej-karpathy-skills https://github.com/forrestchang/andrej-karpathy-skills
+Z4nzu/hackingtool https://github.com/Z4nzu/hackingtool
+hugohe3/ppt-master https://github.com/hugohe3/ppt-master
+google-ai-edge/LiteRT-LM https://github.com/google-ai-edge/LiteRT-LM
+warpdotdev/warp https://github.com/warpdotdev/warp
+HunxByts/GhostTrack https://github.com/HunxByts/GhostTrack
+BrasilAPI/BrasilAPI https://github.com/BrasilAPI/BrasilAPI
+soxoj/maigret https://github.com/soxoj/maigret
+1jehuang/jcode https://github.com/1jehuang/jcode
+abhigyanpatwari/GitNexus https://github.com/abhigyanpatwari/GitNexus
+microsoft/VibeVoice https://github.com/microsoft/VibeVoice
+ZhuLinsen/daily_stock_analysis https://github.com/ZhuLinsen/daily_stock_analysis
+google-labs-code/design.md https://github.com/google-labs-code/design.md
+VoltAgent/awesome-design-md https://github.com/VoltAgent/awesome-design-md
