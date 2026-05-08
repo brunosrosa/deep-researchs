@@ -1,3 +1,6 @@
+---
+sticker: lucide//atom
+---
 # CommunitZ - Product Requirements Document (PRD)
 
 ## 1. Visão Central e Princípios Norteadores

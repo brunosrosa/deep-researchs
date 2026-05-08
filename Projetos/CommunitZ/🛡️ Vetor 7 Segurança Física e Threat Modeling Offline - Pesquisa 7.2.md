@@ -2,44 +2,22 @@
 aliases:
   - "🛡️ Vetor 7: Segurança Física e Threat Modeling Offline - Pesquisa 7.2"
 ---
-Estruturei os **7 Vetores de Pesquisa** e suas respectivas linhas de investigação (os artefatos que vamos gerar).
+### 📋 Prompt para Execução: Pesquisa 7.2
 
-Quando estiver pronto, basta pedir _"Gere o prompt para a Pesquisa 1.1"_ e eu construo a instrução cirúrgica para extrairmos a densidade máxima.
+> **Contexto do Projeto:**
+> Estou projetando a arquitetura de banco de dados e as ferramentas de auditoria do "CommunitZ", uma rede social hiperlocal e sem anonimato. Inevitavelmente, a plataforma será palco de infrações que cruzam a barreira do crime real (ameaças físicas, estelionato, difamação grave, stalking). O usuário vítima ou o "Operador" local precisará extrair o histórico dessas infrações para registrar um Boletim de Ocorrência (B.O.) ou abrir um processo judicial. O desafio é garantir que essa exportação tenha validade jurídica inquestionável perante juízes e peritos, provando que a plataforma não alterou os dados e que a vítima não forjou os _prints_.
 
-### 🏛️ Vetor 1: Governança Comunitária e Micro-Política
+> **Objetivo da Pesquisa:**
+> Realize uma investigação profunda sobre a vanguarda em **Forense Digital**, **Cadeia de Custódia de Dados Digitais** (focada na legislação brasileira - Pacote Anticrime e CPP) e **Arquitetura de Logs Incorruptíveis**. Preciso mapear padrões técnicos e soluções de arquitetura para a geração e exportação automática de evidências legais (pacotes de dados assinados criptograficamente) diretamente pela interface da plataforma.
+> **Diretrizes de Busca e Expansão (O que você deve explorar):**
+> 1. **Vanguarda Regulatória e Perícia Forense:** Busque os padrões de normatização internacional (ex: ISO/IEC 27037 - Coleta e preservação de evidências digitais) e a jurisprudência criminal brasileira. O que a Polícia Civil e o Ministério Público exigem para aceitar um _log_ de chat como prova material irrefutável? Como atestar a integridade do dado desde a geração até a exportação?
+> 2. **Soluções Tecnológicas e Open-Source:** Vasculhe arquiteturas de bancos de dados imutáveis (_Append-Only_, _WORM - Write Once, Read Many_) e _ledgers_ criptográficos (como o _Trillian_ do Google, ou bancos baseados em árvores de Merkle). Como utilizar carimbos de tempo descentralizados (_Time-Stamping_) ou certificação ICP-Brasil automatizada para selar um PDF ou arquivo JSON exportado pelo usuário?
+> 3. **Não Limite a Solução (A UX da Justiça):** Explore como traduzir a complexidade forense para um clique. Como desenhar a função "Exportar Dossiê de Incidente"? O sistema pode gerar um pacote contendo os _hashes_ das mensagens, IPs truncados, metadados de sessão e a chave pública de verificação para que o escrivão da delegacia possa validar a autenticidade do documento em um portal externo do CommunitZ?
 
-- **Pesquisa 1.1:** Aplicação prática dos 8 Princípios da **Teoria dos Comuns (Elinor Ostrom)** para auto-regulação de canais digitais.
-- **Pesquisa 1.2:** Mitigação da **Fadiga Eleitoral**: Estudo sobre _Ranked-Choice Voting_ (Voto Ranqueado) e Democracia Líquida em ecossistemas de alta frequência.
-- **Pesquisa 1.3:** A "Lei de Ferro da Oligarquia": Como estruturar a **mecânica de Recall** e limites de mandato para evitar a perpetuação de "panelinhas" na moderação local.
+> **Formato de Saída Exigido:**
+> Gere um **Relatório de Artefato Denso** estruturado com cabeçalhos claros, uso estratégico de negrito para conceitos-chave e listas objetivas. O relatório deve conter:
+> - Um "De/Para" prático: A exigência legal da Cadeia de Custódia traduzida para o diagrama de arquitetura de _logging_ (ex: _hash_ em cascata para cada mensagem editada ou deletada).
+> - Referências de bibliotecas de criptografia forense, padrões normativos e _frameworks_ de _audit trail_ _open-source_.
+> - Análise de Riscos: "A Forja por Deepfake/Edição de HTML". Como a arquitetura prova tecnicamente para um juiz que um _printscreen_ anexado ao processo por um usuário mal-intencionado é falso, contrastando-o com o _log_ imutável do servidor?
 
-### 🧠 Vetor 2: Psicologia Comportamental e _Game Design_
-
-- **Pesquisa 2.1:** **Arquitetura de Score Cívico** vs. Crédito Social: Como usar a Lei de Goodhart para evitar que usuários manipulem ("farmem") reputação sem gerar valor real.
-- **Pesquisa 2.2:** **_Friction Design_ (Design de Fricção):** Estratégias de UX e "Cool-Down" arquitetural para desescalar picos de raiva e evitar linchamentos virtuais.
-- **Pesquisa 2.3:** Superando o **Efeito Bystander (Espectador)**: Como desenhar abas de alerta (SOS/Zeladoria) que incentivem a ação coletiva no mundo real em vez da apatia.
-
-### ⚖️ Vetor 3: Engenharia Regulatória e _Compliance_ Jurídico
-
-- **Pesquisa 3.1:** **Limites do Marco Civil da Internet:** Responsabilidade solidária da plataforma (CommunitZ) vs. responsabilidade do Operador local em casos de difamação ou crimes reais.
-- **Pesquisa 3.2:** **Regulamentação BACEN para _Escrow_:** Estruturação legal do Fundo Comunitário e retenção de taxas (BaaS vs. Instituição de Pagamento).
-- **Pesquisa 3.3:** **KYC e LGPD:** Viabilidade técnica e impacto jurídico da integração de APIs governamentais (ex: Gov.br) para validação de residência e prevenção contra _Fake Accounts_.
-
-### 🗺️ Vetor 4: Geopolítica de Dados e Resiliência (GIS)
-
-- **Pesquisa 4.1:** **Tratamento de _Edge Cases_ Espaciais:** Como sistemas lidam com _Geofencing_ dinâmico e usuários que habitam exatamente nas fronteiras (polígonos de conflito) de dois bairros/canais.
-- **Pesquisa 4.2:** **_Rate-Limit_ Geoespacial e _Astroturfing_:** Algoritmos para diferenciar picos de acesso legítimos (emergências locais) de invasões coordenadas por usuários de fora da região.
-
-### 💸 Vetor 5: _Unit Economics_ e Economia Hiperlocal
-
-- **Pesquisa 5.1:** **Elasticidade de Taxas (_Take-Rate_):** Modelagem financeira para Marketplaces hiperlocais para evitar a desintermediação (usuários fechando via Pix por fora).
-- **Pesquisa 5.2:** **Estratégia B2B2C (O Cavalo de Troia):** Análise do mercado de softwares para condomínios e precificação para substituir taxas de administração obsoletas pela estrutura do CommunitZ.
-
-### 🕵️ Vetor 6: _Post-Mortem_ (O Cemitério de Produtos)
-
-- **Pesquisa 6.1:** **Autópsia do Nextdoor:** Mapeamento tático dos erros de produto que geraram viés racial, paranoia de vizinhança e toxicidade na maior rede local atual.
-- **Pesquisa 6.2:** **Colapso do Yik Yak e Declínio do Foursquare:** Estudo de caso sobre a falha do anonimato geolocalizado e o esgotamento do modelo de "Prefeito" (_Mayorship_).
-
-### 🛡️ Vetor 7: Segurança Física e _Threat Modeling_ Offline
-
-- **Pesquisa 7.1:** **Blindagem contra _Doxing_:** Protocolos de plataformas jornalísticas e ativistas adaptados para proteger a identidade de Operadores locais contra retaliações físicas.
-- **Pesquisa 7.2:** **Geração de Evidências Legais:** Padrões técnicos para exportação de logs incorruptíveis aceitos por órgãos de segurança pública para Boletins de Ocorrência.
+> Aja como um Perito Criminal Digital, Arquiteto de Software (_Data Engineering_) e Especialista em Direito Eletrônico. Sem jargões vazios, vá direto à densidade técnica e pericial.
