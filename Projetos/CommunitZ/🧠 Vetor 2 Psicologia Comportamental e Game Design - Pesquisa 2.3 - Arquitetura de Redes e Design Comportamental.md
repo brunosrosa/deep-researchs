@@ -4,6 +4,7 @@ aliases:
     🧠 Vetor 2 Psicologia Comportamental e Game Design - Pesquisa 2.3 - 
 
     Arquitetura de Redes e Design Comportamental
+sticker: lucide//corner-up-right
 ---
 
 # Relatório de Arquitetura de Redes e Design Comportamental: Mitigação do Efeito Espectador em Plataformas de Tecnologia Cívica Hiperlocal

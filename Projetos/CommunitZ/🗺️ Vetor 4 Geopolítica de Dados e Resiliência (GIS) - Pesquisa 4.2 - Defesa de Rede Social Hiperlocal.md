@@ -1,6 +1,7 @@
 ---
 aliases:
   - "🗺️ Vetor 4: Geopolítica de Dados e Resiliência (GIS) - Pesquisa 4.2"
+sticker: lucide//corner-up-right
 ---
 
 # Relatório Técnico de Arquitetura de Defesa: Mitigação de Astroturfing e Rate-Limiting Geoespacial Dinâmico

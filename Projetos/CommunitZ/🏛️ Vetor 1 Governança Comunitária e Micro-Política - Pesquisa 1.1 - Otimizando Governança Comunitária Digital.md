@@ -3,6 +3,7 @@ aliases:
   - |-
     🏛️ Vetor 1 Governança Comunitária e Micro-Política - Pesquisa 1.1 - 
     Otimizando Governança Comunitária Digital
+sticker: lucide//corner-up-right
 ---
 
 # Arquitetura de Governança para Comunidades Digitais Geolocalizadas: Aplicação da Teoria dos Comuns e Tecnologias Descentralizadas

@@ -1,6 +1,7 @@
 ---
 aliases:
   - "🚪 Vetor 10: A Fronteira IoT e o Lock-in Físico"
+sticker: lucide//corner-up-right
 ---
 Contexto do Projeto:
 Estou projetando a arquitetura de integração de Hardware (IoT) e o modelo jurídico do "CommunitZ", uma rede social hiperlocal. Nossa estratégia de entrada (GTM) é o modelo B2B2C em condomínios. Para criar uma retenção absoluta (Physical Lock-in), o aplicativo atuará como a "Chave Digital" do morador, integrando-se a catracas, portões de garagem, interfones e smart lockers (armários inteligentes). O grande desafio é arquitetural e legal: a rede social possui regras rígidas, punições (strikes) e banimentos para usuários tóxicos. No entanto, o direito de ir e vir e o direito à propriedade são constitucionais.

@@ -4,6 +4,7 @@ aliases:
     🧠 Vetor 2 Psicologia Comportamental e Game Design - Pesquisa 2.2 - 
 
     Arquitetura de Desescalada e Design de Fricção em Redes Hiperlocais
+sticker: lucide//corner-up-right
 ---
 
 # Arquitetura de Desescalada e Design de Fricção em Redes Hiperlocais

@@ -4,6 +4,7 @@ aliases:
     🧠 Vetor 2 Psicologia Comportamental e Game Design - Pesquisa 2.1 - 
 
     Resiliência contra Manipulação e a Construção de Confiança Local
+sticker: lucide//corner-up-right
 ---
 
 # Decodificando a Reputação para o CommunitZ: Um Guia para a Resiliência contra Manipulação e a Construção de Confiança Local

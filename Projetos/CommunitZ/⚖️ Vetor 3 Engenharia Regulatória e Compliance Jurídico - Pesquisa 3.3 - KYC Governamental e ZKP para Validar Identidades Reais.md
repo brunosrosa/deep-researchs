@@ -1,6 +1,7 @@
 ---
 aliases:
   - "⚖️ Vetor 3: Engenharia Regulatória e Compliance Jurídico - Pesquisa 3.3"
+sticker: lucide//corner-up-right
 ---
 
 # Projeto CommunitZ: Um Modelo Híbrido de KYC Governamental e ZKP para Validar Identidades Reais e Geolocalização Sem Comprometer a Privacidade sob a LGPD

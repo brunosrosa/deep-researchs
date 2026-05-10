@@ -1,6 +1,7 @@
 ---
 aliases:
   - "⚖️ Vetor 3: Engenharia Regulatória e Compliance Jurídico - Pesquisa 3.2"
+sticker: lucide//corner-up-right
 ---
 
 # Relatório de Engenharia Financeira, Regulatória e Sistêmica para Arquitetura de Marketplaces Hiperlocais e Gestão de Fundos Comunitários

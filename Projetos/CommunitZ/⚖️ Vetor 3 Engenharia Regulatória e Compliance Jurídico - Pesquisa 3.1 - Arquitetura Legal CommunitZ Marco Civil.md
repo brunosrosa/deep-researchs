@@ -1,6 +1,7 @@
 ---
 aliases:
   - "⚖️ Vetor 3 Engenharia Regulatória e Compliance Jurídico - Pesquisa 3.1 - Arquitetura Legal CommunitZ: Marco Civil"
+sticker: lucide//corner-up-right
 ---
 
 # Engenharia Regulatória e Arquitetura Jurídica: Ecossistema de Governança Hiperlocal da Plataforma CommunitZ

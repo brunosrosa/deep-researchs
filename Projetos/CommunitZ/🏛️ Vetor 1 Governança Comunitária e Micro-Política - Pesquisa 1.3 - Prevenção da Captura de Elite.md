@@ -4,6 +4,7 @@ aliases:
     🏛️ Vetor 1 Governança Comunitária e Micro-Política - Pesquisa 1.3 - 
 
     Prevenção da Captura de Elite
+sticker: lucide//corner-up-right
 ---
 
 # Arquitetura de Governança Anti-Entrancamento: Engenharia de Sistemas para Prevenção da Captura de Elite em Ecossistemas Sociais Hiperlocais

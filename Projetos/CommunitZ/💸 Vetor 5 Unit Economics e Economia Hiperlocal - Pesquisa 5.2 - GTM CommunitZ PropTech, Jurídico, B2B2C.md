@@ -5,6 +5,7 @@ aliases:
     GTM CommunitZ: PropTech
   - Jurídico
   - B2B2C
+sticker: lucide//corner-up-right
 ---
 
 # Relatório de Estratégia de Go-To-Market e Arquitetura B2B2C para PropTechs Condominiais

@@ -1,6 +1,7 @@
 ---
 aliases:
   - "🗺️ Vetor 4: Geopolítica de Dados e Resiliência (GIS) - Pesquisa 4.1"
+sticker: lucide//corner-up-right
 ---
 
 # Relatório Arquitetural Espacial: Engenharia de Geofencing Probabilístico, Resolução de Conflitos e Prevenção de Manipulação em Redes Hiperlocais

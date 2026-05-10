@@ -1,6 +1,7 @@
 ---
 aliases:
   - "💸 Vetor 5: Unit Economics e Economia Hiperlocal - Pesquisa 5.1"
+sticker: lucide//corner-up-right
 ---
 
 # Relatório de Arquitetura Econômica e Prevenção de Desintermediação em Marketplaces Hiperlocais
