@@ -1,6 +1,9 @@
 ---
 aliases:
-  - "🏛️ Vetor 1: Governança Comunitária e Micro-Política - Pesquisa 1.2"
+  - |-
+    🏛️ Vetor 1 Governança Comunitária e Micro-Política - Pesquisa 1.2 - 
+
+    Design de Sistemas de Votação
 ---
 
 # Arquitetura de Governança de Alta Frequência: Design de Sistemas de Votação para Ecossistemas Hiperlocais

@@ -4,6 +4,7 @@ aliases:
     🏛️ Vetor 1 Governança Comunitária e Micro-Política - Pesquisa 1.1 - 
     Otimizando Governança Comunitária Digital
 ---
+
 # Arquitetura de Governança para Comunidades Digitais Geolocalizadas: Aplicação da Teoria dos Comuns e Tecnologias Descentralizadas
 
 A intersecção entre a sociologia de redes, o design de mecanismos criptoeconômicos e a arquitetura de sistemas descentralizados representa a vanguarda absoluta da governança digital contemporânea. O projeto "CommunitZ", ao propor uma rede social estritamente geolocalizada e vinculada a polígonos físicos reais (bairros, condomínios, cidades) sob a premissa de identidades validadas, enfrenta os mesmos dilemas de coordenação sociopolítica que afligem a humanidade há milênios: o paradoxo da ação coletiva, a fadiga na manutenção de bens públicos e a tirania imposta por maiorias ou minorias vocais. Para evitar a "tragédia dos comuns" na gestão destes espaços virtuais e de seus respectivos Fundos Comunitários, o design estrutural da plataforma não pode depender de modelos arcaicos de controle de acesso centralizado (como o tradicional _Role-Based Access Control_ - RBAC), típicos da Web 2.0. Em vez disso, exige uma tradução rigorosa, algorítmica e baseada em protocolos dos oito Princípios de Design de Elinor Ostrom.

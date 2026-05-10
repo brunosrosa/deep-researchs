@@ -854,6 +854,7 @@ sequenceDiagram
 ---
 
 ### 📥 Como Usar & Validar
+
 1. **Renderize** em [Mermaid Live](https://mermaid.live) ou no seu Git/Markdown.
 2. **Valide o fluxo** simulando os dois caminhos (`Gov.br → Sucesso` vs `Gov.br → Fallback → Privado`).
 3. **Teste a segregação**: execute queries simulando um JOIN entre `DB_V` e `DB_L`. O resultado deve ser `NULL` ou exigir chave externa inexistente.

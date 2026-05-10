@@ -1,7 +1,11 @@
 ---
 aliases:
-  - "🧠 Vetor 2: Psicologia Comportamental e Game Design - Pesquisa 2."
+  - |-
+    🧠 Vetor 2 Psicologia Comportamental e Game Design - Pesquisa 2.1 - 
+
+    Resiliência contra Manipulação e a Construção de Confiança Local
 ---
+
 # Decodificando a Reputação para o CommunitZ: Um Guia para a Resiliência contra Manipulação e a Construção de Confiança Local
 
 ## Análise Comparativa dos Eixos do Score Cívico: Eficiência e Justiça
