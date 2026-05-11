@@ -1,0 +1,3 @@
+ - Sobre o futuro abraçando a possibilidade de descentralização com "nodes" locais;
+	 - Qual a melhor "stack" para isso hoje? e no futuro como ele tem se desenhado? qual parece ser a melhor solução pra nossa proposta? 
+ - Estratégia de "Exit to Community" (E2C) atrelado à essa ideia final, fazendo com que eu não tire mais que U$500 milhões para mim, e outros fundadores/investidores iniciais também aceitam essa cláusula limite (isso é viável?), devolvendo excedentes para a própria sociedade. 
