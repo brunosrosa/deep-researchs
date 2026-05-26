@@ -30,12 +30,12 @@ Estes são os agentes de mais alto nível. Eles não executam tarefas de produç
 
 ### **O Conselho de Co-Evolução (Os Meta-Agentes)**
 
-|   |   |   |
-|---|---|---|
-|**Agente**|**Arquétipo**|**Função Principal (em uma frase)**|
-|**`@Kairós`**|O Otimizador de Processos|Analisa continuamente os dados de observabilidade do `Argus Sentry` para identificar gargalos e ineficiências, propondo proativamente otimizações para os SOPs da fábrica.|
-|**`@Epimeteu`**|O Historiador que Aprende|Realiza análises "post-mortem" automatizadas de projetos concluídos, extraindo lições aprendidas para atualizar o `Codex Prime` e evitar a repetição de erros.|
-|**`@Prometeu`**|O Batedor de Inovações|Monitora o horizonte tecnológico em busca de novas ferramentas e técnicas, abrindo RFCs de "Avaliação Tecnológica" para garantir que a fábrica permaneça na vanguarda.|
+|                 |                           |                                                                                                                                                                            |
+| --------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agente**      | **Arquétipo**             | **Função Principal (em uma frase)**                                                                                                                                        |
+| **`@Kairós`**   | O Otimizador de Processos | Analisa continuamente os dados de observabilidade do `Argus Sentry` para identificar gargalos e ineficiências, propondo proativamente otimizações para os SOPs da fábrica. |
+| **`@Epimeteu`** | O Historiador que Aprende | Realiza análises "post-mortem" automatizadas de projetos concluídos, extraindo lições aprendidas para atualizar o `Codex Prime` e evitar a repetição de erros.             |
+| **`@Prometeu`** | O Batedor de Inovações    | Monitora o horizonte tecnológico em busca de novas ferramentas e técnicas, abrindo RFCs de "Avaliação Tecnológica" para garantir que a fábrica permaneça na vanguarda.     |
 
 ## **`Olympus.agents`: A Forja das Guildas**
 
@@ -43,12 +43,12 @@ Estes são os agentes operacionais, os especialistas que executam as tarefas con
 
 ### **Guilda de Arquitetura e Governança**
 
-|   |   |
-|---|---|
-|**Agente**|**Função Principal (em uma frase)**|
-|**`@ArquitetoDoCodex`**|Especialista em estruturar, nomear e organizar os documentos do `Codex Prime`, garantindo a aderência aos padrões.|
-|**`@ArquitetoTI`**|Projeta a arquitetura de software de alto nível (HLD) e de baixo nível (LLD) para novos sistemas e funcionalidades.|
-|**`@AgenteDeSeguranca`**|Executa análises de vulnerabilidade, revisa código sob a ótica de segurança e garante a conformidade com as políticas definidas no `@Cerberus`.|
+|                          |                                                                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agente**               | **Função Principal (em uma frase)**                                                                                                             |
+| **`@ArquitetoDoCodex`**  | Especialista em estruturar, nomear e organizar os documentos do `Codex Prime`, garantindo a aderência aos padrões.                              |
+| **`@ArquitetoTI`**       | Projeta a arquitetura de software de alto nível (HLD) e de baixo nível (LLD) para novos sistemas e funcionalidades.                             |
+| **`@AgenteDeSeguranca`** | Executa análises de vulnerabilidade, revisa código sob a ótica de segurança e garante a conformidade com as políticas definidas no `@Cerberus`. |
 
 ### **Guilda de Engenharia de Software**
 

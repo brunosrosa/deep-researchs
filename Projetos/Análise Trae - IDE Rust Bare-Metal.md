@@ -1,6 +1,7 @@
 ---
 aliases:
   - "Análise Trae: IDE Rust Bare-Metal"
+sticker: lucide//compass
 ---
 
 # Relatório de Arquitetura de Sistemas: Análise Estrutural de AI-IDEs, Model Context Protocol e Integração do Trae para Engenharia de Software em Rust (Bare-Metal)
@@ -191,3 +192,37 @@ A assinatura do Trae demonstra-se fundamentalmente e esmagadoramente recomendáv
 3. **Modernização Contextual Estendida:** A implementação universal da diretiva JSON-RPC através do padrão Model Context Protocol (.trae/mcp.json) possibilita a inserção cirúrgica do `rust-analyzer` na mente da inferência. Além disso, a convivência salutar e totalmente hermética da arquitetura de isolamento de caminhos (Pastas `.trae/` isoladas dos núcleos `.agent/` de um potencial pareamento simultâneo com o Google Antigravity) , anula de forma incontestável as limitações do ecossistema, incluindo o déficit funcional associado à inabilidade de o Trae executar travessia em Links Simbólicos complexos por limitações em ambientes subjacentes herméticos baseados em LSP.
 
 O resultado desta avaliação assegura que, sob o paradigma de arquitetura de software moderno e para as finalidades delineadas, o AI-IDE Trae preenche e transcende as especificações impostas com competência de nível empresarial. O IDE assume um posicionamento singular frente às adversidades cruéis do compilador Rust para microcontroladores.
+
+-----
+
+Com base na arquitetura analisada, aqui estão algumas recomendações de engenharia práticas para otimizar o seu fluxo de trabalho "Dual IDE" em Rust Bare-Metal:
+
+1. **Automatize o Custom Runner (probe-run):** Configure ativamente o `probe-run` no seu `.cargo/config.toml` como o runner padrão do projeto. Dessa forma, quando a IA do Trae ou os agentes do Antigravity executarem um simples `cargo run`, o binário será compilado e injetado nativamente no microcontrolador. Os logs do hardware voltarão ao terminal de forma transparente, permitindo que a IA faça a depuração (debug) contínua sem precisar de configurações adicionais complexas de flash de memória.
+2. **Gerenciamento de Segurança de Comandos no Antigravity:** Como o desenvolvimento de sistemas embarcados interage com portas físicas e requer chamadas de baixo nível do sistema, configure o arquivo de regras `GEMINI.md` do Antigravity com diretrizes estritas de segurança, proibindo a execução de comandos destrutivos ou de sistema sem confirmação explícita. Além disso, nas configurações (Agent Modes / Settings), você pode definir a política "Terminal Command Auto Execution" como "Request Review" para garantir que nenhum agente faça alterações indesejadas no ambiente.
+3. **Otimização do Consumo da Cota de $10 no Trae:** Embora o Trae ofereça o formidável "Max Mode" de 1 Milhão de tokens, injetar o repositório Rust inteiro em cada prompt consumirá a sua alocação nominal básica (Basic usage) muito rapidamente. Uma estratégia adotada por desenvolvedores avançados na plataforma é manter um arquivo separado (como `changelog.md` ou um documento de requisitos em fases). Você instrui o Trae a focar apenas na "fase atual" descrita nesse documento, evitando desperdício de tokens com contextos de bibliotecas Crate que já estão estabilizadas.
+4. **Adoção do Padrão Cross-Platform (`AGENTS.md`):** O Google Antigravity adicionou suporte nativo ao arquivo `AGENTS.md` a partir da versão 1.20.3. Se você planeja usar ferramentas complementares no terminal (como o Claude Code), centralize suas regras genéricas de Rust nesse arquivo `AGENTS.md` na raiz do projeto, pois ele funciona como um padrão universal. Utilize o arquivo `GEMINI.md` apenas para regras específicas de comportamento do orquestrador do Antigravity, visto que ele tem precedência de leitura sobre o `AGENTS.md` em caso de regras conflitantes.
+
+-----
+
+Aqui estão mais algumas dicas avançadas e exclusivas para extrair o máximo do Trae, especialmente ajustadas para a engenharia de sistemas embarcados e as restrições da própria IDE:
+
+**1. Integre Servidores MCP Físicos (Hardware-in-the-loop)**
+
+Já que você atua com Bare-Metal, saiba que o ecossistema MCP vai muito além de buscar arquivos locais. Existem servidores MCP focados em hardware, como o `serial` e o `stm32-mcp`. Ao plugar esses servidores no `.trae/mcp.json`, o Trae adquire a capacidade de interagir com o hardware físico via comunicação serial, ler portas COM, diagnosticar logs e até mesmo acionar processos de flash via SWD para placas STM32 enviando comandos em linguagem natural.
+
+**2. Domine o Sistema de "Skills" (`SKILL.md`)**
+
+Além dos _System Prompts_ estáticos (como o `project_rules.md`), o Trae suporta nativamente um sistema modular chamado _Skills_. O ideal é não inchar suas regras globais com detalhes minuciosos. Crie diretórios `.trae/skills/{nome_da_skill}/SKILL.md` contendo instruções modulares para tarefas específicas (ex: "Criar testes rigorosos para código `unsafe` no Rust" ou "Auditoria de uso de memória no heap"). A IA ativará essa habilidade apenas quando for acionada ou julgar estritamente necessário. Você também pode importar bibliotecas de Skills da comunidade rodando o comando `npx skills` no terminal.
+
+**3. Injeção de Datasheets via `#Doc`**
+
+Em desenvolvimento Bare-Metal, o conhecimento das tabelas de endereços de registradores é crítico e LLMs costumam "alucinar" essas posições. Utilize a interface de contexto do Trae acionando o atalho `#Doc` no chat. Isso permite que você faça upload de manuais e datasheets (em Markdown ou PDFs locais) diretamente para a memória da IA como um conjunto de documentos referenciáveis. A IA passará a basear o código nativo estritamente nas documentações de hardware que você subiu.
+
+**4. Otimização Cirúrgica de Contexto (Poupando seus Créditos Pro)** Para evitar que a IA do Trae consuma rapidamente os seus $20 de _Basic Usage_, refine o que a ferramenta lê.
+
+- Vá em _Settings > Context > Ignore Files_ e garanta que diretórios pesados de compilação do Rust (`target/`) e binários embarcados estejam na lista de exclusão para que a IA não os indexe gastando tokens.
+- Em vez de usar apenas comandos genéricos, direcione a IA usando os atalhos `#Code` (para isolar funções específicas e referenciar apenas elas) e `#Folder` (para focar apenas no módulo do driver de periféricos atual).
+
+**5. Seleção Especializada de Modelos no Modo SOLO**
+
+O modo autônomo (SOLO) do Trae permite instanciar Agentes Customizados para missões específicas. A dica de arquitetura aqui é casar o modelo certo com o trabalho do agente. Por exemplo, configure um agente de "Análise de Arquitetura de Hardware" usando o Gemini-3-Pro-Preview, que possui excelência e contexto gigantesco para ler vastos SDKs embarcados; e reserve modelos como o GPT-5.3-Codex (se/quando disponível na sua interface do Trae) para os agentes de refatoração brutal e lógica estrita do Borrow Checker. Desse modo, você não desperdiça a energia de raciocínio lógico em etapas que pedem apenas contexto estendido.

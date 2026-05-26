@@ -1,6 +1,8 @@
 ---
 sticker: lucide//box-select
 ---
+---
+
 # Bases:
 
 Repositórios importantes de analisar para Orquestração:
@@ -640,10 +642,10 @@ hermes-webui https://github.com/nesquena/hermes-webui
 any-buddy https://github.com/cpaczek/any-buddy
 cuLA https://github.com/inclusionAI/cuLA
 see-through https://github.com/shitagaki-lab/see-through
-nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill 
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill
 three.wasm https://github.com/mrdoob/three.wasm
 refugiOS https://github.com/Ganso/refugiOS
-mcp2cli https://github.com/knowsuchagency/mcp2cli 
+mcp2cli https://github.com/knowsuchagency/mcp2cli
 rlm_repl https://github.com/fullstackwebdev/rlm_repl
 recursive-llm https://github.com/ysz/recursive-llm
 agent-os https://github.com/buildermethods/agent-os
@@ -651,6 +653,7 @@ bmalph https://github.com/LarsCowe/bmalph
 OpenSpec https://github.com/Fission-AI/OpenSpec
 spec-kit https://github.com/github/spec-kit
 cc-sdd https://github.com/gotalab/cc-sdd
+
 ## Skills base (bMAD e SDD)
 
 https://github.com/bmad-code-org/BMAD-METHOD
@@ -917,8 +920,6 @@ miniblue - https://github.com/moabukar/miniblue
 
 # NEW NEW NEW
 
-
-
 debug-agent - https://github.com/millionco/debug-agent
 cli-to-js - https://github.com/millionco/cli-to-js
 tmux-agent-sidebar - https://github.com/hiroppy/tmux-agent-sidebar
@@ -941,7 +942,6 @@ MiroFish - https://github.com/666ghj/MiroFish
 MiroFish-Offline - https://github.com/nikmcfly/MiroFish-Offline
 helixent - https://github.com/MagicCube/helixent
 miniblue - https://github.com/moabukar/miniblue
-
 
 NemoClaw https://github.com/NVIDIA/NemoClaw
 NeMo-Agent-Toolkit https://github.com/NVIDIA/NeMo-Agent-Toolkit
@@ -973,10 +973,10 @@ hermes-webui https://github.com/nesquena/hermes-webui
 any-buddy https://github.com/cpaczek/any-buddy
 cuLA https://github.com/inclusionAI/cuLA
 see-through https://github.com/shitagaki-lab/see-through
-nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill 
+nothing-design-skill https://github.com/dominikmartn/nothing-desing-skill
 three.wasm https://github.com/mrdoob/three.wasm
 refugiOS https://github.com/Ganso/refugiOS
-mcp2cli https://github.com/knowsuchagency/mcp2cli 
+mcp2cli https://github.com/knowsuchagency/mcp2cli
 rlm_repl https://github.com/fullstackwebdev/rlm_repl
 recursive-llm https://github.com/ysz/recursive-llm
 agent-os https://github.com/buildermethods/agent-os
@@ -994,8 +994,6 @@ cc-sdd https://github.com/gotalab/cc-sdd
 - **turbovec**: https://github.com/RyanCodrai/turbovec
 - **hippo-memory**: https://github.com/kitfunso/hippo-memory
 - **luce-megakernel**: https://github.com/Luce-Org/luce-megakernel
-
-
 - **git bayesect**: https://github.com/hauntsaninja/git_bayesect
 - **Zerobox**: https://github.com/afshinm/zerobox
 - **korb**: https://github.com/yannick-cw/korb
@@ -1005,15 +1003,11 @@ cc-sdd https://github.com/gotalab/cc-sdd
 - **OberonSystem3Native**: https://github.com/rochus-keller/OberonSystem3Native
 - **onWatch**: https://github.com/onllm-dev/onWatch
 - **runablehq-memory**: https://github.com/runablehq/memory
-
-
 - **Agents Observe**: https://github.com/simple10/agents-observe
 - **finalrun-agent**: https://github.com/final-run/finalrun-agent
 - **marimo-pair**: https://github.com/marimo-team/marimo-pair
 - **DecisionNode**: https://github.com/decisionnode/DecisionNode
 - **Raincast**: https://github.com/tihiera/raincast
-
-
 - **react-rewrite**: https://github.com/donghaxkim/react-rewrite
 - **zoneless**: https://github.com/zonelessdev/zoneless
 - **Openbrowser**: https://github.com/JasonHonKL/Openbrowser
@@ -1024,8 +1018,6 @@ cc-sdd https://github.com/gotalab/cc-sdd
 - **ttf-doom**: https://github.com/4RH1T3CT0R7/ttf-doom
 - **baremail**: https://github.com/matt-virgo/baremail
 - **modo**: https://github.com/mohshomis/modo
-
-
 - **Kiyeovo**: https://github.com/Realman78/Kiyeovo
 - **claudraband**: https://github.com/halfwhey/claudraband
 - **Pegboard**: https://github.com/virpo/pegboard
@@ -1035,7 +1027,6 @@ cc-sdd https://github.com/gotalab/cc-sdd
 
 - **OpenMythos** - https://github.com/kyegomez/OpenMythos
 - **design.md** - https://github.com/google-labs-code/design.md
-
 
 zennotes https://github.com/ZenNotes/zennotes  
 pgque https://github.com/NikolayS/pgque  
@@ -1069,7 +1060,6 @@ Boxer3D https://github.com/Barath19/Boxer3D
 memkraft https://github.com/seojoonkim/memkraft  
 PsUi https://github.com/jlabon2/PsUi  
 aube https://github.com/endevco/aube
-
 
 PPT-Design-Prompt https://github.com/Russell-cell/PPT-Design-Prompt
 agent-simulator https://github.com/jasonkneen/agent-simulator
@@ -1107,7 +1097,6 @@ auto-memory https://github.com/dezgit2025/auto-memory
 ephemera https://github.com/vmi-rs/ephemera  
 tabula-docs https://github.com/Lauwed/tabula-docs
 
-
 saasmail https://github.com/choyiny/saasmail  
 hister https://github.com/asciimoo/hister  
 recipes https://github.com/TandoorRecipes/recipes
@@ -1143,7 +1132,6 @@ squarebox https://github.com/SquareWaveSystems/squarebox
 trackarr https://github.com/leandrobattochio/trackarr
 familiar https://github.com/seethroughlab/familiar
 modelship https://github.com/alez007/modelship
-
 
 coleam00/Archon https://github.com/coleam00/Archon
 microsoft/markitdown https://github.com/microsoft/markitdown
