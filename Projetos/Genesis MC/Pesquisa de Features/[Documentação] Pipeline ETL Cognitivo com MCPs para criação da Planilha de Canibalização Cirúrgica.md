@@ -1,5 +1,6 @@
 ---
 aliases: []
+sticker: lucide//bookmark-plus
 ---
 # Relatório Arquitetural: Engenharia de Pipeline de ETL Cognitivo via Integração de Sistemas Agênticos e Protocolo MCP
 

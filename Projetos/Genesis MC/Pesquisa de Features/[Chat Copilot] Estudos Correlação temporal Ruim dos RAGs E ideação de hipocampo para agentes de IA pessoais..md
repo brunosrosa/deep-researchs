@@ -1,3 +1,6 @@
+---
+sticker: lucide//skull
+---
 # Correlação temporal ruim (ou cegueira temporal) em sistemas Retrieval‑Augmented Generation (RAG)
 
 Excelente pergunta, Bruno — **sim, há uma linha de pesquisa bem ativa e já considerada de _vanguarda_** voltada exatamente para mitigar a **correlação temporal ruim (ou cegueira temporal)** em sistemas **Retrieval‑Augmented Generation (RAG)**. Vou organizar a resposta de forma **estrutural**, destacando **abordagens, trabalhos-chave e o que realmente avança o estado da arte**.

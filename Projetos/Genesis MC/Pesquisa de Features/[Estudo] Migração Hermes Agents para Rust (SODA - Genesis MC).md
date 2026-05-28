@@ -1,3 +1,6 @@
+---
+sticker: lucide//apple
+---
 # Projeto Genesis MC e a Canibalização Cirúrgica de Hermes Agents: Arquitetura da Simbiose Homem-Máquina em Rust
 
 ## O Paradigma da Engenharia de Assistentes Autônomos Locais

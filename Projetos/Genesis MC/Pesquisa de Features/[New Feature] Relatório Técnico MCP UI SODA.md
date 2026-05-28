@@ -1,3 +1,6 @@
+---
+sticker: lucide//citrus
+---
 # Relatório Técnico de Integração: Implementação do Protocolo MCP Apps (UI) na Arquitetura SODA
 
 ## 1. Contextualização Histórica e a Evolução do Model Context Protocol

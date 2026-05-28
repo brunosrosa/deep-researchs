@@ -1,3 +1,6 @@
+---
+sticker: lucide//skull
+---
 # 🧠 Mudança de mentalidade necessária (ponto-chave)
 
 Você não quer mais:

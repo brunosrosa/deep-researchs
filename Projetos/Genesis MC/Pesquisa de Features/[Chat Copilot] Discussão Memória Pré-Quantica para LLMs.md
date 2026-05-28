@@ -1,3 +1,6 @@
+---
+sticker: lucide//skull
+---
 Um **resumo estruturado dos principais pontos** da página **“Study Finds Exponential Quantum Advantage in Machine Learning Tasks”**, publicada pelo _The Quantum Insider_ em **10 de abril de 2026**:
 
 ---

@@ -1,3 +1,6 @@
+---
+sticker: lucide//activity
+---
 # CAMADA DE FUNDAÇÃO E HARDWARE (BARE-METAL)
 
 - ADR-001: Core Stack Restrita (Rust/Tokio no Backend, Svelte 5 no Frontend, Repúdio a Node.js/Electron).
