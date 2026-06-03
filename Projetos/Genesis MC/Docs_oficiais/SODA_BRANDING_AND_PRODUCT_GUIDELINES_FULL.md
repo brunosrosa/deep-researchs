@@ -1,3 +1,6 @@
+---
+sticker: lucide//citrus
+---
 
 # Bíblia de Branding, Visão e Design System: Souls MC (Sovereign Operating Data Architecture)
 

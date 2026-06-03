@@ -1,5 +1,5 @@
 ---
-sticker: lucide//ghost
+sticker: lucide//citrus
 aliases:
   - SODA_BRANDING_AND_PRODUCT_GUIDELINES_V2.5_DENSE
 ---
