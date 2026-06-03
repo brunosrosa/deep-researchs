@@ -2,6 +2,7 @@
 aliases:
   - "Build 2026: Impacto no Souls MC"
 ---
+
 # Alinhamento Arquitetural e Otimização do Souls MC face às Definições do Microsoft Build 2026: Um Roteiro de Modernização Baseado em Sistemas Agênticos, Dados e Performance
 
 As diretrizes e os lançamentos apresentados no Microsoft Build estabelecem uma mudança de paradigma na engenharia de software, na qual a inteligência artificial deixa de ser um componente isolado e passa a ser regida por sistemas integrados que priorizam governança, eficiência de dados e execução local. Para o projeto Souls MC, que opera na interseção de alta concorrência de rede, renderização em tempo real e interação complexa de sistemas de dados, essa evolução tecnológica abre caminhos claros para otimização de infraestrutura, segurança de execução e aprimoramento da experiência do usuário.
@@ -127,15 +128,10 @@ Adicionalmente, a NVIDIA integra o _NVIDIA OpenShell_ sobre o MXC, adicionando o
 Para blindar e governar as interações de microsserviços autônomos ou bots de moderação do Souls MC (por exemplo, evitando que um bot de trade de itens execute comandos destrutivos no banco de dados como `drop_table`), a aplicação do padrão aberto _Agent Control Specification_ (ACS) torna-se obrigatória. O ACS opera como um contrato descritivo em YAML que intercepta a execução lógica em cinco pontos fundamentais do fluxo de decisão :
 
 1. **Validação de Entrada (_Input Checkpoint_)**: Saneia os prompts e dados enviados pelo jogador antes que cheguem ao modelo de decisão de IA, mitigando ataques diretos de injeção de instruções.
-    
 2. **Filtro de Decisão (_LLM Checkpoint_)**: Avalia as saídas conceituais do modelo inteligente para validar conformidade ética e lógica.
-    
 3. **Monitoramento de Fluxo (_State Checkpoint_)**: Audita transições críticas de estados do sistema para impedir comportamento anômalo ou loops infinitos de execução.
-    
 4. **Governança de Permissões (_Tool Execution Checkpoint_)**: Garante que o bot só execute APIs autorizadas dentro de escopos e assinaturas estritas, bloqueando operações arbitrárias de sistema.
-    
 5. **Sanitização de Saída (_Output Checkpoint_)**: Limpa e valida as respostas finais enviadas para o jogador para evitar vazamento de dados corporativos ou mensagens impróprias.
-    
 
 Por se tratar de um arquivo declarativo portátil independente de infraestrutura, as políticas do ACS acompanham a aplicação por meio de diferentes frameworks (como LangChain ou Semantic Kernel), simplificando auditorias de conformidade regulatória.
 
@@ -181,13 +177,8 @@ Por fim, todo esse ambiente deve ser operado em _Dev Drives_ estruturadas sobre 
 Com base no panorama tecnológico apresentado no Microsoft Build, determinam-se as seguintes correções de rota e diretrizes de desenvolvimento para o projeto Souls MC:
 
 1. **Implementar a Arquitetura de Persistência HorizonDB**: Substituir instâncias tradicionais ou auto-hospedadas de bancos de dados PostgreSQL pelo Azure HorizonDB no ambiente produtivo. Essa transição mitiga riscos de perda de sincronização de dados de inventário crítico ou reversão de estados de transações (_inventory rollback_) sob alta carga de acessos concorrentes, aproveitando a latência inferior a um milissegundo de confirmações multi-zona.
-    
 2. **Unificar Telemetria com Rayfin e Fabric OneLake**: Adotar o Rayfin SDK para mapear os fluxos de eventos e dados de telemetria comportamental do Souls MC usando decoradores TypeScript nativos. Essa correção de rota elimina a necessidade de manutenção de pipelines complexos de ETL para consolidar logs de atividades do jogador, disponibilizando-os para modelagem analítica preditiva de forma imediata dentro do OneLake.
-    
 3. **Refatorar o Empacotamento de Ativos Gráficos**: Integrar as atualizações do DirectStorage 3.0 no fluxo de exportação de dados do cliente do Souls MC. A aplicação de algoritmos de compressão Zstandard otimizados para descompressão por hardware na GPU diminui a latência de transferência de dados tridimensionais, prevenindo engasgos na renderização e otimizando o carregamento dinâmico de mundos voxelizados massivos. Complementarmente, implementar o mapeamento via _Advanced Shader Delivery_ no canal de distribuição para anular atrasos de processamento gráfico nos acessos iniciais de novos usuários.
-    
 4. **Isolar Scripts Locais com o Microsoft Execution Containers SDK**: Se o Souls MC permitir a injeção ou execução de modificações customizadas de código criadas por sua comunidade de jogadores, adotar o SDK do MXC na estrutura interna do launcher do cliente do jogo torna-se imperativo. Ao declarar as fronteiras de acesso a arquivos de sistema e sockets de rede de forma centralizada e deixar que o Windows imponha esse isolamento de maneira nativa, assegura-se que vulnerabilidades ou scripts maliciosos de terceiros não comprometam o sistema físico do usuário final.
-    
 5. **Incorporar o ASSERT no Pipeline de Integração Contínua (CI/CD)**: Integrar o framework ASSERT aos testes de automação de controle e moderação. O ASSERT executará varreduras e testes simulados de conformidade com as diretrizes do jogo de forma automatizada sobre novas versões antes de suas promoções para os servidores abertos de testes.
-    
 6. **Padronizar Ambientes de Estações de Trabalho**: Adotar o fluxo declarativo do `winget configure` associado a containers nativos do WSL para estabelecer uma base idêntica de ferramentas de desenvolvimento e dependências em todas as máquinas da equipe técnica do Souls MC, eliminando inconsistências operacionais.
