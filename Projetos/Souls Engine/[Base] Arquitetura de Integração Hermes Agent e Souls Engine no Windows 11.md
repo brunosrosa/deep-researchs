@@ -201,7 +201,7 @@ Para garantir que a RTX 2060m opere sem degradação, o Souls Engine implementa 
 
 ### 5.3 O Watchdog Termodinâmico NVML
 
-A crate `souls_inference` incorpora um monitor ativo acoplado à NVIDIA Management Library (`nvml-wrapper`), executando medições de telemetria a intervalos de 500 milissegundos:
+A crate `souls_inference_runtime` incorpora um monitor ativo acoplado à NVIDIA Management Library (`nvml-wrapper`), executando medições de telemetria a intervalos de 500 milissegundos:
 
 * **Faixa Nominal ($\text{VRAM}_{\text{livre}} > 1.400\text{ MB}$ e $T_{\text{GPU}} < 75^\circ\text{C}$):** Autorização plena para inferência do Tier 1 na dGPU com aceleração CUDA.
 * **Faixa Preventiva ($800\text{ MB} < \text{VRAM}_{\text{livre}} \le 1.400\text{ MB}$ ou $75^\circ\text{C} \le T_{\text{GPU}} < 82^\circ\text{C}$):** Restrição de novas alocações de contexto. O modelo reduz o teto de novos tokens e direciona rotinas de vetorização semântica para o provedor de execução CPU do ONNX Runtime.
@@ -313,12 +313,14 @@ A inclusão do algoritmo ParetoBandit e da taxonomia multimodelo direciona a org
 
 As diretrizes técnicas para as crates são assim distribuídas:
 
+* `souls_anthropophagy` **(Manter & Refinar)**: A esteira automatizada de dissecação, extração de algoritmos puros e purificação de soluções open-source.
+* `souls_llm_local_arena` **(Manter & Refinar)**: A suíte contínua de calibração e benchmarking empírico dos modelos locais rodando no hardware real (Atual: Intel i9 9th + RTX 2060m 6GB Vram + 32GB RAM).
 * **`souls_protocol` (Manter & Refinar):** Centraliza contratos DTOs de dados, serializadores JSON-RPC, esquemas MCP de ferramentas e tipos Arrow para intercâmbio colunar.
 * **`souls_core` (Manter):** Configurações gerais, inicialização de tracing assíncrono Tokio, barreiras contra pânico e abstrações de I/O Win32.
 * **`souls_memory` (Manter & Consolidar):** Gestão exclusiva de concorrência sobre SQLite em modo WAL (FTS5) e LanceDB vetorial.
 * **`souls_ast` (Manter Especializada):** Compilação de gramáticas Tree-sitter nativas, gerador de outlines de código e computação de Myers Diff.
-* **`souls_inference` (Refatorar & Especializar):** Hospeda os runtimes de inferência local: ONNX Runtime em CPU para Tier 0, llama.cpp em CPU para Tier 0.5 (logit probing), llama.cpp com aceleração CUDA para Tier 1, e o monitor térmico NVML.
-* **`souls_router` (Nova Crate Especializada):** Implementa o algoritmo de aprendizado contextual **ParetoBandit**, persistindo a matriz de recompensas bayesianas no SQLite e exportando métodos de cálculo de utilidade.
+* **`souls_inference_runtime` (Refatorar & Especializar):** Hospeda os runtimes de inferência local: ONNX Runtime em CPU para Tier 0, llama.cpp em CPU para Tier 0.5 (logit probing), llama.cpp com aceleração CUDA para Tier 1, e o monitor térmico NVML.
+* **`souls_model_router` (Nova Crate Especializada):** Implementa o algoritmo de aprendizado contextual **ParetoBandit**, persistindo a matriz de recompensas bayesianas no SQLite e exportando métodos de cálculo de utilidade.
 * **`souls_server` (Nova Crate Executável):** Binário executável daemon baseado em Axum, unificando o servidor MCP (HTTP/SSE), os endpoints REST de telemetria consumidos pelo dashboard e as rotas de inferência local compatíveis com a especificação OpenAI.
 
 ### 9.2 Organização de Diretórios do Workspace Rust
@@ -328,22 +330,24 @@ A árvore de diretórios do repositório está estruturada da seguinte forma:
 * `souls-engine/` (Raiz do Workspace Rust)
 * `Cargo.toml` (Configuração dos membros virtuais do workspace)
 * `crates/`
-* `souls_protocol/` (Tipos JSON-RPC, contratos de ferramentas MCP e DTOs)
-* `souls_core/` (Configuração TOML, logging tracing e salvaguardas de pânico)
-* `souls_memory/` (Controladores SQLite WAL/FTS5 e LanceDB)
-* `souls_ast/` (Gramáticas Tree-sitter nativas e algoritmo de Myers Diff)
-* `souls_inference/` (Drivers ONNX Runtime, llama.cpp com llguidance e NVML)
-* `souls_router/` (Motor matemático do ParetoBandit e regressão contextual)
-* `souls_server/` (Daemon unificado em Axum: MCP HTTP/SSE e rotas REST)
-* `adapters/` (Componentes de Integração com o Hermes)
-* `hermes_memory_souls/` (Plugin leve em Python para `$HERMES_HOME/plugins/memory/`)
-* `__init__.py` (Implementação formal da classe `MemoryProvider` do Hermes)
-* `plugin.yaml` (Manifesto declarativo de configuração de memória)
-* `hermes_dashboard_souls/` (Plugin do Web Dashboard para `$HERMES_HOME/plugins/souls_dashboard/`)
-* `plugin.yaml` (Manifesto do plugin para o framework Hermes)
-* `dashboard/manifest.json` (Declaração de rotas, título e ícone da interface web)
-* `dashboard/plugin_api.py` (Roteador FastAPI que consulta os dados REST do Souls Engine)
-* `dashboard/dist/index.js` (Componente React compilado em formato IIFE consumindo o SDK global)
+	* `souls_anthropophagy` (Firewall de Licenças (SPDX Checker), Dissecador Sintático & Call-Graph Tracer, Organ Slicer (Extrator de Órgãos) e The Organ Vault (catálogo persistido no SQLite))
+	* `souls_llm_local_arena` (Harness de Teste de Performance, Harness de Rigidez Sintática (JSON Rigidity Suite), Alimentador de Priors)
+	* `souls_protocol/` (Tipos JSON-RPC, contratos de ferramentas MCP e DTOs)
+	* `souls_core/` (Configuração TOML, logging tracing e salvaguardas de pânico)
+	* `souls_memory/` (Controladores SQLite WAL/FTS5 e LanceDB)
+	* `souls_ast/` (Gramáticas Tree-sitter nativas e algoritmo de Myers Diff)
+	* `souls_inference_runtime/` (Drivers ONNX Runtime, llama.cpp com llguidance e NVML)
+	* `souls_model_router/` (Motor matemático do ParetoBandit e regressão contextual)
+	* `souls_server/` (Daemon unificado em Axum: MCP HTTP/SSE e rotas REST)
+	* `adapters/` (Componentes de Integração com o Hermes)
+		* `hermes_memory_souls/` (Plugin leve em Python para `$HERMES_HOME/plugins/memory/`)
+			* `__init__.py` (Implementação formal da classe `MemoryProvider` do Hermes)
+			* `plugin.yaml` (Manifesto declarativo de configuração de memória)
+		* `hermes_dashboard_souls/` (Plugin do Web Dashboard para `$HERMES_HOME/plugins/souls_dashboard/`)
+			* `plugin.yaml` (Manifesto do plugin para o framework Hermes)
+			* `dashboard/manifest.json` (Declaração de rotas, título e ícone da interface web)
+			* `dashboard/plugin_api.py` (Roteador FastAPI que consulta os dados REST do Souls Engine)
+			* `dashboard/dist/index.js` (Componente React compilado em formato IIFE consumindo o SDK global)
 
 ### 9.3 Cronograma Determinístico de Implementação do MVP (Windows 11)
 
@@ -372,9 +376,9 @@ A implementação do sistema ocorre em quatro fases de engenharia sequenciais e 
 
 #### Fase 4: Tiers Locais, ParetoBandit e Dashboard Unificado (Semanas 7–8)
 
-* Integração da biblioteca NVML na crate `souls_inference` e ativação do monitor térmico a cada 500 milissegundos.
+* Integração da biblioteca NVML na crate `souls_inference_runtime` e ativação do monitor térmico a cada 500 milissegundos.
 * Implantação dos Tiers 0 e 0.5 em CPU via ONNX e llama.cpp, e ativação do Tier 1 na dGPU com FlashAttention-2 e KV Cache assimétrico.
-* Desenvolvimento da crate `souls_router` com a formulação bayesiana do ParetoBandit e despacho via ferramenta MCP `souls_route_subtask`.
+* Desenvolvimento da crate `souls_model_router` com a formulação bayesiana do ParetoBandit e despacho via ferramenta MCP `souls_route_subtask`.
 * Construção do plugin `$HERMES_HOME/plugins/souls_dashboard/`, integrando o roteador FastAPI e a interface React com `window.__HERMES_PLUGIN_SDK__`.
 * Condução de testes de estresse com injeção de pânicos forçados no binário Rust, confirmando a continuidade operacional ininterrupta do Hermes Agent.
 
